@@ -52,7 +52,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by My will to program in javascript (its non-existent)
           <span className={styles.logo}>
           </span>
         </a>

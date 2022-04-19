@@ -73,6 +73,15 @@
   max-width: 800px;
 }
 
+.vgrid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 800px;
+  flex-direction: column;
+}
+
 .card {
   margin: 1rem;
   padding: 1.5rem;
