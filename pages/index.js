@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import styles from 'spacebubble.io/styles/Home.module.css'
 
 export default function Home() {
   return (
@@ -46,15 +47,8 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
           Powered by My will to program in javascript (its non-existent)
-          <span className={styles.logo}>
-          </span>
-        </a>
+          <span className={styles.logo}></span>
       </footer>
     </div>
   )
