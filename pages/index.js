@@ -40,7 +40,7 @@ export default function Home() {
             href="https://spacebubble.io/code"
             className={styles.card}
           >
-            <h2 style={{textAlign: "right"}}>Learn to code → </h2>
+            <h2 style={{textAlign: 'right'}}>Learn to code → </h2>
             <p>Learn to code with my online, multi-language {'&'} graphical code teacher!</p>
           </a>
         </div>
