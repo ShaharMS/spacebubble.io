@@ -15,38 +15,31 @@ export default function Home() {
           Welcome to <a href="https://spacebubble.io">Spacebubble.io!</a>
         </h1>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
+          <a href="https://spacebubble.io/libraries" className={styles.card}>
+            <h2>Libraries &rarr;</h2>
+            <p>Find in-depth information and documentation about code libraries i made :)</p>
           </a>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
+          <a href="https://nextjs.org/apps" className={styles.card}>
+            <h2>Apps &rarr;</h2>
+            <p>Explore mobile {'&'} desktop apps i made</p>
           </a>
 
           <a
             href="https://github.com/vercel/next.js/tree/canary/examples"
             className={styles.card}
           >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
+            <h2>Blogs {'&'} Articles &rarr;</h2>
+            <p>Pretty much look at stuff i wrote (dont worry, its pretty interesting!)</p>
           </a>
 
           <a
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
             className={styles.card}
           >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
+            <h2>Learn to code &rarr;</h2>
+            <p>Learn to code with my online, multi-language {'&'} graphical code teacher!</p>
           </a>
         </div>
       </main>
