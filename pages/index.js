@@ -14,21 +14,23 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome to <a href="https://spacebubble.io">Spacebubble.io!</a>
         </h1>
-        <br></br>
-        <br></br>
+        <p className={styles.description}>
+          Wanna learn how to code
+
+        </p>
         <div className={styles.grid}>
           <a href="https://spacebubble.io/libraries" className={styles.card}>
             <h2>← Libraries</h2>
             <p>Find in-depth information and documentation about code libraries i made :)</p>
           </a>
 
-          <a href="https://nextjs.org/apps" className={styles.card}>
+          <a href="https://spacebubble.io/apps" className={styles.card}>
             <h2>Apps → </h2>
-            <p>Explore mobile {'&'} desktop apps i made. try them out!</p>
+            <p>Explore mobile {'&'} desktop apps i made. you should try them out!</p>
           </a>
 
           <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
+            href="https://spacebubble.io/blog"
             className={styles.card}
           >
             <h2>← Blogs {'&'} Articles</h2>
@@ -36,7 +38,7 @@ export default function Home() {
           </a>
 
           <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+            href="https://spacebubble.io/code"
             className={styles.card}
           >
             <h2>Learn to code → </h2>
