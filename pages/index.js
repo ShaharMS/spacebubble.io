@@ -24,7 +24,7 @@ export default function Home() {
           </a>
 
           <a href="https://spacebubble.io/apps" className={styles.card}>
-            <h2 style={"text-align:right"}>Apps {'&'} Programs → </h2>
+            <h2 style={{textAlign: 'right'}}>Apps {'&'} Programs → </h2>
             <p>Explore mobile {'&'} desktop apps i made. you should try them out!</p>
           </a>
 
