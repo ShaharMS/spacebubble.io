@@ -15,7 +15,7 @@ export default function Home() {
           Welcome to <a href="https://spacebubble.io">Spacebubble.io!</a>
         </h1>
         <p className={styles.description}>
-          <b>Welcome to my website!</b> here you can find info about my projects, documentation for my libraries and even <b>learn how to code!</b>
+          <b>Welcome to my website!</b><br></br>here you can find info about my projects,<br></br>documentation for my libraries<br></br>and even <b>learn how to code!</b>
         </p>
         <div className={styles.grid}>
           <a href="https://spacebubble.io/libraries" className={styles.card}>
