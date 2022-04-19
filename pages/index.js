@@ -15,17 +15,16 @@ export default function Home() {
           Welcome to <a href="https://spacebubble.io">Spacebubble.io!</a>
         </h1>
         <p className={styles.description}>
-          Wanna learn how to code
-
+          <strong>Welcome to my website!</strong> here you can find info about my projects, documentation for my libraries and even <strong>learn how to code!</strong>
         </p>
         <div className={styles.grid}>
           <a href="https://spacebubble.io/libraries" className={styles.card}>
-            <h2>← Libraries</h2>
+            <h2>← Code Libraries</h2>
             <p>Find in-depth information and documentation about code libraries i made :)</p>
           </a>
 
           <a href="https://spacebubble.io/apps" className={styles.card}>
-            <h2>Apps → </h2>
+            <h2 style={"text-align:right"}>Apps {'&'} Programs → </h2>
             <p>Explore mobile {'&'} desktop apps i made. you should try them out!</p>
           </a>
 
@@ -41,7 +40,7 @@ export default function Home() {
             href="https://spacebubble.io/code"
             className={styles.card}
           >
-            <h2>Learn to code → </h2>
+            <h2 style={"text-align:right"}>Learn to code → </h2>
             <p>Learn to code with my online, multi-language {'&'} graphical code teacher!</p>
           </a>
         </div>
