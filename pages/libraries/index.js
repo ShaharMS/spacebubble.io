@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import styles from '../../styles/Home.module.css'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -18,10 +19,12 @@ export default function Home() {
           <b>Welcome to my website!</b><br></br>here you can find info about my projects,<br></br>documentation for my libraries<br></br>and even <b>learn how to code!</b>
         </p>
         <div className={styles.vgrid}>
-          <a href="/libraries/texter/index.html" className={styles.card}>
-            <h2>← texter</h2>
+          <Link href="/libraries/texter/index.html">
+            <a className={styles.card}>
+            <h2>texter</h2>
             <p>Cross-framework, cross-platform Haxe Library that brings support for general text related things, such as text input, right-to-left text, HTML and Markdown</p>
-          </a>
+            </a>
+          </Link>
         </div>
       </main>
 

@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Script from 'next/script'
+import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -14,37 +15,36 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://spacebubble.io">Spacebubble.io!</a>
+          Welcome to <Link href="https://spacebubble.io">Spacebubble.io!</Link>
         </h1>
         <p className={styles.description}>
           <b>Welcome to my website!</b><br></br>here you can find info about my projects,<br></br>documentation for my libraries<br></br>and even <b>learn how to code!</b>
         </p>
         <div className={styles.grid}>
-          <a href="/libraries/" className={styles.card}>
-            <h2>← Code Libraries</h2>
-            <p>Find in-depth information and documentation about code libraries i made :)</p>
-          </a>
-
-          <a href="/apps/" className={styles.card}>
-            <h2 style={{textAlign: 'right'}}>Apps {'&'} Programs → </h2>
-            <p>Explore mobile {'&'} desktop apps i made. you should try them out!</p>
-          </a>
-
-          <a
-            href="/blog/"
-            className={styles.card}
-          >
-            <h2>← Blogs {'&'} Articles</h2>
-            <p>Pretty much look at stuff i wrote (dont worry, its pretty interesting!)</p>
-          </a>
-
-          <a
-            href="/code/"
-            className={styles.card}
-          >
-            <h2 style={{textAlign: 'right'}}>Learn to code → </h2>
-            <p>Learn to code with my online, multi-language {'&'} graphical code teacher!</p>
-          </a>
+          <Link href="/libraries/">
+            <a className={styles.card}>
+              <h2>← Code Libraries</h2>
+              <p>Find in-depth information and documentation about code libraries i made :)</p>
+            </a>
+          </Link>
+          <Link href="/apps/">
+            <a className={styles.card}>
+              <h2 style={{textAlign: 'right'}}>Apps {'&'} Programs → </h2>
+              <p>Explore mobile {'&'} desktop apps i made. you should try them out!</p>
+            </a>
+          </Link>
+          <Link href="/blogs/">
+            <a className={styles.card}>
+              <h2>← Blogs {'&'} Articles</h2>
+              <p>Pretty much look at stuff i wrote (dont worry, its pretty interesting!)</p>
+            </a>
+          </Link>
+          <Link href="/code/">
+            <a className={styles.card}>
+              <h2 style={{textAlign: 'right'}}>Learn to code → </h2>
+              <p>Learn to code with my online, multi-language {'&'} graphical code teacher!</p>
+            </a>
+          </Link>
         </div>
       </main>
 
