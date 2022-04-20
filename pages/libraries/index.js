@@ -18,7 +18,7 @@ export default function Home() {
           <b>Welcome to my website!</b><br></br>here you can find info about my projects,<br></br>documentation for my libraries<br></br>and even <b>learn how to code!</b>
         </p>
         <div className={styles.vgrid}>
-          <a href="https://spacebubble.io/libraries/texter" className={styles.card}>
+          <a href="https://spacebubble.io/libraries/texter-lib" className={styles.card}>
             <h2>← texter</h2>
             <p>Cross-framework, cross-platform <a href='https://haxe.org'>Haxe</a> Library that brings support for general text related things, such as text input, right-to-left text, HTML and Markdown</p>
           </a>
