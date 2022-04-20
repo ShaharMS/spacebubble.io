@@ -1,9 +1,11 @@
 import Head from 'next/head'
+import Script from 'next/script'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
   return (
     <div className={styles.container}>
+      <Script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js' type='text/javascript'></Script>
       <Head>
         <title>Spacebubble.io</title>
         <meta name="description" content="Welcome to Shahar's website! you might also know me as ShaharMS." />
@@ -18,18 +20,18 @@ export default function Home() {
           <b>Welcome to my website!</b><br></br>here you can find info about my projects,<br></br>documentation for my libraries<br></br>and even <b>learn how to code!</b>
         </p>
         <div className={styles.grid}>
-          <a href="https://spacebubble.io/libraries" className={styles.card}>
+          <a href="/libraries/" className={styles.card}>
             <h2>← Code Libraries</h2>
             <p>Find in-depth information and documentation about code libraries i made :)</p>
           </a>
 
-          <a href="https://spacebubble.io/apps" className={styles.card}>
+          <a href="/apps/" className={styles.card}>
             <h2 style={{textAlign: 'right'}}>Apps {'&'} Programs → </h2>
             <p>Explore mobile {'&'} desktop apps i made. you should try them out!</p>
           </a>
 
           <a
-            href="https://spacebubble.io/blog"
+            href="/blog/"
             className={styles.card}
           >
             <h2>← Blogs {'&'} Articles</h2>
@@ -37,7 +39,7 @@ export default function Home() {
           </a>
 
           <a
-            href="https://spacebubble.io/code"
+            href="/code/"
             className={styles.card}
           >
             <h2 style={{textAlign: 'right'}}>Learn to code → </h2>
