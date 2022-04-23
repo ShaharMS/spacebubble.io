@@ -15,3 +15,9 @@ a {
   box-sizing: border-box;
 }
 
+coloredLink {
+  color: rgb(0, 106, 255);
+  text-decoration-line: underline;
+  
+}
+

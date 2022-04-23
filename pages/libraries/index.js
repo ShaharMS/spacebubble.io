@@ -29,7 +29,7 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}>
-          Powered by My will to program in javascript (its non-existent)
+          Powered 0.0001% of Shaggy&apos;s power (hehe)
           <span className={styles.logo}></span>
       </footer>
     </div>
