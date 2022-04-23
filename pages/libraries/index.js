@@ -10,7 +10,7 @@ export default function Home() {
         <meta name="description" content="This site contains the documentation for my libraries. give those a try; theyre pretty good" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <div className={styles.spaceContainer}></div>
       <main className={styles.main}>
         <h1 className={styles.title}>
           Libraries
