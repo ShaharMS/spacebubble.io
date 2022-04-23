@@ -42,7 +42,7 @@ export default function Home() {
                     ילד.זוז_לנקודה(110,20)<br></br>
                     ילד.אסוף_כוכב()‏<br></br>
                 </p>
-                <h1><br></br>--><br></br></h1>
+                <h1><br></br>--&gt;<br></br></h1>
                 <p className={styles.card}>
                     var name1 = new Child();<br></br>
                     name1.name = &quot;חיים&quot;;<br></br>
