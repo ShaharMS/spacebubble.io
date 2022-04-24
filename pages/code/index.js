@@ -11,8 +11,7 @@ export default function Home() {
       	  <meta name="description" content="Want to learn the basics of coding in an undertandable and interactive way while not having to learn a second language! you can write in spanish, english, hebrew and more!" />
       	  <link rel="icon" href="/favicon.ico" />
       	</Head>
-        <div className={styles.spaceContainer}></div>
-        <main className={styles.main}>
+          <div className={[space.stars, space.twinkling, space.clouds]}></div>        <main className={styles.main}>
             <h1 className={styles.title}>
                 Learn Coding!
             </h1>

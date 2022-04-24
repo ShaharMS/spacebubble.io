@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Script from 'next/script'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
+import space from '../styles/SpaceBG.module.css'
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
       	  <link rel="icon" href="/favicon.ico" />
       	</Head>
 
-		<div className={styles.spaceContainer}></div>
+		<div className={[space.stars, space.twinkling, space.clouds]}></div>
       	<main className={styles.main}>
       	  	<h1 className={styles.title}>
       	    Welcome!
