@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styles from '../../styles/Home.module.css'
 import Link from 'next/link'
-import space from '../styles/SpaceBG.module.css'
+import space from '../../styles/SpaceBG.module.css'
 
 export default function Home() {
   return (
