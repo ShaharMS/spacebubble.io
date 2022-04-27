@@ -9,16 +9,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@100;400;900&display=swap" rel="stylesheet" />
-    <link rel="styles" href="global.css">
 
     <script src="https://cdn.jsdelivr.net/npm/kute.js@2.1.2/dist/kute.min.js"></script>
 
     <style>
       h1 {
-        font-size: 4rem;
+        font-size: 5rem;
       }
       p {
-        font-size: 1.5rem;
+        font-size: 2rem;
       }
       body {
         margin: 0;
@@ -32,6 +31,7 @@
         position: relative;
         display: flex;
         flex-direction: column;
+        align-items: center;
         min-height: 500px;
         padding-top: 100px;
       }
@@ -133,10 +133,10 @@
       }
 
       .layer1 {
-        background-image: url('./assets/layer1.svg');
+        background-image: url('./layer1.svg');
       }
       .layer2 {
-        background-image: url('./assets/layer2.svg');
+        background-image: url('./layer2.svg');
       }
 
       .flip {
@@ -160,50 +160,54 @@
         background: url('./blobs.svg') no-repeat bottom / cover;
       }
 
-    .card {
-      width: 25vw;
-      height: 200px;
-      align-self: flex-end;
-      background: transparent;
-      border-radius: 10px;
-      border-color: azure;
-      border-width: 4px;
-      max-width: 200px;
-      box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.2);
-      text-align: center;
-    }
+      .card {
+        width: ;
+        height: fit-content;
+        align-self: flex-end;
+        border-radius: 10px;
+        border-color: rgb(255, 255, 255);
+        border-width: 4px;
+        border-style: outset;
+        max-width: 400px;
+        text-align: center;
+      }
+
     </style>
   </head>
   <body>
-    <section class="blue">
-      <h1 style="text-align: left; padding-left: 10%;">Hey There!</h1>
-      <p  style="text-align: left; padding-left: 20%; padding-right: 20%;">Welcome to my website! Here I store the things im working on, as well as some pretty useful stuff, <b>like:</b></p>
+    <section class="blue" style="align-items: flex-start;">
+      <h1 style="padding-left: 10vw;">Hey There!</h1>
+      <p style="padding-left: 15vw; padding-right: 15vw;">Welcome! idk how you got there, but you might a swell look at stuff i made:</p>
       <div class="curve"></div>
     </section>
 
-    <section style="padding-right: 20%; text-align: right;">
-      <h1>Code Libraries</h1>
-      <p>I'm programming for nearly a year now, and at one point ive decided to make
-      some libraries</p>
-      <card class="card">
-        <h2>texter</h2>
-      </card>
-      
+    <section style="align-items: flex-end;">
+      <h1 style="padding-right: 10vw;">Code Libraries:   </h1>
+      <div style="display: flex; justify-content: space-evenly; padding-right: 10vw;">
+        <div class="card" style="margin: 5px;">
+          <h1 style="font-size: 3rem;">texter</h1>
+          <hr>
+          <p style="font-size: 1.5rem; font-weight: lighter;">
+            A Haxe library used for general text manipulation and display.
+            The library is cross platform & framework, but not framework agnostic.
+          </p>
+        </div>
+      </div>
     </section>
 
     <section class="bubble">
-      <h1>Nice Curves!</h1>
-      <p>A website is like a road. The more curves it has the more interesting it is.</p>
+      <h1>Lorem Ipsum</h1>
+      <p>Lorem ipsum dolor sussy amet,.,,,</p>
     </section>
 
     <section class="dark">
-      <h1>Nice Curves!</h1>
-      <p>A website is like a road. The more curves it has the more interesting it is.</p>
+      <h1>Lorem Ipsum</h1>
+      <p>Lorem ipsum dolor sussy amet,.,,,</p>
     </section>
 
     <section class="red">
-      <h1>Nice Curves!</h1>
-      <p>A website is like a road. The more curves it has the more interesting it is.</p>
+      <h1>Lorem Ipsum</h1>
+      <p>Lorem ipsum dolor sussy amet,.,,,</p>
 
       <div class="wave">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -218,16 +222,16 @@
     <div class="spacer layer1"></div>
 
     <section>
-      <h1>Nice Curves!</h1>
-      <p>A website is like a road. The more curves it has the more interesting it is.</p>
+      <h1>Lorem Ipsum</h1>
+      <p>Lorem ipsum dolor sussy amet,.,,,</p>
     </section>
 
     <div class="spacer layer2 flip"></div>
 
     <section class="pink">
       <div class="blob-content">
-        <h1>Nice Curves!</h1>
-        <p>A website is like a road. The more curves it has the more interesting it is.</p>
+        <h1>Lorem Ipsum</h1>
+        <p>Lorem ipsum dolor sussy amet,.,,,</p>
       </div>
 
       <svg
@@ -257,7 +261,7 @@
       </svg>
 
       <script>
-        KUTE.fromTo(
+        const tween = KUTE.fromTo(
           '#blob1',
           { path: '#blob1' },
           { path: '#blob2' },
@@ -269,8 +273,8 @@
     <div class="spacer layer2"></div>
 
     <section class="blobs">
-      <h1>Nice Curves!</h1>
-      <p>A website is like a road. The more curves it has the more interesting it is.</p>
+      <h1>Lorem Ipsum</h1>
+      <p>Lorem ipsum dolor sussy amet,.,,,</p>
     </section>
   </body>
 </html>
