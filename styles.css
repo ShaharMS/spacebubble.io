@@ -1,0 +1,153 @@
+
+html {
+    font-size: 1.2vw;
+}
+
+h1 {
+    font-size: 5rem;
+}
+p {
+    font-size: 2rem;
+}
+body {
+    margin: 0;
+    font-family: 'Prompt', sans-serif;
+    color: white;
+    background: #202731;
+    overflow-x: hidden;
+}
+section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 300px;
+    padding-top: 100px;
+}
+.blue {
+    background: #3c31dd;
+}
+.red {
+    background: #dd3f31;
+}
+.pink {
+    background: #ff0066;
+    overflow: hidden;
+}
+.dark {
+    background: #0f0f10;
+}
+/* Curved bg with plain CSS */
+.curve {
+  position: absolute;
+  height: 250px;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+}
+.curve::before {
+  content: '';
+  display: block;
+  position: absolute;
+  border-radius: 100% 50%;
+  width: 55%;
+  height: 100%;
+  transform: translate(85%, 60%);
+  background-color: #202731;
+}
+.curve::after {
+  content: '';
+  display: block;
+  position: absolute;
+  border-radius: 100% 50%;
+  width: 55%;
+  height: 100%;
+  background-color: #3c31dd;
+  transform: translate(-4%, 40%);
+  z-index: -1;
+}
+/* Bubble bg with plain CSS */
+.bubble::after {
+  content: '';
+  border-top-left-radius: 50% 100%;
+  border-top-right-radius: 50% 100%;
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  background-color: #0f0f10;
+  height: 85%;
+}
+/* Curved bg with SVG via https://www.shapedivider.app/ */
+.wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+.wave svg {
+  position: relative;
+  display: block;
+  width: calc(103% + 1.3px);
+  height: 262px;
+}
+.wave .shape-fill {
+  fill: hsl(240, 3%, 6%);
+}
+/* SVG background image via https://haikei.app/ */
+.spacer {
+  aspect-ratio: 960/300;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.layer1 {
+  background-image: url('./layer1.svg');
+}
+.layer2 {
+  background-image: url('./layer2.svg');
+}
+.flip {
+  transform: rotate(180deg);
+}
+/* Blobs SVG background image via https://haikei.app/ */
+.blob-motion {
+  position: absolute;
+  transform: translateY(-20%);
+  z-index: 0;
+}
+.blob-content {
+  z-index: 1;
+}
+.blobs {
+  width: 100%;
+  background: url('./blobs.svg') no-repeat bottom / cover;
+}
+.card {
+  width: fit-content;
+  height: fit-content;
+  max-height: 550px;
+  overflow-y: scroll;
+  align-self: flex-end;
+  padding: 5px;
+  border-radius: 10px;
+  border-color: rgb(180, 177, 177);
+  color: rgb(180, 177, 177);
+  border-width: 4px;
+  border-style: solid;
+  max-width: 400px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+.card:hover {
+  border: 4px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+}
+.h-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: flex-end;
+}
