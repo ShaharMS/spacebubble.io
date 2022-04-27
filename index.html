@@ -163,6 +163,7 @@
       .card {
         width: fit-content;
         height: fit-content;
+        max-height: 450px;
         align-self: flex-end;
         padding: 5px;
         border-radius: 10px;
@@ -179,18 +180,24 @@
         color: rgb(255, 255, 255);
       }
 
+      .h-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: flex-end;
+      }
+
     </style>
   </head>
   <body>
     <section class="blue" style="align-items: flex-start;">
       <h1 style="padding-left: 10vw;">Hey There!</h1>
-      <p style="padding-left: 15vw; padding-right: 15vw;">Welcome! idk how you got there, but you might a swell look at stuff i made:</p>
+      <p style="padding-left: 15vw; padding-right: 15vw;">Welcome! idk how you got there, but you might as well look at stuff i made:</p>
       <div class="curve"></div>
     </section>
 
     <section style="align-items: flex-end;">
       <h1 style="padding-right: 10vw;">Code Libraries 💻</h1>
-      <div style="display: flex; justify-content: space-evenly; padding-right: 10vw;">
+      <div style="padding-right: 10vw;" class="h-grid">
         <div class="card" style="margin: 5px; cursor: pointer;" onclick="location.href = '/texter/'">
           <h1 style="font-size: 3rem;">Texter</h1>
           <hr>
@@ -201,7 +208,7 @@
           </p>
         </div>
 
-        <div class="card" style="margin: 5px; cursor: pointer;" onclick="location.href = '/texter/'">
+        <div class="card" style="margin: 5px; cursor: pointer;" onclick="location.href = '/little/'">
           <h1 style="font-size: 3rem;">Little</h1>
           <hr>
           <p style="font-size: 1.5rem; font-weight: lighter;">
