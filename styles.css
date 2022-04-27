@@ -1,10 +1,10 @@
 
 html {
-    font-size: 1.2vw;
+    font-size: max(min(1.2vw, 16px), 12px);
 }
 
 h1 {
-    font-size: 5rem;
+    font-size: 4rem;
 }
 p {
     font-size: 2rem;
@@ -127,12 +127,13 @@ section {
   background: url('./blobs.svg') no-repeat bottom / cover;
 }
 .card {
-  width: fit-content;
+  width: max-content;
   height: fit-content;
-  max-height: 550px;
-  overflow-y: scroll;
+  max-height: 480px;
+  overflow-y: auto;
   align-self: flex-end;
-  padding: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
   border-radius: 10px;
   border-color: rgb(180, 177, 177);
   color: rgb(180, 177, 177);
@@ -148,6 +149,20 @@ section {
 }
 .h-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: flex-end;
+  grid-auto-flow: row;
+  grid-column-end: -1;
+  align-self: center;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
