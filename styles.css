@@ -79,6 +79,7 @@ section {
   z-index: -1;
   width: 100%;
   min-width: 1200px;
+  overflow-x: hidden;
   align-self: center;
   background-color: #0f0f10;
   height: 85%;
@@ -139,7 +140,6 @@ section {
   height: fit-content;
   max-height: 480px;
   overflow-y: auto;
-  align-self: flex-end;
   padding-left: 5px;
   padding-right: 5px;
   border-radius: 10px;
