@@ -32,7 +32,7 @@ section {
 }
 .pink {
     background: #ff0066;
-    overflow: hidden;
+    z-index: 2;
 }
 .dark {
     background: #0f0f10;
@@ -40,6 +40,8 @@ section {
 /* Curved bg with plain CSS */
 .curve {
   position: absolute;
+  align-self: center;
+  max-height: 20vw;
   height: 250px;
   width: 100%;
   bottom: 0;
@@ -75,6 +77,8 @@ section {
   bottom: 0;
   z-index: -1;
   width: 100%;
+  min-width: 1200px;
+  align-self: center;
   background-color: #0f0f10;
   height: 85%;
 }
@@ -91,6 +95,7 @@ section {
   position: relative;
   display: block;
   width: calc(103% + 1.3px);
+  max-height: 15vw;
   height: 262px;
 }
 .wave .shape-fill {
@@ -120,10 +125,12 @@ section {
   z-index: 0;
 }
 .blob-content {
-  z-index: 1;
+  z-index: 3;
+
 }
 .blobs {
-  width: 100%;
+  aspect-ratio: 920/300;
+  width: 100vw;
   background: url('./blobs.svg') no-repeat bottom / cover;
 }
 .card {
@@ -139,7 +146,7 @@ section {
   color: rgb(180, 177, 177);
   border-width: 4px;
   border-style: solid;
-  max-width: 400px;
+  max-width: min(400px, 90vw);
   text-align: center;
   transition: all 0.3s ease-in-out;
 }
@@ -147,11 +154,13 @@ section {
   border: 4px solid rgb(255, 255, 255);
   color: rgb(255, 255, 255);
 }
-.h-grid {
-  display: grid;
-  grid-auto-flow: row;
-  grid-column-end: -1;
-  align-self: center;
+
+.grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 95vw;
 }
 
 
