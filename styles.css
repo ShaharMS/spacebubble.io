@@ -15,6 +15,7 @@ body {
 	font-family: 'Prompt', sans-serif;
 	color: white;
 	background: #202731;
+	overflow-x: clip;
 }
 
 section {
