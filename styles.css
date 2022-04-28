@@ -15,6 +15,7 @@ body {
     color: white;
     background: #202731;
     overflow-x: hidden;
+    
 }
 section {
     position: relative;
@@ -129,8 +130,8 @@ section {
 
 }
 .blobs {
-  aspect-ratio: 920/300;
-  width: 100vw;
+  width: 100%;
+  overflow-x: hidden;
   background: url('./blobs.svg') no-repeat bottom / cover;
 }
 .card {
