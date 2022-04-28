@@ -15,8 +15,6 @@ body {
 	font-family: 'Prompt', sans-serif;
 	color: white;
 	background: #202731;
-	overflow-x: hidden;
-
 }
 
 section {
@@ -93,7 +91,7 @@ section {
 	z-index: -1;
 	width: 100%;
 	min-width: 1200px;
-	overflow-x: hidden;
+	overflow: hidden;
 	align-self: center;
 	background-color: #0f0f10;
 	height: 85%;
