@@ -3,7 +3,8 @@
 }
 
 .dark {
-    background: rgb(20, 20, 25);
+    background-image: url("../wavebg.svg");
+    background-size: stretch;
     color: white;
 }
 

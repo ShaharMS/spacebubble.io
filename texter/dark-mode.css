@@ -3,13 +3,15 @@
 }
 
 .dark-theme {
-  background-color: #111 !important;
+  
   color: #ccc;
   color-scheme: dark;
 }
 
 .dark-theme body {
-  background-color: #111 !important;
+  background-image: url("../wavebg.svg") !important;
+  background-repeat: repeat-y;
+  background-size: cover;
   color: #ccc;
 }
 
