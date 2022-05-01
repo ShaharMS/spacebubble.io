@@ -21,6 +21,7 @@ section {
 	position: relative;
 	display: flex;
 	flex-direction: column;
+	overflow-x: clip;
 	align-items: center;
 	min-height: 300px;
 	padding-top: 100px;
