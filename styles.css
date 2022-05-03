@@ -86,7 +86,6 @@ section {
 	z-index: -1;
 }
 
-/* Bubble bg with plain CSS */
 .bubble::after {
 	content: '';
 	border-top-left-radius: 50% 100%;
@@ -102,7 +101,6 @@ section {
 	height: 85%;
 }
 
-/* Curved bg with SVG via https://www.shapedivider.app/ */
 .wave {
 	position: absolute;
 	top: 0;
@@ -124,7 +122,6 @@ section {
 	fill: hsl(240, 3%, 6%);
 }
 
-/* SVG background image via https://haikei.app/ */
 .spacer {
 	aspect-ratio: 960/300;
 	width: 100%;
@@ -145,7 +142,6 @@ section {
 	transform: rotate(180deg);
 }
 
-/* Blobs SVG background image via https://haikei.app/ */
 .blob-motion {
 	position: absolute;
 	transform: translateY(-20%);
