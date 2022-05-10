@@ -1,47 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- use theme color or fallback -->
+<!--use textcolor from settings, otherwise create a contrasting color to theme color-->
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="hpStyles.css" type="text/css">
-    <link rel="stylesheet" href="styles.css" type="text/css">
-    <title>Document</title>
+	<meta charset="utf-8" />
+	<link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="./bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+	<link href="./bootstrap/css/bootstrap-select.min.css" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic" rel="stylesheet"
+		type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,600italic,400" rel="stylesheet"
+		type="text/css" />
+	<link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet"
+		type="text/css" />
+	<script src="./jquery-3.6.0.min.js"></script>
+	<script src="./bootstrap/js/bootstrap.min.js"></script>
+	<script src="./bootstrap/js/bootstrap-select.min.js"></script>
+	<link href="./styles.css" rel="stylesheet" />
+	<link href="./extra-styles.css" rel="stylesheet" />
+	<link href="./haxe-nav.css" rel="stylesheet" />
+	<link href="./dark-mode.css" rel="stylesheet" />
+	<script>var dox = { rootPath: "./", platforms: ["oc"] };</script>
+	<script src="./nav.js"></script>
+	<script src="./index.js"></script>
+	<link rel="icon" href="./favicon.ico" type="image/x-icon" />
+	<title>top level</title>
 </head>
 
 <body>
-    <ul class="tree">
-        <li><h2>Get Help With:</h2></li>
-        <li>Child 2</li>
-        <li>
-            <input class="tree-toggle" type="checkbox" id="tree-toggle-01" />
-            <label class="tree-toggle-label" for="tree-toggle-01">Child 3</label>
-            <ul class="subtree">
-                <li>Subchild 1</li>
-                <li>Subchild 2</li>
-                <li>
-                    <input class="tree-toggle" type="checkbox" id="tree-toggle-02" />
-                    <label class="tree-toggle-label" for="tree-toggle-02">Subchild 3</label>
-                    <ul class="subtree">
-                        <li>SubSubChild 1</li>
-                        <li>SubSubChild 2</li>
-                    </ul>
-                </li>
-                <li>
-                    <input class="tree-toggle" type="checkbox" id="tree-toggle-03" />
-                    <label class="tree-toggle-label" for="tree-toggle-03">Subchild 4</label>
-                    <ul class="subtree">
-                        <li>SubSubChild 1</li>
-                        <li>SubSubChild 2</li>
-                        <li>SubSubChild 3</li>
-                    </ul>
-                </li>
-                <li>Subchild 5</li>
-            </ul>
-        </li>
-        <li>Child 4</li>
-    </ul>
-</body>
+	<script>/* Here to prevent flash of unstyled content */let systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches; if ((!localStorage.theme && systemDarkMode) || localStorage.theme == "dark") { document.body.style.backgroundColor = "#111"; document.body.style.opacity = "0"; document.addEventListener("DOMContentLoaded", function (event) { toggleTheme(); document.body.style.backgroundColor = ""; document.body.style.opacity = ""; }); }</script>
+	<style>
+		.navbar .brand {
+			display: inline-block;
+			float: none;
+			text-shadow: 0 0 0 transparent;
+		}
+	</style>
+	<nav class="nav">
+		<div class="navbar">
+			<div class="navbar-inner" style="background:#FAFAFA; border-bottom:1px solid rgba(0,0,0,.09)">
+				<div class="container grid">
+					<a class="brand" style="color:#000000" href="./">The Haxe Help Center&nbsp;&nbsp;&nbsp;&nbsp;<small>Just Learn Haxe!</small></a>
+					<a href="#" id="theme-toggle" class="brand" style="color:#000000" onclick="toggleTheme()" title="Toggle Dark Mode"></a>
+					<i class="fa fa-moon-o"></i>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<div class="grid" style=" align-self: flex-start; padding-left: 2vw; flex-wrap: nowrap;">
+		<div class="card-no-decor" style="text-align: left;">
+			<div class="well sidebar-nav">
+				<form class="form-search" id="searchForm">
+					<div class="input-prepend input-block-level">
+						<span class="add-on">
+							<i class="fa fa-search"></i>
+						</span>
+						<input id="search" type="text" placeholder="Filter (Ctrl+P)" autocomplete="off" />
+					</div>
+				</form>
+			</div>
+			<div class="well sidebar-nav" id="explorer">
+				<div id="nav"/>
+			</div>
+		</div>
+	</div>
+	<div class="card-no-decor" style="text-align: left; padding-right: ;">
+		<h1>Welcome!</h1>
+		<p>
+			This is my website's Haxe Center. 
+			here, you can learn many things about Haxe, as well as understand some
+			programming concepts used in other languages.<br>
+			Things to get you started:
+		</p>
+		<table>
+			<tr>
+				
+			</tr>	
+		</table>
+	</div>	
+
+	<script src="./highlighter.js"></script>
+	<link href="./highlighter.css" rel="stylesheet" />
+	<script src="../htmlIncluder.js"></script>
+	</body>
 
 </html>
