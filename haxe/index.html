@@ -40,40 +40,53 @@
 	<nav class="nav">
 		<div class="navbar">
 			<div class="navbar-inner" style="background:#FAFAFA; border-bottom:1px solid rgba(0,0,0,.09)">
-				<div class="container grid">
-					<a class="brand" style="color:#000000" href="./">The Haxe Help Center&nbsp;&nbsp;&nbsp;&nbsp;<small>Just Learn Haxe!</small></a>
-					<a href="#" id="theme-toggle" class="brand" style="color:#000000" onclick="toggleTheme()" title="Toggle Dark Mode"></a>
-					<i class="fa fa-moon-o"></i>
+				<div class="container">
+					<a class="brand" style="color:#000000" href="./">The Haxe Learning Center</a><a href="#"
+						id="theme-toggle" class="brand" style="color:#000000" onclick="toggleTheme()"
+						title="Toggle Dark Mode"></a>
+						<i class="fa fa-moon-o"></i>
+					</a>
 				</div>
 			</div>
 		</div>
 	</nav>
-	<div class="grid" style=" align-self: flex-start; padding-left: 2vw; flex-wrap: wrap;">
-		<div class="card-no-decor" style="text-align: left;">
-			<div class="well sidebar-nav">
-				<form class="form-search" id="searchForm">
-					<div class="input-prepend input-block-level">
-						<span class="add-on">
-							<i class="fa fa-search"></i>
-						</span>
-						<input id="search" type="text" placeholder="Filter (Ctrl+P)" autocomplete="off" />
-					</div>
-				</form>
+	<div class="container main-content">
+		<div class="row-fluid">
+			<div class="span3">
+				<div class="well sidebar-nav">
+					<form class="form-search" id="searchForm">
+						<div class="input-prepend input-block-level"><span class="add-on"><i
+									class="fa fa-search"></i></span><input id="search" type="text"
+								placeholder="Filter (Ctrl+P)" autocomplete="off" /></div>
+					</form>
+				</div>
+				<div class="well sidebar-nav" id="explorer">
+					<div id="nav"></div>
+				</div>
 			</div>
-			<div class="well sidebar-nav" id="explorer">
-				<div id="nav"/>
+			<div class="span9">
+				<h1>Welcome!</h1>
+				<p>
+					The Haxe Learning Center is a collection of tutorials and documentation for Haxe.
+                	Here, you can learn many things about Haxe, as well as understand some
+                	programming concepts used in other languages.<br>
+                	Things to get you started:
+            	</p>
+				<table class="table table-condensed">
+					<tbody>
+						<tr>
+							<td>
+								<a href="./">Basics</i>
+							</td>
+							<td>
+								<a href="./tutorials/">Tutorials</a>
+							</td>
+						</tr>
+					</tbody>	
+				</table>
 			</div>
 		</div>
 	</div>
-	<div class="card-no-decor" style="text-align: left;">
-		<h1>Welcome!</h1>
-		<p>
-			This is my website's Haxe Center. 
-			here, you can learn many things about Haxe, as well as understand some
-			programming concepts used in other languages.<br>
-			Things to get you started:
-		</p>
-	</div>	
 
 	<script src="./highlighter.js"></script>
 	<link href="./highlighter.css" rel="stylesheet"></link>
