@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+	<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+	<link href="../bootstrap/css/bootstrap-select.min.css" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic" rel="stylesheet"
+		type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,600italic,400" rel="stylesheet"
+		type="text/css" />
+	<link href="https://netdna.bo otstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet"
+		type="text/css" />
+	<script src="../jquery-3.6.0.min.js"></script>
+	<script src="../bootstrap/js/bootstrap.min.js"></script>
+	<script src="../bootstrap/js/bootstrap-select.min.js"></script>
+	<link href="../styles.css" rel="stylesheet" />
+	<link href="../extra-styles.css" rel="stylesheet" />
+	<link href="../haxe-nav.css" rel="stylesheet" />
+	<link href="../dark-mode.css" rel="stylesheet" />
+	<script>var dox = { rootPath: "./", platforms: ["oc"] };</script>
+	<script src="../nav.js"></script>
+	<script src="../index.js"></script>
+	<link rel="icon" href="../favicon.ico" type="image/x-icon"></link>
+	<title>top level</title>
+    <style>
+        .navbar .brand {
+            display: inline-block;
+            float: none;
+            text-shadow: 0 0 0 transparent;
+        }
+    </style>
+</head>
+<body>
+    <body>
+        <script>
+        /* Here to prevent flash of unstyled content */
+        let systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches; 
+        if ((!localStorage.theme && systemDarkMode) || localStorage.theme == "dark") { 
+            document.body.style.backgroundColor = "#111"; 
+            document.body.style.opacity = "0"; 
+            document.addEventListener("DOMContentLoaded", function (event) { 
+                toggleTheme(); 
+                document.body.style.backgroundColor = ""; 
+                document.body.style.opacity = ""; 
+            }); 
+        }
+        </script>
+        <nav class="nav">
+            <div class="navbar">
+                <div class="navbar-inner" style="background:#FAFAFA; border-bottom:1px solid rgba(0,0,0,.09)">
+                    <div class="container grid">
+                        <a class="brand" style="color:#000000" href="#">The Haxe Help Center&nbsp;&nbsp;&nbsp;&nbsp;<small>Just Learn Haxe!</small></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="grid" style="padding-left: 2vw; flex-wrap: nowrap; align-items: flex-start;">
+            <div class="card-no-decor" style="text-align: left; max-width:fit-content">
+                <div class="well" id="explorer" style="max-width:fit-content">
+                    <div id="nav"/>
+                </div>
+            </div>
+            <div class="card-no-decor" style="text-align: left; max-width: 400px;">
+                <h1>Primitive Types</h1>
+                <p>
+                    This is my website's Haxe Center. 
+                    here, you can learn many things about Haxe, as well as understand some
+                    programming concepts used in other languages.<br>
+                    Things to get you started:
+                </p>
+            </div>	
+        </div>
+    
+        <script src="./highlighter.js"></script>
+        <link href="./highlighter.css" rel="stylesheet" />
+        <script src="../htmlIncluder.js"></script>
+</body>
+</html>

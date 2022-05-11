@@ -29,13 +29,6 @@
     display: none;
 }
 
-/* #nav { */
-/*   float: left; */
-/*   width: 250px; */
-/*   background: green; */
-/* } */
-/*#content .header { position:absolute; background:rgba(255,255,255,0.9); left:250px; right:15px; padding:0px 12px; border-bottom:1px solid #EEE;}*/
-/*#content .body { padding-top:80px;}*/
 .nav-list {
     padding-right: 0;
 }

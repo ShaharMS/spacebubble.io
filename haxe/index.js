@@ -86,7 +86,7 @@ function setPlatform(platform) {
 }
 
 $(document).ready(function () {
-	$("#nav").html(getHTMLFrom(window.location.pathname + "navbar.html"));
+	$("#nav").html(navContent);
 	var treeState = readCookie("treeState");
 
 	$("#nav .expando").each(function (i, e) {
