@@ -18,25 +18,34 @@
 	<script src="./bootstrap/js/bootstrap.min.js"></script>
 	<script src="./bootstrap/js/bootstrap-select.min.js"></script>
 	<link href="./styles.css" rel="stylesheet" />
-	<link href="./extra-styles.css" rel="stylesheet" />
 	<link href="./haxe-nav.css" rel="stylesheet" />
 	<link href="./dark-mode.css" rel="stylesheet" />
 	<script>var dox = { rootPath: "./", platforms: ["oc"] };</script>
 	<script src="./nav.js"></script>
 	<script src="./index.js"></script>
 	<link rel="icon" href="./favicon.ico" type="image/x-icon"></link>
-	<title>top level</title>
-</head>
-
-<body>
-	<script>/* Here to prevent flash of unstyled content */let systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches; if ((!localStorage.theme && systemDarkMode) || localStorage.theme == "dark") { document.body.style.backgroundColor = "#111"; document.body.style.opacity = "0"; document.addEventListener("DOMContentLoaded", function (event) { toggleTheme(); document.body.style.backgroundColor = ""; document.body.style.opacity = ""; }); }</script>
+	<title>Haxe Help Center</title>
 	<style>
 		.navbar .brand {
-			display: inline-block;
-			float: none;
 			text-shadow: 0 0 0 transparent;
 		}
 	</style>
+</head>
+
+<body>
+	<script>
+	/* Here to prevent flash of unstyled content */
+	let systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches; 
+	if ((!localStorage.theme && systemDarkMode) || localStorage.theme == "dark") { 
+		document.body.style.backgroundColor = "#111"; 
+		document.body.style.opacity = "0"; 
+		document.addEventListener("DOMContentLoaded", function (event) { 
+			toggleTheme(); document.body.style.backgroundColor = ""; 
+			document.body.style.opacity = ""; 
+		}); 
+	}
+	</script>
+	
 	<nav class="nav">
 		<div class="navbar">
 			<div class="navbar-inner" style="background:#FAFAFA; border-bottom:1px solid rgba(0,0,0,.09)">
@@ -50,23 +59,16 @@
 			</div>
 		</div>
 	</nav>
-	<div class="container main-content">
+	<div class="container" style="padding-top: 20px;">
 		<div class="row-fluid">
 			<div class="span3">
-				<div class="well sidebar-nav">
-					<form class="form-search" id="searchForm">
-						<div class="input-prepend input-block-level"><span class="add-on"><i
-									class="fa fa-search"></i></span><input id="search" type="text"
-								placeholder="Filter (Ctrl+P)" autocomplete="off" /></div>
-					</form>
-				</div>
 				<div class="well sidebar-nav" id="explorer">
 					<div id="nav"></div>
 				</div>
 			</div>
 			<div class="span9">
 				<h1>Welcome!</h1>
-				<p>
+				<p style="padding-bottom: 20px;">
 					The Haxe Learning Center is a collection of tutorials and documentation for Haxe.
                 	Here, you can learn many things about Haxe, as well as understand some
                 	programming concepts used in other languages.<br>
@@ -76,10 +78,23 @@
 					<tbody>
 						<tr>
 							<td>
-								<a href="./">Basics</i>
+								<a href="./basics"> Programming Basics</a>
 							</td>
 							<td>
-								<a href="./tutorials/">Tutorials</a>
+								Learn the basics of programming in Haxe.
+								This includes the basic types, variables, loops etc.<br>
+								<b>This is relevant for other languages as well</b>.
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a href="./coding-patterns">Coding Patterns</a>
+							</td>
+							<td>
+								Further understand Haxe code patterns and their syntax: 
+								<a href="./coding-patterns/Abstracts.html">Abstracts</a>, 
+								<a href="./coding-patterns/Interfaces.html">Interfaces</a>, 
+								<a href="./coding-patterns/Lambdas.html">Lambda Functions</a>...
 							</td>
 						</tr>
 					</tbody>	

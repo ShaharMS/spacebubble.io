@@ -9,8 +9,7 @@
 }
 
 .dark-theme body {
-  background-image: url("../wavebg.svg") !important;
-  background-repeat: repeat-y;
+  background-color: #151515;
   background-size: cover;
   color: #ccc;
 }
