@@ -6,12 +6,11 @@ const pageState = {
 }
 
 function setState(pageName) {
-    window.location.assign(window.location.host + "/haxe/?name=" + pageName);
-    getCurrentState();
+    window.location.href = "/haxe/?name=" + pageName;
+    pullCurrentState();
 }
 
 function pullCurrentState() {
-    let pageName =  window.location.href.split('/').pop();
-    pageName = pageName.replace("?name=", "");
-    document.getElementById("article").innerHTML = getHTMLFrom(window.location.host + "/haxe/pages/" + pageName + ".html");
+    let pageName =  window.location.href.split('/').pop().replace("?name=", "");
+    document.getElementById("article-body").innerHTML = getHTMLFrom(window.location.host + "/haxe/pages/" + pageName + ".html");
 }

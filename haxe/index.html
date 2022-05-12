@@ -17,13 +17,13 @@
 	<script src="./jquery-3.6.0.min.js"></script>
 	<script src="./bootstrap/js/bootstrap.min.js"></script>
 	<script src="./bootstrap/js/bootstrap-select.min.js"></script>
+	<script src="./pageState.js"></script>
 	<link href="./styles.css" rel="stylesheet" />
 	<link href="./haxe-nav.css" rel="stylesheet" />
 	<link href="./dark-mode.css" rel="stylesheet" />
 	<script>var dox = { rootPath: "./", platforms: ["oc"] };</script>
 	<script src="./nav.js"></script>
 	<script src="./index.js"></script>
-	<link rel="icon" href="./favicon.ico" type="image/x-icon"></link>
 	<title>Haxe Help Center</title>
 	<style>
 		.navbar .brand {
@@ -46,8 +46,6 @@
 		}); 
 	}
 	</script>
-
-	<script src="./pageState.js"></script>
 	
 	<nav class="nav">
 		<div class="navbar">
@@ -108,7 +106,9 @@
 			</div>
 		</div>
 	</div>
-
+	<script>
+		pullCurrentState();
+	</script>
 	<script src="./highlighter.js"></script>
 	<link href="./highlighter.css" rel="stylesheet"></link>
 	<script src="../htmlIncluder.js"></script>
