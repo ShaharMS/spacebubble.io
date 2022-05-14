@@ -17,7 +17,6 @@
 	<script src="./jquery-3.6.0.min.js"></script>
 	<script src="./bootstrap/js/bootstrap.min.js"></script>
 	<script src="./bootstrap/js/bootstrap-select.min.js"></script>
-	<script src="./pageState.js"></script>
 	<link href="./styles.css" rel="stylesheet" />
 	<link href="./haxe-nav.css" rel="stylesheet" />
 	<link href="./dark-mode.css" rel="stylesheet" />
@@ -33,7 +32,7 @@
 	<meta n>
 </head>
 
-<body>
+<body style="overflow-x: clip;">
 	<script>
 	/* Here to prevent flash of unstyled content */
 	let systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches; 
@@ -46,10 +45,14 @@
 		}); 
 	}
 	</script>
+
+	<div class="bubble bubble2">
+
+	</div>
 	
 	<nav class="nav">
 		<div class="navbar">
-			<div class="navbar-inner" style="background:#FAFAFA; border-bottom:1px solid rgba(0,0,0,.09)">
+			<div class="navbar-inner" style="background:#FAFAFA; border-bottom:1px solid rgba(0,0,0,.09) text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);">
 				<div class="container">
 					<a class="brand" style="color:#000000" href="./">The Haxe Learning Center</a><a href="#"
 						id="theme-toggle" class="brand" style="color:#000000" onclick="toggleTheme()"
@@ -68,46 +71,19 @@
 				</div>
 			</div>
 			<div class="span9" id="article-body">
-				<h1>Welcome!</h1>
-				<p style="padding-bottom: 20px;">
-					The Haxe Learning Center is a collection of tutorials guides and docs for Haxe.
-                	Here, you can learn many things about Haxe, as well as understand some
-                	programming concepts used in other languages.<br>
-					This place is supposed to have everything - from the very basic, to the more advanced concepts.<br>
-					If you think something is missing, and you want to add a page, visit this website's
-					<a href="https://github.com/ShaharMS/spacebubble.io">github repository</a> and contribute.<br><br>
-                	Things to get you started:
-            	</p>
-				<table class="table table-condensed">
-					<tbody>
-						<tr>
-							<td>
-								<a href="./basics"> Programming Basics</a>
-							</td>
-							<td>
-								Learn the basics of programming in Haxe.
-								This includes the basic types, variables, loops etc.<br>
-								<b>This is relevant for other languages as well</b>.
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a href="./coding-patterns">Coding Patterns</a>
-							</td>
-							<td>
-								Further understand Haxe code patterns and their syntax: 
-								<a href="./coding-patterns/Abstracts.html">Abstracts</a>, 
-								<a href="./coding-patterns/Interfaces.html">Interfaces</a>, 
-								<a href="./coding-patterns/Lambdas.html">Lambda Functions</a>...
-							</td>
-						</tr>
-					</tbody>	
-				</table>
+				
 			</div>
 		</div>
 	</div>
 	<script>
+		window.addEventListener("locationchange", pullCurrentState);
 		pullCurrentState();
+
+		function pullCurrentState(event) {
+    		let pageName =  window.location.href.split('/').pop().replace("?name=", "");
+    		if (pageName === "") pageName = "index";
+    		document.getElementById("article-body").innerHTML = getHTMLFrom("/haxe/pages/" + pageName + ".html");
+		}
 	</script>
 	<script src="./highlighter.js"></script>
 	<link href="./highlighter.css" rel="stylesheet"></link>

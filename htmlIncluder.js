@@ -28,6 +28,7 @@ function includeHTML() {
 }
 
 function getHTMLFrom(path) {
+    console.log(path);
     var request = new XMLHttpRequest();
     request.open("GET", path, false);
     request.send();
