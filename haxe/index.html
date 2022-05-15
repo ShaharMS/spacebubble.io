@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark-theme">
 <!-- use theme color or fallback -->
 <!--use textcolor from settings, otherwise create a contrasting color to theme color-->
 
@@ -30,18 +30,6 @@
 </head>
 
 <body style="overflow-x: clip;">
-	<script>
-	/* Here to prevent flash of unstyled content */
-	let systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches; 
-	if ((!localStorage.theme && systemDarkMode) || localStorage.theme == "dark") { 
-		document.body.style.backgroundColor = "#111"; 
-		document.body.style.opacity = "0"; 
-		document.addEventListener("DOMContentLoaded", function (event) { 
-			toggleTheme(); document.body.style.backgroundColor = ""; 
-			document.body.style.opacity = ""; 
-		}); 
-	}
-	</script>
 
 	<div class="bubble bubble2">
 
@@ -50,10 +38,7 @@
 	<nav class="nav">
 		<div class="navbar">
 			<div class="navbar-inner" style="background:#FAFAFA; border-bottom:1px solid rgba(0,0,0,.09); text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);">
-				<a class="brand" style="color:#000000" href="./">The Haxe Learning Center</a><a href="#"
-					class="brand" style="color:#000000"
-					title="Toggle Dark Mode"></a>
-					<i class="fa fa-moon-o"></i>
+				<a class="brand" style="color:#000000" href="./">The Haxe Learning Center</a>
 				</a>
 			</div>
 		</div>
@@ -66,7 +51,7 @@
 				</div>
 			</div>
 			<div class="span9" id="article-body">
-				
+				Loading...
 			</div>
 		</div>
 	</div>
