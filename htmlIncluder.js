@@ -13,8 +13,7 @@ function includeHTML() {
             request = new XMLHttpRequest();
             request.onreadystatechange = function () {
                 if (this.readyState == 4) {
-                    if (this.status == 200) { currentElement.innerHTML = this.responseText; }
-                    if (this.status == 404) { currentElement.innerHTML = "Page not found."; }
+                    currentElement.innerHTML = this.responseText;
                     /* Remove the attribute, and call this function once more: */
                     currentElement.removeAttribute("include-html");
                     includeHTML();
