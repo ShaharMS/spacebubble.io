@@ -9,17 +9,15 @@
 	<link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 	<link href="./bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
 	<link href="./bootstrap/css/bootstrap-select.min.css" rel="stylesheet" />
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic" rel="stylesheet"
-		type="text/css" />
-	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,600italic,400" rel="stylesheet"
-		type="text/css" />
-	<script src="./jquery-3.6.0.min.js"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,600italic,400" rel="stylesheet" type="text/css" />
 	<link href="./styles.css" rel="stylesheet" />
 	<link href="./haxe-nav.css" rel="stylesheet" />
 	<link href="./dark-mode.css" rel="stylesheet" />
 	<script>var dox = { rootPath: "./", platforms: ["oc"] };</script>
-	<script src="./nav.js"></script>
-	<script src="./index.js"></script>
+	<script src="../htmlIncluder.js"></script>
 	<title>Haxe Help Center</title>
 	<style>
 		.navbar .brand {
@@ -58,6 +56,7 @@
 	<script>
 		window.addEventListener("locationchange", pullCurrentState);
 		pullCurrentState();
+		document.getElementById("nav").innerHTML = getHTMLFrom("./navbar.html");
 
 		function pullCurrentState(event) {
     		let pageName =  window.location.href.split('/').pop().replace("?name=", "");
