@@ -187,3 +187,11 @@ nav .navbar .nav>li>.dropdown-menu:after {
 .navbar .brand.sub.ide:before {
     color: #f89c0e;
 }
+
+@media only screen and (max-width : 767px) {
+    #nav {
+        max-height: 25vh;
+        align-self: center;
+        
+    }
+}
