@@ -29,9 +29,7 @@
 
 <body style="overflow-x: clip;">
 
-	<div class="bubble" style="overflow-x: clip;">
-
-	</div>
+	<div class="bubble" style="overflow-x: clip;"/>
 	
 	<nav class="nav">
 		<div class="navbar">
@@ -61,6 +59,7 @@
 		function pullCurrentState(event) {
     		let pageName =  window.location.href.split('/').pop().replace("?name=", "");
     		if (pageName === "") pageName = "index";
+			if (pageName.includes(".html")) pageName = pageName.split(".")[0];
     		document.getElementById("article-body").innerHTML = getHTMLFrom("/haxe/pages/" + pageName + ".html");
 		}
 	</script>
