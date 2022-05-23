@@ -28,7 +28,7 @@
         import openfl.Lib;
 
         //later
-        var window = Lib.application.createWindow({
+        final window = Lib.application.createWindow({
 			width: 400,
 			height: 400,
 			x: 0,
@@ -104,4 +104,51 @@
             </table>
         </p>
     </blockquote>
+
+    <pre><code>
+        // At the top of the file
+        import openfl.Lib;
+
+        //later
+        final window = Lib.application.createWindow({
+            width: 400,
+            height: 400,
+            x: 0,
+            y: 0,
+            title: "Hey There!",
+            resizable: true
+        });
+        // Access the stage of the window - its where we add the graphics
+        // here we add our sprite
+        var sprite = new MySprite();
+        windowstage.addChild(sprite);
+    </code></pre>
+    <pre><code>
+        import openfl.display.Sprite;
+        import openfl.display.Bitmap;
+        import openfl.display.BitmapData;
+
+        /**
+         * My sprite class. it displays an image :D
+         */
+        class MySprite extends Sprite {
+            public function new() {
+                var bitmap = new Bitmap(BitmapData.fromFile("assets/image.png"));
+                addChild(bitmap);
+            }
+        }
+    </code></pre>
+    <blockquote class="weak">
+        <h3>What does this code do?</h3>
+        <p style="font-size: 0.9em;">
+            After we create the window, we access the stage, and add our sprite to it.
+            <br>
+            That sprite is an instance of the <code>MySprite</code> class, which we created later.
+            that class simply displays an image, here it displays the one stored at <code>assets/image.png</code>.
+            after initializing the sprite, we add it to the stage.
+        </p>
+    </blockquote>
+<p>
+    After running that code, you can see we have a sprite on the screen extra window:
+    <i>image here</i>
 </p>
