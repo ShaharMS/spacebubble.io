@@ -482,3 +482,11 @@ pre.example:before {
 	align-self: center;
 	background-color: #080808;
 }
+
+.weak {
+    opacity: 0.5;
+}
+
+.weak:hover {
+    opacity: 0.8;
+}

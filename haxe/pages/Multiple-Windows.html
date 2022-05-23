@@ -22,6 +22,7 @@
     Lets first create the window, and assign it to a variable.<br>
     That variable can be local, class level, static, whatever you want 
     (in this example, I'll use local variables):<br><br>
+</p>
     <pre style="padding: 0px;"><code>
         // At the top of the file
         import openfl.Lib;
@@ -36,7 +37,7 @@
 			resizable: true
 		});
     </code></pre>
-    <blockquote style="opacity: 0.5;">
+    <blockquote class="weak">
         <h3>What does this code do?</h3>
         <p style="font-size: 0.9em;">
             This code assigns a window to the variable named <code>window</code>.<br>
@@ -44,6 +45,63 @@
             Were creating a 400x400 window, at the top-left of the screen, titled "Hey There!", and the window is resizable.
         </p>
     </blockquote>
-    
-    Now, we have the reated window stored inside the variable <code>window</code>
+<p>
+    Now, we have the created window stored inside the variable <code>window</code>.<br>
+    If you use intellisense in your editor, you might have noticed the <code>stage</code> field under the <code>window</code> variable.<br>
+    From now on, we're going to work with the stage.
+</p>
+<b>
+    If you are a HaxeFlixel user, you need to get out of your comfort zone for a bit, because were starting with OpenFL!
+</b>
+<blockquote><h2>Sprites and Bitmaps</h2></blockquote>
+<p>
+    The first thing ill show you how to do is add a sprite to that window. its not that complicated - trust me!<br><br>
+
+    <blockquote class="weak">
+        <h3>Haxeflixel users - Notice:</h3>
+        <p style="font-size: 0.9em;">
+            OpenFL and HaxeFlixel are actually very similar. for this tutorial, i suggest memorizing the similarities between the two:
+            <table>
+                <tr>
+                    <td>
+                        <b>HaxeFlixel</b>
+                    </td>
+                    <td>
+                        <b>OpenFL</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <code>new FlxSprite()</code>
+                    </td>
+                    <td>
+                        <code>new Bitmap()</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <code>new FlxSpriteGroup()</code>
+                    </td>
+                    <td>
+                        <code>new Sprite()</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <code>.loadGraphic("path/to/image.png")</code>
+                    </td>
+                    <td>
+                        <code>BitmapData.fromFile("path/to/image.png")</code>
+                    </td>
+                </tr>
+                    <td>
+                        <code>add(sprite);</code>
+                    </td>
+                    <td>
+                        <code>addChild(sprite);</code>
+                    </td>
+                </tr>
+            </table>
+        </p>
+    </blockquote>
 </p>
