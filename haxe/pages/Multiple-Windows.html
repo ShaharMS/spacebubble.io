@@ -1,0 +1,49 @@
+<h1>OpenFL - With Multiple Windows <small>by Shahar Marcus</small></h1>
+
+<p style="padding-bottom: 30px;">
+    A while ago, I started investigating multi-window support for my application. 
+    I just wanted my applications's settings tab to be a seperate window. Looks smple enough, right? <br> 
+    But - I got "Unlucky" - For that app i used the game framework <a href="https://haxeflixel.com">HaxeFlixel</a>, 
+    and that framework isn't really designed With multiple windows in mind 
+    (well, you can't blame it - its a game framework after all).<br><br>
+
+    But i didnt give up - I started looking for other solutions, and it took a while 
+    - because for some reason, i never considered just not using HaxeFlixel for that - 
+    But dont judge me, i never did anything without HaxeFlixel...<br><br>
+
+    only a week or so later, after i gave up on the multi-window stuff, it dawned on me i can just use lime and openfl for that, <br>
+    <b>And thats exactly what this tutorial is all about:</b>
+</p>
+<blockquote><h2>Setting Up The Window</h2></blockquote>
+<p>
+    <i>before i continue, make sure you have the haxelibs <b>Lime</b> and <b>OpenFL</b> installed</i>
+</p>
+<p>
+    Lets first create the window, and assign it to a variable.<br>
+    That variable can be local, class level, static, whatever you want 
+    (in this example, I'll use local variables):<br><br>
+    <pre style="padding: 0px;"><code>
+        // At the top of the file
+        import openfl.Lib;
+
+        //later
+        var window = Lib.application.createWindow({
+			width: 400,
+			height: 400,
+			x: 0,
+			y: 0,
+			title: "Hey There!",
+			resizable: true
+		});
+    </code></pre>
+    <blockquote style="opacity: 0.5;">
+        <h3>What does this code do?</h3>
+        <p style="font-size: 0.9em;">
+            This code assigns a window to the variable named <code>window</code>.<br>
+            As for the curly brackets, those represent the <code>WindowAttributes</code> parameter. Basically,
+            Were creating a 400x400 window, at the top-left of the screen, titled "Hey There!", and the window is resizable.
+        </p>
+    </blockquote>
+    
+    Now, we have the reated window stored inside the variable <code>window</code>
+</p>
