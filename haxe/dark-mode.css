@@ -298,31 +298,37 @@
 }
 
 .dark-theme pre .type {
-  color: #DECB6B
+  color: #2cfe53
 }
 
 .dark-theme pre .kwd {
-  color: #C792EA
+  color: #ff52df
 }
 
-.dark-theme pre .val {
-  color: #FF5370
+.dark-theme pre .kwd1 {
+  color: #4762fc
+}
+
+.dark-theme pre .func {
+  color: #c7da00
 }
 
 .dark-theme div.pre .str,
 .dark-theme pre .str,
 .dark-theme pre .str .kwd,
+.dark-theme pre .str .kwd1,
 .dark-theme pre .str .type,
-.dark-theme pre .str .val {
-  color: #C3E88D
+.dark-theme pre .str .func {
+  color: #ff5e00
 }
 
 .dark-theme pre .cmt,
 .dark-theme pre .cmt .kwd,
+.dark-theme pre .cnt .kwd1,
 .dark-theme pre .cmt .str,
 .dark-theme pre .cmt .type,
-.dark-theme pre .cmt .val {
-  color: #545454
+.dark-theme pre .cmt .func {
+  color: #5e5e5e
 }
 
 .dark-theme .last-modified {
