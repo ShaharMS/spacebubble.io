@@ -1,0 +1,14 @@
+<h1>Input, But With Multiple Windows <small>by Shahar Marcus</small></h1>
+
+<p>
+    In OpenFL, input (and objects in general) are stored and managed "per group" - inside Sprites, Stages, and other custom groups.
+    This systems actually scales up really well with multiple windows, since most of the time those objects are window/container specific, and dont need
+    to communicate with the "outer world".
+</p>
+<p>
+    But we have a problem when it comes to input:<br>
+    Sometimes, we want to have a key combination/an event launched when a user does something inside your game/app, no matter what window/container it is in.
+</p>
+<p>
+    But input (or events in general) are handled per group. So, How do we overcome this?
+</p>
