@@ -233,11 +233,6 @@
   background-color: transparent;
 }
 
-.dark-theme pre.example::before {
-  color: #DDD;
-  background: #191919;
-}
-
 .dark-theme h3 code {
   box-shadow: 0 0 15px rgb(20, 20, 20);
 }
@@ -298,7 +293,7 @@
 }
 
 .dark-theme pre .type {
-  color: #2cfe53
+  color: #00cc69
 }
 
 .dark-theme pre .kwd {

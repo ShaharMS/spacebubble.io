@@ -398,30 +398,6 @@ table.params th {
     visibility: inherit;
 }
 
-pre.example {
-    position: relative;
-    padding-top: 34.5px;
-}
-
-pre.example:before {
-    position: absolute;
-    top: -1px;
-    left: -1px;
-
-    content: "Example";
-    color: #999;
-    padding: 2px 6px;
-    background: #fff;
-    font-weight: bold;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-
-    -moz-border-radius: 4px 0;
-    -ms-border-radius: 4px 0;
-    -webkit-border-radius: 4px 0;
-    border-radius: 4px 0;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-}
-
 .inherited-fields {
     padding: 5px 20px;
     margin-top: 1em;
@@ -490,7 +466,7 @@ pre.example:before {
 .weak:hover {
     opacity: 0.8;
 }
-
 .programming {
-    padding-top: 20px !important
+    padding-left: 10px;
+    padding-right: 10px;
 }
