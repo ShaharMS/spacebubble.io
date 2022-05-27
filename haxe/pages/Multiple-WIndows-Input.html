@@ -12,3 +12,54 @@
 <p>
     But input (or events in general) are handled per group. So, How do we overcome this?
 </p>
+<p>
+    Well, recently, I had an idea - lime gives us event listeners for when 
+    windows lose focus, so why shouldnt we use that?
+</p>
+<p>
+    Lime has two main events regarding window focus:
+    <ul>
+        <li><code>window.onFocusIn</code> - when a window gains focus</li>
+        <li><code>window.onFocusOut</code> - when a window loses focus</li>
+    </ul>
+    But, if you try checking them out, youll notice they arent just functions
+    you can assign to and call, but a special "object" that handles events:
+</p>
+<p>
+    Each of those events has these properties:
+</p>
+<table class="table-bordered table">
+    <tbody>
+        <tr>
+            <td><code>event.add()</code></td>
+            <td>adds an event listener, which is a function that gets called when the event dispatches</td>
+        </tr>
+        <tr>
+            <td><code>event.remove()</code></td>
+            <td>removes an event listener, which is a function that gets called when the event dispatches</td>
+        </tr>
+        <tr>
+            <td><code>event.has()</code></td>
+            <td>checks if an event listener is attached to the event</td>
+        </tr>
+        <tr>
+            <td><code>event.dispatch()</code></td>
+            <td>dispatches an event, In which you add the parameters usually given by that event</td>
+        </tr>
+        <tr>
+            <td><code>event.cancel()</code></td>
+            <td>cancels this event. That means this event wont dispatch its attached callbacks anymore</td>
+        </tr>
+        <tr>
+            <td><code>event.canceled</code></td>
+            <td>checks whether or not this event is canceled.</td>
+        </tr>
+        <tr>
+            <td><code>event.removeAll()</code></td>
+            <td>removes all event listeners attached to this event</td>
+        </tr>
+        <tr><td><code>event.__listeners</code></td>
+            <td>an array of all event listeners attached to this event</td>
+        </tr>
+    </tbody>
+</table>
