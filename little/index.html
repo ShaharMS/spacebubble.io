@@ -4,10 +4,101 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Refresh" content="0; url='https://github.com/ShaharMS/Little'" />
-    <title>Little</title>
+    <script src="./interp.js"></script>
+    <title>Document</title>
 </head>
 <body>
-    yeaaaa theres nothing here rn
+    <div>
+        <h3>input:</h3>
+    </div>
+    <textarea id="text" style="height: 70vh; width: 45vw;">
+
+    </textarea>
+    <textarea id="result" style="height: 70vh; width: 45vw;">
+    </textarea>
+    <p>
+        Notice, this is a very early prototype of the language. dont expect things to work correctly out of the box
+        <br>
+        <table>
+            <td>
+                Types:
+                <ul>
+                    <li>
+                        <code>
+                            Number, Decimal
+                        </code>
+                    </li>
+                    <li>
+                        <code>
+                            Boolean
+                        </code>
+                    </li>
+                    <li>
+                        <code>
+                            Letters (soon to be Characters)
+                        </code>
+                    </li>
+                    <li>
+                        <code>
+                            Everything
+                        </code>
+                    </li>
+                </ul>
+            </td>
+            <td>
+                Keywords:
+                <ul>
+                    <li>
+                        <code>Declare variables - define x:Type = value</code>
+                    </li>
+                    <li>
+                        <code>Declare functions - action x(param:Type, anonParam) = //indent + 1</code>
+                    </li>
+                    <li>
+                        <code>Write to the console - print(value)</code>
+                    </li>
+                    <li>
+                        <code>Declare classes - class Name = //indent + 1</code>
+                    </li>
+                </ul>
+            </td>
+            <td>
+                Syntax:
+                <ul>
+                    <li>
+                        <code>No semicolons, each line seperated by a line feed (enter) char</code>
+                    </li>
+                    <li>
+                        <code>No curly brackets, each class/action seperated by indent level</code>
+                    </li>
+                    <li>
+                        <code>Types are optional, but the languagee is type safe</code>
+                    </li>
+                    <li>
+                        <code>Theres no null, but you have the nothing value which will throw an error when accessed</code>
+                    </li>
+                    
+                </ul>
+            </td>
+        </table>
+    </p>
+
+    <script>
+        var logBackup = console.log;
+        var logMessages = [];
+
+        console.log = function() {
+            logMessages.push.apply(logMessages, arguments);
+            logBackup.apply(console, arguments);
+        };
+        var text = document.getElementById('text');
+        text.addEventListener("keyup", function() {
+            var text = document.getElementById('text').value;
+            LittleInterpreter.run(text);
+            var resEl = document.getElementById('result');
+            resEl.value = logMessages.join("\n");
+            logMessages = [];
+        });
+    </script>
 </body>
 </html>
