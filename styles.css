@@ -3,15 +3,15 @@ html {
 }
 
 h1 {
-	font-size: 4rem;
+	font-size: 3.5rem;
 }
 
 h2 {
-	font-size: 3.2rem;
+	font-size: 2rem;
 }
 
 p {
-	font-size: 2rem;
+	font-size: 16px;
 }
 
 body {
@@ -34,7 +34,7 @@ section {
 .top-navbar {
 	position: absolute;
 	width: 100vw;
-	height: 50px;
+	height: 30px;
 	top: 0;
 	left: 0;
 	background: rgb(0, 0, 0);
@@ -51,4 +51,39 @@ section {
 	opacity: 0.5;
 	text-decoration: none;
 	margin: 10px;
+}
+
+.main-view {
+	position: absolute;
+	top: 40px;
+	left: 60vw;
+	width: 40vw;
+	height: 100vh - 40px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.card {
+	width: 90%;
+	height: fit-content;
+	max-height: 480px;
+	overflow-y: auto;
+	padding-left: 5px;
+	padding-right: 5px;
+	border-radius: 10px;
+	border-color: rgb(180, 177, 177);
+	color: rgb(180, 177, 177);
+	border-width: 2px;
+	border-style: solid;
+	max-width: min(400px, 90vw);
+	text-align: center;
+	transition: all 0.3s ease-in-out;
+	cursor: pointer;
+}
+
+.card:hover {
+	border: 4px solid rgb(255, 255, 255);
+	color: rgb(255, 255, 255);
 }
