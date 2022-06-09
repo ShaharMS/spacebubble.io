@@ -6,7 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <video src="./qwertyiiop.webm" autoplay="true"></video>
+<body style="display: flex; flex-direction: column;">
+    <video src="./qwertyiiop.webm" id="video" style="height: 80vh;">
+    </video>
+    <button type="button" id="play_button"><h1>Play</h1></button>
+    <script>
+        var playButton = document.getElementById("play_button");
+        // Event listener for the play/pause button
+        playButton.addEventListener("click", function() {
+          if (video.paused == true) {
+            // Play the video
+            video.play();
+            console.log(video.width);
+            // Update the button text to 'Pause'
+            playButton.innerHTML = "<h1>Pause</h1>";
+          } else {
+            // Pause the video
+            video.pause();
+        
+            // Update the button text to 'Play'
+            playButton.innerHTML = "<h1>Play</h1>";
+          }
+        });
+    </script>
 </body>
 </html>
