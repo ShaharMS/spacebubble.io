@@ -35,6 +35,7 @@ pre .val {
 pre .str,
 div.pre .str,
 pre .str .kwd,
+pre .str .kwd1,
 pre .str .val,
 pre .str .type {
     color: #a00;
@@ -48,6 +49,7 @@ pre .cmt {
 
 /* Make sure keywords inside comments are not highlighted*/
 pre .cmt .kwd,
+pre .cmt .kwd1,
 pre .cmt .str,
 pre .cmt .val,
 pre .cmt .type {

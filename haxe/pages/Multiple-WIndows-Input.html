@@ -1,20 +1,23 @@
 <h1>Input, But With Multiple Windows <small>by Shahar Marcus</small></h1>
 
 <p>
-    In OpenFL, input (and objects in general) are stored and managed "per group" - inside Sprites, Stages, and other custom groups.
-    This systems actually scales up really well with multiple windows, since most of the time those objects are window/container specific, and dont need
+    In OpenFL, input (and objects in general) are stored and managed 
+    "per group" - inside Sprites, Stages, and other custom groups.
+    This systems actually scales up really well with multiple windows, 
+    since most of the time those objects are window/container specific, and don't need
     to communicate with the "outer world".
 </p>
 <p>
     But we have a problem when it comes to input:<br>
-    Sometimes, we want to have a key combination/an event launched when a user does something inside your game/app, no matter what window/container it is in.
+    Sometimes, we want to have a key combination/an event launched when a user 
+    does something inside your game/app, no matter what window/container it is in.
 </p>
 <p>
     But input (or events in general) are handled per group. So, How do we overcome this?
 </p>
 <p>
     Well, recently, I had an idea - lime gives us event listeners for when 
-    windows lose focus, so why shouldnt we use that?
+    windows lose focus, so why should'nt we use that?
 </p>
 <p>
     Lime has two main events regarding window focus:
@@ -22,7 +25,7 @@
         <li><code>window.onFocusIn</code> - when a window gains focus</li>
         <li><code>window.onFocusOut</code> - when a window loses focus</li>
     </ul>
-    But, if you try checking them out, youll notice they arent just functions
+    But, if you try checking them out, you'll notice they aren't just functions
     you can assign to and call, but a special "object" that handles events:
 </p>
 <p>
@@ -67,7 +70,7 @@
     And now, after we got familiar with Lime's event management, its time to start making
     our multi-window input manager! <br><br>
 
-    First, create a class for the input manager, with a few functions:
+    First, create a class for the input manager, with a few functions and a field:
 </p>
 <pre class="programming" id="1">
 <code>// At the top of the file
@@ -75,7 +78,7 @@ import openfl.Lib;
 import lime.ui.KeyCode;
 import lime.ui.KeyModifier;
 //later
-class InputManager {
+class MultiWindowInputListener {
     
     /**
      * Adds a cross-window keyboard event listener
@@ -83,9 +86,26 @@ class InputManager {
      * @param listener A function with two parameters, the first being the
      * `KeyCode` and the second being the `KeyModifier` 
      */
-    public static function addListener(listener:(KeyCode, KeyModifier) -> Void) {
+    public static function add(listener:(KeyCode, KeyModifier) -> Void) {}
 
-    }
+    /**
+     * Removes a callback function from the event.
+     *
+     * @param listener The function you wish to be removed
+     */
+    public static function remove(listener:(KeyCode, KeyModifier) -> Void) {}
 
+    /**
+     * An array, containing the listener's callback functions
+     */
+    public static var listeners = [];
 }
 </code></pre>
+<p>
+    This might seem like a lot, but it really isn't: I just created a class, called
+    <i>MultiInputWindowManager</i>, and added two empty functions and an array. I also added
+    some docs for those who wanted :D (who am I kidding - I wrote those for fun 💀)
+</p>
+<p>
+    And now, we get to the fun part - implementation
+</p>
