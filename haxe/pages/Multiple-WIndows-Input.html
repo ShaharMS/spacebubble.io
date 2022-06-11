@@ -63,3 +63,29 @@
         </tr>
     </tbody>
 </table>
+<p>
+    And now, after we got familiar with Lime's event management, its time to start making
+    our multi-window input manager! <br><br>
+
+    First, create a class for the input manager, with a few functions:
+</p>
+<pre class="programming" id="1">
+<code>// At the top of the file
+import openfl.Lib;
+import lime.ui.KeyCode;
+import lime.ui.KeyModifier;
+//later
+class InputManager {
+    
+    /**
+     * Adds a cross-window keyboard event listener
+     *
+     * @param listener A function with two parameters, the first being the
+     * `KeyCode` and the second being the `KeyModifier` 
+     */
+    public static function addListener(listener:(KeyCode, KeyModifier) -> Void) {
+
+    }
+
+}
+</code></pre>
