@@ -70,7 +70,7 @@
     And now, after we got familiar with Lime's event management, its time to start making
     our multi-window input manager! <br><br>
 
-    First, create a class for the input manager, with a few functions and a field:
+    First, create a class for the input manager, with a few functions and two fields:
 </p>
 <pre class="programming" id="1">
 <code>// At the top of the file
@@ -78,8 +78,19 @@ import openfl.Lib;
 import lime.ui.KeyCode;
 import lime.ui.KeyModifier;
 //later
-class MultiWindowInputListener {
-    
+class MultiWindowInputListener
+{
+    /**
+     * Initializes the multi-window listener
+     */
+    public static function init() {}
+
+    /**
+     * Adds a window to the application
+     * @param attributes The attributes to use for window generation
+     */
+    public static function addWindow(attributes:WindowAttributes) {}
+
     /**
      * Adds a cross-window keyboard event listener
      *
@@ -98,14 +109,28 @@ class MultiWindowInputListener {
     /**
      * An array, containing the listener's callback functions
      */
-    public static var listeners = [];
+    public static var listeners:Array&lt;(KeyCode, KeyModifier) -> Void&gt; = [];
+
+    /**
+     * An array, containing the windows that report key presses
+     */
+    public static var windows:Array&lt;Window&gt; = [];
 }
 </code></pre>
-<p>
+<p style="margin-top: 10px;">
     This might seem like a lot, but it really isn't: I just created a class, called
-    <i>MultiInputWindowManager</i>, and added two empty functions and an array. I also added
+    <i>MultiInputWindowManager</i>, and added four empty functions and two arrays. I also added
     some docs for those who wanted :D (who am I kidding - I wrote those for fun 💀)
 </p>
 <p>
     And now, we get to the fun part - implementation
 </p>
+<p>
+    First, we'll get to implement the first function - <code>init()</code><br><br>
+
+    This is kind of like the <code>new()</code> function, but your'e only meant to use it one time:
+</p>
+<pre><code class="programming">public static function init() {
+    windows.push(Lib.application.window);
+}
+</code></pre>
