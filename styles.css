@@ -58,10 +58,10 @@ section {
 	border-left: 2px solid rgb(18, 20, 20);
 	position: absolute;
 	top: 30px;
-	left: 50vw;
+	left: max(50vw, 100vw - 610px);
 	height: 90vh - 30px;
 	max-height: 96.5vh;
-	width: 50vw;
+	width: min(50vw, 610px);
 	display: flex;
     justify-content: center;
 	vertical-align: top;
@@ -90,7 +90,8 @@ section {
 	color: rgb(180, 177, 177);
 	border-width: 2px;
 	border-style: solid;
-	max-width: min(300px, 50vw);
+	max-width: min(250px, 95%);
+	width: min(250px, 50vw);
 	text-align: center;
 	transition: all 0.3s ease-in-out;
 	cursor: pointer;

@@ -17,15 +17,14 @@
 	<link href="./haxe-nav.css" rel="stylesheet" />
 	<link href="./dark-mode.css" rel="stylesheet" />
 	<link href="./highlighter.css" rel="stylesheet" />
-	<script>var dox = { rootPath: "./", platforms: ["oc"] };</script>
 	<script src="../htmlIncluder.js"></script>
-	<title>Haxe Help Center</title>
+	<title>Haxe Help Center - Home</title>
 	<style>
 		.navbar .brand {
 			text-shadow: 0 0 0 transparent;
 		}
 	</style>
-	<meta n>
+	<meta name="description" content="Welcome to the Haxe learning center! Here, you can learn many things about Haxe libraries and solve errors!">
 </head>
 
 <body style="overflow-x: clip;">
@@ -44,7 +43,31 @@
 		<div class="row-fluid">
 			<div class="span3">
 				<div class="well sidebar-nav" id="explorer">
-					<div id="nav"></div>
+					<div id="nav">
+						<ul class="nav nav-list">
+							<li class="expando expanded">
+								<a class="nav-header" href="./?name=Basics"><i class="fa fa-folder"></i>Basics</a>
+							</li>
+							<li class="expando expanded">
+								<a class="nav-header" href="./?name=Haxe"><i class="fa fa-folder"></i>Haxe tutorials</a>
+							</li>
+							<li class="expando expanded">
+								<a class="nav-header" href="./?name=Haxe-libraries"><i class="fa fa-folder"></i>Haxe libraries</a>
+								<ul class="nav nav-list">
+									<li class="expando expanded">
+										<a class="nav-header" href="./?name=OpenFL"><i class="fa fa-folder"></i>OpenFL Tutorials</a>
+										<ul class="nav nav-list">
+											<li><a href="./?name=Multiple-Windows"><i class="fa fa-file-o"></i>Multi-Window Application</a></li>
+											<li><a href="./?name=Multiple-Windows-Input"><i class="fa fa-file-o"></i>Input & Multiple Windows</a></li>
+											<li><a href="./?name=Text-Formatting"><i class="fa fa-file-o"></i>Text Formatting</a></li>
+											<li><a href="./?name=Object-Masking"><i class="fa fa-file-o"></i>Masking & Covering Objects</a></li>
+											<li><a href="./?name=HTML5-Markdown"><i class="fa fa-file-o"></i>HTML5 and Markdown</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<div class="span9" id="article-body" >
