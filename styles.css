@@ -58,10 +58,10 @@ section {
 	border-left: 2px solid rgb(18, 20, 20);
 	position: absolute;
 	top: 30px;
-	left: max(50vw, 100vw - 610px);
+	left: max(50vw, 100vw - 630px);
 	height: 90vh - 30px;
 	max-height: 96.5vh;
-	width: min(50vw, 610px);
+	width: min(50vw, 630px);
 	display: flex;
     justify-content: center;
 	vertical-align: top;
@@ -75,7 +75,6 @@ section {
 	display: flex;
 	flex-direction: column;
 	border-radius: 10px;
-	background: #202731;
 	padding-bottom: 0px;
 	padding-top: 0px;
 	
@@ -90,8 +89,8 @@ section {
 	color: rgb(180, 177, 177);
 	border-width: 2px;
 	border-style: solid;
-	max-width: min(250px, 95%);
-	width: min(250px, 50vw);
+	max-width: min(270px, 95%);
+	width: min(270px, 50vw);
 	text-align: center;
 	transition: all 0.3s ease-in-out;
 	cursor: pointer;
@@ -101,4 +100,46 @@ section {
 .card:hover {
 	border: 2px solid rgb(255, 255, 255);
 	color: rgb(255, 255, 255);
+}
+.bubble::after {
+	content: '';
+	border-radius: 100%;
+	position: absolute;
+	bottom: 2vh;
+	z-index: -1;
+	width: 200vw;
+    height: 200vw;
+	min-width: 1200px;
+	align-self: center;
+	background-color: #181e25;
+}
+
+.bubble2::after{
+	content: '';
+	border-radius: 100%;
+	position: absolute;
+	top: 80vh;
+	bottom: 120vh;
+	left: -20vw;
+	right: 20vw;
+	z-index: -1;
+	width: 40vw;
+	height: 40vw;
+	align-self: center;
+	background-color: rgb(24, 30, 37);
+}
+
+.bubble3::after{
+	content: '';
+	border-radius: 100%;
+	position: absolute;
+	top: 70vh;
+	bottom: 130vh;
+	left: -30vw;
+	right: 30vw;
+	z-index: -1;
+	width: 60vw;
+	height: 60vw;
+	align-self: center;
+	background-color: #1c232b;
 }
