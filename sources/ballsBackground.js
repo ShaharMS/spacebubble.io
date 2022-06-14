@@ -2,29 +2,35 @@ const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 ctx.webkitImageSmoothingEnabled = true;
 
-const tempCanvas = document.createElement('canvas-metaballs');
+const tempCanvas = document.createElement('canvas');
 const tempCtx = tempCanvas.getContext('2d');
 
 //constants
 const numOfBalls = 5;
-const ballBaseSize = 200;
-const width = 1920;
-const height = 1080;
-const threshold = 100;
-const colors = { r: 24, g: 30, b: 37 }
+const ballBaseSize = 100;
+const threshold = 0;
+const colors = { r: 29, g: 35, b: 42 }
 const cycle = 0;
 const points = [];
-const baseVelocity = 10;
+const baseVelocity = 5;
 
-canvas.width = width;
-canvas.height = height;
-tempCanvas.width = width;
-tempCanvas.height = height;
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+tempCanvas.width = window.innerWidth;
+tempCanvas.height = window.innerHeight;
+
+//add a resize event listener to the window
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    tempCanvas.width = window.innerWidth;
+    tempCanvas.height = window.innerHeight;
+}, false);
 
 // generate balls
 const ballsPoint = Array.from({ length: numOfBalls }, () => ({
-    x: Math.random() * width,
-    y: Math.random() * height,
+    x: Math.random() * window.innerWidth,
+    y: Math.random() * window.innerHeight,
     vx: (Math.random() * baseVelocity * 2) - baseVelocity,
     vy: (Math.random() * baseVelocity * 2) - baseVelocity,
     size: Math.random() * ballBaseSize + ballBaseSize
@@ -32,27 +38,26 @@ const ballsPoint = Array.from({ length: numOfBalls }, () => ({
 
 const update = () => {
     const t0 = performance.now();
-    tempCtx.clearRect(0, 0, width, height);
+    tempCtx.clearRect(0, 0, window.innerWidth, window.innerHeight);
     ballsPoint
         .forEach((ballPoint) => {
             ballPoint.x = ballPoint.x + ballPoint.vx;
             ballPoint.y = ballPoint.y + ballPoint.vy;
 
-            if (ballPoint.x > width + ballPoint.size) {
+            if (ballPoint.x > window.innerWidth + ballPoint.size) {
                 ballPoint.x = 0 - ballPoint.size
             } else if (ballPoint.x < 0 - ballPoint.size) {
-                ballPoint.x = width + ballPoint.size
+                ballPoint.x = window.innerWidth + ballPoint.size
             }
 
-            if (ballPoint.y > height + ballPoint.size) {
+            if (ballPoint.y > window.innerHeight + ballPoint.size) {
                 ballPoint.y = 0 - ballPoint.size
             } else if (ballPoint.y < 0 - ballPoint.size) {
-                ballPoint.y = height + ballPoint.size
+                ballPoint.y = window.innerHeight + ballPoint.size
             }
             tempCtx.beginPath();
             let grad = tempCtx.createRadialGradient(ballPoint.x, ballPoint.y, 1, ballPoint.x, ballPoint.y, ballPoint.size)
-            grad.addColorStop(0, `rgba(${colors.r}, ${colors.g}, ${colors.b}, 1)`);
-            grad.addColorStop(1, `rgba(${colors.r}, ${colors.g}, ${colors.b}, 0)`);
+            grad.addColorStop(1, `rgb(${colors.r}, ${colors.g}, ${colors.b})`);
             tempCtx.fillStyle = grad;
             tempCtx.arc(ballPoint.x, ballPoint.y, ballPoint.size, 0, Math.PI * 2)
             tempCtx.fill();
@@ -67,7 +72,7 @@ const update = () => {
 };
 
 const metabalize = (t0) => {
-    let imageData = tempCtx.getImageData(0, 0, width, height);
+    let imageData = tempCtx.getImageData(0, 0, window.innerWidth, window.innerHeight);
     let pix = imageData.data;
     // rgba, hence i + 4 to the next red
     for (let i = 0; i < pix.length; i += 4) {

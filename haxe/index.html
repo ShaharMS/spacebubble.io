@@ -11,8 +11,10 @@
 	<link href="./bootstrap/css/bootstrap-select.min.css" rel="stylesheet" />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic" rel="stylesheet" type="text/css" />
-	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,600italic,400" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic" rel="stylesheet"
+		type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,600italic,400" rel="stylesheet"
+		type="text/css" />
 	<link href="./styles.css" rel="stylesheet" />
 	<link href="./haxe-nav.css" rel="stylesheet" />
 	<link href="./dark-mode.css" rel="stylesheet" />
@@ -24,16 +26,18 @@
 			text-shadow: 0 0 0 transparent;
 		}
 	</style>
-	<meta name="description" content="Welcome to the Haxe learning center! Here, you can learn many things about Haxe libraries and solve errors!">
+	<meta name="description"content="Welcome to the Haxe learning center! Here, you can learn many things about Haxe libraries and solve errors!">
+	<script src="../sources/htmlIncluder.js"></script>
 </head>
 
 <body style="overflow-x: clip;">
 
-	<div class="bubble" style="overflow-x: clip;"/>
-	
+	<div class="bubble" style="overflow-x: clip;" />
+
 	<nav class="nav">
 		<div class="navbar">
-			<div class="navbar-inner" style="background:#FAFAFA; border-bottom:1px solid rgba(0,0,0,.09); text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);">
+			<div class="navbar-inner"
+				style="background:#FAFAFA; border-bottom:1px solid rgba(0,0,0,.09); text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);">
 				<a class="brand" style="color:#000000" href="./">The Haxe Learning Center</a>
 				</a>
 			</div>
@@ -43,34 +47,45 @@
 		<div class="row-fluid">
 			<div class="span3">
 				<div class="well sidebar-nav" id="explorer">
-					<div id="nav">
-						<ul class="nav nav-list">
-							<li class="expando expanded">
-								<a class="nav-header" href="./?name=Basics"><i class="fa fa-folder"></i>Basics</a>
-							</li>
-							<li class="expando expanded">
-								<a class="nav-header" href="./?name=Haxe"><i class="fa fa-folder"></i>Haxe tutorials</a>
-							</li>
-							<li class="expando expanded">
-								<a class="nav-header" href="./?name=Haxe-libraries"><i class="fa fa-folder"></i>Haxe libraries</a>
-								<ul class="nav nav-list">
-									<li class="expando expanded">
-										<a class="nav-header" href="./?name=OpenFL"><i class="fa fa-folder"></i>OpenFL Tutorials</a>
-										<ul class="nav nav-list">
-											<li><a href="./?name=Multiple-Windows"><i class="fa fa-file-o"></i>Multi-Window Application</a></li>
-											<li><a href="./?name=Multiple-Windows-Input"><i class="fa fa-file-o"></i>Input & Multiple Windows</a></li>
-											<li><a href="./?name=Text-Formatting"><i class="fa fa-file-o"></i>Text Formatting</a></li>
-											<li><a href="./?name=Object-Masking"><i class="fa fa-file-o"></i>Masking & Covering Objects</a></li>
-											<li><a href="./?name=HTML5-Markdown"><i class="fa fa-file-o"></i>HTML5 and Markdown</a></li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
+					<ul class="nav nav-list">
+						<li class="expando expanded">
+							<a class="nav-header" href="./?name=Basics"><i class="fa fa-folder"></i>Basics</a>
+						</li>
+						<li class="expando expanded">
+							<a class="nav-header" href="./?name=Haxe"><i class="fa fa-folder"></i>Haxe tutorials</a>
+						</li>
+						<li class="expando expanded">
+							<a class="nav-header" href="./?name=Haxe-libraries"><i class="fa fa-folder"></i>Haxe
+								libraries</a>
+							<ul class="nav nav-list">
+								<li class="expando expanded">
+									<a class="nav-header" href="./?name=OpenFL"><i class="fa fa-folder"></i>OpenFL
+										Tutorials</a>
+									<ul class="nav nav-list">
+										<li><a href="./?name=Multiple-Windows"><i class="fa fa-file-o"></i>Multi-Window
+												Application</a></li>
+										<li><a href="./?name=Multiple-Windows-Input"><i class="fa fa-file-o"></i>Input &
+												Multiple Windows</a></li>
+										<li><a href="./?name=Text-Formatting"><i class="fa fa-file-o"></i>Text
+												Formatting</a></li>
+										<li><a href="./?name=Object-Masking"><i class="fa fa-file-o"></i>Masking &
+												Covering Objects</a></li>
+										<li><a href="./?name=HTML5-Markdown"><i class="fa fa-file-o"></i>HTML5 and
+												Markdown</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="expando expanded">
+							<a class="nav-header" href="./?name=Haxe-Errors"><i class="fa fa-folder"></i>Haxe Errors</a>
+							<ul class="nav nav-list">
+								<li><a href="./?name=Sys_Error"><i class="fa fa-file-o"></i>Sys_error("...")</a></li>
+							</ul>
+						</li>
+					</ul>
 				</div>
 			</div>
-			<div class="span9" id="article-body" >
+			<div class="span9" id="article-body">
 				Loading...
 			</div>
 		</div>
@@ -81,15 +96,15 @@
 		document.getElementById("nav").innerHTML = getHTMLFrom("./navbar.html");
 
 		function pullCurrentState(event) {
-    		let pageName =  window.location.href.split('/').pop().replace("?name=", "");
-    		if (pageName === "") pageName = "index";
+			let pageName = window.location.href.split('/').pop().replace("?name=", "");
+			if (pageName === "") pageName = "index";
 			if (pageName.includes(".html")) pageName = pageName.split(".")[0];
-    		document.getElementById("article-body").innerHTML = getHTMLFrom("/haxe/pages/" + pageName + ".html");
+			document.getElementById("article-body").innerHTML = getHTMLFrom("/haxe/pages/" + pageName + ".html");
 		}
 	</script>
 	<script src="./highlighter.js"></script>
-	<link href="./highlighter.css" rel="stylesheet"></link>
-	<script src="../htmlIncluder.js"></script>
+	<link href="./highlighter.css" rel="stylesheet">
+	</link>
 	<script src="./codeblock.js"></script>
 </body>
 
