@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" type="text/css"/>
     <script src="./interp.js"></script>
-    <title>Document</title>
+    <script src="../sources/littleHighlighter.js"></script>
+    <title>Try Little!</title>
 </head>
 <body>
-    <div>
-        <h3>input:</h3>
-    </div>
-    <textarea id="text" style="height: 50vh; width: 45vw;">
+    <textarea id="code" style="height: 50vh; width: 45vw;">
 
     </textarea>
     <textarea id="result" style="height: 50vh; width: 45vw;">
@@ -92,14 +91,15 @@
             logMessages.push.apply(logMessages, arguments);
             logBackup.apply(console, arguments);
         };
-        var text = document.getElementById('text');
+        var text = document.getElementById('code');
         text.addEventListener("keyup", function() {
             interpNum++;
-            var text = document.getElementById('text').value;
-            LittleInterpreter.run(text);
+            var code = document.getElementById('code').value;
+            LittleInterpreter.run(code);
             var resEl = document.getElementById('result');
             resEl.value = `Interpreter started, Launch Number ${interpNum}\n——————————\n` +logMessages.join("\n");
             logMessages = [];
+            Highlighter.main();
         });
     </script>
 </body>

@@ -1,0 +1,65 @@
+textarea {
+  color: #DDD;
+}
+
+textarea a {
+  color: #29e
+}
+
+.textarea .type {
+  color: #00cc69
+}
+
+textarea .kwd {
+  color: #ff52df
+}
+
+textarea .kwd1 {
+  color: #4762fc
+}
+
+textarea .func {
+  color: #c7da00
+}
+
+textarea .str,
+textarea .str,
+textarea .str .kwd,
+textarea .str .kwd1,
+textarea .str .type,
+textarea .str .func {
+  color: #ff5e00
+}
+
+textarea .cmt,
+textarea .cmt .kwd,
+textarea .cmt .kwd1,
+textarea .cmt .str,
+textarea .cmt .type,
+textarea .cmt .func {
+  color: #5e5e5e
+}
+
+textarea .last-modified {
+  color: #666
+}
+
+body {
+	margin: 0;
+	font-family: 'Prompt', sans-serif;
+	color: white;
+	background: #202731;
+	overflow: hidden;
+}
+
+textarea {
+    background-color: #202731;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 45vw;
+  height: 50vh;
+}

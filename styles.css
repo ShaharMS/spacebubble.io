@@ -58,9 +58,9 @@ section {
 	border-left: 2px solid rgb(18, 20, 20);
 	position: absolute;
 	top: 30px;
-	left: max(50vw, 100vw - 630px);
-	height: 90vh - 30px;
-	max-height: 96.5vh;
+	left: max(50vw, calc(100vw - 630px));
+	height: 100vh;
+	max-height: 100vh;
 	width: min(50vw, 630px);
 	display: flex;
     justify-content: center;
@@ -100,4 +100,21 @@ section {
 .card:hover {
 	border: 2px solid rgb(255, 255, 255);
 	color: rgb(255, 255, 255);
+}
+
+/*make a special case when using a phone*/
+@media screen and (max-width: 640px) {
+	.main-view {
+		padding-top: 5vw;
+		left: 0;
+		width: 100vw;
+		top: 50vh;
+		height: calc(50vh - 5vw);
+		border-top: 2px solid rgb(18, 20, 20);
+		border-left: none;
+	}
+	.card {
+		max-width: 80vw;
+		width: 80vw;
+	}
 }
