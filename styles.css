@@ -118,3 +118,12 @@ section {
 		width: 80vw;
 	}
 }
+
+table td {
+	margin: 0px;
+}
+
+table tr {
+	margin: 0px;
+	padding: 0px;
+}
