@@ -18,7 +18,7 @@
 	<link href="./styles.css" rel="stylesheet" />
 	<link href="./haxe-nav.css" rel="stylesheet" />
 	<link href="./dark-mode.css" rel="stylesheet" />
-	<link href="./highlighter.css" rel="stylesheet" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/vs2015.min.css">
 	<link href="../htmlIncluder.js" type="text/javascript"></script>
 	<title>Haxe Help Center - Home</title>
 	<style>
@@ -67,16 +67,11 @@
 								<li class="expando expanded">
 									<a class="nav-header" href="./?name=OpenFL"><i class="fa fa-folder"></i>OpenFL Tutorials</a>
 									<ul class="nav nav-list">
-										<li><a href="./?name=Multiple-Windows"><i class="fa fa-file-o"></i>Multi-Window
-												Application</a></li>
-										<li><a href="./?name=Multiple-Windows-Input"><i class="fa fa-file-o"></i>Input &
-												Multiple Windows</a></li>
-										<li><a href="./?name=Text-Formatting"><i class="fa fa-file-o"></i>Text
-												Formatting</a></li>
-										<li><a href="./?name=Object-Masking"><i class="fa fa-file-o"></i>Masking &
-												Covering Objects</a></li>
-										<li><a href="./?name=HTML5-Markdown"><i class="fa fa-file-o"></i>HTML5 and
-												Markdown</a></li>
+										<li><a href="./?name=HTML5-Markdown"><i class="fa fa-file-o"></i>HTML5 and Markdown</a></li>
+										<li><a href="./?name=Multiple-Windows-Input"><i class="fa fa-file-o"></i>Input & Multiple Windows</a></li>
+										<li><a href="./?name=Object-Masking"><i class="fa fa-file-o"></i>Masking & Covering Objects</a></li>
+										<li><a href="./?name=Multiple-Windows"><i class="fa fa-file-o"></i>Multi-Window Application</a></li>
+										<li><a href="./?name=OpenFL-Defines"><i class="fa fa-file-o"></i>OpenFL Defines List</a></li>
 									</ul>
 								</li>
 								
@@ -99,7 +94,6 @@
 	<script>
 		window.addEventListener("locationchange", pullCurrentState);
 		pullCurrentState();
-		document.getElementById("nav").innerHTML = getHTMLFrom("./navbar.html");
 
 		function pullCurrentState(event) {
 			let pageName = window.location.href.split('/').pop().replace("?name=", "");
@@ -108,10 +102,10 @@
 			document.getElementById("article-body").innerHTML = getHTMLFrom("/haxe/pages/" + pageName + ".html");
 		}
 	</script>
-	<script src="./highlighter.js"></script>
-	<link href="./highlighter.css" rel="stylesheet">
-	</link>
-	<script src="./codeblock.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/languages/haxe.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/languages/powershell.min.js"></script>
+	<script>hljs.highlightAll();</script>
 </body>
 
 </html>
