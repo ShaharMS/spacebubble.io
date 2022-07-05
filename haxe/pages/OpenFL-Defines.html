@@ -1,3 +1,9 @@
+<style>
+    td {
+        max-width: 40vw;
+        overflow-x: scroll;
+    }
+</style>
 <h1>OpenFL Defines, And Their Meanings <small>by Shahar Marcus</small></h1>
 <br>
 <p>
@@ -15,7 +21,7 @@
         </tr>
         <tr>
             <td>
-                <pre><code class="language-xml" style="overflow-x: scroll; display:ruby">&lt;haxedef&nbsp;name="queue_experimental_optimization"/&gt;</code></pre>
+                <pre><code class="language-xml" >&lt;haxedef&nbsp;name="queue_experimental_optimization"/&gt;</code></pre>
             </td>
             <td>Enables a new and optimized game loop - boosts performance, and takes less memory</td>
             <td>9.2.0+</td>
@@ -29,24 +35,52 @@
         </tr>
         <tr>
             <td>
-                <pre><code class="language-xml" style="overflow-x: scroll; display:ruby">&lt;haxedef&nbsp;name="openfl_debug"/&gt;</code></pre>
+                <pre><code class="language-xml" >&lt;haxedef&nbsp;name="openfl_debug"/&gt;</code></pre>
             </td>
             <td>Prevents signing the program with the <i>"release"</i> tag, allows debugging information from being generated for openfl classes</td>
             <td></td>
         </tr>
         <tr>
             <td>
-                <pre><code class="language-xml" style="overflow-x: scroll; display:ruby">&lt;haxedef&nbsp;name="openfl_trace_text_layout_groups"/&gt;</code></pre>
+                <pre><code class="language-xml" >&lt;haxedef&nbsp;name="openfl_trace_text_layout_groups"/&gt;</code></pre>
             </td>
             <td>Debugging option, traces positional information about text layout groups, and the text they contains.</td>
             <td>4.9.0+</td>
         </tr>
         <tr>
             <td>
-                <pre><code class="language-xml" style="overflow-x: scroll; display:ruby">&lt;haxedef&nbsp;name="openfl_strict"/&gt;</code></pre>
+                <pre><code class="language-xml" >&lt;haxedef&nbsp;name="openfl_strict"/&gt;</code></pre>
             </td>
             <td>Disables any unsafe/unimplemented/unstable features that are currently offered</td>
             <td>8.9.1+</td>
+        </tr>
+        <tr>
+            <td>
+                <pre><code class="language-xml" >&lt;haxedef&nbsp;name="openfl_disable_cacheasbitmap"/&gt;</code></pre>
+            </td>
+            <td>Disables <code>object.cacheAsBitmap</code>'s functionality</td>
+            <td>9.1.0+</td>
+        </tr>
+        <tr>
+            <td>
+                <pre><code class="language-xml" >&lt;haxedef&nbsp;name="openfl_disable_filters"/&gt;</code></pre>
+            </td>
+            <td>Disables visual filters entirely - blocks them from rendering</td>
+            <td>9.1.0+</td>
+        </tr>
+        <tr>
+            <td>
+                <pre><code class="language-xml" >&lt;haxedef&nbsp;name="gl_stats"/&gt;</code></pre>
+            </td>
+            <td>Adds additional debugging information to the FPS counter's text: <b>total draw calls</b>, <b>stage draw calls this second</b>, <b>stage3d draw calls this second</b></td>
+            <td>6.5.3+</td>
+        </tr>
+        <tr>
+            <td>
+                <pre><code class="language-xml" >&lt;haxedef&nbsp;name="openfl_disable_handle_error"/&gt;</code></pre>
+            </td>
+            <td>Disables the <code>UncaughtErrorEvent.UNCAUGHT_ERROR</code> event</td>
+            <td></td>
         </tr>
     </table>
 

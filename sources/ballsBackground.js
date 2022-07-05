@@ -1,23 +1,17 @@
-const canvas = document.getElementById('canvas');
-const ctx = canvas.getContext('2d');
-ctx.webkitImageSmoothingEnabled = true;
+var canvas;
+var ctx;
 
-const tempCanvas = document.createElement('canvas');
-const tempCtx = tempCanvas.getContext('2d');
+var tempCanvas = document.createElement('canvas');
+var tempCtx = tempCanvas.getContext('2d');
 
 //constants
-const numOfBalls = 5;
-const ballBaseSize = 100;
-const threshold = 0;
-const colors = { r: 29, g: 35, b: 42 }
-const cycle = 0;
-const points = [];
-const baseVelocity = 5;
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-tempCanvas.width = window.innerWidth;
-tempCanvas.height = window.innerHeight;
+let numOfBalls = 5;
+let ballBaseSize = 100;
+let threshold = 0;
+let colors = { r: 29, g: 35, b: 42 }
+let cycle = 0;
+let points = [];
+let baseVelocity = 5;
 
 //add a resize event listener to the window
 window.addEventListener('resize', () => {
@@ -89,4 +83,34 @@ const metabalize = (t0) => {
     ctx.putImageData(imageData, 0, 0);
 };
 
-update();
+/**
+ * 
+ * @param {Number} ballNum The number of balls to be generated
+ * @param {Number} baseBallSize The base size of the balls
+ * @param {{r:Number, g:Number, b:Number}} color  The color of the balls
+ * @param {Number} velocity  The velocity of the balls
+ */
+function start(ballNum, baseBallSize, color, velocity) {
+    numOfBalls = ballNum || numOfBalls;
+    ballBaseSize = baseBallSize || ballBaseSize;
+    threshold = 0;
+    colors = color || colors;
+    cycle = 0;
+    points = [];
+    baseVelocity = velocity;
+
+    canvas = document.getElementById('canvas');
+    ctx = canvas.getContext('2d');
+    ctx.webkitImageSmoothingEnabled = true;
+
+    tempCanvas = document.createElement('canvas');
+    tempCtx = tempCanvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    tempCanvas.width = window.innerWidth;
+    tempCanvas.height = window.innerHeight;
+
+    update();
+}
+

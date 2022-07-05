@@ -27,12 +27,13 @@
 		}
 	</style>
 	<meta name="description"content="Welcome to the Haxe learning center! Here, you can learn many things about Haxe libraries and solve errors!">
+	<script src="../sources/ballsBackground.js"></script>
 	<script src="../sources/htmlIncluder.js"></script>
 </head>
 
-<body style="overflow-x: clip;">
+<body>
 
-	<div class="bubble" style="overflow-x: clip;" />
+	<canvas id="canvas" style="width: 100vw; height:100vh; position: fixed; z-index: -1;"></canvas>
 
 	<nav class="nav">
 		<div class="navbar">
@@ -105,7 +106,10 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/languages/haxe.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/languages/powershell.min.js"></script>
-	<script>hljs.highlightAll();</script>
+	<script>
+		hljs.highlightAll();
+		start(null, null, {r: 15, g: 15, b: 15});
+	</script>
 </body>
 
 </html>

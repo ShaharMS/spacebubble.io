@@ -275,15 +275,6 @@ h6 {
     overflow-y: auto;
 }
 
-#searchForm {
-    padding: 0 9px;
-    margin-bottom: 10px;
-}
-
-#searchForm .control-group {
-    margin: 0;
-}
-
 .indent {
     margin-left: 20px;
     border-left: 5px solid #eeeeee;
@@ -454,7 +445,6 @@ table.params th {
 	z-index: -1;
 	width: 200vw;
     height: 200vw;
-	min-width: 1200px;
 	align-self: center;
 	background-color: #080808;
 }
