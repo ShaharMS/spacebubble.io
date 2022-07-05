@@ -48,7 +48,30 @@
 </p>
 <br>
 <blockquote>
-    <h2>2. Pull The Submodules</h2>
+    <h2>2. Install Hashlink 1.12</h2>
+</blockquote>
+<p>
+    Another big improvement provided by Lime 8 is the ability to use the latest <a href="https://hashlink.haxe.org/">Hashlink</a> - 1.12
+    <br>
+    <br>
+    To install Hashlink:
+    <ol>
+        <li>Go to <a href="https://github.com/HaxeFoundation/hashlink/releases">the releases page on github for Hashlink</a></li>
+        <li>Download the <code>zip</code> or <code>tar.gz</code> that you need for your computer</li>
+        <li>Extract the downloaded file to a folder you will remember</li>
+    </ol>
+    After doing that, you just need to point Lime to that Hashlink folder:
+    <h4><code>
+        lime setup hl
+    </code></h4>
+    <h4><code>
+        <b style="color: lightgreen;">Path to a custom version of Hashlink. Leave empty to use lime's default version.</b> <i>[C:\path\to\old\hl]</i>: C:\path\to\new\hl
+    </code></h4>
+</p>
+
+
+<blockquote>
+    <h2>3. Pull The Submodules</h2>
 </blockquote>
 <p>
     Lime 8 has replaced its forks with git submodules, which means we need to pull those submodules to update
@@ -64,7 +87,7 @@
 </p>
 <br>
 <blockquote>
-    <h2>3. Rebuild Lime's Tools And Binaries</h2>
+    <h2>4. Rebuild Lime's Tools And Binaries</h2>
 </blockquote>
 <p>
     Now, after making sure lime and its dependencies are up to date, 
