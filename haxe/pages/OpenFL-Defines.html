@@ -82,6 +82,74 @@
             <td>Disables the <code>UncaughtErrorEvent.UNCAUGHT_ERROR</code> event</td>
             <td></td>
         </tr>
+        <tr>
+            <td>
+                <pre><code class="language-xml" >&lt;haxedef&nbsp;name="openfl_pool_events"/&gt;</code></pre>
+            </td>
+            <td>Uses a pool to store events. when used, reduces the amount of memory used when lots of listeners are added</td>
+            <td>8.9.0 - 9.0.2</td>
+        </tr>
+        <tr>
+            <td>
+                <pre><code class="language-xml" >&lt;haxedef&nbsp;name="openfl_always_dispatch_mouse_events"/&gt;</code></pre>
+            </td>
+            <td>Instead of waiting for the mouse event to bubble up, OpenFL dispatches that event instantly</td>
+            <td>8.9.0+</td>
+        </tr>
+        <tr>
+            <td>
+                <pre><code class="language-xml" >&lt;haxedef&nbsp;name="openfl_disable_display_render"/&gt;</code></pre>
+            </td>
+            <td>Disables rendering of objects entirely</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <pre><code class="language-xml" >&lt;haxedef&nbsp;name="openfl_always_render"/&gt;</code></pre>
+            </td>
+            <td>renders every single object to the screen, even if it isn't meant/set to not be rendered</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <pre><code class="language-xml" >&lt;haxedef&nbsp;name="openfl_force_sw_graphics"/&gt;
+&lt;haxedef&nbsp;name="force_sw_graphics"/&gt;</code></pre>
+            </td>
+            <td>Renders everything with software rendering. You need to use only one of these defines.</td>
+            <td>8.0.0+</td>
+        </tr>
+        <tr>
+            <td>
+                <pre><code class="language-xml" >&lt;haxedef&nbsp;name="openfl_force_hw_graphics"/&gt;
+&lt;haxedef&nbsp;name="force_hw_graphics"/&gt;</code></pre>
+            </td>
+            <td>Renders everything with hardware accelerated rendering. You need to use only one of these defines.</td>
+            <td>8.0.0+</td>
+        </tr>
+        <tr>
+            <td>
+                <pre><code class="language-xml" >&lt;haxedef&nbsp;name="openfl_power_of_two"/&gt;</code></pre>
+            </td>
+            <td>Makes sure the generated opengl texture for images have powers of two width/height (32, 64, 128, 256, etc.). 
+                <b>Only needed for older devices which don't support textures with arbitrary dimensions</b>. 
+                It's a pretty CPU-intensive process (creates another copy of the image, but with the required size), 
+                and it is recommended to use textures with powers of 2 width/height this define is used anyway to prevent stutters.</td>
+            <td>3.3.3+</td>
+        </tr>
+        <tr>
+            <td>
+                <pre><code class="language-xml" >&lt;haxedef&nbsp;name="openfl_disable_graphics_upscaling"/&gt;</code></pre>
+            </td>
+            <td>Disables <code>scaleX</code> and <code>scaleY</code> - when enabled, they're always set to 1.</td>
+            <td>9.0.2+</td>
+        </tr>
+        <tr>
+            <td>
+                <pre><code class="language-xml" >&lt;haxedef&nbsp;name="openfl_disable_context_cache"/&gt;</code></pre>
+            </td>
+            <td>Disables the use of cache in the <code>Context3D</code> class.</td>
+            <td>8.5.0+</td>
+        </tr>
     </table>
 
     <a href="https://github.com/ShaharMS/spacebubble.io/pulls" style="display: block; text-align: center;">Something's wrong/missing? make a PR/Issue and extend/fix this list :)</a>
