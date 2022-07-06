@@ -44,7 +44,7 @@ nav a {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	top: calc(10vh);
+	top: 23vh;
 	padding-inline: 80px;
 }
 
