@@ -5,22 +5,22 @@ body {
 }
 
 h1 {
-	font-size: 64px
+	font-size: 5.2vw
 }
 h2 {
-	font-size: 52px
+	font-size: 4.4vw
 }
 h3 {
-	font-size: 40px
+	font-size: 3.6vw
 }
 
 p {
-	font-size: 20px
+	font-size: 1.6vw;
 }
 
 
 nav {
-	size: 28px;
+	font-size: 1.75vw;
 	font-weight: 600;
 }
 
@@ -29,7 +29,7 @@ nav {
 	color: #FFF;
 	position: fixed;
 	top: 30px;
-	left: calc(100vw - 360px);
+	left: 62.5vw;
 }
 small {
 	font-weight: 300;
@@ -43,9 +43,9 @@ nav a {
 	position: relative;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around;
+	justify-content: space-between;
 	top: calc(100vh / 2 - 150px);
-	margin-inline: -160px;
+	padding-inline: 80px;
 }
 
 .youtubevideo {
