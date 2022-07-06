@@ -20,7 +20,7 @@ p {
 
 
 nav {
-	font-size: 1.75vw;
+	font-size: 1.5vw;
 	font-weight: 600;
 }
 
@@ -29,7 +29,7 @@ nav {
 	color: #FFF;
 	position: fixed;
 	top: 30px;
-	left: 62.5vw;
+	left: 67.5vw;
 }
 small {
 	font-weight: 300;
@@ -58,7 +58,7 @@ nav a {
 
 #mainpage-triangle {		/*dot is for a class, #is for an id*/
 	position: absolute;
-	top: 54vh;
+	top: 56vh;
 	left: 10vw;
 
 	width: 0;
