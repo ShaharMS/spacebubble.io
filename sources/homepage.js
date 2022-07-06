@@ -1,3 +1,0 @@
-const shapeColors = {
-    color1: 
-}

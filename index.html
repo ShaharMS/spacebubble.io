@@ -9,8 +9,10 @@
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,300;0,600;0,700;0,900;1,300;1,600;1,700;1,900&display=swap" rel="stylesheet"> 
 	<title>Home | Spacebubble.io</title>
 	<link rel="stylesheet" href="./styles.css">
+	<script src="./sources/shapeBackground.js"></script>
 </head>
 <body>
+	<canvas id="canvas" style="position: fixed; top:0; left:0;"></canvas>
 	<nav id="mainpage-navbar">About us <small>|</small> <a href="./haxe">Haxe</a> <small>|</small> Apps <small>|</small> libraries <small>|</small> more</nav>
 
 	<div class="mainview">
@@ -23,5 +25,8 @@
 		</div>
 		<div class="youtubevideo"></div>
 	</div>
+	<script>
+		startShapeBackground(1, 1, ["#16336c", "#2A63D1"]);
+	</script>
 </body>
 </html>
