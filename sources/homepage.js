@@ -1,0 +1,3 @@
+const shapeColors = {
+    color1: 
+}

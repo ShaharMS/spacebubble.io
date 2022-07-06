@@ -1,129 +1,20 @@
-html {
-	font-size: max(min(1.2vw, 16px), 12px);
-}
-
-h1 {
-	font-size: 3.5rem;
-}
-
-h2 {
-	font-size: 2rem;
-}
-
-p {
-	font-size: 16px;
-}
-
 body {
-	margin: 0;
-	font-family: 'Prompt', sans-serif;
-	color: white;
-	background: #202731;
-	overflow: hidden;
+	background-color: #480f62;
+	font-family: 'Montserrat Alternates', sans-serif;
 }
 
-section {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	overflow-x: clip;
-	align-items: center;
-	min-height: 300px;
-	padding-top: 100px;
+nav {
+	size: 28px;
+	font-weight: 600;
 }
 
-.top-navbar {
-	position: absolute;
-	width: 100vw;
-	height: 30px;
-	top: 0;
-	left: 0;
-	background: rgb(0, 0, 0);
-	padding-left: 20px;
-	vertical-align: center;
-	
-}
-.top-navbar * {
-	position: relative;
-	vertical-align: center;
-	color: white;
-	font-size: 1.5rem;
-	font-weight: 500;
-	opacity: 0.5;
-	text-decoration: none;
-	margin: 10px;
-}
-
-.main-view {
-	border-left: 2px solid rgb(18, 20, 20);
-	position: absolute;
+#mainpage-navbar {
+	word-wrap: normal;
+	color: #FFF;
+	position: fixed;
 	top: 30px;
-	left: max(50vw, calc(100vw - 630px));
-	height: 100vh;
-	max-height: 100vh;
-	width: min(50vw, 630px);
-	display: flex;
-    justify-content: center;
-	vertical-align: top;
-    flex-wrap: wrap;
-	overflow-y: auto;
-	
+	left: calc(100vw - 360px);
 }
-
-.main-view>div {
-	height: fit-content;
-	display: flex;
-	flex-direction: column;
-	border-radius: 10px;
-	padding-bottom: 0px;
-	padding-top: 0px;
-	
-}
-
-.card {
-	height: fit-content;
-	padding-left: 10px;
-	padding-right: 10px;
-	border-radius: 10px;
-	border-color: rgb(180, 177, 177);
-	color: rgb(180, 177, 177);
-	border-width: 2px;
-	border-style: solid;
-	max-width: min(270px, 95%);
-	width: min(270px, 50vw);
-	text-align: center;
-	transition: all 0.3s ease-in-out;
-	cursor: pointer;
-	margin: 5px;
-}
-
-.card:hover {
-	border: 2px solid rgb(255, 255, 255);
-	color: rgb(255, 255, 255);
-}
-
-/*make a special case when using a phone*/
-@media screen and (max-width: 640px) {
-	.main-view {
-		padding-top: 5vw;
-		left: 0;
-		width: 100vw;
-		top: 50vh;
-		height: calc(50vh - 5vw);
-		border-top: 2px solid rgb(18, 20, 20);
-		border-left: none;
-	}
-	.card {
-		max-width: 80vw;
-		width: 80vw;
-	}
-}
-
-table td {
-	margin: 0px;
-}
-
-table tr {
-	margin: 0px;
-	padding: 0px;
+small {
+	font-weight: 300;
 }
