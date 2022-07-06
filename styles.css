@@ -15,7 +15,7 @@ h3 {
 }
 
 p {
-	font-size: 1.6vw;
+	font-size: 1.8vw;
 }
 
 
@@ -54,4 +54,17 @@ nav a {
   	padding: 20px; 
   	width: 30vw;
 	aspect-ratio: 16/9;
+}
+
+#mainpage-triangle {
+	position: absolute;
+	top: 54vh;
+	left: 10vw;
+
+	width: 0;
+	height: 0;
+	border-left: 9vw solid transparent;
+	border-right: 9vw solid transparent;
+	border-bottom: 15.5884572vw solid rgb(255, 255, 255);
+	rotate: 50deg;
 }
