@@ -30,6 +30,25 @@ const getObjectType = () => {
     }
 }
 
+let previousColor = -1;
+
+const getObjectColor = () => {
+    let c = Math.floor(Math.random() * color.length);
+    
+    if (previousColor == c)
+        return getObjectColor();
+    else
+        previousColor = c
+        
+        
+    return color[c]
+
+}
+
+
+
+
+
 // generate balls
 let objects = Array.from({ length: numberOfObjects }, () => ({
     x: Math.random() * window.innerWidth,
@@ -39,7 +58,7 @@ let objects = Array.from({ length: numberOfObjects }, () => ({
     size: Math.random() * baseSize + baseSize,
     type: getObjectType(),
     angularVelocity: ((Math.random() * baseVelocity * 2) - baseVelocity) / 100,
-    color: color[Math.floor(Math.random() * color.length)]
+    color: getObjectColor()
 }));
 
 const update = () => {
