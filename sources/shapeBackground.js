@@ -45,10 +45,6 @@ const getObjectColor = () => {
 
 }
 
-
-
-
-
 // generate balls
 let objects = Array.from({ length: numberOfObjects }, () => ({
     x: Math.random() * window.innerWidth,
@@ -61,10 +57,27 @@ let objects = Array.from({ length: numberOfObjects }, () => ({
     color: getObjectColor()
 }));
 
+const checkCollision = () => {
+    objects.forEach(element => {
+        objects.forEach(element2 => {
+            if (element != element2) {
+                let dx = element.x - element2.x;
+                let dy = element.y - element2.y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+        
+                if (distance < element.radius + element2.radius) {
+                    // collision detected!
+                }
+            }
+        });
+    });
+}
+
 const update = () => {
     tempCtx.clearRect(0, 0, window.innerWidth, window.innerHeight);
     objects
         .forEach((object) => {
+            checkCollision();
             object.x = object.x + object.vx;
             object.y = object.y + object.vy;
 
@@ -81,19 +94,7 @@ const update = () => {
             }
             tempCtx.beginPath();
             tempCtx.fillStyle = object.color;
-            //switch (object.type) {
-            //    case 'circle':
-                    tempCtx.arc(object.x, object.y, object.size, 0, 2 * Math.PI);
-            //        break;
-            //    case 'square':
-            //        tempCtx.fillRect(object.x - object.size / 2, object.y - object.size / 2, object.size * 2, object.size * 2);
-            //        break;
-            //    case 'triangle':
-            //        tempCtx.moveTo(object.x, object.y);
-            //        tempCtx.lineTo(object.x + object.size * 2, object.y);
-            //        tempCtx.lineTo(object.x + object.size, object.y + object.size * 2);
-            //        break;
-            //}
+            tempCtx.arc(object.x, object.y, object.size, 0, 2 * Math.PI);
             tempCtx.fill();
             tempCtx.setTransform(1,0,0,1,0,0)
 

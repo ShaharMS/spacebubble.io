@@ -10,6 +10,7 @@
 	<title>Home | Spacebubble.io</title>
 	<link rel="stylesheet" href="./styles.css">
 	<script src="./sources/shapeBackground.js"></script>
+	<script src="./sources/bounce.js"></script>
 </head>
 <body>
 	<canvas id="canvas" style="position: fixed; top:0; left:0;"></canvas>
@@ -27,14 +28,16 @@
 		<iframe style="width: 40vw; height: 22.5vw;" width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 	</div>
 	
-
-	<p class="centeredabsolute"  >let's explore</p>
-	<div class="centeredabsolute">
-		<div id="letsexploretriangle"></div>
+	<div class="bouncing bottomPage">
+		<p class="centeredabsolute">Let's explore!</p>
+		<div class="centeredabsolute">
+			<div id="letsexploretriangle"></div>
+		</div>
 	</div>
 	
 	<script>
 		startShapeBackground(1, 1, ["#16336c", "#2A63D1"]);
+		startBounce();
 	</script>
 </body>
 </html>
