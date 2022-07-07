@@ -11,12 +11,6 @@ let color = ["#16336c", "#2A63D1"];
 let baseVelocity = 1;
 
 //add a resize event listener to the window
-window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    tempCanvas.width = window.innerWidth;
-    tempCanvas.height = window.innerHeight;
-}, false);
 
 const getObjectType = () => {
     let type = Math.floor(Math.random() * 3);
@@ -61,7 +55,6 @@ const getCollisionDirection = (object1, object2) => {
     let x = object2.x - object1.x;
     let y = object2.y - object1.y;
     let radians = Math.atan2(y, x);
-    //return the angle in degrees
     return radians;
 }
 
@@ -148,7 +141,12 @@ function startShapeBackground(objNum, bSize, colors, velocity) {
     tempCanvas.width = window.innerWidth;
     tempCanvas.height = window.innerHeight;
 
-    
+    window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        tempCanvas.width = window.innerWidth;
+        tempCanvas.height = window.innerHeight;
+    }, false);
 
     update();
 }
