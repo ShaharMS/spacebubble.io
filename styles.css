@@ -134,11 +134,19 @@ nav a {
 	font-weight: 300;
 }
 
-
 .haxeLogo{
 	width: 35vw;
 	margin-top: 0vh;
 	margin-left: 28vh;
+}
+
+.clickherebutton{
+	background-color: rgb(255, 255, 255);
+	font-family: Montserrat Alternates;
+	border: none;
+	text-align: center;
+	font-size: 50px;
+	border-radius: 12px;
 }
 
 /* ALLOW FOR DEBUGGING
