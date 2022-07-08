@@ -79,12 +79,16 @@ nav a {
 
 }
 
-.bottomPage {
+#letsExploreTriangle:hover {
+	cursor: pointer	;
+}
 
+.bottomPage {
 	position: absolute;
 	top: 82vh;
 	animation: MoveUpDown 2s ease-in-out infinite;
 }
+
 @keyframes MoveUpDown {
 	0% {
 		top: 82vh;
@@ -101,20 +105,41 @@ nav a {
 	display: flex;
 	position: absolute;
 	left: 0;
-	width: 99.4vw; 
+	width: 99.1vw; 
 	margin-left: auto; 
 	margin-right: auto; 
 	text-align: center;
 	justify-content: center;
-
 }
 
 #navbarMoreMenu {
 	text-decoration: underline;
 }
 
+.haxePage {
+	position: absolute;
+	left: 5vw;
+	top:150vh;
+	font-weight: 700;
+	display: flex;
+	flex-direction: row;
+	padding-bottom: 15vh;
+}
+
+.haxeDesc {
+	margin-top: -10vh;
+	width: 40vw;
+	font-weight: 300;
+}
+
+
+.haxeLogo{
+	width: 35vw;
+	margin-top: 0vh;
+	margin-left: 28vh;
+}
+
 /* ALLOW FOR DEBUGGING
 * {
 	outline: #414141 solid;
-}
-*/
+}*/
