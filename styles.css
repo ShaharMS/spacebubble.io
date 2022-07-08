@@ -2,6 +2,8 @@ body {
 	color: #FFF;
 	background-color: #480f62;
 	font-family: 'Montserrat Alternates', sans-serif;
+	padding: 0;
+	margin: 0;
 }
 
 h1 {
@@ -30,6 +32,9 @@ nav {
 	position: fixed;
 	top: 30px;
 	left: 67.5vw;
+	display: flex;
+	flex-direction: row;
+	column-gap: 0.2vw;
 }
 small {
 	font-weight: 300;
@@ -46,14 +51,6 @@ nav a {
 	justify-content: space-between;
 	top: 23vh;
 	padding-inline: 80px;
-}
-
-.youtubevideo {
-	border-radius: 25px;
-  	background: #ced1c9;
-  	padding: 20px; 
-  	width: 30vw;
-	aspect-ratio: 16/9;
 }
 
 #mainpage-triangle {		/*dot is for a class, #is for an id*/
@@ -101,7 +98,6 @@ nav a {
 }
 
 .centeredAbsolute {
-
 	display: flex;
 	position: absolute;
 	left: 0;
@@ -112,3 +108,13 @@ nav a {
 	justify-content: center;
 
 }
+
+#navbarMoreMenu {
+	text-decoration: underline;
+}
+
+/* ALLOW FOR DEBUGGING
+* {
+	outline: #414141 solid;
+}
+*/
