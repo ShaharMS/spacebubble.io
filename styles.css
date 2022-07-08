@@ -27,11 +27,13 @@ nav {
 }
 
 #mainpage-navbar {
+	font-family: Gantari;
+	font: 100;
 	word-wrap: normal;
 	color: #FFF;
 	position: fixed;
 	top: 30px;
-	left: 67.5vw;
+	left: 72vw;
 	display: flex;
 	flex-direction: row;
 	column-gap: 0.2vw;
