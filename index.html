@@ -17,58 +17,68 @@
 
 </head>
 <body>
-	<canvas id="canvas" style="position: fixed; top:0; left:0;"></canvas>
-	<div id="mainpage-triangle"></div>
-	<nav id="mainpage-navbar">
-		About us 
-		<small>|</small> 
-		<a href="./haxe">
-			Haxe
-		</a> 
-		<small>|</small> 
-		<a href="./apps">
-			Apps
-		</a>
-		<small>|</small> 
-			Libraries 
-		<small>|</small> 
-		<div id="navbarMoreMenu">More</div>
-	</nav>
-
-	<div class="mainview">
-		<div>
-			<h1>Hey there!</h1>
-			<p style="margin-top: -5vh;">
-				Hello, welcome to <b>Spacebubble.io!</b><br>this website is currently under development
-				
-			</p>
-		</div>
-		<iframe style="width: 40vw; height: 22.5vw;" width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	</div>
-	
-	<div class="bottomPage">
-		<p class="centeredAbsolute">Let's explore!</p>
-		<div class="centeredAbsolute">
-			<div id="letsExploreTriangle"></div>
-		</div>
-	</div>
-	
-	<div class="haxePage">
+	<div class="container">
+		<section>
+			<div class="mainview">
+				<div>
+					<h1>Hey there!</h1>
+					<p style="margin-top: -5vh;">
+						Hello, welcome to <b>Spacebubble.io!</b><br>this website is currently under development
+							
+					</p>
+				</div>
+				<iframe style="width: 40vw; height: 22.5vw;" width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+			<div id="mainpage-triangle"></div>
+			<div class="bottomPage">
+				<p>Let's explore!</p>
+				<div id="letsExploreTriangle"></div>
+			</div>
+			<canvas id="canvas" style="position: absolute; top:0; left:0; z-index: -1; width: 100%; height: 100%;"></canvas>
+		</section>
 		
-		<div class="haxeDesc">
-			<h1>Haxe</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			</p>
-			<button class="clickherebutton">Button</button>
-		</div>
-		<img class="haxeLogo" src="./images/HaxeLogo.svg" alt="Logo of the programming language haxe">
+		
+		
+		<section>
+			
+			<div class="haxeDesc">
+				<h1>Haxe</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+					nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+					reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+					pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
+					qui officia deserunt mollit anim id est laborum.
+				</p>
+				<button class="clickherebutton">Button</button>
+			</div>
+			<img class="haxeLogo" src="./images/HaxeLogo.svg" alt="Logo of the programming language haxe">
+		</section>
+		
+		<section>
+			
+			<nav id="mainpage-navbar">
+				About us 
+				<small>|</small> 
+				<a href="./haxe">
+					Haxe
+				</a> 
+				<small>|</small> 
+				<a href="./apps">
+					Apps
+				</a>
+				<small>|</small> 
+					Libraries 
+				<small>|</small> 
+				<div id="navbarMoreMenu">More</div>
+		</nav>
+		</section>
+		
+	
+		<script>
+			startShapeBackground();
+		</script>
 	</div>
-	
-
-	
-
-	<script>
-		startShapeBackground();
-	</script>
 </body>
 </html>
