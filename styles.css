@@ -80,8 +80,8 @@ nav a {
 }
 
 #mainpage-triangle {
-	position: absolute;
-	top: 60vh;
+	position: relative;
+	top: -55vh;
 	left: 10vw;
 
 	width: 0;
@@ -94,8 +94,8 @@ nav a {
 }
 
 #letsExploreTriangle {
-	position: absolute;
-	top: 4.5vw;
+	margin-top: -2vh;
+	margin-inline: auto;
 	width: 0;
 	height: 0;
 	border-left: 1vw solid transparent;
@@ -110,22 +110,23 @@ nav a {
 }
 
 .bottomPage {
+	position: relative;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
-	position: absolute;
-	top: 82vh;
+	align-items: center;
 	animation: MoveUpDown 2s ease-in-out infinite;
 }
 
 @keyframes MoveUpDown {
 	0% {
-		top: 80vh;
+		top: -20vh;
 	}
 	50% {
-		top: 83vh;
+		top: -15vh;
 	}
 	100% {
-		top: 80vh;
+		top: -20vh;
 	}
 }
 

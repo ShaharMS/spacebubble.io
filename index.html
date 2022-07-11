@@ -29,15 +29,13 @@
 				</div>
 				<iframe style="width: 40vw; height: 22.5vw;" width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
-			<div id="mainpage-triangle"></div>
-			<div class="bottomPage">
-				<p>Let's explore!</p>
-				<div id="letsExploreTriangle"></div>
-			</div>
 			<canvas id="canvas" style="position: absolute; top:0; left:0; z-index: -1; width: 100%; height: 100%;"></canvas>
 		</section>
-		
-		
+		<div class="bottomPage">
+			<p>Let's explore!</p>
+			<div id="letsExploreTriangle"></div>
+		</div>
+		<div id="mainpage-triangle"></div>
 		
 		<section>
 			
@@ -78,6 +76,14 @@
 	
 		<script>
 			startShapeBackground();
+
+			let letsExplore = document.getElementById("letsExploreTriangle");
+			console.log(letsExplore);
+			letsExplore.addEventListener("click", function(){
+				let pageHeight = window.innerHeight;
+				document.getElementsByClassName("container")[0].scrollBy({behavior: "smooth", top: pageHeight});
+				console.log("clicked");
+			});
 		</script>
 	</div>
 </body>
