@@ -21,6 +21,8 @@ const getObjectType = () => {
             return 'square';
         case 2:
             return 'triangle';
+        default:
+            return 'circle';
     }
 }
 
@@ -52,8 +54,8 @@ let objects = Array.from({ length: numberOfObjects }, () => ({
 }));
 
 const getCollisionDirection = (object1, object2) => {
-    let x = object2.x - object1.x;
-    let y = object2.y - object1.y;
+    let x = object1.x - object2.x;
+    let y = object1.y - object2.y;
     let radians = Math.atan2(y, x);
     return radians;
 }
@@ -72,16 +74,21 @@ const checkCollision = () => {
             if (index1 != index2) {
                 let distance = Math.sqrt(Math.pow(object1.x - object2.x, 2) + Math.pow(object1.y - object2.y, 2));
                 if (distance < object1.radius + object2.radius) {
-                    let object1AngularVelocity = getCollisionDirection(object1, object2);
-                    let object2AngularVelocity = getCollisionDirection(object2, object1);
+                    let vPosForObject1 = getVPosFromAngle(getCollisionDirection(object1, object2));
+                    let vPosForObject2 = getVPosFromAngle(getCollisionDirection(object2, object1));
                     //calculate vx and vy based on the angles the objects should be travelling at
-                    object1.vx = getVPosFromAngle(object2AngularVelocity).vx;
-                    object1.vy = getVPosFromAngle(object2AngularVelocity).vy;
-                    object2.vx = getVPosFromAngle(object1AngularVelocity).vx;
-                    object2.vy = getVPosFromAngle(object1AngularVelocity).vy;
+                    object1.vx = vPosForObject1.vx;
+                    object1.vy = vPosForObject1.vy;
+                    object2.vx = vPosForObject2.vx;
+                    object2.vy = vPosForObject2.vy;
                 }
             }
         });
+
+        if (object1.x - object1.radius < 0) object1.vx = Math.abs(object1.vx);
+        if (object1.x + object1.radius > window.innerWidth) object1.vx = -Math.abs(object1.vx);
+        if (object1.y - object1.radius < 0) object1.vy = Math.abs(object1.vy);
+        if (object1.y + object1.radius > window.innerHeight) object1.vy = -Math.abs(object1.vy);
     });
 }
 
