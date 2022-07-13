@@ -13,10 +13,40 @@ h2 small {
     padding: 0.2em;
     border-radius: 0.5em;
     border: 2px solid rgb(17, 17, 17);
-    background-color: #272727;
     font-family: monospace;
     background-color: #1f1e1e;
     
+}
+
+.downloadButton .downloadIcon {
+    filter: invert(97%) sepia(0%) saturate(141%) hue-rotate(191deg) brightness(88%) contrast(93%);
+    height: 16px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.downloadButton:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.downloadButton:hover .downloadIcon {
+    filter: invert(100%) sepia(0%) saturate(100%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.codeblock {
+    padding: 0.2em;
+    border-radius: 0.5em;
+    border: 1px solid rgb(17, 17, 17);
+    font-family: monospace;
+    background-color: #1f1e1e;
 }
 
 table {
@@ -45,8 +75,6 @@ tr:first-child>td.outline {
 tr:last-child>td.outline {
     border-bottom: 2px dotted #06c;
 }
-
-/*how could it look like with the header*/
 
 th.outline {
     background-color: #99ccee;
