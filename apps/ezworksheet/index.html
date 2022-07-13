@@ -6,74 +6,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apps | EZWorksheet</title>
     <script src="../../sources/htmlIncluder.js"></script>
-    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body style="margin-inline: 20px;">
-    <h1>Welcome!</h1>
+    <div class="container">
+        <div class="containerCell">
+            <h1>Welcome!</h1>
 
-    <p>
-        This page is an early indicator the EZWorksheet app is getting worked on :).
-        <br><br>
-        Right now, the current version is:
-    </p>
-
-    <code><h2 id="version"></h2></code>
-
-    <p>
-        <br>What is this version thing?
-    </p>
-    <table >
-        <tr>
-            <td>
-                <code><b>Y</b>.x.x-x</code>
-            </td>
-            <td>
-                Indicates a major versions - that means a large enough change was made to the app's code that it's no longer compatible with previous versions.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>x.<b>Y</b>.x-x</code>
-            </td>
-            <td>
-                Indicates a minor version - that means a large, or medium change was made for the app, usually adding new features. Previous versions are still compatible.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>x.x.<b>Y</b>-x</code>
-            </td>
-            <td>
-                Indicates a patch version - that means a small change was made to the app, usually being a bug fix, or a new feature. Previous versions are still compatible.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>x.x.x-<b>Y</b></code>
-            </td>
-            <td>
-                Indicates a build version: <br>
-                <b>alpha</b> means the application is in a usable, but in an early stage of development. <br>
-                <b>beta</b> means the application is closer to release, but still has some quirks. <br>
-                <b>rc</b> means the application is very close to official release, and is pretty much fully usable, maybe missing some features. <br>
-                <b>No prefix</b> means the application is officialy released.
-            </td>
-        </tr>
-    </table>
-
-    <hr>
-    <h2>What is EZWorksheet?</h2>
-
-    <p>EZWorksheet is an app that lets you take worksheets in multiple
-        formats (image, pdf, docx) and complete them, just like you would on paper - 
-        with text boxes placed where you need to type. <br>
-        The app also lets you group those pages into workbooks of specific subjects,
-        allowing the app to be an all-in-one solution for mess involving school worksheets :).
-    </p>
-    
-    
-    
-    
+            <p>
+                This page is an early indicator the EZWorksheet app is getting worked on :).
+                <br><br>
+                Right now, the current version is:
+            </p>
+        
+            <code><h2 id="version"></h2></code>
+        
+            <p>
+                <br>What is this version thing?
+            </p>
+            <table>
+                <tr>
+                    <td>
+                        <code><b>Y</b>-x.x.x</code>
+                    </td>
+                    <td>
+                        Indicates a build version: <br>
+                        <b>alpha</b> means the application is in a usable, but in an early stage of development. <br>
+                        <b>beta</b> means the application is closer to release, but still has some quirks. <br>
+                        <b>rc</b> means the application is very close to official release, and is pretty much fully usable, maybe missing some features. <br>
+                        <b>No prefix</b> means the application is officialy released.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <code>x-<b>Y</b>.x.x</code>
+                    </td>
+                    <td>
+                        Indicates a major versions - that means a large enough change was made to the app's code that it's no longer compatible with previous versions.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <code>x-x.<b>Y</b>.x</code>
+                    </td>
+                    <td>
+                        Indicates a minor version - that means a large, or medium change was made for the app, usually adding new features. Previous versions are still compatible.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <code>x-x.x.<b>Y</b></code>
+                    </td>
+                    <td>
+                        Indicates a patch version - that means a small change was made to the app, usually being a bug fix, or a new feature. Previous versions are still compatible.
+                    </td>
+                </tr>
+            </table>
+        
+            <hr>
+            <h2>What is EZWorksheet?</h2>
+        
+            <p>EZWorksheet is an app that lets you take worksheets in multiple
+                formats (image, pdf, docx) and complete them, just like you would on paper - 
+                with text boxes placed where you need to type. <br>
+                The app also lets you group those pages into workbooks of specific subjects,
+                allowing the app to be an all-in-one solution for mess involving school worksheets :).
+            </p>
+        </div>
+        <div id="changelog" class="containerCell">
+            <h1>Changelog</h1>
+            <br>
+            <div>
+                <h2>alpha-0.0.1 <small>July 13th, 2022</small> <small>alpha</small></h2>
+                <ul>
+                    <li>Fixed first line getting clipped when pressing enter</li>
+                    <li>Fixed unusually tall text fields from being genereated</li>
+                </ul>
+            </div>
+            <div>
+                <h2>alpha-0.0.0 <small>July 9th, 2022</small> <small>alpha</small></h2>
+                <ul>
+                    <li>Initial release</li>
+                    <li>added basic UI for drawing and choosing colors</li>
+                    <li>added a baisc line detection algorithm for detecting lines inside pages</li>
+                    <li>app infrastructure</li>
+                </ul>
+            </div>
+        </div>
+    </div>
     
     <script>
         document.getElementById('version').innerHTML = getHTMLFrom("./api/version.html");

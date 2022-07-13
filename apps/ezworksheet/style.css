@@ -1,0 +1,113 @@
+body {
+    background-color: #272727;
+    color: rgb(212, 212, 212);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
+h2 small {
+    font-size: 12px;
+    color: #999;
+    font-weight: bold;
+    /*make this look like a codeblock with background and round outline*/
+    padding: 0.2em;
+    border-radius: 0.5em;
+    border: 2px solid rgb(17, 17, 17);
+    background-color: #272727;
+    font-family: monospace;
+    background-color: #1f1e1e;
+    
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #efefef;
+}
+
+th,
+td {
+    padding: 4px;
+    border: 1px solid #ccc;
+}
+
+td.outline {
+    border-left: 2px dotted #06c;
+    border-right: 2px dotted #06c;
+}
+
+tr:first-child>td.outline {
+    border-top: 2px dotted #06c;
+}
+
+tr:last-child>td.outline {
+    border-bottom: 2px dotted #06c;
+}
+
+/*how could it look like with the header*/
+
+th.outline {
+    background-color: #99ccee;
+    border: 2px dotted #06c
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    column-gap: 50px;
+}
+
+.containerCell {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    column-gap: 50px;
+}
+
+#changelog {
+    border-left: #efefef solid 1px;
+    padding-left: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    table {
+        width: 100%;
+    }
+    th,
+    td {
+        padding: 4px;
+        border: 1px solid #ccc;
+    }
+    td.outline {
+        border-left: 2px dotted #06c;
+        border-right: 2px dotted #06c;
+    }
+    tr:first-child>td.outline {
+        border-top: 2px dotted #06c;
+    }
+    tr:last-child>td.outline {
+        border-bottom: 2px dotted #06c;
+    }
+    th.outline {
+        background-color: #99ccee;
+        border: 2px dotted #06c
+    }
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #changelog {
+        padding-left: 0px;
+        border-left: none;
+        border-top: #efefef solid 1px;
+    }
+
+    .containerCell {
+        width: 100%;
+    }
+}
