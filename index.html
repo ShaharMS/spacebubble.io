@@ -110,7 +110,13 @@
 			});
 
 			//get all elements with class disabled, cancel their default behaviour, make them unclickable
-			
+			let disabledLinks = document.getElementsByClassName("disabled");
+			for (let i = 0; i < disabledLinks.length; i++) {
+				let link = disabledLinks[i];
+				link.addEventListener("click", function (e) {
+					e.preventDefault();
+				});
+			}
 		</script>
 	</div>
 </body>

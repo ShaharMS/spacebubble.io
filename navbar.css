@@ -14,6 +14,10 @@ nav a.disabled {
     opacity: 0.5;
 }
 
+nav a.disabled:hover {
+    cursor: default;
+}
+
 nav .dropdown {
     color: #FFF;
     cursor: pointer;
