@@ -31,12 +31,6 @@ p {
 	font-size: 1.8vw;
 }
 
-
-nav {
-	font-size: 1.5vw;
-	font-weight: 600;
-}
-
 .container {
 	overflow: auto;
 	width: 100%;
@@ -49,24 +43,8 @@ nav {
 	scroll-snap-align: center;
 }
 
-#mainpage-navbar {
-	font-family: 'Gantari', sans-serif;
-	font: 100;
-	word-wrap: normal;
-	color: #FFF;
-	position: fixed;
-	top: 30px;
-	left: 72vw;
-	display: flex;
-	flex-direction: row;
-	column-gap: 0.3vw;
-}
 small {
 	font-weight: 300;
-}
-
-nav a {
-	color: #FFF;
 }
 
 .mainview {
@@ -103,10 +81,6 @@ nav a {
 	border-bottom: calc(0.866*2vw) solid rgb(255, 255, 255);
 	transform: rotate(180deg); 
 
-}
-
-#letsExploreTriangle:hover {
-	cursor: pointer	;
 }
 
 .bottomPage {

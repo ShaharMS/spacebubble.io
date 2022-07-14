@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,300;0,600;0,700;0,900;1,300;1,600;1,700;1,900&display=swap" rel="stylesheet"> 
+	<link
+		href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,300;0,600;0,700;0,900;1,300;1,600;1,700;1,900&display=swap"
+		rel="stylesheet">
 	<title>Home | Spacebubble.io</title>
 	<link rel="stylesheet" href="./styles.css">
+	<link rel="stylesheet" href="./navbar.css">
 	<script src="./sources/shapeBackground.js"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Gantari:wght@100;500;700&family=Jost:wght@100;300;500&family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Gantari:wght@100;500;700&family=Jost:wght@100;300;500&family=Open+Sans:wght@700&display=swap"
+		rel="stylesheet">
 
 
 </head>
+
 <body>
 	<div class="container">
 		<section>
@@ -24,67 +31,88 @@
 					<h1>Hey there!</h1>
 					<p style="margin-top: -5vh;">
 						Hello, welcome to <b>Spacebubble.io!</b><br>this website is currently under development
-							
+
 					</p>
 				</div>
-				<iframe style="width: 40vw; height: 22.5vw;" width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<iframe style="width: 40vw; height: 22.5vw;" width="560" height="315"
+					src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen></iframe>
 			</div>
-			<canvas id="canvas" style="position: absolute; top:0; left:0; z-index: -1; width: 100%; height: 100%;"></canvas>
+			<canvas id="canvas"
+				style="position: absolute; top:0; left:0; z-index: -1; width: 100%; height: 100%;"></canvas>
 		</section>
 		<div class="bottomPage">
-			<p>Let's explore!</p>
-			<div id="letsExploreTriangle"></div>
+			<div id="letsExplore">
+				<p>Let's explore!</p>
+				<div id="letsExploreTriangle"></div>
+			</div>
+
 		</div>
 		<div id="mainpage-triangle"></div>
-		
+
 		<section>
-			
+
 			<div class="haxeDesc">
 				<h1>Haxe</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-					nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-					reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-					pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+					nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+					reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+					pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
 					qui officia deserunt mollit anim id est laborum.
 				</p>
 				<button class="clickherebutton">Button</button>
 			</div>
 			<img class="haxeLogo" src="./images/HaxeLogo.svg" alt="Logo of the programming language haxe">
 		</section>
-		
-		<section>
-			
+
+		<div id="navbarContainer">
 			<nav id="mainpage-navbar">
-				About us 
-				<small>|</small> 
-				<a href="./haxe">
+				<a href="./about.html" class="disabled">
+					About
+				</a>
+				<a href="./haxe/">
 					Haxe
-				</a> 
-				<small>|</small> 
-				<a href="./apps">
+				</a>
+				<a href="./apps/" class="disabled">
 					Apps
 				</a>
-				<small>|</small> 
-					Libraries 
-				<small>|</small> 
-				<div id="navbarMoreMenu">More</div>
-		</nav>
-		</section>
-		
-	
+				<a href="./libs/" class="disabled">
+					Libraries
+				</a>
+				<div class="dropdown">
+					<a class="dropdownButton">More</a>
+					<div class="dropdown-content">
+						<a href="./apps/ezworksheet/">EZWorksheet</a>
+						<a href="./little/">Little</a>
+						<a href="./texter/">Texter</a>
+					</div>
+				</div>
+			</nav>
+		</div>
+
+
+
 		<script>
 			startShapeBackground();
 
-			let letsExplore = document.getElementById("letsExploreTriangle");
-			console.log(letsExplore);
-			letsExplore.addEventListener("click", function(){
+			let letsExplore = document.getElementById("letsExplore");
+			//set the cursor to pointer when hovering over the "Let's explore" button
+			letsExplore.addEventListener("mouseover", function () {
+				letsExplore.style.cursor = "pointer";
+			});
+			letsExplore.addEventListener("click", function () {
 				let pageHeight = window.innerHeight;
-				document.getElementsByClassName("container")[0].scrollBy({behavior: "smooth", top: pageHeight});
+				document.getElementsByClassName("container")[0].scrollBy({ behavior: "smooth", top: pageHeight });
 				console.log("clicked");
 			});
+
+			//get all elements with class disabled, cancel their default behaviour, make them unclickable
+			
 		</script>
 	</div>
 </body>
+
 </html>
