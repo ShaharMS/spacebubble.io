@@ -91,6 +91,7 @@ th.outline {
 }
 
 .containerCell {
+    margin-left: 10px;
     width: 50%;
     height: 100vh;
     overflow: auto;
