@@ -91,7 +91,7 @@ th.outline {
 }
 
 .containerCell {
-    margin-left: 10px;
+    padding-left: 20px;
     width: 50%;
     height: 100vh;
     overflow: auto;
@@ -102,7 +102,6 @@ th.outline {
 
 #changelog {
     border-left: #efefef solid 1px;
-    padding-left: 20px;
 }
 
 @media screen and (max-width: 600px) {
@@ -142,5 +141,7 @@ th.outline {
 
     .containerCell {
         width: 100%;
+        padding-inline: 20px;
+        height: unset;
     }
 }
