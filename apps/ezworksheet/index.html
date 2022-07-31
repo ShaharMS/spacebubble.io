@@ -132,6 +132,23 @@
                         <li>Added Text to the history tab</li>
                     </ul>
                 </div>
+                <div>
+                    <h2>alpha-1.1.1 <small>Unreleased</small> <small>alpha</small></h2>
+                    <ul>
+                        <li>Sidebar:
+                            <ul>
+                                <li>remove show/hide arrow</li>
+                                <li>position is now fixed</li>
+                                <li>Toolbox is now layed down horizontally, with a 6*2 grid</li>
+                                <li>Fixed weird gap between the menu and the sidebar</li>
+                                <li>Fixed blue borders showing up</li>
+                                <li>all "boxes" are now lined up, should have the same width and border</li>
+                            </ul>
+                        </li>
+                        <li>changed traces to warnings when using unimplemented features</li>
+                        <li>fixed slowdowns when opening a new page</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -151,7 +168,6 @@
             if (window.navigator.userAgent.indexOf("X11") != -1) OSName = "UNIX";
             if (window.navigator.userAgent.indexOf("Linux") != -1) OSName = "Linux";
             console.log(OSName);
-            var invisibleIFrame = document.createElement('iframe');
             console.log(OSName == "Windows 10");
             switch (OSName) {
                 case "Windows 10":
