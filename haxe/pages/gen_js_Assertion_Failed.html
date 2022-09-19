@@ -1,33 +1,37 @@
 <h1>"src/generators/genjs.ml": Assertion Failed <small>by Shahar Marcus</small></h1>
-<p style="padding-bottom: 20px;">
+<p>
     When testing/compiling your project to Javascript, you sometimes get this annoying, seemingly unresolvable and undocumented error:
 </p>
+<pre>
+    File "src/generators/genjs.ml", line 412, characters 13-19: Assertion failed
+</pre>
+<p style="padding-bottom: 20px;">
+    I know this error might be scary, but no worries! let me explain it:
+</p>
+
 <blockquote>
     <h2>So, What Exactly Is This?</h2>
 </blockquote>
 <p style="padding-bottom: 20px;">
-    On this one, were unlucky; this error is a compiler error :(<br>
-    But, Don't you worry, we're gonna solve that together!<br>
-    <br>
-    You might have noticed that this error also triggers on non-sys platforms,
-    such as JS and Flash. Thats because this error doesn't depend on the code you write:<br>
-    <b>Its just a file permission error...</b>
+    This error looks differently because its a compiler error, stemming from OCaml. <br>
+    It is raised whenever you access anything before calling <code>super()</code>, or
+    try to set anything from the superclass (for example, <code>super.x = 40</code> will throw this error)
+
 </p>
 <blockquote>
     <h2>And How Do We Solve It?</h2>
 </blockquote>
 <p style="padding-bottom: 20px;">
-    Because this error gets triggered because of file permission problems, we might want to check the 
-    build folder's permissions. - it might block certain apps or forms of access to that folder, thus
-    triggering a plethora of error types, including the one you probably came here to solve - 
-    <code>Sys_error("bad file descriptor")</code>
+    This error might be tricky to understand, but the solution is very quick and easy:
 </p>
 <blockquote>
     <h2>Quick Fixes:</h2>
 </blockquote>
 <p>
     <ul>
-        <li>Move the project to another directory</li>
-        <li>Move Git's default repository folder, if using git and the project is in the Git repositories folder</li>
+        <li>always call <code>super()</code> before anything in the <code>new()</code> function</li>
+        <li>instead of accessing properties through the superclass (<code>super.x</code>, <code>super.y</code>), access them through <code>this</code> (<code>this.x</code>, <code>this.y</code>)</li>
+        <li>replace all occurrences of <code><b style="font-weight: 900">super</b>.someProperty = someValue</code> with <code><b style="font-weight: 900">this</b>.someProperty = someValue</code></li>
+        <li>Avoid using the <code>super</code> keyword in "sticky" situations if it can be replaced with <code>this</code> (recommended when using reflection)</li>
     </ul>
 </p>
