@@ -33,7 +33,7 @@ function getHTMLFrom(path) {
     request.send();
     console.log(request.status);
     if (request.status == 404) {
-        return `<pre>Cannot GET /haxe/pages/Vision-Line-Detection.html</pre>`;
+        return `<pre>Cannot GET ` + path;
     }
     return request.responseText;
 }
