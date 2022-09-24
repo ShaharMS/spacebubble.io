@@ -1,5 +1,5 @@
 /**
- * This function is used to include other html files in a certine html element using the `include-html` attribute.
+ * This function is used to include other html files in a certain html element using the `include-html` attribute.
  */
 function includeHTML() {
     var taggedElements, currentElement, path, request;
@@ -31,5 +31,8 @@ function getHTMLFrom(path) {
     var request = new XMLHttpRequest();
     request.open("GET", path, false);
     request.send();
+    if (request.status == 404) {
+        return `<pre>Cannot GET /haxe/pages/Vision-Line-Detection.html</pre>`;
+    }
     return request.responseText;
 }
