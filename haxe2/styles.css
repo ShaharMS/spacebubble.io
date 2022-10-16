@@ -1,0 +1,45 @@
+body {
+	color: rgb(255, 255, 255);
+	background-color: #202020;
+	font-family: 'Jost', sans-serif;
+	padding: 0px;
+	margin: 0px;
+	height: 100%;
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 100px;
+}
+
+h2 {    
+    font-weight: 600;
+}
+
+h3 {
+    font-weight: 300;    
+}
+
+.tabmenu {
+    background-color: #131313;
+    width: 25vw;
+    height: 100vh;
+}
+
+.HaxeTitle {
+    color: #00F0F0;
+    font-family: Montserrat Alternates;
+    font-size: 50px;
+    margin-top: 0px;
+}
+
+.menu {
+    font-size: 30px;
+    color: white;
+}
+
+.container {
+    display: flex;
+    color: #00F0F0;
+    flex-direction: row;
+}
