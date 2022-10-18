@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>טיימרבוס ישראל</title>
+    <link rel="stylesheet" href="/frontend/index.css">
+    <link rel="icon" href="/frontend/media/icon.svg">
+</head>
+
+<body>
+    <div class="container">
+        <h1>בוקר טוב אהד</h1>
+        <h2>האוטובוס יגיע לתחנה בעוד<br>
+            <span id="time-bus">{{ min_list }}</span>
+        </h2>
+        <a onclick="updateCountdown()" href="/timer" id="timer-button">הפעל טיימר</a>
+
+    </div>
+
+    <div id="clock">
+        <span id="hrs">00</span>
+        <span>:</span>
+        <span id="min">00</span>
+    </div>
+    <script src="/frontend/index.js" defer></script>
+</body>
+
+</html>
