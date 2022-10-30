@@ -1,0 +1,5 @@
+--class-path src
+--main Main
+--library vision
+--library format
+--js ./main.js
