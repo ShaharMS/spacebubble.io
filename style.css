@@ -23,6 +23,7 @@ a {
 }
 
 .navbar-list {
+    position: relative;
     display: inline;
     position: absolute;
     left: 50%;
@@ -30,16 +31,6 @@ a {
     transform: translate(-50%, 0);
     letter-spacing: 3px;
     font-size: 1.25em;
-}
-
-.navbar-list li {
-    float: left;
-    display: block;
-    font-weight: 200;
-}
-
-.navbar-list li:hover {
-    cursor: pointer;
 }
 
 section {
