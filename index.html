@@ -41,6 +41,7 @@
             </div>
         </div>
     </section>
+
     <section class="second-section">
         <h1>Wanna See some cool stuff?</h1>
         <div id="bouncy-arrow">
@@ -48,9 +49,13 @@
             <div class="triangle"></div>
         </div>
     </section>
-
+    
+    <section class="third-section">
+        <h1>Little</h1>
+    </section>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
     <script>
         window.addEventListener("scroll", e => {
             let scrollValue = 0;
@@ -65,7 +70,7 @@
         let bouncyArrow = document.getElementById("bouncy-arrow");
         bouncyArrow.addEventListener("click", e => {
             let pageHeight = window.innerHeight * 1.5;
-			window.scrollBy({ behavior: "smooth", top: pageHeight });
+			window.scrollTo({ behavior: "smooth", top: pageHeight });
         })
     </script>
 </body>
