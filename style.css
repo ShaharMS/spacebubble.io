@@ -92,3 +92,30 @@ section {
     flex-direction: row;
     justify-content: space-evenly;
 }
+
+.twitter-logo {
+    color: hsl(203, 89%, 53%);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.github-logo {
+    color: hsl(0, 0%, 66%);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.discord-logo {
+    color: hsl(236, 89%, 65%);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.Discord-icon, .GitHub-icon, .Twitter-icon {
+    margin-right: 5px;
+}
+
+
