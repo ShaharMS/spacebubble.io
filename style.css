@@ -53,7 +53,7 @@ a {
     top: 420px;
     object-fit: cover;
     object-position: top;
-    height: 470vh;
+    height: 560vh;
     z-index: -1;
 }
 
@@ -173,13 +173,14 @@ Second Section
 
 #bouncy-arrow {
     position: relative;
+    margin-top: 100px;
     animation: bounce 2s linear infinite;
     animation-timing-function: ease-in-out;
 }
 
 /*
 ----------------------------------------------
-Third Section
+Third Section, Little -  The Programming Language
 ----------------------------------------------
 */
 
@@ -187,9 +188,84 @@ Third Section
     position: absolute;
     top: 150vh;
     padding-inline: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10vw;
 }
 
 .third-section h1 {
+    font-size: 6.3em;
+}
+
+.code-io {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(30, 30, 30);
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 250px;
+    height: fit-content;
+
+}
+
+#code {
+    height: 400px;
+    width: 600px;
+    border: 0;
+    outline: black solid 1;
+    border-radius: 4px;
+    background-color: rgb(16, 16, 16);
+    color: white;
+    resize: none;
+    font-family:'Courier New', Courier, monospace;
+    white-space: pre-wrap;
+}
+
+#result {
+    height: 400px;
+    width: 600px;
+    border: 0;
+    outline: black solid 1;
+    border-radius: 4px;
+    background-color: rgb(16, 16, 16);
+    color: white;
+    resize: none;
+    font-family:'Courier New', Courier, monospace;
+}
+
+#run {
+    position: absolute;
+    width: 100px;
+    color: darkgoldenrod;
+    font-weight: 900;
+    font-family: 'poppins';
+    background-color: rgb(45, 45, 45);
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+    right: calc(5% + 20px + 5px);
+    top: 655px;
+}
+
+#run:hover {
+    background-color: rgb(60, 60, 60);
+    cursor: pointer;
+}
+#run:active {
+    background-color: rgb(30, 30, 30);
+}
+
+.third-section .data {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.third-section .data h1 {
     font-size: 3em;
 }
 
@@ -204,7 +280,30 @@ Third Section
   }
 
 @media screen and (max-width: 1200px) {
-    .first-section-title {
+    .first-section-title, .third-section h1 {
         font-size: 4em;
     }
+
+    .third-section {
+        top: 160vh;
+        gap: 5vw;
+    }
+
+    #code, #result {
+        width: 350px;
+        height: 300px;
+    }
+    #run {
+        top: 465px;
+    }
+
+    .code-io {
+        margin-top: 160px;
+    }
+
+    .third-section .data div {
+        max-height: 500px;
+        overflow-y: auto;
+    }
+
 }

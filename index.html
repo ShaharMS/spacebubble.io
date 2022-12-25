@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SpaceBubble homepage</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./little/littleStyle.css">
+    <script src="./little/interp.js"></script>
+    <script src="./sources/littleHighlighter.js"></script>
 </head>
 
 <body>
@@ -33,30 +36,68 @@
                 <div class="circle"></div>
                 <h3>Shahar Marcus</h3>
                 <div class="handles">
-                    <a class="twitter-logo" href="https://twitter.com/MarcusShahar"><ion-icon name="logo-twitter" class="Twitter-icon"></ion-icon>Twitter</a>
-                    <a class="github-logo" href="https://github.com/ShaharMS"><ion-icon name="logo-github" class="GitHub-icon"></ion-icon>GitHub</a>
-                    <a class="discord-logo" href="https://discordapp.com/users/688713768938897420"><ion-icon name="logo-discord" class="Discord-icon"></ion-icon> Discord</a>
+                    <a class="twitter-logo" href="https://twitter.com/MarcusShahar"><ion-icon name="logo-twitter"
+                            class="Twitter-icon"></ion-icon>Twitter</a>
+                    <a class="github-logo" href="https://github.com/ShaharMS"><ion-icon name="logo-github"
+                            class="GitHub-icon"></ion-icon>GitHub</a>
+                    <a class="discord-logo" href="https://discordapp.com/users/688713768938897420"><ion-icon
+                            name="logo-discord" class="Discord-icon"></ion-icon> Discord</a>
                 </div>
-                
+
             </div>
         </div>
     </section>
 
     <section class="second-section">
-        <h1>Wanna See some cool stuff?</h1>
         <div id="bouncy-arrow">
             <h2 id="text">Keep Scrolling!</h2>
             <div class="triangle"></div>
         </div>
     </section>
-    
+
     <section class="third-section">
-        <h1>Little</h1>
+        <div class="content">
+            <h1>Little</h1>
+            <p>
+                Little is a programming language i wrote,
+                and it's goal is to teach children how to program,
+                in an easy and accessible way. You can write it's source code in whatever language you'd like to write
+                in - english, spanish, hebrew, arabic, and you'd still be able to run it :)
+                <br>
+                <br>
+                The language is currently in development, and only supports basic mathematical expressions and
+                definitions.
+                Check out the syntax and available features below &darr;
+            </p>
+            <div class="data">
+                <div>
+                    <h1>Syntax</h1>
+                    <p>
+                        Notice, this is a very early prototype of the language. don't expect things to work correctly
+                        out of the box
+                    </p>
+                    <br>
+                    <table>
+                        <tr><td>Types:</td><td><ul><li><b><code>Number, Decimal, Boolean, Characters, Everything</code></b></li></ul></td></tr>
+                        <tr><td>Keywords:</td><td><ul><li><code>Variable Declaration - define x:Type = value</code></li><li><code>Function Declaration - action x(param:Type, anonParam) = </code></li><li><code>Write to the console (Standard Output) - print(value)</code></li></ul></td></tr>
+                        <tr><td>Syntax:</td><td><ul><li><code>No semicolons, each line separated by a line feed (enter) char</code></li><li><code>No curly brackets, each class/action separated by indent level</code></li><li><code>Types are optional, but the language is type safe</code></li><li><code>Theres no null, but you have the nothing value which will throw an error when accessed</code></li></ul></td></tr>
+                    </table>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="code-io">
+            <p id="code"contenteditable="true">//Code Here</p>
+            <button id="run">Run</button>
+            <p id="result">Console Output Here.</p>
+        </div>
     </section>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
     <script>
+        var logBackup = console.log;
+
         window.addEventListener("scroll", e => {
             let scrollValue = 0;
             let bouncyArrow = document.getElementById("bouncy-arrow");
@@ -65,13 +106,41 @@
             bouncyArrow.style.marginTop = "calc(-2% + " + scrollValue / 2 + "px" + ")";
             if (scrollValue == 900) document.getElementById("text").innerText = "Thanks :D"
             else document.getElementById("text").innerText = "Keep Scrolling!"
-            console.log(scrollValue);
         });
         let bouncyArrow = document.getElementById("bouncy-arrow");
         bouncyArrow.addEventListener("click", e => {
-            let pageHeight = window.innerHeight * 1.5;
-			window.scrollTo({ behavior: "smooth", top: pageHeight });
-        })
+            let pageHeight = window.innerHeight * 1.3;
+            window.scrollTo({ behavior: "smooth", top: pageHeight });
+        });
+
+        var interpNum = 0;
+        var logMessages = [];
+
+        console.log = function () {
+            logMessages.push.apply(logMessages, arguments);
+            logBackup.apply(console, arguments);
+        };
+        var run = document.getElementById('run');
+        run.addEventListener("click", interp);
+        var code = document.getElementById('code');
+        code.addEventListener("input", interp);
+        code.addEventListener('keydown', event => {
+            if (event.key === 'Enter') {
+                document.execCommand('insertText', false, '\n');
+                event.preventDefault();
+            }
+        });
+
+        function interp() {
+            interpNum++;
+            var code = document.getElementById('code').innerText;
+            logBackup(code);
+            LittleInterpreter.run(code);
+            var resEl = document.getElementById('result');
+            resEl.innerText = `Interpreter started, Launch Number ${interpNum}\n——————————\n` + logMessages.join("\n");
+            logMessages = [];
+            Highlighter.main();
+        }
     </script>
 </body>
 
