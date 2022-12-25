@@ -105,6 +105,38 @@ First Section
     justify-content: space-evenly;
 }
 
+.twitter-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: hsl(197, 100%, 45%);
+    font-weight: 700;
+}
+
+.discord-logo {
+    display: flex;
+    flex-direction: row;
+    color: hsl(236, 89%, 65%);
+    font-weight: 700;
+    align-items: center;
+
+}
+
+.github-logo {
+    display: flex;
+    flex-direction: row;
+    color: rgb(103, 103, 103);
+    font-weight: 700;
+    align-items: center;
+
+}
+
+.Twitter-icon, .GitHub-icon, .Discord-icon {
+    margin-right: 5px;
+}
+
+
+
 /*
 ----------------------------------------------
 Second Section
