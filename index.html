@@ -34,45 +34,17 @@
                 <h3>Shahar Marcus</h3>
                 <div class="handles">
                     <a class="twitter-logo" href="https://twitter.com/MarcusShahar"><ion-icon name="logo-twitter" class="Twitter-icon"></ion-icon>Twitter</a>
-                    <a class="github-logo" href="https://github.com/ShaharMS"><ion-icon name="logo-github" class="GitHub-icon"></ion-icon>GitHub</a>
                     <a class="discord-logo" href="https://discordapp.com/users/688713768938897420"><ion-icon name="logo-discord" class="Discord-icon"></ion-icon> Discord</a>
+                    <a class="github-logo" href="https://github.com/ShaharMS"><ion-icon name="logo-github" class="GitHub-icon"></ion-icon>GitHub</a>
                 </div>
                 
             </div>
         </div>
     </section>
-
-    <section class="second-section">
-        <h1>Wanna See some cool stuff?</h1>
-        <div id="bouncy-arrow">
-            <h2 id="text">Keep Scrolling!</h2>
-            <div class="triangle"></div>
-        </div>
-    </section>
     
-    <section class="third-section">
-        <h1>Little</h1>
-    </section>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-    <script>
-        window.addEventListener("scroll", e => {
-            let scrollValue = 0;
-            let bouncyArrow = document.getElementById("bouncy-arrow");
-            if (window.scrollY > 50) scrollValue = window.scrollY - 50;
-            if (scrollValue > 900) scrollValue = 900;
-            bouncyArrow.style.marginTop = "calc(-2% + " + scrollValue / 2 + "px" + ")";
-            if (scrollValue == 900) document.getElementById("text").innerText = "Thanks :D"
-            else document.getElementById("text").innerText = "Keep Scrolling!"
-            console.log(scrollValue);
-        });
-        let bouncyArrow = document.getElementById("bouncy-arrow");
-        bouncyArrow.addEventListener("click", e => {
-            let pageHeight = window.innerHeight * 1.5;
-			window.scrollTo({ behavior: "smooth", top: pageHeight });
-        })
-    </script>
 </body>
 
 </html>

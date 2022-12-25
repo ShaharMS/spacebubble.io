@@ -76,6 +76,7 @@ First Section
     font-size: 6.3em;
     font-weight: 300;
     margin-top: 0px;
+    margin-bottom: 5vh;
 }
 
 .first-section-text {
@@ -143,39 +144,6 @@ Second Section
 ----------------------------------------------
 */
 
-.second-section {
-    position: absolute;
-    top: 78vh;
-    text-align: center;
-    width: 600px;
-    left: 50%;
-    transform: translate(-50%);
-}
-
-.second-section h1 {
-    font-size: 2.2em;
-}
-
-.second-section h2 {
-    margin-top: -3%;
-    font-size: 2em;
-}
-
-.second-section .triangle {
-    margin-top: -4%;
-    border-left: 30px solid transparent;
-    border-right: 30px solid transparent;
-    border-top: 60px solid rgb(255, 255, 255); 
-    position: relative;
-    left: 50%;
-    transform: translate(-50%);
-}
-
-#bouncy-arrow {
-    position: relative;
-    animation: bounce 2s linear infinite;
-    animation-timing-function: ease-in-out;
-}
 
 /*
 ----------------------------------------------
@@ -183,28 +151,3 @@ Third Section
 ----------------------------------------------
 */
 
-.third-section {
-    position: absolute;
-    top: 150vh;
-    padding-inline: 5%;
-}
-
-.third-section h1 {
-    font-size: 3em;
-}
-
-
-@keyframes bounce {
-    0%, 100% {
-      top: 0;
-    }
-    50% {
-      top: -20px;
-    }
-  }
-
-@media screen and (max-width: 1200px) {
-    .first-section-title {
-        font-size: 4em;
-    }
-}
