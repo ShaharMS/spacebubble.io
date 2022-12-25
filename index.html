@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>SpaceBubble homepage</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    
-    <body>
-        
-        <nav class="navbar-list">
-            <a href="">&nbsp;Home </a>|
-            <a href="">&nbsp;About </a>|
-            <a href="">&nbsp;Work </a>|
-            <a href="">Contact</a>
-        </nav>
-        
-        <section>
-            <div class="first-section-content">
-                <div class="homepage-left">
-                    <h1 class="first-section-title">TEXT GOES HERE <br> TEXT GOES</h1>
-                    <p class="first-section-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, ab
-                        beatae. Praesentium quasi nostrum similique accusantium facere illo eligendi officiis inventore
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpaceBubble homepage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar-list">
+        <a href="">&nbsp;Home </a>|
+        <a href="">&nbsp;About </a>|
+        <a href="">&nbsp;Work </a> |
+        <a href="">Contact</a>
+    </nav>
+
+    <img class="blobs-background" src="./assets/background-blobs.svg" alt="">
+
+    <section>
+        <div class="first-section-content">
+            <div class="left">
+                <h1 class="first-section-title">TEXT GOES HERE <br> TEXT GOES</h1>
+                <p class="first-section-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, ab
+                    beatae. Praesentium quasi nostrum similique accusantium facere illo eligendi officiis inventore
                     iure perspiciatis repellendus delectus, ut labore, ipsum eveniet reiciendis.</p>
             </div>
-            
-            <div class="homepage-right">
+
+            <div class="right">
                 <div class="circle"></div>
                 <h3>Shahar Marcus</h3>
                 <div class="handles">
@@ -38,13 +40,34 @@
                 
             </div>
         </div>
-        <div>
-            <img class="blobs-background" src="./assets/background-blobs.svg" alt="">
+    </section>
+    <section class="second-section">
+        <h1>Wanna See some cool stuff?</h1>
+        <div id="bouncy-arrow">
+            <h2 id="text">Keep Scrolling!</h2>
+            <div class="triangle"></div>
         </div>
     </section>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        window.addEventListener("scroll", e => {
+            let scrollValue = 0;
+            let bouncyArrow = document.getElementById("bouncy-arrow");
+            if (window.scrollY > 50) scrollValue = window.scrollY - 50;
+            if (scrollValue > 900) scrollValue = 900;
+            bouncyArrow.style.marginTop = "calc(-2% + " + scrollValue / 2 + "px" + ")";
+            if (scrollValue == 900) document.getElementById("text").innerText = "Thanks :D"
+            else document.getElementById("text").innerText = "Keep Scrolling!"
+            console.log(scrollValue);
+        });
+        let bouncyArrow = document.getElementById("bouncy-arrow");
+        bouncyArrow.addEventListener("click", e => {
+            let pageHeight = window.innerHeight * 1.5;
+			window.scrollBy({ behavior: "smooth", top: pageHeight });
+        })
+    </script>
 </body>
 
 </html>

@@ -22,6 +22,20 @@ a {
     font-weight: 200;
 }
 
+
+.circle {
+    border-radius: 50%;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid black;
+}
+
+
 .navbar-list {
     position: relative;
     display: inline;
@@ -33,10 +47,6 @@ a {
     font-size: 1.25em;
 }
 
-section {
-    height: 100vh;
-}
-
 .blobs-background {
     position: absolute;
     width: 100%;
@@ -46,6 +56,12 @@ section {
     height: 470vh;
     z-index: -1;
 }
+
+/*
+----------------------------------------------
+First Section
+----------------------------------------------
+*/
 
 .first-section-content {
     padding-inline: 5%;
@@ -69,17 +85,13 @@ section {
 
 }
 
-.circle {
-    border-radius: 50%;
-}
-
 .first-section-content .circle {
     width: 20vw;
     height: 20vw;
     background-color: antiquewhite;
 }
   
-.homepage-right {
+.first-section-content .right {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -87,35 +99,8 @@ section {
 
 }
 
-.homepage-right .handles {
+.first-section-content .right .handles {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
-
-.twitter-logo {
-    color: hsl(203, 89%, 53%);
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-}
-
-.github-logo {
-    color: hsl(0, 0%, 66%);
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-}
-
-.discord-logo {
-    color: hsl(236, 89%, 65%);
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-}
-
-.Discord-icon, .GitHub-icon, .Twitter-icon {
-    margin-right: 5px;
-}
-
-
