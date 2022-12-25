@@ -145,6 +145,23 @@ Second Section
     animation-timing-function: ease-in-out;
 }
 
+/*
+----------------------------------------------
+Third Section
+----------------------------------------------
+*/
+
+.third-section {
+    position: absolute;
+    top: 150vh;
+    padding-inline: 5%;
+}
+
+.third-section h1 {
+    font-size: 3em;
+}
+
+
 @keyframes bounce {
     0%, 100% {
       top: 0;

@@ -41,12 +41,17 @@
             </div>
         </div>
     </section>
+
     <section class="second-section">
         <h1>Wanna See some cool stuff?</h1>
         <div id="bouncy-arrow">
             <h2 id="text">Keep Scrolling!</h2>
             <div class="triangle"></div>
         </div>
+    </section>
+
+    <section class="third-section">
+        <h1>Little</h1>
     </section>
 
     <script>
@@ -63,7 +68,7 @@
         let bouncyArrow = document.getElementById("bouncy-arrow");
         bouncyArrow.addEventListener("click", e => {
             let pageHeight = window.innerHeight * 1.5;
-			window.scrollBy({ behavior: "smooth", top: pageHeight });
+			window.scrollTo({ behavior: "smooth", top: pageHeight });
         })
     </script>
 </body>
