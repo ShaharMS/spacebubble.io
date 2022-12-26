@@ -50,7 +50,7 @@ a {
 .blobs-background {
     position: absolute;
     width: 100%;
-    top: 420px;
+    top: 45vh;
     object-fit: cover;
     object-position: top;
     height: 560vh;
@@ -211,7 +211,7 @@ Third Section, Little -  The Programming Language
 }
 
 #code {
-    height: 400px;
+    height: 40vh;
     width: 600px;
     border: 0;
     outline: black solid 1;
@@ -221,10 +221,11 @@ Third Section, Little -  The Programming Language
     resize: none;
     font-family:'Courier New', Courier, monospace;
     white-space: pre-wrap;
+    padding: 4px;
 }
 
 #result {
-    height: 400px;
+    height: 40vh;
     width: 600px;
     border: 0;
     outline: black solid 1;
@@ -233,31 +234,7 @@ Third Section, Little -  The Programming Language
     color: white;
     resize: none;
     font-family:'Courier New', Courier, monospace;
-}
-
-#run {
-    position: absolute;
-    width: 100px;
-    color: darkgoldenrod;
-    font-weight: 900;
-    font-family: 'poppins';
-    background-color: rgb(45, 45, 45);
-    outline: none;
-    border: none;
-    border-radius: 4px;
-    border-color: black;
-    border-width: 1px;
-    border-style: solid;
-    right: calc(5% + 20px + 5px);
-    top: 655px;
-}
-
-#run:hover {
-    background-color: rgb(60, 60, 60);
-    cursor: pointer;
-}
-#run:active {
-    background-color: rgb(30, 30, 30);
+    padding: 4px;
 }
 
 .third-section .data {
@@ -280,7 +257,7 @@ Third Section, Little -  The Programming Language
     }
   }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1400px) {
     .first-section-title, .third-section h1 {
         font-size: 4em;
     }
@@ -292,7 +269,6 @@ Third Section, Little -  The Programming Language
 
     #code, #result {
         width: 350px;
-        height: 300px;
     }
     #run {
         top: 465px;
