@@ -162,16 +162,6 @@ Second Section
     font-size: 2em;
 }
 
-.second-section .triangle {
-    margin-top: -4%;
-    border-left: 30px solid transparent;
-    border-right: 30px solid transparent;
-    border-top: 60px solid rgb(255, 255, 255); 
-    position: relative;
-    left: 50%;
-    transform: translate(-50%);
-}
-
 #bouncy-arrow {
     position: relative;
     margin-top: 100px;
@@ -207,7 +197,6 @@ Third Section, Little -  The Programming Language
     padding: 20px;
     margin-top: 250px;
     height: fit-content;
-
 }
 
 #code {
@@ -270,6 +259,43 @@ Third Section, Little -  The Programming Language
     font-size: 3em;
 }
 
+/*
+----------------------------------------------
+Forth Section, Little -  The Programming Language
+----------------------------------------------
+*/
+
+
+.forth-contnet {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+.forth-section {
+    position: absolute;
+    padding-inline: 5%;
+    top: 330vh;
+}
+
+.text-content h1 {
+    font-size: 6.3em;
+    margin-bottom: 2vh;
+}
+
+.text-content p {
+    width: 30vw;
+}
+
+.design-elements img {
+    position: absolute;
+    top: -30vh;
+    left: 50vw;
+    width: 40vw;
+}
+
 
 @keyframes bounce {
     0%, 100% {
@@ -307,4 +333,16 @@ Third Section, Little -  The Programming Language
         overflow-y: auto;
     }
 
+    .forth-section h1 {
+        font-size: 4em;
+    }
+
+    .forth-contnet p {
+        max-height: 400px;
+        overflow: auto;
+    }
+
+    h1 {
+        font-size: 4em;
+    }
 }
