@@ -87,8 +87,9 @@ First Section
 }
 
 .first-section-content .circle {
-    width: 20vw;
-    height: 20vw;
+    width: 240px;
+    height: 240px;
+    margin-inline: auto;
     background-color: antiquewhite;
 }
   
@@ -135,7 +136,6 @@ First Section
 .Twitter-icon, .GitHub-icon, .Discord-icon {
     margin-right: 5px;
 }
-
 
 
 /*
@@ -238,12 +238,12 @@ Third Section, Little -  The Programming Language
 
 /*
 ----------------------------------------------
-Forth Section, Little -  The Programming Language
+Fourth Section, Little -  The Programming Language
 ----------------------------------------------
 */
 
 
-.forth-contnet {
+.fourth-contnet {
     position: absolute;
     display: flex;
     flex-direction: row;
@@ -251,7 +251,7 @@ Forth Section, Little -  The Programming Language
     justify-content: center;
     gap: 30px;
 }
-.forth-section {
+.fourth-section {
     position: absolute;
     padding-inline: 5%;
     top: 330vh;
@@ -288,6 +288,17 @@ Forth Section, Little -  The Programming Language
         font-size: 4em;
     }
 
+    .first-section-content .circle {
+        width: 200px;
+        height: 200px;
+    }
+
+    .handles {
+        column-gap: 8px;
+        display: flex;
+        flex-direction: column;
+    }
+
     .third-section {
         top: 160vh;
         gap: 5vw;
@@ -309,11 +320,11 @@ Forth Section, Little -  The Programming Language
         overflow-y: auto;
     }
 
-    .forth-section h1 {
+    .fourth-section h1 {
         font-size: 4em;
     }
 
-    .forth-contnet p {
+    .fourth-contnet p {
         max-height: 400px;
         overflow: auto;
     }
