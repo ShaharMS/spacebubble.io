@@ -55,6 +55,8 @@ a {
     object-position: top;
     height: 680vh;
     z-index: -1;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 /*
