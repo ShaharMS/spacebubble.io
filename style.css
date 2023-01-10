@@ -147,8 +147,6 @@ Second Section
 */
 
 .second-section {
-    position: absolute;
-    top: 78vh;
     text-align: center;
     width: 600px;
     left: 50%;
@@ -178,8 +176,7 @@ Third Section, Little -  The Programming Language
 */
 
 .third-section {
-    position: absolute;
-    top: 150vh;
+    margin-top: 60vh;
     padding-inline: 5%;
     display: flex;
     flex-direction: row;
@@ -197,7 +194,7 @@ Third Section, Little -  The Programming Language
     background-color: rgb(30, 30, 30);
     border-radius: 20px;
     padding: 20px;
-    margin-top: 250px;
+    margin-top: 150px;
     height: fit-content;
 }
 
@@ -302,31 +299,18 @@ Fourth Section, Little -  The Programming Language
     }
 
     .third-section {
-        top: 160vh;
-        gap: 5vw;
+        margin-top: 65vh;
     }
 
-    #code, #result {
-        width: 350px;
-    }
-    #run {
-        top: 465px;
-    }
-
-    .code-io {
-        margin-top: 160px;
-    }
-
-    .third-section .data div {
-        max-height: 500px;
-        overflow-y: auto;
+    .third-section .code-io {
+        display: none;
     }
 
     .fourth-section h1 {
         font-size: 4em;
     }
 
-    .fourth-contnet p {
+    .fourth-content p {
         max-height: 400px;
         overflow: auto;
     }
