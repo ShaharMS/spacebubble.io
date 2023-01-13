@@ -176,7 +176,7 @@ Third Section, Little -  The Programming Language
 */
 
 .third-section {
-    margin-top: 70vh;
+    margin-top: 73vh;
     padding-inline: 5%;
     display: flex;
     flex-direction: row;
@@ -242,18 +242,19 @@ Fourth Section, EZworksheet
 */
 
 
-.fourth-contnet {
-    position: absolute;
+.fourth-content {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     gap: 30px;
 }
 .fourth-section {
-    position: absolute;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-top: 300px;
     padding-inline: 5%;
-    top: 330vh;
 }
 
 .text-content h1 {
@@ -265,13 +266,20 @@ Fourth Section, EZworksheet
     width: 30vw;
 }
 
-.design-elements img {
-    position: absolute;
-    top: -30vh;
-    left: 50vw;
-    width: 40vw;
+.fourth-section .ezworksheet-links {
+    margin-top: 500px;
 }
 
+.fourth-section .ezworksheet-links a {
+    font-size: 1.2em;
+    display: block;
+    margin: 50px;
+    margin-left: 10vw;
+    border: 4px solid white;
+    border-radius: 20px;
+    padding: 5px;
+    padding-inline: 10px;
+}
 
 @keyframes bounce {
     0%, 100% {
