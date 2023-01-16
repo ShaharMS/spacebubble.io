@@ -244,37 +244,56 @@ Fourth Section, EZworksheet
 
 .fourth-content {
     display: flex;
-    flex-direction: row-reverse;
     align-items: center;
     justify-content: space-evenly;
     gap: 30px;
+    width: 100%;
+    margin-top: 200px;
+}
+
+.fourth-content div {
+    min-width: 30%;
 }
 .fourth-section {
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
     margin-top: 300px;
     padding-inline: 5%;
+    width: 100%;
 }
 
-.text-content h1 {
+.fourth-section .text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 50%;
+}
+
+.fourth-section .text-content h1 {
     font-size: 6.3em;
     margin-bottom: 2vh;
 }
 
-.text-content p {
-    width: 30vw;
+.fourth-section .text-content p {
+    width: 75%;
+    margin-left: 12.5%;
+    text-align: justify;
 }
 
 .fourth-section .ezworksheet-links {
-    margin-top: 500px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 200px;
 }
 
 .fourth-section .ezworksheet-links a {
     font-size: 1.2em;
     display: block;
+    width: 150px;
+    text-align: center;
+    font-weight: 400;
     margin: 50px;
-    margin-left: 10vw;
     border: 4px solid white;
     border-radius: 20px;
     padding: 5px;
