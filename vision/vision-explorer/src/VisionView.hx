@@ -1,21 +1,24 @@
 package;
 
 import filters.FilterView;
+import filters.Grayscale;
+import filters.Sharpen;
+import filters.Deepfry;
 import haxe.ui.events.MouseEvent;
 import haxe.ui.containers.VBox;
 
 @:build(haxe.ui.ComponentBuilder.build("assets/vision-view.xml"))
 class VisionView extends VBox {
-
-    public static var g:VisionView;
-
-    public var originalImage:vision.ds.Image = null;
+    var originalImage:vision.ds.Image = null;
     var filters:Array<FilterView> = [];
 
     public function new() {
         super();
         onLoadButton(null);
-        g = this;
+
+        addFilter("deepfry");
+        addFilter("sharpen");
+        addFilter("grayscale");
     }
 
     private function addFilter(filterId:String) {
@@ -31,7 +34,7 @@ class VisionView extends VBox {
     }
 
     @:bind(loadButton, MouseEvent.CLICK)
-    public function onLoadButton(_) {
+    private function onLoadButton(_) {
         var url = imageUrlField.text;
 		vision.tools.ImageTools.loadFromFile(url, data -> {
                 originalImage = data;
@@ -44,11 +47,6 @@ class VisionView extends VBox {
                 applyFilters();
 			}
 		);		
-    }
-    @:bind(newFilter, MouseEvent.CLICK)
-    private function addNewFilter(_) {
-        addFilter("grayscale");
-        onLoadButton(null);
     }
 
     private function onImageChanged(image:vision.ds.Image) {

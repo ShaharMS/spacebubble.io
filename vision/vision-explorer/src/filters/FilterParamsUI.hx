@@ -17,7 +17,7 @@ class FilterParamsUI extends VBox {
         }
     }
 
-    public function applyFilter(image:vision.ds.Image, ?methodName:String):vision.ds.Image {
+    public function applyFilter(image:vision.ds.Image):vision.ds.Image {
         return image;
     }
 

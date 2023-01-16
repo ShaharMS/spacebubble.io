@@ -12,20 +12,9 @@ using vision.Vision;
         <checkbox id="filterEnabled" text="Enabled" selected="true" />
     </vbox>
 )
-class CustomFilter extends FilterParamsUI {
-
-    public var m:String;
-
-    public function new(methodName:String) {
-        super();
-        m = methodName;
-    }
-
-    public override function applyFilter(image:vision.ds.Image, ?methodName:String):vision.ds.Image {
-        if (m != "clone") {
-            if (image == null) image = VisionView.g.originalImage.clone();
-            image = Reflect.callMethod(null, Reflect.field(Vision, m), [image.clone()]);
-        }
+class LaplacianEdgeDiffOperator extends FilterParamsUI {
+    public override function applyFilter(image:vision.ds.Image):vision.ds.Image {
+        image = image.laplacianEdgeDiffOperator();
         return image;
     }
 }

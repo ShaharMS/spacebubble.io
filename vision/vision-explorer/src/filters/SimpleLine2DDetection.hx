@@ -1,0 +1,22 @@
+package filters;
+
+using vision.Vision;
+
+@:xml(
+    <vbox text="" width="100%">
+        <hbox width="100%">
+            <image width="130" id="previewImageBefore" scaleMode="fitwidth" />
+            <image resource="haxeui-core/styles/shared/collapsed-blue.png" verticalAlign="center" />
+            <image width="130" id="previewImageAfter" scaleMode="fitwidth" />
+        </hbox>
+        <checkbox id="filterEnabled" text="Enabled" selected="true" />
+    </vbox>
+)
+class SimpleLine2DDetection extends FilterParamsUI {
+    public override function applyFilter(image:vision.ds.Image):vision.ds.Image {
+        for (l in image.simpleLine2DDetection()) {
+            image.drawLine2D(l, vision.ds.Color.RED);
+        }
+        return image;
+    }
+}
