@@ -1,0 +1,6 @@
+<vbox style="padding: 15px;" styleName="default-background" width="100%" height="100%">
+    <!--<tab-view id="mainTabs" width="100%" height="100%" styleName="rounded-tabs">
+        <vision-view text="300px-Valve_original_%281%29.PNG" width="100%" height="100%" />
+    </tab-view> -->
+    <vision-view text="300px-Valve_original_%281%29.PNG" width="100%" height="100%" />
+</vbox>

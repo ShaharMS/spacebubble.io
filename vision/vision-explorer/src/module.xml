@@ -1,0 +1,79 @@
+<module preload="all">
+    <components>
+        <class package="." />
+    </components>
+    <themes>
+        <global>
+            <style>
+                .collapsible-view {
+                    padding: 0px;
+                }
+
+                .collapsible-view .scrollview-contents {
+                    padding: 0px;
+                    spacing: 0px;
+                }
+
+                .collapsible-container {
+                    padding: 0px;
+                    spacing: 0px;
+                }
+
+                .collapsible {
+                    spacing: 0px;
+                }
+                
+                .collapsible-header {
+                    padding: 0px;
+                }
+
+                .collapsible-button {
+                    border-radius: 0;
+                    border: 0px solid $normal-border-color;
+                    width: 100%;
+                    text-align: left;
+                    icon: $arrow-right-square;
+                    icon-position: left;
+                    border: none;
+                    border-color: $normal-border-color;
+                    border-bottom-width: 1px;
+                    padding: 6px;
+                    padding-top: 12px;
+                    padding-bottom: 12px;
+                    padding-right: 12px;
+                    background-color: $solid-background-color;
+                }
+
+                .collapsible-button:hover {
+                    background-color: $solid-background-color-hover;
+                }
+
+                .collapsible-button:down {
+                    icon: $arrow-down-square;
+                }
+                
+                .collapsible-content {
+                    padding: 5px 5px;
+                    width: 100%;
+                    border-bottom: 1px solid $normal-border-color;
+                }
+                
+                .collapsible.last .collapsible-content {
+                    border: none;
+                }
+                
+                .label.errored {
+                    color: #ED4337;
+                }
+                
+                .label.success { 
+                    color: #198754;
+                }
+                
+                .label.warning {
+                    color: #ffcc00;
+                }
+            </style>
+        </global>
+    </themes>
+</module>
