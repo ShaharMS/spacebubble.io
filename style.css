@@ -59,6 +59,21 @@ a {
     transform: translate(-50%);
 }
 
+
+.links a {
+    font-size: 1.2em;
+    display: block;
+    width: 150px;
+    text-align: center;
+    font-weight: 400;
+    margin-block: 50px;
+    border: 4px solid white;
+    border-radius: 20px;
+    padding: 5px;
+    padding-inline: 10px;
+}
+
+
 /*
 ----------------------------------------------
 First Section
@@ -138,8 +153,6 @@ First Section
 .Twitter-icon, .GitHub-icon, .Discord-icon {
     margin-right: 5px;
 }
-
-
 /*
 ----------------------------------------------
 Second Section - Empty space
@@ -280,24 +293,75 @@ Fourth Section, EZworksheet
     text-align: justify;
 }
 
-.fourth-section .ezworksheet-links {
+.fourth-section .links {
     display: flex;
     justify-content: center;
     flex-direction: column;
     margin-top: 200px;
 }
 
-.fourth-section .ezworksheet-links a {
-    font-size: 1.2em;
-    display: block;
-    width: 150px;
-    text-align: center;
-    font-weight: 400;
-    margin: 50px;
-    border: 4px solid white;
-    border-radius: 20px;
-    padding: 5px;
-    padding-inline: 10px;
+/*
+----------------------------------------------
+Fifth Section, Vision
+----------------------------------------------
+*/
+
+.fifth-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    padding-inline: 5%;
+    width: 90%;
+}
+
+.fifth-content {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    width: 100%;
+    margin-top: 200px;
+}
+
+.fifth-section .text-content {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.fifth-section .text-content h1 {
+    font-size: 6.3em;
+    margin-bottom: 2vh;
+}
+
+.fifth-section .text-content .title {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+}
+
+.fifth-section .text-content p {
+    width: 100%;
+}
+
+.fifth-section .links {
+    display: flex;
+    justify-content: left;
+    align-items: flex-end;
+    margin-left: 70px;
+    margin-bottom: 30px;
+    column-gap: 10px;
+    flex-direction: row;
+    
+}
+
+.fifth-content .links a {
+    margin-block: 30px;
+    height: min-content;
+}
+
+.fifth-section .vision-example {
+    height: 800px;
+    width: 79%
 }
 
 @keyframes bounce {
