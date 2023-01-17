@@ -24,6 +24,20 @@ a {
     font-weight: 200;
 }
 
+::-webkit-scrollbar {
+    width: 15px;
+}
+  
+::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: hsl(321, 93%, 48%);
+    border-radius: 15px;
+}
+
+
 
 .circle {
     border-radius: 50%;
@@ -289,8 +303,8 @@ Fourth Section, EZworksheet
 }
 
 .fourth-section .text-content p {
-    width: 75%;
-    margin-left: 12.5%;
+    width: 80%;
+    margin-left: 17%;
     text-align: justify;
 }
 
@@ -327,6 +341,7 @@ Fifth Section, Vision
     display: flex;
     flex-direction: column;
     width: 80%;
+    margin-bottom: 40px;
 }
 
 .fifth-section .text-content h1 {
@@ -362,8 +377,11 @@ Fifth Section, Vision
 
 .fifth-section .vision-example {
     height: 800px;
-    width: 79%
+    width: 79%;
+    border-radius: 5px;
 }
+
+
 
 @keyframes bounce {
     0%, 100% {

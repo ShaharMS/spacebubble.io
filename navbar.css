@@ -10,7 +10,7 @@ nav a::before {
   position: absolute;
   width: 100%;
   height: 2px;
-  background-color: #aa00b6;
+  background-color: hsl(321, 93%, 48%);
   bottom: 0;
   left: 0;
   transform-origin: right;
