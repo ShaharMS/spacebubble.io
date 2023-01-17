@@ -16,6 +16,7 @@ nav a::before {
   transform-origin: right;
   transform: scaleX(0);
   transition: transform .4s ease-in-out;
+  border-radius: 5px;
 }
 
 nav a:hover::before {

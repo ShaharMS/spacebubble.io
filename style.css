@@ -15,7 +15,6 @@ body {
     font-family: 'poppins';
     height: max-content;
     overflow-x: hidden;
-
 }
 
 a {
@@ -37,8 +36,6 @@ a {
     border-radius: 15px;
 }
 
-
-
 .circle {
     border-radius: 50%;
 }
@@ -57,16 +54,16 @@ a {
     display: inline;
     position: absolute;
     left: 50%;
-    top: 2vh;
+    top: 4vh;
     transform: translate(-50%, 0);
-    letter-spacing: 3px;
     font-size: 1.25em;
+    letter-spacing: 7px;
 }
 
 .blobs-background {
-
+    margin-top: 20px;
     position: absolute;
-    height: 8047px;
+    height: 6000px;
     width: 100vw;
     top: 45vh;
     z-index: -1;
@@ -276,7 +273,7 @@ Fourth Section, EZworksheet
     justify-content: space-evenly;
     gap: 30px;
     width: 100%;
-    margin-top: 200px;
+    margin-top: -160px;
 }
 
 .fourth-content div {
