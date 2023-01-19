@@ -318,20 +318,37 @@ Fifth Section, Vision
 ----------------------------------------------
 */
 
+:root {
+    --card-gap: 1000px;
+    --half-card-width: 200px;
+}
+
 .fifth-section {
     display: flex;
     flex-direction: column;
-    margin-top: 100px;
+    margin-top: 300px;
     padding-inline: 5%;
     width: 90%;
 }
 
-.fifth-content {
+#card-group {
     display: flex;
     flex-direction: row;
-    gap: 30px;
-    width: 100%;
-    margin-top: 200px;
+    position: relative;
+    left: calc(50% - var(--half-card-width) - var(--card-gap));
+}
+
+.card {
+    min-width: calc(var(--half-card-width) * 2);
+    height: 300px;
+    background: rgb(30, 30, 30);
+    margin-inline: var(--card-gap);
+}
+
+.fifth-section .controls {
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
 }
 
 .fifth-section .text-content {
