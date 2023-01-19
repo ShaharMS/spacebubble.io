@@ -1,15 +1,9 @@
 .card {
-    top: 550vh;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, 0);
     background: rgb(9,11,54);
     background: linear-gradient(153deg, rgba(9,11,54,1) 0%, rgba(12,63,123,1) 100%);
     border-radius: 30px;
     overflow: hidden;
     display: flex;
-    gap: 100px;
-    padding: 30px;
 }
 
 .card img {
