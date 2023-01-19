@@ -378,6 +378,15 @@ Fifth Section, Vision
     border-radius: 5px;
 }
 
+/*
+----------------------------------------------
+Sixth Section, Cool Crad
+----------------------------------------------
+*/
+
+.sixth-section {
+    height: 100vh;
+}
 
 
 @keyframes bounce {

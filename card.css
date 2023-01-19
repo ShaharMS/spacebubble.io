@@ -1,0 +1,52 @@
+.card {
+    top: 550vh;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, 0);
+    background: rgb(9,11,54);
+    background: linear-gradient(153deg, rgba(9,11,54,1) 0%, rgba(12,63,123,1) 100%);
+    border-radius: 30px;
+    overflow: hidden;
+    display: flex;
+    gap: 100px;
+    padding: 30px;
+}
+
+.card img {
+    width: 400px;
+    aspect-ratio: 1;
+}
+
+.card p {
+    width: 300px;
+}
+
+.text-section a {
+    position: absolute;
+    top: 80%;
+    border: 3px white solid;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 20px;
+    font-weight: 700px; /*not working, why?*/
+}
+
+.navigation-dots {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 600vh; /*should be realtive to the parent, why not?*/
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
