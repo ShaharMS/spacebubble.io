@@ -223,6 +223,11 @@ Third Section, Little -  The Programming Language
     height: fit-content;
 }
 
+.code-io iframe {
+    width: 608px;
+    height: 750px;
+}
+
 #code {
     height: 40vh;
     width: 600px;
