@@ -41,3 +41,7 @@
     border-radius: 50%;
     display: inline-block;
 }
+
+.current {
+    color: red;
+}

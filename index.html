@@ -159,7 +159,7 @@
 
     <section class="fifth-section">
         <div id="card-group">
-            <div class="card">
+            <div class="card current">
                 <div class="text-section">
                     <h2>Vision</h2>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga magni alias eaque molestias laborum
@@ -172,25 +172,45 @@
                 </div>
             </div>
             <div class="card">
-                <h1>b</h1>
+                <div class="text-section">
+                    <h2>Vision</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga magni alias eaque molestias laborum
+                        eligendi?</p>
+                    <a href="#">Demo</a>
+                </div>
+    
+                <div class="media-section">
+                    <!-- <img src="./assets/media-example.png" alt="change please Marcus thank you"> -->
+                </div>
             </div>
+
             <div class="card">
-                <h1>c</h1>
+                <div class="text-section">
+                    <h2>Vision</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga magni alias eaque molestias laborum
+                        eligendi?</p>
+                    <a href="#">Demo</a>
+                </div>
+    
+                <div class="media-section">
+                    <img src="./assets/media-example.png" alt="change please Marcus thank you">
+                </div>
             </div>
+
         </div>
         <div class="navigation-dots">
-            <button id="previous">previous</button>
+            <button onclick="swapCards()" id="previous">previous</button>
             <span class="dot"></span>
             <span class="dot"></span>
             <span class="dot"></span>
-            <button id="next">next</button>
+            <button id="next" onclick="swapCards()">next</button>
         </div>
     </section>
 
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="./sources/mainpage-cards.js"></script>
+    <script src="./sources/cardSwapOhad.js"></script>
     <script>
         var logBackup = console.log;
         var interpNum = 0;
