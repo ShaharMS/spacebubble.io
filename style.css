@@ -201,7 +201,7 @@ Third Section, Little -  The Programming Language
 */
 
 .third-section {
-    margin-top: 73vh;
+    margin-top: 77vh;
     padding-inline: 5%;
     display: flex;
     flex-direction: row;
@@ -325,14 +325,14 @@ Fifth Section, Vision
 
 :root {
     --card-gap: 1000px;
-    --half-card-width: 400px;
+    --half-card-width: 800px;
 }
 
 .fifth-section {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-top: 300px;
+    margin-top: 500px;
     padding-inline: 5%;
     width: 90%;
 }
@@ -346,11 +346,12 @@ Fifth Section, Vision
 
 .card {
     min-width: calc(var(--half-card-width) * 2);
-    height: 400px;
+    height: 600px;
     background: rgb(30, 30, 30);
     margin-inline: var(--card-gap);
     box-sizing: border-box;
     padding-inline: 55px;
+    display: flex;
 }
 
 .fifth-section .controls {
