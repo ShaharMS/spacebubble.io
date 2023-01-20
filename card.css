@@ -24,16 +24,13 @@
     padding-top: 5px;
     padding-bottom: 5px;
     border-radius: 20px;
-    font-weight: 700px; /*not working, why?*/
+    font-weight: 700; /*not working, why?*/
 }
 
 .navigation-dots {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0);
-    top: 600vh; /*should be realtive to the parent, why not?*/
     display: flex;
     flex-direction: row;
+    justify-content: center;
     gap: 20px;
 }
 
