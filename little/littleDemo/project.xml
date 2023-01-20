@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://lime.software/project/1.0.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://lime.software/project/1.0.2 http://lime.software/xsd/project-1.0.2.xsd">
+	
+	
+	<meta title="LittleDemo" package="com.sample.littledemo" version="1.0.0" company="Company Name" />
+	<app main="Main" path="Export" file="LittleDemo"/>
+	<window width="608" height="750" background=""/>
+	
+	<source path="Source" />
+	
+	<haxelib name="openfl" />
+	<haxelib name="little"/>
+	<haxelib name="texter"/>
+	<haxelib name="formula"/>
+	
+	<assets path="Assets" rename="assets" />
+	
+</project>

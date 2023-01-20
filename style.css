@@ -344,6 +344,8 @@ Fifth Section, Vision
     height: 400px;
     background: rgb(30, 30, 30);
     margin-inline: var(--card-gap);
+    box-sizing: border-box;
+    padding-inline: 55px;
 }
 
 .fifth-section .controls {
