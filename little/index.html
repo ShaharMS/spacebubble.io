@@ -4,103 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css" type="text/css"/>
-    <script src="./interp.js"></script>
-    <script src="../sources/littleHighlighter.js"></script>
-    <title>Try Little!</title>
+    <title>Little | Spacebubble.io</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <textarea id="code" style="height: 50vh; width: 45vw;">
-
-    </textarea>
-    <textarea id="result" style="height: 50vh; width: 45vw;">
-    </textarea>
-    <p>
-        Notice, this is a very early prototype of the language. don't expect things to work correctly out of the box
-        <br>
-        <table>
-            <td>
-                Types:
-                <ul>
-                    <li>
-                        <code>
-                            Number, Decimal
-                        </code>
-                    </li>
-                    <li>
-                        <code>
-                            Boolean
-                        </code>
-                    </li>
-                    <li>
-                        <code>
-                            Characters
-                        </code>
-                    </li>
-                    <li>
-                        <code>
-                            Everything
-                        </code>
-                    </li>
-                </ul>
-            </td>
-            <td>
-                Keywords:
-                <ul>
-                    <li>
-                        <code>Declare variables - define x:Type = value</code>
-                    </li>
-                    <li>
-                        <code>Declare functions - action x(param:Type, anonParam) = //indent + 1</code>
-                    </li>
-                    <li>
-                        <code>Write to the console - print(value)</code>
-                    </li>
-                    <li>
-                        <code>Declare classes - class Name = //indent + 1</code>
-                    </li>
-                </ul>
-            </td>
-            <td>
-                Syntax:
-                <ul>
-                    <li>
-                        <code>No semicolons, each line separated by a line feed (enter) char</code>
-                    </li>
-                    <li>
-                        <code>No curly brackets, each class/action separated by indent level</code>
-                    </li>
-                    <li>
-                        <code>Types are optional, but the language is type safe</code>
-                    </li>
-                    <li>
-                        <code>Theres no null, but you have the nothing value which will throw an error when accessed</code>
-                    </li>
-                    
-                </ul>
-            </td>
-        </table>
-    </p>
-
-    <script>
-        var interpNum = 0;
-        var logBackup = console.log;
-        var logMessages = [];
-
-        console.log = function() {
-            logMessages.push.apply(logMessages, arguments);
-            logBackup.apply(console, arguments);
-        };
-        var text = document.getElementById('code');
-        text.addEventListener("keyup", function() {
-            interpNum++;
-            var code = document.getElementById('code').value;
-            LittleInterpreter.run(code);
-            var resEl = document.getElementById('result');
-            resEl.value = `Interpreter started, Launch Number ${interpNum}\n——————————\n` +logMessages.join("\n");
-            logMessages = [];
-            Highlighter.main();
-        });
-    </script>
+    <div class="navbar"> <!--Navbar-->
+        <span class="title"><h1>L</h1><h2>i</h2><h3>t</h3><h4>t</h4><h5>l</h5><h6>e</h6></span>
+    </div>
 </body>
 </html>
