@@ -69,8 +69,17 @@ a {
     z-index: -1;
     left: 50%;
     transform: translate(-50%);
+    overflow: hidden;
 }
 
+.blobs-background img {
+    position: absolute;
+    width: 100%;
+    min-width: 1500px;
+    height: 6108px;
+    left: 50%;
+    transform: translate(-50%);
+}
 
 .links a {
     font-size: 1.2em;
