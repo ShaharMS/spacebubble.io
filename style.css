@@ -40,15 +40,6 @@ a {
     border-radius: 50%;
 }
 
-.triangle {
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-top: 100px solid black;
-}
-
-
 .navbar-list {
     position: relative;
     display: inline;
@@ -81,10 +72,18 @@ a {
     transform: translate(-50%);
 }
 
+.links {
+    width: max-content;
+}
+
+.links.row {
+    display: flex;
+    flex-direction: row;
+}
+
 .links a {
     font-size: 1.2em;
     display: block;
-    width: 150px;
     text-align: center;
     font-weight: 400;
     margin-block: 40px;
@@ -92,6 +91,12 @@ a {
     border-radius: 20px;
     padding: 5px;
     padding-inline: 10px;
+    width: 200px;
+}
+
+.links.row a {
+    margin-block: 0;
+    margin-inline: 40px;
 }
 
 
