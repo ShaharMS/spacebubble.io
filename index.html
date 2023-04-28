@@ -82,7 +82,15 @@
             
         </div>
         <div class="code-io">
-            <iframe title="code-io" src="./little/littleDemo/Export/html5/bin/index.html" frameborder="0" loading="lazy"></iframe>
+            <iframe title="code-io" src="./little/index.html" frameborder="0"></iframe>
+            <script>
+                const frame = document.getElementById("code-io");
+                frame.addEventListener("load", () => {
+                    var node = document.createElement('style');
+                    node.appendChild(document.createTextNode('#code-row {    width: 100vw;    height: 96vh;    margin-block: 2vh;}#ast {    display: none;}#second-container {    display: none;}button {    display: none;}'));
+                    frame..document.body.appendChild(node);
+                });
+            </script>
         </div>
     </section>
 
