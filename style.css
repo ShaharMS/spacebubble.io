@@ -13,7 +13,7 @@ body {
     color: white;
     background-repeat: no-repeat;
     font-family: 'poppins';
-    height: max-content;
+    height: 200vh;
     overflow-x: hidden;
 }
 
@@ -21,6 +21,17 @@ a {
     text-decoration: none;
     color: white;
     font-weight: 200;
+}
+
+/*for flashing elements*/
+flash {
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
 }
 
 ::-webkit-scrollbar {
@@ -99,6 +110,11 @@ a {
     margin-inline: 40px;
 }
 
+.highlight {
+    font-weight: bolder;
+    font-size: 1.5em;
+    padding-block: 10px;
+}
 
 /*
 ----------------------------------------------
@@ -215,7 +231,8 @@ Third Section, Little -  The Programming Language
 */
 
 .third-section {
-    margin-top: 77vh;
+    position: absolute;
+    top: 155vh;
     padding-inline: 5%;
     display: flex;
     flex-direction: row;
@@ -287,6 +304,8 @@ Fourth Section, EZworksheet
 
 
 .fourth-content {
+    position: absolute;
+    top: 300vh;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -343,6 +362,8 @@ Fifth Section, Vision
 }
 
 .fifth-section {
+    position: absolute;
+    top: 400vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -425,53 +446,12 @@ Sixth Section, Cool Crad
 */
 
 .sixth-section {
+    position: absolute;
+    top: 500vh;
     height: 100vh;
 }
 
 
-@keyframes bounce {
-    0%, 100% {
-      top: 0;
-    }
-    50% {
-      top: -20px;
-    }
-  }
-
 @media screen and (max-width: 1400px) {
-    .first-section-title, .third-section h1 {
-        font-size: 4em;
-    }
 
-    .first-section-content .circle {
-        width: 200px;
-        height: 200px;
-    }
-
-    .handles {
-        column-gap: 8px;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .third-section {
-        margin-top: 65vh;
-    }
-
-    .third-section .code-io {
-        display: none;
-    }
-
-    .fourth-section h1 {
-        font-size: 4em;
-    }
-
-    .fourth-content p {
-        max-height: 400px;
-        overflow: auto;
-    }
-
-    h1 {
-        font-size: 4em;
-    }
 }
