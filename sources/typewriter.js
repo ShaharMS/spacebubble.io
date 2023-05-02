@@ -10,7 +10,7 @@ function observerCallback(entries, observer) {
     entries.forEach(entry => {
         if (entry.isIntersecting && !entry.target.classList.contains("__highlighted")) {
             // set up text to print, each item in array is new line
-            let aText = [entry.target.innerText];
+            let aText = entry.target.innerText.split("\n");
             let iArrLength = aText[0].length; // the length of the text array
 
             let iTextPos = 0; // initialise text position
@@ -24,7 +24,7 @@ function observerCallback(entries, observer) {
                 let destination = entry.target;
 
                 while (iRow < iIndex) {
-                    sContents += aText[iRow++] + '<br />';
+                    sContents += aText[iRow++] + '<br/>';
                 }
                 destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "<flash style=\"margin-inline:2px\">|</flash>";
                 if (iTextPos++ == iArrLength) {
@@ -32,7 +32,7 @@ function observerCallback(entries, observer) {
                     iIndex++;
                     if (iIndex != aText.length) {
                         iArrLength = aText[iIndex].length;
-                        setTimeout(typewriter, 500);
+                        setTimeout(typewriter, iSpeed * 4);
                     }
                 } else {
                     setTimeout(typewriter, iSpeed);
@@ -47,5 +47,4 @@ function observerCallback(entries, observer) {
 
 document.querySelectorAll(".highlight").forEach((e) => {
     observer.observe(e);
-    console.log(e.innerHTML);
 });

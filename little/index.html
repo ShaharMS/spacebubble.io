@@ -330,7 +330,6 @@ Ast
             html = html.replace(new RegExp("(//.+?)(\n|$)", "g"), "<span class='cmt'>$1</span>$2");
             html = html.replace(new RegExp("(/\\*\\*?(.|\n)+?\\*?\\*/)", "g"), "<span class='cmt'>$1</span>");
             html = html.replace(nums, "<span class='nums'>$1</span>")
-            console.log(html);
             return html;
         };
 

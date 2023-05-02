@@ -116,6 +116,11 @@ flash {
     padding-block: 10px;
 }
 
+.example-video {
+    border: 6px white dashed;
+    border-radius: 60px;
+}
+
 /*
 ----------------------------------------------
 First Section
@@ -317,6 +322,7 @@ Fourth Section, EZworksheet
 .fourth-content div {
     min-width: 30%;
 }
+
 .fourth-section {
     display: flex;
     margin-top: 300px;
@@ -338,9 +344,12 @@ Fourth Section, EZworksheet
 }
 
 .fourth-section .text-content p {
-    width: 80%;
-    margin-left: 17%;
     text-align: justify;
+}
+
+.fourth-content .example-video {
+    align-self: center;
+    width: 90%;
 }
 
 .fourth-section .links {

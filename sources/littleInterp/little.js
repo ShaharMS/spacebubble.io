@@ -1,4 +1,5 @@
-(function ($global) { "use strict";
+(function ($hx_exports, $global) { "use strict";
+$hx_exports["little"] = $hx_exports["little"] || {};
 var $hxClasses = {},$estr = function() { return js_Boot.__string_rec(this,''); },$hxEnums = $hxEnums || {},$_;
 function $extend(from, fields) {
 	var proto = Object.create(from);
@@ -727,10 +728,10 @@ haxe_Log.formatOutput = function(v,infos) {
 	return pstr + ": " + str;
 };
 haxe_Log.trace = function(v,infos) {
-	/*var str = haxe_Log.formatOutput(v,infos);
+	var str = haxe_Log.formatOutput(v,infos);
 	if(typeof(console) != "undefined" && console.log != null) {
 		console.log(str);
-	}*/
+	}
 };
 var haxe_NativeStackTrace = function() { };
 $hxClasses["haxe.NativeStackTrace"] = haxe_NativeStackTrace;
@@ -1486,7 +1487,7 @@ little_interpreter_Runtime.throwError = function(token,layer) {
 little_interpreter_Runtime.print = function(item) {
 	little_interpreter_Runtime.stdout += "\n" + (little_Little.debug ? "Interpreter".toUpperCase() + ": " : "") + "Module " + little_interpreter_Runtime.currentModule + ", Line " + little_interpreter_Runtime.line + ":  " + (item == null ? "null" : "" + item);
 };
-var little_Little = function() { };
+var little_Little = $hx_exports["little"]["Little"] = function() { };
 $hxClasses["little.Little"] = little_Little;
 little_Little.__name__ = "little.Little";
 little_Little.loadModule = function(code,name,debug,runRightBeforeMain) {
@@ -5362,6 +5363,6 @@ little_tools_PrepareRun.prepared = false;
 little_tools_PrettyPrinter.s = "";
 little_tools_PrettyPrinter.l = 0;
 Main.main();
-})(typeof window != "undefined" ? window : typeof global != "undefined" ? global : typeof self != "undefined" ? self : this);
+})(typeof exports != "undefined" ? exports : typeof window != "undefined" ? window : typeof self != "undefined" ? self : this, typeof window != "undefined" ? window : typeof global != "undefined" ? global : typeof self != "undefined" ? self : this);
 
 //# sourceMappingURL=interp.js.map
