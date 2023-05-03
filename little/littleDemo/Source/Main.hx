@@ -77,31 +77,34 @@ class Main extends Sprite
 	}
 
 	public function parseLittle(text:String):Array<{color:Int, start:Int, end:Int}>
-		{
-			var interp:Array<{color:Int, start:Int, end:Int}> = [];
-			
-			var indexOfBlue = text.indexesFromEReg(new EReg('\\b(${Keywords.VARIABLE_DECLARATION}|${Keywords.FUNCTION_DECLARATION}|${Keywords.TRUE_VALUE}|${Keywords.FALSE_VALUE}|${Keywords.NULL_VALUE}|${Keywords.FOR_LOOP_IDENTIFIERS.FROM}|${Keywords.FOR_LOOP_IDENTIFIERS.TO}|${Keywords.FOR_LOOP_IDENTIFIERS.JUMP})\\b', "m")),
-				indexOfPurple = text.indexesOfSubs(Keywords.CONDITION_TYPES),
-				indexOfFunctionName = text.indexesFromEReg(~/([a-zA-Z0-9_]+)\(/m),
-				indexOfClassName = text.indexesFromEReg(~/(?::|\(| |\n|^)[A-Z][a-zA-Z]+/m),
-				indexOfString = text.indexesFromEReg(~/"[^"]*"|'[^']*'/),
-				indexOfNumbers = text.indexesOfSubs(["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]),
-				indexOfComments = text.indexesFromEReg(~/\/\/.*/m);	
-			
-			for (i in indexOfFunctionName)
-				interp.push({color: 0xdcdcaa, start: i.startIndex, end: i.endIndex - 1});
-			for (i in indexOfBlue)
-				interp.push({color: 0x569cd6, start: i.startIndex, end: i.endIndex});
-			for (i in indexOfClassName)
-				interp.push({color: 0x44c9b0, start: i.startIndex, end: i.endIndex});
-			for (i in indexOfPurple)
-				interp.push({color: 0xc586c0, start: i.startIndex, end: i.endIndex});
-			for (i in indexOfNumbers)
-				interp.push({color: 0xb5cea8, start: i.startIndex, end: i.endIndex});
-			for (i in indexOfString)
-				interp.push({color: 0xff5e00, start: i.startIndex, end: i.endIndex});
-			for (i in indexOfComments)
-				interp.push({color: 0x5e5e5e, start: i.startIndex, end: i.endIndex});
-			return interp;
-		}
+	{
+		var interp:Array<{color:Int, start:Int, end:Int}> = [];
+		
+		var indexOfIdent = text.indexesFromEReg(~/\w+/),
+			indexOfBlue = text.indexesFromEReg(new EReg('\\b(${Keywords.VARIABLE_DECLARATION}|${Keywords.FUNCTION_DECLARATION}|${Keywords.TRUE_VALUE}|${Keywords.FALSE_VALUE}|${Keywords.NULL_VALUE}|${Keywords.FOR_LOOP_IDENTIFIERS.FROM}|${Keywords.FOR_LOOP_IDENTIFIERS.TO}|${Keywords.FOR_LOOP_IDENTIFIERS.JUMP})\\b', "m")),
+			indexOfPurple = text.indexesOfSubs(Keywords.CONDITION_TYPES),
+			indexOfFunctionName = text.indexesFromEReg(~/([a-zA-Z0-9_]+)\(/m),
+			indexOfClassName = text.indexesFromEReg(~/(?::|\(| |\n|^)[A-Z][a-zA-Z]+/m),
+			indexOfString = text.indexesFromEReg(~/"[^"]*"|'[^']*'/),
+			indexOfNumbers = text.indexesOfSubs(["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]),
+			indexOfComments = text.indexesFromEReg(~/\/\/.*/m);	
+	
+		for (i in indexOfIdent)
+			interp.push({color: 0x9cdcfe, start: i.startIndex, end: i.endIndex});
+		for (i in indexOfFunctionName)
+			interp.push({color: 0xdcdcaa, start: i.startIndex, end: i.endIndex - 1});
+		for (i in indexOfBlue)
+			interp.push({color: 0x569cd6, start: i.startIndex, end: i.endIndex});
+		for (i in indexOfClassName)
+			interp.push({color: 0x44c9b0, start: i.startIndex, end: i.endIndex});
+		for (i in indexOfPurple)
+			interp.push({color: 0xc586c0, start: i.startIndex, end: i.endIndex});
+		for (i in indexOfNumbers)
+			interp.push({color: 0xb5cea8, start: i.startIndex, end: i.endIndex});
+		for (i in indexOfString)
+			interp.push({color: 0xff5e00, start: i.startIndex, end: i.endIndex});
+		for (i in indexOfComments)
+			interp.push({color: 0x5e5e5e, start: i.startIndex, end: i.endIndex});
+		return interp;
+	}
 }
