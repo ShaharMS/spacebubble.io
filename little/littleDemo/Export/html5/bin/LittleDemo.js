@@ -892,13 +892,13 @@ ApplicationMain.main = function() {
 ApplicationMain.create = function(config) {
 	var app = new openfl_display_Application();
 	ManifestResources.init(config);
-	app.meta.h["build"] = "313";
+	app.meta.h["build"] = "314";
 	app.meta.h["company"] = "Company Name";
 	app.meta.h["file"] = "LittleDemo";
 	app.meta.h["name"] = "LittleDemo";
 	app.meta.h["packageName"] = "com.sample.littledemo";
 	app.meta.h["version"] = "1.0.0";
-	var attributes = { allowHighDPI : true, alwaysOnTop : false, borderless : false, element : null, frameRate : 60, height : 750, hidden : false, maximized : false, minimized : false, parameters : { }, resizable : true, title : "LittleDemo", width : 608, x : null, y : null};
+	var attributes = { allowHighDPI : true, alwaysOnTop : false, borderless : false, element : null, frameRate : 60, height : 0, hidden : false, maximized : false, minimized : false, parameters : { }, resizable : true, title : "LittleDemo", width : 0, x : null, y : null};
 	attributes.context = { antialiasing : 0, background : null, colorDepth : 32, depth : true, hardware : true, stencil : true, type : null, vsync : false};
 	if(app.__window == null) {
 		if(config != null) {
@@ -3343,13 +3343,30 @@ var Main = function() {
 	this.input.set_defaultTextFormat(texter_general_markdown_MarkdownVisualizer.get_markdownTextFormat());
 	this.input.set_background(true);
 	this.input.set_backgroundColor(1052688);
-	this.input.set_height(365);
+	this.input.set_height(320);
 	this.input.set_width(608);
 	this.input.set_type(1);
 	this.input.set_multiline(true);
+	this.input.set_wordWrap(false);
+	this.input.set_text("define welcome = \" world\"\nprint(\"hello\" + welcome)\nprint({define i = \"Hi!\", (i + \" Whats up?\")})");
+	this.input.set_x(38);
+	this.input.set_y(0);
+	this.lines = new openfl_text_TextField();
+	var linesF = texter_general_markdown_MarkdownVisualizer.get_markdownTextFormat();
+	linesF.align = 4;
+	linesF.color = 3618615;
+	this.lines.set_defaultTextFormat(linesF);
+	this.lines.set_multiline(true);
+	this.lines.set_wordWrap(false);
+	this.lines.set_background(true);
+	this.lines.set_backgroundColor(1052688);
+	this.lines.set_height(320);
+	this.lines.set_width(40);
+	this.lines.set_x(0);
+	this.lines.set_y(0);
 	this.input.addEventListener("change",function(e) {
 		little_Little.run(_gthis.input.get_text());
-		_gthis.output.set_text(little_Little.runtime.stdout);
+		_gthis.output.set_text(TextTools.replaceFirst(little_Little.runtime.stdout,"\n",""));
 		_gthis.input.setTextFormat(texter_general_markdown_MarkdownVisualizer.get_markdownTextFormat(),0,_gthis.input.get_text().length);
 		var coloring = _gthis.parseLittle(_gthis.input.get_text());
 		var _g = 0;
@@ -3358,20 +3375,35 @@ var Main = function() {
 			++_g;
 			_gthis.input.setTextFormat(new openfl_text_TextFormat("_typewriter",null,i.color),i.start,i.end);
 		}
+		var lineCount = TextTools.countOccurrencesOf(_gthis.input.get_text(),"\n");
+		var status = TextTools.countOccurrencesOf(_gthis.lines.get_text(),"\n");
+		var _g = status;
+		var _g1 = lineCount + 1;
+		while(_g < _g1) {
+			var i = _g++;
+			var fh = _gthis.lines;
+			fh.set_text(fh.get_text() + ("" + i + "|\n"));
+		}
+		var _g = lineCount + 1;
+		var _g1 = status;
+		while(_g < _g1) {
+			var i = _g++;
+			_gthis.lines.set_text(TextTools.replaceLast(_gthis.lines.get_text(),"" + i + "|\n",""));
+		}
+		_gthis.lines.set_scrollV(_gthis.input.get_scrollV());
 	});
-	this.input.set_text("define welcome = \" world\"\nprint(\"hello\" + welcome)\nprint({define i = \"Hi!\", (i + \" Whats up?\")})");
-	this.input.set_x(this.input.set_y(0));
 	this.output = new openfl_text_TextField();
 	this.output.set_defaultTextFormat(texter_general_markdown_MarkdownVisualizer.get_markdownTextFormat());
 	this.output.set_background(true);
 	this.output.set_backgroundColor(1052688);
-	this.output.set_height(365);
-	this.output.set_width(608);
+	this.output.set_height(340);
+	this.output.set_width(646);
 	this.output.set_multiline(true);
-	this.output.set_wordWrap(true);
+	this.output.set_wordWrap(false);
 	this.output.set_x(0);
 	this.output.set_y(20 + this.input.get_height());
 	this.addChild(this.input);
+	this.addChild(this.lines);
 	this.addChild(this.output);
 	this.input.dispatchEvent(new openfl_events_Event("change"));
 };
@@ -23339,7 +23371,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 666789;
+	this.version = 297315;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = "lime.utils.AssetCache";

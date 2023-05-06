@@ -14,6 +14,7 @@ using TextTools;
 class Main extends Sprite
 {
 	public var input:TextField;
+	public var lines:TextField;
 	public var output:TextField;
 
 	public function new()
@@ -26,40 +27,66 @@ class Main extends Sprite
 		input.defaultTextFormat = Markdown.visualizer.markdownTextFormat;
 		input.background = true;
 		input.backgroundColor = 0x101010;
-		input.height = 365;
+		input.height = 320;
 		input.width = 608;
 		input.type = INPUT;
 		input.multiline = true;
-		// Lib.application.window.onKeyDown.add((c, m) -> {
-		// 	if (c == 13) {
-		// 		input.replaceSelectedText("\n");
-		// 	}
-		// });
+		input.wordWrap = false;
+		input.text = 'define welcome = " world"\nprint("hello" + welcome)\nprint({define i = "Hi!", (i + " Whats up?")})';
+		input.x = 38;
+		input.y = 0;
+		
+		lines = new TextField();
+		var linesF = Markdown.visualizer.markdownTextFormat;
+		linesF.align = RIGHT;
+		linesF.color = 0x373737;
+		lines.defaultTextFormat = linesF;
+		lines.multiline = true;
+		lines.wordWrap = false;
+		lines.background = true;
+		lines.backgroundColor = 0x101010;
+		lines.height = 320;
+		lines.width = 40;
+		lines.x = 0;
+		lines.y = 0;
+
 		input.addEventListener(Event.CHANGE, e -> {
 			Little.run(input.text);
-			output.text = Little.runtime.stdout;
-
+			output.text = Little.runtime.stdout.replaceFirst("\n", "");
 			input.setTextFormat(Markdown.visualizer.markdownTextFormat, 0, input.text.length);
 			var coloring:Array<{color:Int, start:Int, end:Int}> = parseLittle(input.text);
 			for (i in coloring)
 			{
 				input.setTextFormat(new openfl.text.TextFormat("_typewriter", null, i.color), i.start, i.end);
 			}
+
+			var lineCount = input.text.countOccurrencesOf("\n");
+			var status = lines.text.countOccurrencesOf("\n");
+			for (i in status...lineCount + 1) {
+				lines.text += '$i|\n';
+			}
+			for (i in lineCount + 1...status) {
+				lines.text = lines.text.subtract('$i|\n');
+			}
+			lines.scrollV = input.scrollV;
 		});
-		input.text = 'define welcome = " world"\nprint("hello" + welcome)\nprint({define i = "Hi!", (i + " Whats up?")})';
-		input.x = input.y = 0;
+		
+
+		
+
 
 		output = new TextField();
 		output.defaultTextFormat = Markdown.visualizer.markdownTextFormat;
 		output.background = true;
 		output.backgroundColor = 0x101010;
-		output.height = 365;
-		output.width = 608;
+		output.height = 340;
+		output.width = 646;
 		output.multiline = true;
-		output.wordWrap = true;
+		output.wordWrap = false;
 		output.x = 0;
 		output.y = 20 + input.height;
 		addChild(input);
+		addChild(lines);
 		addChild(output);
 
 		input.dispatchEvent(new Event(Event.CHANGE));

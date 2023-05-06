@@ -5,7 +5,7 @@
 	
 	<meta title="LittleDemo" package="com.sample.littledemo" version="1.0.0" company="Company Name" />
 	<app main="Main" path="Export" file="LittleDemo"/>
-	<window width="608" height="750" background=""/>
+	<window background=""/>
 	
 	<source path="Source" />
 	

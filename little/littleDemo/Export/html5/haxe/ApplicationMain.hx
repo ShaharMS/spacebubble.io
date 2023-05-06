@@ -20,7 +20,7 @@ class ApplicationMain
 
 		#if (js && html5)
 		#if (munit || utest)
-		lime.system.System.embed("LittleDemo", null, 608, 750);
+		lime.system.System.embed("LittleDemo", null, 0, 0);
 		#end
 		#else
 		create(null);
@@ -35,7 +35,7 @@ class ApplicationMain
 		ManifestResources.init(config);
 		#end
 
-		app.meta["build"] = "313";
+		app.meta["build"] = "314";
 		app.meta["company"] = "Company Name";
 		app.meta["file"] = "LittleDemo";
 		app.meta["name"] = "LittleDemo";
@@ -54,14 +54,14 @@ class ApplicationMain
 			element: null,
 			frameRate: 60,
 			#if !web fullscreen: false, #end
-			height: 750,
+			height: 0,
 			hidden: #if munit true #else false #end,
 			maximized: false,
 			minimized: false,
 			parameters: {},
 			resizable: true,
 			title: "LittleDemo",
-			width: 608,
+			width: 0,
 			x: null,
 			y: null,
 		};
