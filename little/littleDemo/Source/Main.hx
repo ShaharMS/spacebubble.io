@@ -49,28 +49,35 @@ class Main extends Sprite
 		lines.width = 40;
 		lines.x = 0;
 		lines.y = 0;
+		lines.selectable = false;
+		lines.mouseWheelEnabled = false;
 
 		input.addEventListener(Event.CHANGE, e -> {
-			Little.run(input.text);
-			output.text = Little.runtime.stdout.replaceFirst("\n", "");
-			input.setTextFormat(Markdown.visualizer.markdownTextFormat, 0, input.text.length);
-			var coloring:Array<{color:Int, start:Int, end:Int}> = parseLittle(input.text);
-			for (i in coloring)
-			{
-				input.setTextFormat(new openfl.text.TextFormat("_typewriter", null, i.color), i.start, i.end);
-			}
+			try {
+				Little.run(input.text);
+				output.text = Little.runtime.stdout.replaceFirst("\n", "");
+				input.setTextFormat(Markdown.visualizer.markdownTextFormat, 0, input.text.length);
+				var coloring:Array<{color:Int, start:Int, end:Int}> = parseLittle(input.text);
+				for (i in coloring)
+				{
+					input.setTextFormat(new openfl.text.TextFormat("_typewriter", null, i.color), i.start, i.end);
+				}
 
-			var lineCount = input.text.countOccurrencesOf("\n");
-			var status = lines.text.countOccurrencesOf("\n");
-			for (i in status...lineCount + 1) {
-				lines.text += '$i|\n';
-			}
-			for (i in lineCount + 1...status) {
-				lines.text = lines.text.subtract('$i|\n');
-			}
-			lines.scrollV = input.scrollV;
+				var lineCount = input.text.countOccurrencesOf("\n");
+				var status = lines.text.countOccurrencesOf("\n");
+				for (i in status...lineCount + 1) {
+					lines.text += '$i|\n';
+				}
+				for (i in lineCount + 1...status) {
+					lines.text = lines.text.subtract('$i|\n');
+				}
+				lines.scrollV = input.scrollV;
+			} catch (e) trace(e.details());
 		});
 		
+		input.addEventListener(Event.SCROLL, e -> {
+			lines.scrollV = input.scrollV;
+		});
 
 		
 
@@ -109,7 +116,7 @@ class Main extends Sprite
 		
 		var indexOfIdent = text.indexesFromEReg(~/\w+/),
 			indexOfBlue = text.indexesFromEReg(new EReg('\\b(${Keywords.VARIABLE_DECLARATION}|${Keywords.FUNCTION_DECLARATION}|${Keywords.TRUE_VALUE}|${Keywords.FALSE_VALUE}|${Keywords.NULL_VALUE}|${Keywords.FOR_LOOP_IDENTIFIERS.FROM}|${Keywords.FOR_LOOP_IDENTIFIERS.TO}|${Keywords.FOR_LOOP_IDENTIFIERS.JUMP})\\b', "m")),
-			indexOfPurple = text.indexesOfSubs(Keywords.CONDITION_TYPES),
+			indexOfPurple = text.indexesOfSubs(Keywords.CONDITION_TYPES.concat([Keywords.ELSE])),
 			indexOfFunctionName = text.indexesFromEReg(~/([a-zA-Z0-9_]+)\(/m),
 			indexOfClassName = text.indexesFromEReg(~/(?::|\(| |\n|^)[A-Z][a-zA-Z]+/m),
 			indexOfString = text.indexesFromEReg(~/"[^"]*"|'[^']*'/),
