@@ -892,7 +892,7 @@ ApplicationMain.main = function() {
 ApplicationMain.create = function(config) {
 	var app = new openfl_display_Application();
 	ManifestResources.init(config);
-	app.meta.h["build"] = "315";
+	app.meta.h["build"] = "316";
 	app.meta.h["company"] = "Company Name";
 	app.meta.h["file"] = "LittleDemo";
 	app.meta.h["name"] = "LittleDemo";
@@ -3409,7 +3409,7 @@ var Main = function() {
 	this.output.set_height(340);
 	this.output.set_width(646);
 	this.output.set_multiline(true);
-	this.output.set_wordWrap(false);
+	this.output.set_wordWrap(true);
 	this.output.set_x(0);
 	this.output.set_y(20 + this.input.get_height());
 	this.addChild(this.input);
@@ -23381,7 +23381,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 502346;
+	this.version = 552598;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = "lime.utils.AssetCache";
@@ -27293,14 +27293,14 @@ little_interpreter_Interpreter.accessObject = function(exp,memory) {
 				var name = prop.name;
 				var params = prop.params;
 				if(little_interpreter_memory_MemoryTree.get(object.props,little_interpreter_Interpreter.stringifyTokenValue(name)) == null) {
-					little_interpreter_Interpreter.evaluate(little_parser_ParserTokens.ErrorMessage("Unable to call `" + objName + little_Keywords.PROPERTY_ACCESS_SIGN + little_interpreter_Interpreter.stringifyTokenValue(name) + "(" + little_interpreter_Interpreter.stringifyTokenValue(params) + ")`: `" + objName + "` Does not contain property `" + little_interpreter_Interpreter.stringifyTokenIdentifier(name) + "`."));
+					little_interpreter_Interpreter.evaluate(little_parser_ParserTokens.ErrorMessage("Unable to call `" + objName + little_Keywords.PROPERTY_ACCESS_SIGN + little_interpreter_Interpreter.stringifyTokenValue(name) + "(" + little_interpreter_Interpreter.stringifyTokenValue(params) + ")`: `" + objName + "` Does not contain property `" + little_interpreter_Interpreter.stringifyTokenIdentifier(name) + "`. Use `" + little_Keywords.FUNCTION_DECLARATION + "` to create a new property (`" + little_Keywords.FUNCTION_DECLARATION + " " + str + little_Keywords.PROPERTY_ACCESS_SIGN + little_interpreter_Interpreter.stringifyTokenIdentifier(name) + "(...)`)"));
 					return null;
 				}
 				return new little_interpreter_memory_MemoryObject(little_interpreter_memory_MemoryTree.get(object.props,little_interpreter_Interpreter.stringifyTokenValue(name)).use(params),null,null,null,null,null,null,little_interpreter_memory_MemoryTree.get_object(memory));
 			} else {
 				if(little_interpreter_memory_MemoryTree.get(object.props,little_interpreter_Interpreter.stringifyTokenIdentifier(prop)) == null) {
 					little_interpreter_memory_MemoryTree.set(object.props,little_interpreter_Interpreter.stringifyTokenIdentifier(prop),new little_interpreter_memory_MemoryObject(little_parser_ParserTokens.NullValue,null,null,null,null,null,null,object));
-					little_interpreter_Interpreter.evaluate(little_parser_ParserTokens.ErrorMessage("Unable to access `" + str + little_Keywords.PROPERTY_ACCESS_SIGN + little_interpreter_Interpreter.stringifyTokenValue(prop) + "`: `" + str + "` Does not contain property `" + little_interpreter_Interpreter.stringifyTokenValue(prop) + "`"));
+					little_interpreter_Interpreter.evaluate(little_parser_ParserTokens.ErrorMessage("Unable to access `" + str + little_Keywords.PROPERTY_ACCESS_SIGN + little_interpreter_Interpreter.stringifyTokenValue(prop) + "`: `" + str + "` Does not contain property `" + little_interpreter_Interpreter.stringifyTokenValue(prop) + "`. Use `" + little_Keywords.VARIABLE_DECLARATION + "` to create a new property (`" + little_Keywords.VARIABLE_DECLARATION + " " + str + little_Keywords.PROPERTY_ACCESS_SIGN + little_interpreter_Interpreter.stringifyTokenValue(prop) + "`)"));
 					return null;
 				}
 				return little_interpreter_memory_MemoryTree.get(object.props,little_interpreter_Interpreter.stringifyTokenIdentifier(prop));
@@ -29018,6 +29018,13 @@ little_parser_Parser.mergeCalls = function(pre) {
 				case 1:
 					post.push(little_parser_ParserTokens.Expression(parts,type4));
 					break;
+				case 14:
+					var name3 = lookbehind.name;
+					var property = lookbehind.property;
+					post.pop();
+					token = little_parser_ParserTokens.PartArray(parts);
+					post.push(little_parser_ParserTokens.PropertyAccess(name3,little_parser_ParserTokens.FunctionCall(property,token)));
+					break;
 				case 15:
 					var _g1 = lookbehind.sign;
 					post.push(little_parser_ParserTokens.Expression(parts,type4));
@@ -29039,9 +29046,9 @@ little_parser_Parser.mergeCalls = function(pre) {
 			post.push(little_parser_ParserTokens.PartArray(little_parser_Parser.mergeCalls(parts1)));
 			break;
 		case 14:
-			var name3 = token.name;
-			var property = token.property;
-			post.push(little_parser_ParserTokens.PropertyAccess(little_parser_Parser.mergeCalls([name3])[0],little_parser_Parser.mergeCalls([property])[0]));
+			var name4 = token.name;
+			var property1 = token.property;
+			post.push(little_parser_ParserTokens.PropertyAccess(little_parser_Parser.mergeCalls([name4])[0],little_parser_Parser.mergeCalls([property1])[0]));
 			break;
 		default:
 			post.push(token);

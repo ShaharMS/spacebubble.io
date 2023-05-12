@@ -89,7 +89,7 @@ class Main extends Sprite
 		output.height = 340;
 		output.width = 646;
 		output.multiline = true;
-		output.wordWrap = false;
+		output.wordWrap = true;
 		output.x = 0;
 		output.y = 20 + input.height;
 		addChild(input);
