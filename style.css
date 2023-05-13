@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    --default-size: 1080px;
 }
 
 body {
@@ -28,15 +29,15 @@ flash {
 }
 
 @keyframes blinker {
-  50% {
-    opacity: 0;
-  }
+    50% {
+        opacity: 0;
+    }
 }
 
 ::-webkit-scrollbar {
     width: 15px;
 }
-  
+
 ::-webkit-scrollbar-track {
     background: #000000;
 }
@@ -55,7 +56,7 @@ flash {
     display: inline;
     position: absolute;
     left: 50%;
-    top: 4vh;
+    top: calc(var(--default-size) * 1/25);
     transform: translate(-50%, 0);
     font-size: 1.25em;
     letter-spacing: 7px;
@@ -66,7 +67,7 @@ flash {
     position: absolute;
     height: 6000px;
     width: 100vw;
-    top: 45vh;
+    top: calc(var(--default-size) * 8/20);
     z-index: -1;
     left: 50%;
     transform: translate(-50%);
@@ -120,6 +121,8 @@ flash {
     border-radius: 60px;
 }
 
+
+
 /*
 ----------------------------------------------
 First Section
@@ -139,7 +142,7 @@ First Section
     font-size: 6.3em;
     font-weight: 300;
     margin-top: 0px;
-    margin-bottom: 5vh;
+    margin-bottom: calc(var(--default-size) * 1/20);
 }
 
 .first-section-text {
@@ -155,7 +158,7 @@ First Section
     margin-inline: auto;
     background-color: antiquewhite;
 }
-  
+
 .first-section-content .right {
     display: flex;
     flex-direction: column;
@@ -196,9 +199,12 @@ First Section
     align-items: center;
 }
 
-.Twitter-icon, .GitHub-icon, .Discord-icon {
+.Twitter-icon,
+.GitHub-icon,
+.Discord-icon {
     margin-right: 5px;
 }
+
 /*
 ----------------------------------------------
 Second Section - Empty space
@@ -221,13 +227,6 @@ Second Section - Empty space
     font-size: 2em;
 }
 
-#bouncy-arrow {
-    position: relative;
-    margin-top: 100px;
-    animation: bounce 2s linear infinite;
-    animation-timing-function: ease-in-out;
-}
-
 /*
 ----------------------------------------------
 Third Section, Little -  The Programming Language
@@ -236,7 +235,7 @@ Third Section, Little -  The Programming Language
 
 .third-section {
     position: absolute;
-    top: 155vh;
+    top: calc(var(--default-size) * 28/20);
     padding-inline: 5%;
     display: flex;
     flex-direction: row;
@@ -249,6 +248,8 @@ Third Section, Little -  The Programming Language
 }
 
 .code-io {
+    position: relative;
+    top: -60px;
     display: flex;
     flex-direction: column;
     background-color: rgb(30, 30, 30);
@@ -263,34 +264,9 @@ Third Section, Little -  The Programming Language
     height: 650px;
 }
 
-#code {
-    height: 40vh;
-    width: 600px;
-    border: 0;
-    outline: black solid 1;
-    border-radius: 4px;
-    background-color: rgb(16, 16, 16);
-    color: white;
-    resize: none;
-    font-family:'Courier New', Courier, monospace;
-    white-space: pre-wrap;
-    padding: 4px;
-}
-
-#result {
-    height: 40vh;
-    width: 600px;
-    border: 0;
-    outline: black solid 1;
-    border-radius: 4px;
-    background-color: rgb(16, 16, 16);
-    color: white;
-    resize: none;
-    font-family:'Courier New', Courier, monospace;
-    padding: 4px;
-}
-
 .third-section .data {
+    position: relative;
+    top: calc(var(--default-size) * 1/5);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -306,27 +282,29 @@ Fourth Section, EZworksheet
 ----------------------------------------------
 */
 
+.fourth-section {
+    display: flex;
+    position: absolute;
+    top: calc(var(--default-size) * 49/20);
+    padding-inline: 5%;
+    width: 100%;
+}
 
 .fourth-content {
-    position: absolute;
-    top: 300vh;
+
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     gap: 30px;
     width: 100%;
-    margin-top: -160px;
+}
+
+.fourth-content .links {
+    padding-top: 200px;
 }
 
 .fourth-content div {
     min-width: 30%;
-}
-
-.fourth-section {
-    display: flex;
-    margin-top: 300px;
-    padding-inline: 5%;
-    width: 100%;
 }
 
 .fourth-section .text-content {
@@ -339,7 +317,7 @@ Fourth Section, EZworksheet
 
 .fourth-section .text-content h1 {
     font-size: 6.3em;
-    margin-bottom: 2vh;
+    margin-bottom: calc(var(--default-size) * 1/50);
 }
 
 .fourth-section .text-content p {
@@ -348,7 +326,8 @@ Fourth Section, EZworksheet
 
 .fourth-content .example-video {
     align-self: center;
-    width: 90%;
+    margin-top: 40px;
+    height: calc(var(--default-size) * 1/4);
 }
 
 .fourth-section .links {
@@ -371,80 +350,25 @@ Fifth Section, Vision
 
 .fifth-section {
     position: absolute;
-    top: 400vh;
+    top: calc(var(--default-size) * 35/10);
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-top: 500px;
     padding-inline: 5%;
     width: 90%;
 }
 
-#card-group {
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    left: calc(50% - var(--half-card-width) - var(--card-gap));
-}
-
-.card {
-    min-width: calc(var(--half-card-width) * 2);
-    height: 600px;
-    background: rgb(30, 30, 30);
-    margin-inline: var(--card-gap);
-    box-sizing: border-box;
-    padding-inline: 55px;
-    display: flex;
-}
-
-.fifth-section .controls {
-    display: flex;
-    margin-top: 50px;
-    justify-content: center;
-}
-
-.fifth-section .text-content {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    margin-bottom: 40px;
-}
-
-.fifth-section .text-content h1 {
+.fifth-content h1 {
     font-size: 6.3em;
+    text-align: center;
     margin-bottom: 2vh;
-}
-
-.fifth-section .text-content .title {
-    display: flex;
-    flex-direction: row;
-    width: 80%;
-}
-
-.fifth-section .text-content p {
     width: 100%;
 }
 
-.fifth-section .links {
+#cards {
     display: flex;
-    justify-content: left;
-    align-items: flex-end;
-    margin-left: 70px;
-    margin-bottom: 30px;
-    column-gap: 10px;
-    flex-direction: row;
-    
-}
-
-.fifth-content .links a {
-    margin-block: 30px;
-    height: min-content;
-}
-
-.fifth-section .vision-example {
-    height: 800px;
-    width: 79%;
-    border-radius: 5px;
+    gap: 30px;
+    width: 100%;
 }
 
 /*
@@ -460,6 +384,4 @@ Sixth Section, Cool Crad
 }
 
 
-@media screen and (max-width: 1400px) {
-
-}
+@media screen and (max-width: 1400px) {}

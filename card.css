@@ -1,9 +1,10 @@
 .card {
-    background: rgb(9,11,54);
-    background: linear-gradient(153deg, rgba(9,11,54,1) 0%, rgba(12,63,123,1) 100%);
+    border: #ccc solid 4px;
     border-radius: 30px;
     overflow: hidden;
-    display: flex;
+    display: inline-block;
+    width: 80vw;
+    height: 600px;
 }
 
 .card img {
@@ -40,6 +41,46 @@
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
+}
+
+.dot.highlighted {
+    background-color: rgb(255, 255, 255);
+}
+
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+
+    border-bottom: 10px solid #bbb;
+}
+
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+
+    border-top: 10px solid #bbb;
+}
+
+.arrow-right {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+
+    border-left: 10px solid #bbb;
+}
+
+.arrow-left {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+
+    border-right: 10px solid #bbb;
 }
 
 .current {
