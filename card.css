@@ -1,15 +1,26 @@
+
+
+#cards {
+    display: flex;
+    width: 450vw;
+    position: relative;
+    left: 0vw;
+	transition: left 0.5s cubic-bezier(0.42, 0, 0.58, 1.0);
+    
+}
+
 .card {
     border: #ccc solid 4px;
     border-radius: 30px;
     overflow: hidden;
     display: inline-block;
-    width: 80vw;
+    width: 74vw;
+    margin-inline: 8vw;
     height: 600px;
 }
 
 .card img {
     width: 400px;
-    aspect-ratio: 1;
 }
 
 .card p {
@@ -28,10 +39,8 @@
     font-weight: 700; /*not working, why?*/
 }
 
-.navigation-dots {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+#card-control-tray {
+    margin-top: calc(var(--default-size) * 1/50);
     gap: 20px;
 }
 
@@ -41,10 +50,13 @@
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
+    margin: 4px;
 }
 
 .dot.highlighted {
     background-color: rgb(255, 255, 255);
+    padding: 4px;
+    margin: 0;
 }
 
 .arrow-up {
@@ -81,8 +93,4 @@
     border-bottom: 10px solid transparent;
 
     border-right: 10px solid #bbb;
-}
-
-.current {
-    color: red;
 }

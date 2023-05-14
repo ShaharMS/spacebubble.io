@@ -361,13 +361,7 @@ Fifth Section, Vision
 .fifth-content h1 {
     font-size: 6.3em;
     text-align: center;
-    margin-bottom: 2vh;
-    width: 100%;
-}
-
-#cards {
-    display: flex;
-    gap: 30px;
+    margin-bottom: calc(var(--default-size) * 6/50);
     width: 100%;
 }
 
