@@ -55,13 +55,6 @@ const arrows = () => {
         currentCard++;
         if (currentCard >= dots.length) {
             currentCard = 0;
-            // let old = cards.style.transition;
-            // cards.style.transition = "none";
-            // cards.offsetHeight; // forces the browser to set pending html changes, thus always getting an accurate transition.
-            // cards.style.left = "0";
-            // cards.style.transition = old;
-            // let card = cards.getElementsByClassName("card").item(dots.length - 1);
-            // cards.prepend(card);
         }
         let current = dots.item(currentCard);
         current.classList.add("highlighted");
@@ -69,7 +62,7 @@ const arrows = () => {
 
     });
 
-    setInterval(() => {if (!changed) forward.dispatchEvent(new Event('click'));}, 5000);
+    setInterval(() => {if (!changed) {forward.dispatchEvent(new Event('click')); changed = false;} else if (isElementInViewport(cards)) {changed = false;}}, 5000);
     
 
     backward.addEventListener('click', (_) => {
@@ -87,6 +80,17 @@ const arrows = () => {
         cards.style.left = `-${90 * currentCard}vw`;
 
     });
+}
+
+const isElementInViewport = (el) => {
+    let rect = el.getBoundingClientRect();
+
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
 }
 
 setDotsUp(document.getElementById('cards'));
