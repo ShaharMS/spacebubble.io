@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="./little/littleStyle.css">
     <link rel="stylesheet" href="./navbar.css">
     <link rel="stylesheet" href="card.css">
-    <script src="./little/interp.js"></script>
     <script src="./sources/littleHighlighter.js"></script>
+    <script src="./sources/htmlIncluder.js"></script>
 </head>
 
 <body>
@@ -111,19 +111,17 @@
                 <p class="highlight" style="text-align: unset;">
                     EZWorksheet is an app, providing a bridge between physical & online schoolwork by digitalizing worksheets & workbooks.
                 </p>
-                <p> Lorem, ipsum dolor sit amet consectetur Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Expedita quo fuga deserunt quas rerum sint
-                    quibusdam quia ullam laudantium nobis porro sit nihil necessitatibus culpa eos in obcaecati,
-                    reprehenderit atque! Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br> Expedita quo
-                    fuga
-                    deserunt quas rerum sint quibusdam quia Expedita quo fuga deserunt quas rerum sint quibusdam quia
-                    ullam
-                    laudantium nobis porro sit nihil necessitatibus culpa eos in obcaecati. <br> eprehenderit atque!
-                    Lorem,
-                    ipsum dolor sit amet consectetur Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita
-                    quo fuga deserunt quas rerum sint
-                    quibusdam quia ullam laudantium nobis porro sit nihil necessitatibus culpa eos in obcaecati,
-                    reprehenderit atque!</p>
+                <p>back in october of 2021, a couple of months after I started programming, I had an idea, that I thought
+                    may actually help me get rid of the need to fill out boring, repetative worksheets. Back then, I thought I would be able to complete it by <code>1st September, 2022</code>, 
+                    but I didnt expect the amount of work that had to be done for the app to be completely done, and at the end of the day, i released a beta version with a bunch of improvements,
+                    which im pretty proud of myself of :).
+                </p>
+                <p>
+                    As of Today (<code><day></day></code>), the currently released version is:
+                </p>
+                <h3 id="ezworksheet_ver"></h3>
+                <script>document.getElementById("ezworksheet_ver").innerHTML = getHTMLFrom("https://ezworksheet.spacebubble.io/api/version")</script>
+                <script>Array.from(document.getElementsByTagName("day")).forEach(e => e.innerHTML = new Date().toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' }))</script>
                 <video src="" class="example-video"></video>
             </div>
         </div>

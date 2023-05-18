@@ -892,7 +892,7 @@ ApplicationMain.main = function() {
 ApplicationMain.create = function(config) {
 	var app = new openfl_display_Application();
 	ManifestResources.init(config);
-	app.meta.h["build"] = "316";
+	app.meta.h["build"] = "320";
 	app.meta.h["company"] = "Company Name";
 	app.meta.h["file"] = "LittleDemo";
 	app.meta.h["name"] = "LittleDemo";
@@ -23381,7 +23381,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 552598;
+	this.version = 392926;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = "lime.utils.AssetCache";
@@ -26057,7 +26057,6 @@ little_tools_Plugins.registerProperty = function(propertyName,onObject,isType,va
 			};
 		}
 	}
-	haxe_Log.trace("Adding " + propertyName + " to " + onObject,{ fileName : "little/tools/Plugins.hx", lineNumber : 365, className : "little.tools.Plugins", methodName : "registerProperty"});
 	little_interpreter_memory_MemoryTree.set(parent.props,propertyName,memObject);
 };
 var little_interpreter_Runtime = function() { };
@@ -26753,7 +26752,6 @@ little_interpreter_Interpreter.interpret = function(tokens,runConfig) {
 	if(little_interpreter_Interpreter.errorThrown) {
 		return null;
 	}
-	haxe_Log.trace(tokens,{ fileName : "little/interpreter/Interpreter.hx", lineNumber : 26, className : "little.interpreter.Interpreter", methodName : "interpret"});
 	little_interpreter_Interpreter.currentConfig = runConfig;
 	if(tokens == null || tokens.length == 0) {
 		return little_parser_ParserTokens.NullValue;

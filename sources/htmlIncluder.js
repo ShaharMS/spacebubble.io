@@ -33,7 +33,7 @@ function getHTMLFrom(path) {
     request.send();
     console.log(request.status);
     if (request.status == 404) {
-        return `<pre>Cannot GET ` + path;
+        return `<pre>Cannot GET ` + path + "</pre>";
     }
     return request.responseText;
 }
