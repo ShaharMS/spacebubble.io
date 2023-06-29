@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@400;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Geologica', sans-serif;
+    user-select: none;
+}
+
+
+.funny-title {
+    font-size: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pre-funny-title {
+    font-size: 16px;
+}
