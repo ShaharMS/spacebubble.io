@@ -1,0 +1,157 @@
+<style>
+    td {
+        max-width: 40vw;
+    }
+</style>
+<h1>OpenFL Defines, And Their Meanings <small>by Shahar Marcus</small></h1>
+<br>
+<p>
+    Over Time, because of OpenFL's growth and optimizations, it introduced specific
+    defines, which enable/disable certain features.
+    <br>
+    <br>
+    If you don't know what <code>defines</code> are, visit this <a href="./?name=Haxedefs-Haxeflags">link</a>
+
+    <table class="table-bordered table">
+        <tr>
+            <th>Define Name</th>
+            <th>Meaning</th>
+            <th>Versions</th>
+        </tr>
+        <tr>
+            <td>
+                <pre><code class="language-xml" >&lt;haxedef&nbsp;name="queue_experimental_optimization"/&gt;</code></pre>
+            </td>
+            <td>Enables a new and optimized game loop - boosts performance, and takes less memory</td>
+            <td>9.2.0+</td>
+        </tr>
+        <tr>
+            <td>
+                <pre><code class="language-xml">&lt;haxedef&nbsp;name="openfl_dynamic"/&gt;</code></pre>
+            </td>
+            <td>Allows dynamic property access on three main OpenFL classes -  <code>MovieClip</code>, <code>DisplayObject</code> and <code>Error</code></td>
+            <td>5.0.0+ <br> <b>Haxe 3 Only</b></td>
+        </tr>
+        <tr>
+            <td>
+                <pre><code class="language-xml" >&lt;haxedef&nbsp;name="openfl_debug"/&gt;</code></pre>
+            </td>
+            <td>Prevents signing the program with the <i>"release"</i> tag, allows debugging information from being generated for openfl classes</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <pre><code class="language-xml" >&lt;haxedef&nbsp;name="openfl_trace_text_layout_groups"/&gt;</code></pre>
+            </td>
+            <td>Debugging option, traces positional information about text layout groups, and the text they contains.</td>
+            <td>4.9.0+</td>
+        </tr>
+        <tr>
+            <td>
+                <pre><code class="language-xml" >&lt;haxedef&nbsp;name="openfl_strict"/&gt;</code></pre>
+            </td>
+            <td>Disables any unsafe/unimplemented/unstable features that are currently offered</td>
+            <td>8.9.1+</td>
+        </tr>
+        <tr>
+            <td>
+                <pre><code class="language-xml" >&lt;haxedef&nbsp;name="openfl_disable_cacheasbitmap"/&gt;</code></pre>
+            </td>
+            <td>Disables <code>object.cacheAsBitmap</code>'s functionality</td>
+            <td>9.1.0+</td>
+        </tr>
+        <tr>
+            <td>
+                <pre><code class="language-xml" >&lt;haxedef&nbsp;name="openfl_disable_filters"/&gt;</code></pre>
+            </td>
+            <td>Disables visual filters entirely - blocks them from rendering</td>
+            <td>9.1.0+</td>
+        </tr>
+        <tr>
+            <td>
+                <pre><code class="language-xml" >&lt;haxedef&nbsp;name="gl_stats"/&gt;</code></pre>
+            </td>
+            <td>Adds additional debugging information to the FPS counter's text: <b>total draw calls</b>, <b>stage draw calls this second</b>, <b>stage3d draw calls this second</b></td>
+            <td>6.5.3+</td>
+        </tr>
+        <tr>
+            <td>
+                <pre><code class="language-xml" >&lt;haxedef&nbsp;name="openfl_disable_handle_error"/&gt;</code></pre>
+            </td>
+            <td>Disables the <code>UncaughtErrorEvent.UNCAUGHT_ERROR</code> event</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <pre><code class="language-xml" >&lt;haxedef&nbsp;name="openfl_pool_events"/&gt;</code></pre>
+            </td>
+            <td>Uses a pool to store events. when used, reduces the amount of memory used when lots of listeners are added</td>
+            <td>8.9.0 - 9.0.2</td>
+        </tr>
+        <tr>
+            <td>
+                <pre><code class="language-xml" >&lt;haxedef&nbsp;name="openfl_always_dispatch_mouse_events"/&gt;</code></pre>
+            </td>
+            <td>Instead of waiting for the mouse event to bubble up, OpenFL dispatches that event instantly</td>
+            <td>8.9.0+</td>
+        </tr>
+        <tr>
+            <td>
+                <pre><code class="language-xml" >&lt;haxedef&nbsp;name="openfl_disable_display_render"/&gt;</code></pre>
+            </td>
+            <td>Disables rendering of objects entirely</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <pre><code class="language-xml" >&lt;haxedef&nbsp;name="openfl_always_render"/&gt;</code></pre>
+            </td>
+            <td>renders every single object to the screen, even if it isn't meant/set to not be rendered</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <pre><code class="language-xml" >&lt;haxedef&nbsp;name="openfl_force_sw_graphics"/&gt;
+&lt;haxedef&nbsp;name="force_sw_graphics"/&gt;</code></pre>
+            </td>
+            <td>Renders everything with software rendering. You need to use only one of these defines.</td>
+            <td>8.0.0+</td>
+        </tr>
+        <tr>
+            <td>
+                <pre><code class="language-xml" >&lt;haxedef&nbsp;name="openfl_force_hw_graphics"/&gt;
+&lt;haxedef&nbsp;name="force_hw_graphics"/&gt;</code></pre>
+            </td>
+            <td>Renders everything with hardware accelerated rendering. You need to use only one of these defines.</td>
+            <td>8.0.0+</td>
+        </tr>
+        <tr>
+            <td>
+                <pre><code class="language-xml" >&lt;haxedef&nbsp;name="openfl_power_of_two"/&gt;</code></pre>
+            </td>
+            <td>Makes sure the generated opengl texture for images have powers of two width/height (32, 64, 128, 256, etc.). 
+                <b>Only needed for older devices which don't support textures with arbitrary dimensions</b>. 
+                It's a pretty CPU-intensive process (creates another copy of the image, but with the required size), 
+                and it is recommended to use textures with powers of 2 width/height this define is used anyway to prevent stutters.</td>
+            <td>3.3.3+</td>
+        </tr>
+        <tr>
+            <td>
+                <pre><code class="language-xml" >&lt;haxedef&nbsp;name="openfl_disable_graphics_upscaling"/&gt;</code></pre>
+            </td>
+            <td>Disables <code>scaleX</code> and <code>scaleY</code> - when enabled, they're always set to 1.</td>
+            <td>9.0.2+</td>
+        </tr>
+        <tr>
+            <td>
+                <pre><code class="language-xml" >&lt;haxedef&nbsp;name="openfl_disable_context_cache"/&gt;</code></pre>
+            </td>
+            <td>Disables the use of cache in the <code>Context3D</code> class.</td>
+            <td>8.5.0+</td>
+        </tr>
+    </table>
+
+    <a href="https://github.com/ShaharMS/spacebubble.io/pulls" style="display: block; text-align: center;">Something's wrong/missing? make a PR/Issue and extend/fix this list :)</a>
+</p>
+
+

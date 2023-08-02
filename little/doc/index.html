@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" class="dark-theme">
+<!-- use theme color or fallback -->
+<!--use textcolor from settings, otherwise create a contrasting color to theme color-->
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="./bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+	<link href="./bootstrap/css/bootstrap-select.min.css" rel="stylesheet" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic" rel="stylesheet"
+		type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,600italic,400" rel="stylesheet"
+		type="text/css" />
+	<link href="./styles.css" rel="stylesheet" />
+	<link href="./haxe-nav.css" rel="stylesheet" />
+	<link href="./dark-mode.css" rel="stylesheet" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/vs2015.min.css">
+	<link href="../htmlIncluder.js" type="text/javascript"></script>
+	<title>Little Documentation | Spacebubble.io</title>
+	<style>
+		.navbar .brand {
+			text-shadow: 0 0 0 transparent;
+		}
+	</style>
+	<meta name="description"content="Documentation about Little's standard library and types.">
+	<script src="../sources/ballsBackground.js"></script>
+	<script src="../sources/htmlIncluder.js"></script>
+</head>
+
+<body>
+
+	<canvas id="canvas" style="width: 100vw; height:100vh; position: fixed; z-index: -1;"></canvas>
+
+	<nav class="nav">
+		<div class="navbar">
+			<div class="navbar-inner"
+				style="background:#FAFAFA; border-bottom:1px solid rgba(0,0,0,.09); text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);">
+				<a class="brand" style="color:#000000" href="./">Little | Documentation</a>
+				</a>
+			</div>
+		</div>
+	</nav>
+	<div class="container" style="padding-top: 20px; padding-left: 5vw; padding-right: 5vw;">
+		<div class="row-fluid">
+			<div class="span3">
+				<div class="well sidebar-nav" id="explorer">
+					<ul class="nav nav-list">
+						<li class="expando expanded">
+							<a class="nav-header" href="./?name=std_Math"><i class="fa fa-file-o"></i>Math</a>
+						</li>
+						<li class="expando expanded">
+							<a class="nav-header" href="./?name=std_Number"><i class="fa fa-file-o"></i>Number</a>
+						</li>
+						<li class="expando expanded">
+							<a class="nav-header" href="./?name=std_Decimal"><i class="fa fa-file-o"></i>Decimal</a>
+						</li>
+						<li class="expando expanded">
+							<a class="nav-header" href="./?name=std_Boolean"><i class="fa fa-file-o"></i>Boolean</a>
+						</li>
+						<li class="expando expanded">
+							<a class="nav-header" href="./?name=std_Characters"><i class="fa fa-file-o"></i>Characters</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="span9" id="article-body">
+				Loading...
+			</div>
+		</div>
+	</div>
+	<script>
+		window.addEventListener("locationchange", pullCurrentState);
+		pullCurrentState();
+
+		function pullCurrentState(event) {
+			let pageName = window.location.href.split('/').pop().replace("?name=", "");
+			if (pageName === "") pageName = "index";
+			if (pageName.includes(".html")) pageName = pageName.split(".")[0];
+			document.getElementById("article-body").innerHTML = getHTMLFrom("/little/doc/pages/" + pageName + ".html");
+		}
+	</script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/languages/haxe.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/languages/powershell.min.js"></script>
+	<script>
+		hljs.highlightAll();
+		start(null, null, {r: 15, g: 15, b: 15});
+	</script>
+</body>
+
+</html>
