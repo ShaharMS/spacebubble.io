@@ -1,0 +1,23 @@
+#section-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: #fff;
+    background-color: #000;
+    background-image: radial-gradient(circle at top right, rgba(121, 68, 154, 0.13), transparent),radial-gradient(circle at 20% 80%, rgba(41, 196, 255, 0.13), transparent);
+    border-bottom: #000 solid 16px;
+}
+
+#section-1-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#section-1 h1 {
+    font-size: 10em;
+}
