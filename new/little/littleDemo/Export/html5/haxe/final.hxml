@@ -12,24 +12,25 @@
 -cp C:/Users/shaha/haxelibs/formula/0,4,2/src
 -D formula=0.4.2
 -cp Source
+-D HL_PATH=C:\HaxeToolkit\hl-1.12.0-win
+-D tools=8.0.0
+-D ANDROID_SDK=C:\Users\shaha\AppData\Local\Android\Sdk
 -D ANDROID_SETUP=true
+-D lime-canvas
 -D ANDROID_NDK_ROOT=C:\Users\shaha\AppData\Local\Android\Sdk\ndk\ndk-bundle
 -D howlerjs
+-D no-compilation
+-D openfl-html5
 -D lime-webgl
 -D lime-dom
 -D lime-howlerjs
 -D lime-html5
--D openfl-disable-handle-error
--D HL_PATH=C:\HaxeToolkit\hl-1.12.0-win
--D tools=8.0.0
--D ANDROID_SDK=C:\Users\shaha\AppData\Local\Android\Sdk
--D lime-canvas
--D no-compilation
--D openfl-html5
 -D JAVA_HOME=C:\Program Files\Java\jdk1.8.0_291
 -D html5
 -D web
 --remap flash:openfl
+--connect
+6001
 -js Export/html5/bin/LittleDemo.js
 -cp Export/html5/haxe
 -D html5

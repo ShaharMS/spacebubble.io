@@ -892,7 +892,7 @@ ApplicationMain.main = function() {
 ApplicationMain.create = function(config) {
 	var app = new openfl_display_Application();
 	ManifestResources.init(config);
-	app.meta.h["build"] = "320";
+	app.meta.h["build"] = "332";
 	app.meta.h["company"] = "Company Name";
 	app.meta.h["file"] = "LittleDemo";
 	app.meta.h["name"] = "LittleDemo";
@@ -1375,7 +1375,6 @@ lime_utils_ObjectPool.prototype = {
 		if(!this.__pool.exists(object)) {
 			this.__pool.set(object,false);
 			this.clean(object);
-			this.__pool.set(object,false);
 			if(this.__inactiveObject0 == null) {
 				this.__inactiveObject0 = object;
 			} else if(this.__inactiveObject1 == null) {
@@ -1418,7 +1417,6 @@ lime_utils_ObjectPool.prototype = {
 					this.__inactiveObject1 = this.__inactiveObjectList.pop();
 				}
 			}
-			this.__pool.set(object1,true);
 			this.inactiveObjects--;
 			this.activeObjects++;
 			object = object1;
@@ -1432,15 +1430,9 @@ lime_utils_ObjectPool.prototype = {
 		return object;
 	}
 	,release: function(object) {
-		if(!this.__pool.exists(object)) {
-			lime_utils_Log.error("Object is not a member of the pool",{ fileName : "lime/utils/ObjectPool.hx", lineNumber : 102, className : "lime.utils.ObjectPool", methodName : "release"});
-		} else if(!this.__pool.get(object)) {
-			lime_utils_Log.error("Object has already been released",{ fileName : "lime/utils/ObjectPool.hx", lineNumber : 106, className : "lime.utils.ObjectPool", methodName : "release"});
-		}
 		this.activeObjects--;
 		if(this.__size == null || this.activeObjects + this.inactiveObjects < this.__size) {
 			this.clean(object);
-			this.__pool.set(object,false);
 			if(this.__inactiveObject0 == null) {
 				this.__inactiveObject0 = object;
 			} else if(this.__inactiveObject1 == null) {
@@ -1470,7 +1462,6 @@ lime_utils_ObjectPool.prototype = {
 		}
 	}
 	,__addInactive: function(object) {
-		this.__pool.set(object,false);
 		if(this.__inactiveObject0 == null) {
 			this.__inactiveObject0 = object;
 		} else if(this.__inactiveObject1 == null) {
@@ -1497,7 +1488,6 @@ lime_utils_ObjectPool.prototype = {
 				this.__inactiveObject1 = this.__inactiveObjectList.pop();
 			}
 		}
-		this.__pool.set(object,true);
 		this.inactiveObjects--;
 		this.activeObjects++;
 		return object;
@@ -3873,7 +3863,7 @@ lime_text_Font.prototype = {
 	}
 	,__class__: lime_text_Font
 };
-var _$_$ASSET_$_$assets_$texter_$mathtextfield_$math_$bold_$ttf = function() {
+var _$_$ASSET_$_$assets_$texter_$mathtextfield_$math_$bold_$ttf = $hx_exports["__ASSET__assets_texter_mathtextfield_math_bold_ttf"] = function() {
 	this.ascender = 1907;
 	this.descender = -849;
 	this.height = 2756;
@@ -3885,13 +3875,12 @@ var _$_$ASSET_$_$assets_$texter_$mathtextfield_$math_$bold_$ttf = function() {
 	lime_text_Font.call(this);
 };
 $hxClasses["__ASSET__assets_texter_mathtextfield_math_bold_ttf"] = _$_$ASSET_$_$assets_$texter_$mathtextfield_$math_$bold_$ttf;
-$hx_exports["__ASSET__assets_texter_mathtextfield_math_bold_ttf"] = _$_$ASSET_$_$assets_$texter_$mathtextfield_$math_$bold_$ttf;
 _$_$ASSET_$_$assets_$texter_$mathtextfield_$math_$bold_$ttf.__name__ = "__ASSET__assets_texter_mathtextfield_math_bold_ttf";
 _$_$ASSET_$_$assets_$texter_$mathtextfield_$math_$bold_$ttf.__super__ = lime_text_Font;
 _$_$ASSET_$_$assets_$texter_$mathtextfield_$math_$bold_$ttf.prototype = $extend(lime_text_Font.prototype,{
 	__class__: _$_$ASSET_$_$assets_$texter_$mathtextfield_$math_$bold_$ttf
 });
-var _$_$ASSET_$_$assets_$texter_$mathtextfield_$math_$regular_$ttf = function() {
+var _$_$ASSET_$_$assets_$texter_$mathtextfield_$math_$regular_$ttf = $hx_exports["__ASSET__assets_texter_mathtextfield_math_regular_ttf"] = function() {
 	this.ascender = 1905;
 	this.descender = -765;
 	this.height = 2670;
@@ -3903,13 +3892,12 @@ var _$_$ASSET_$_$assets_$texter_$mathtextfield_$math_$regular_$ttf = function() 
 	lime_text_Font.call(this);
 };
 $hxClasses["__ASSET__assets_texter_mathtextfield_math_regular_ttf"] = _$_$ASSET_$_$assets_$texter_$mathtextfield_$math_$regular_$ttf;
-$hx_exports["__ASSET__assets_texter_mathtextfield_math_regular_ttf"] = _$_$ASSET_$_$assets_$texter_$mathtextfield_$math_$regular_$ttf;
 _$_$ASSET_$_$assets_$texter_$mathtextfield_$math_$regular_$ttf.__name__ = "__ASSET__assets_texter_mathtextfield_math_regular_ttf";
 _$_$ASSET_$_$assets_$texter_$mathtextfield_$math_$regular_$ttf.__super__ = lime_text_Font;
 _$_$ASSET_$_$assets_$texter_$mathtextfield_$math_$regular_$ttf.prototype = $extend(lime_text_Font.prototype,{
 	__class__: _$_$ASSET_$_$assets_$texter_$mathtextfield_$math_$regular_$ttf
 });
-var _$_$ASSET_$_$assets_$texter_$texttools_$sans_$ttf = function() {
+var _$_$ASSET_$_$assets_$texter_$texttools_$sans_$ttf = $hx_exports["__ASSET__assets_texter_texttools_sans_ttf"] = function() {
 	this.ascender = 2189;
 	this.descender = -600;
 	this.height = 2789;
@@ -3921,13 +3909,12 @@ var _$_$ASSET_$_$assets_$texter_$texttools_$sans_$ttf = function() {
 	lime_text_Font.call(this);
 };
 $hxClasses["__ASSET__assets_texter_texttools_sans_ttf"] = _$_$ASSET_$_$assets_$texter_$texttools_$sans_$ttf;
-$hx_exports["__ASSET__assets_texter_texttools_sans_ttf"] = _$_$ASSET_$_$assets_$texter_$texttools_$sans_$ttf;
 _$_$ASSET_$_$assets_$texter_$texttools_$sans_$ttf.__name__ = "__ASSET__assets_texter_texttools_sans_ttf";
 _$_$ASSET_$_$assets_$texter_$texttools_$sans_$ttf.__super__ = lime_text_Font;
 _$_$ASSET_$_$assets_$texter_$texttools_$sans_$ttf.prototype = $extend(lime_text_Font.prototype,{
 	__class__: _$_$ASSET_$_$assets_$texter_$texttools_$sans_$ttf
 });
-var _$_$ASSET_$_$assets_$texter_$texttools_$serif_$ttf = function() {
+var _$_$ASSET_$_$assets_$texter_$texttools_$serif_$ttf = $hx_exports["__ASSET__assets_texter_texttools_serif_ttf"] = function() {
 	this.ascender = 1825;
 	this.descender = -443;
 	this.height = 2355;
@@ -3939,7 +3926,6 @@ var _$_$ASSET_$_$assets_$texter_$texttools_$serif_$ttf = function() {
 	lime_text_Font.call(this);
 };
 $hxClasses["__ASSET__assets_texter_texttools_serif_ttf"] = _$_$ASSET_$_$assets_$texter_$texttools_$serif_$ttf;
-$hx_exports["__ASSET__assets_texter_texttools_serif_ttf"] = _$_$ASSET_$_$assets_$texter_$texttools_$serif_$ttf;
 _$_$ASSET_$_$assets_$texter_$texttools_$serif_$ttf.__name__ = "__ASSET__assets_texter_texttools_serif_ttf";
 _$_$ASSET_$_$assets_$texter_$texttools_$serif_$ttf.__super__ = lime_text_Font;
 _$_$ASSET_$_$assets_$texter_$texttools_$serif_$ttf.prototype = $extend(lime_text_Font.prototype,{
@@ -4016,45 +4002,41 @@ openfl_text_Font.prototype = $extend(lime_text_Font.prototype,{
 	,__class__: openfl_text_Font
 	,__properties__: {set_fontName:"set_fontName",get_fontName:"get_fontName"}
 });
-var _$_$ASSET_$_$OPENFL_$_$assets_$texter_$mathtextfield_$math_$bold_$ttf = function() {
+var _$_$ASSET_$_$OPENFL_$_$assets_$texter_$mathtextfield_$math_$bold_$ttf = $hx_exports["__ASSET__OPENFL__assets_texter_mathtextfield_math_bold_ttf"] = function() {
 	this.__fromLimeFont(new _$_$ASSET_$_$assets_$texter_$mathtextfield_$math_$bold_$ttf());
 	openfl_text_Font.call(this);
 };
 $hxClasses["__ASSET__OPENFL__assets_texter_mathtextfield_math_bold_ttf"] = _$_$ASSET_$_$OPENFL_$_$assets_$texter_$mathtextfield_$math_$bold_$ttf;
-$hx_exports["__ASSET__OPENFL__assets_texter_mathtextfield_math_bold_ttf"] = _$_$ASSET_$_$OPENFL_$_$assets_$texter_$mathtextfield_$math_$bold_$ttf;
 _$_$ASSET_$_$OPENFL_$_$assets_$texter_$mathtextfield_$math_$bold_$ttf.__name__ = "__ASSET__OPENFL__assets_texter_mathtextfield_math_bold_ttf";
 _$_$ASSET_$_$OPENFL_$_$assets_$texter_$mathtextfield_$math_$bold_$ttf.__super__ = openfl_text_Font;
 _$_$ASSET_$_$OPENFL_$_$assets_$texter_$mathtextfield_$math_$bold_$ttf.prototype = $extend(openfl_text_Font.prototype,{
 	__class__: _$_$ASSET_$_$OPENFL_$_$assets_$texter_$mathtextfield_$math_$bold_$ttf
 });
-var _$_$ASSET_$_$OPENFL_$_$assets_$texter_$mathtextfield_$math_$regular_$ttf = function() {
+var _$_$ASSET_$_$OPENFL_$_$assets_$texter_$mathtextfield_$math_$regular_$ttf = $hx_exports["__ASSET__OPENFL__assets_texter_mathtextfield_math_regular_ttf"] = function() {
 	this.__fromLimeFont(new _$_$ASSET_$_$assets_$texter_$mathtextfield_$math_$regular_$ttf());
 	openfl_text_Font.call(this);
 };
 $hxClasses["__ASSET__OPENFL__assets_texter_mathtextfield_math_regular_ttf"] = _$_$ASSET_$_$OPENFL_$_$assets_$texter_$mathtextfield_$math_$regular_$ttf;
-$hx_exports["__ASSET__OPENFL__assets_texter_mathtextfield_math_regular_ttf"] = _$_$ASSET_$_$OPENFL_$_$assets_$texter_$mathtextfield_$math_$regular_$ttf;
 _$_$ASSET_$_$OPENFL_$_$assets_$texter_$mathtextfield_$math_$regular_$ttf.__name__ = "__ASSET__OPENFL__assets_texter_mathtextfield_math_regular_ttf";
 _$_$ASSET_$_$OPENFL_$_$assets_$texter_$mathtextfield_$math_$regular_$ttf.__super__ = openfl_text_Font;
 _$_$ASSET_$_$OPENFL_$_$assets_$texter_$mathtextfield_$math_$regular_$ttf.prototype = $extend(openfl_text_Font.prototype,{
 	__class__: _$_$ASSET_$_$OPENFL_$_$assets_$texter_$mathtextfield_$math_$regular_$ttf
 });
-var _$_$ASSET_$_$OPENFL_$_$assets_$texter_$texttools_$sans_$ttf = function() {
+var _$_$ASSET_$_$OPENFL_$_$assets_$texter_$texttools_$sans_$ttf = $hx_exports["__ASSET__OPENFL__assets_texter_texttools_sans_ttf"] = function() {
 	this.__fromLimeFont(new _$_$ASSET_$_$assets_$texter_$texttools_$sans_$ttf());
 	openfl_text_Font.call(this);
 };
 $hxClasses["__ASSET__OPENFL__assets_texter_texttools_sans_ttf"] = _$_$ASSET_$_$OPENFL_$_$assets_$texter_$texttools_$sans_$ttf;
-$hx_exports["__ASSET__OPENFL__assets_texter_texttools_sans_ttf"] = _$_$ASSET_$_$OPENFL_$_$assets_$texter_$texttools_$sans_$ttf;
 _$_$ASSET_$_$OPENFL_$_$assets_$texter_$texttools_$sans_$ttf.__name__ = "__ASSET__OPENFL__assets_texter_texttools_sans_ttf";
 _$_$ASSET_$_$OPENFL_$_$assets_$texter_$texttools_$sans_$ttf.__super__ = openfl_text_Font;
 _$_$ASSET_$_$OPENFL_$_$assets_$texter_$texttools_$sans_$ttf.prototype = $extend(openfl_text_Font.prototype,{
 	__class__: _$_$ASSET_$_$OPENFL_$_$assets_$texter_$texttools_$sans_$ttf
 });
-var _$_$ASSET_$_$OPENFL_$_$assets_$texter_$texttools_$serif_$ttf = function() {
+var _$_$ASSET_$_$OPENFL_$_$assets_$texter_$texttools_$serif_$ttf = $hx_exports["__ASSET__OPENFL__assets_texter_texttools_serif_ttf"] = function() {
 	this.__fromLimeFont(new _$_$ASSET_$_$assets_$texter_$texttools_$serif_$ttf());
 	openfl_text_Font.call(this);
 };
 $hxClasses["__ASSET__OPENFL__assets_texter_texttools_serif_ttf"] = _$_$ASSET_$_$OPENFL_$_$assets_$texter_$texttools_$serif_$ttf;
-$hx_exports["__ASSET__OPENFL__assets_texter_texttools_serif_ttf"] = _$_$ASSET_$_$OPENFL_$_$assets_$texter_$texttools_$serif_$ttf;
 _$_$ASSET_$_$OPENFL_$_$assets_$texter_$texttools_$serif_$ttf.__name__ = "__ASSET__OPENFL__assets_texter_texttools_serif_ttf";
 _$_$ASSET_$_$OPENFL_$_$assets_$texter_$texttools_$serif_$ttf.__super__ = openfl_text_Font;
 _$_$ASSET_$_$OPENFL_$_$assets_$texter_$texttools_$serif_$ttf.prototype = $extend(openfl_text_Font.prototype,{
@@ -23381,7 +23363,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 392926;
+	this.version = 895086;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = "lime.utils.AssetCache";
@@ -26085,9 +26067,8 @@ little_interpreter_Runtime.throwError = function(token,layer) {
 little_interpreter_Runtime.print = function(item) {
 	little_interpreter_Runtime.stdout += "\n" + (little_Little.debug ? "Interpreter".toUpperCase() + ": " : "") + "Module " + little_interpreter_Runtime.currentModule + ", Line " + little_interpreter_Runtime.line + ":  " + (item == null ? "null" : "" + item);
 };
-var little_Little = function() { };
+var little_Little = $hx_exports["little"]["Little"] = function() { };
 $hxClasses["little.Little"] = little_Little;
-$hx_exports["little"]["Little"] = little_Little;
 little_Little.__name__ = "little.Little";
 little_Little.loadModule = function(code,name,debug,runRightBeforeMain) {
 	if(runRightBeforeMain == null) {
@@ -27452,7 +27433,7 @@ little_interpreter_Interpreter.createObject = function(exp,memory) {
 	case 24:case 25:
 		return new little_interpreter_memory_MemoryObject(exp,null,null,little_parser_ParserTokens.Identifier(little_Keywords.TYPE_BOOLEAN),null,null,null,little_interpreter_memory_MemoryTree.get_object(memory));
 	default:
-		haxe_Log.trace("Unable to create memory object from " + Std.string(exp) + ". Returning null.",{ fileName : "little/interpreter/Interpreter.hx", lineNumber : 577, className : "little.interpreter.Interpreter", methodName : "createObject"});
+		haxe_Log.trace("Unable to create memory object from " + Std.string(exp) + ". Returning null.",{ fileName : "little/interpreter/Interpreter.hx", lineNumber : 581, className : "little.interpreter.Interpreter", methodName : "createObject"});
 	}
 	return null;
 };
@@ -28127,14 +28108,22 @@ little_lexer_Lexer.lex = function(code) {
 	var i = 0;
 	while(i < code.length) {
 		var char = code.charAt(i);
-		if(char == "\"") {
+		if(i < code.length - 6 && char == "\"" && code.charAt(i + 1) == "\"" && code.charAt(i + 2) == "\"") {
 			var string = "";
 			++i;
-			while(i < code.length && code.charAt(i) != "\"") {
+			while(i < code.length - 2 && code.charAt(i) != "\"" && code.charAt(i + 1) == "\"" && code.charAt(i + 2) == "\"") {
 				string += code.charAt(i);
 				++i;
 			}
-			tokens.push(little_lexer_LexerTokens.Characters(string));
+			tokens.push(little_lexer_LexerTokens.Documentation(string));
+		} else if(char == "\"") {
+			var string1 = "";
+			++i;
+			while(i < code.length && code.charAt(i) != "\"") {
+				string1 += code.charAt(i);
+				++i;
+			}
+			tokens.push(little_lexer_LexerTokens.Characters(string1));
 		} else if(little_tools_TextTools.contains("1234567890.",char)) {
 			var num = char;
 			++i;
@@ -28237,8 +28226,9 @@ var little_lexer_LexerTokens = $hxEnums["little.lexer.LexerTokens"] = { __ename_
 	,NullValue: {_hx_name:"NullValue",_hx_index:5,__enum__:"little.lexer.LexerTokens",toString:$estr}
 	,Newline: {_hx_name:"Newline",_hx_index:6,__enum__:"little.lexer.LexerTokens",toString:$estr}
 	,SplitLine: {_hx_name:"SplitLine",_hx_index:7,__enum__:"little.lexer.LexerTokens",toString:$estr}
+	,Documentation: ($_=function(content) { return {_hx_index:8,content:content,__enum__:"little.lexer.LexerTokens",toString:$estr}; },$_._hx_name="Documentation",$_.__params__ = ["content"],$_)
 };
-little_lexer_LexerTokens.__constructs__ = [little_lexer_LexerTokens.Identifier,little_lexer_LexerTokens.Sign,little_lexer_LexerTokens.Number,little_lexer_LexerTokens.Boolean,little_lexer_LexerTokens.Characters,little_lexer_LexerTokens.NullValue,little_lexer_LexerTokens.Newline,little_lexer_LexerTokens.SplitLine];
+little_lexer_LexerTokens.__constructs__ = [little_lexer_LexerTokens.Identifier,little_lexer_LexerTokens.Sign,little_lexer_LexerTokens.Number,little_lexer_LexerTokens.Boolean,little_lexer_LexerTokens.Characters,little_lexer_LexerTokens.NullValue,little_lexer_LexerTokens.Newline,little_lexer_LexerTokens.SplitLine,little_lexer_LexerTokens.Documentation];
 var little_parser_Parser = function() { };
 $hxClasses["little.parser.Parser"] = little_parser_Parser;
 little_parser_Parser.__name__ = "little.parser.Parser";
@@ -28287,6 +28277,9 @@ little_parser_Parser.parse = function(lexerTokens) {
 			break;
 		case 7:
 			tokens.push(little_parser_ParserTokens.SplitLine);
+			break;
+		case 8:
+			var content = token.content;
 			break;
 		}
 		++i;
@@ -28481,7 +28474,7 @@ little_parser_Parser.mergePropertyOperations = function(pre) {
 			break;
 		case 15:
 			if(token.sign == little_Keywords.PROPERTY_ACCESS_SIGN == true) {
-				haxe_Log.trace(i,{ fileName : "little/parser/Parser.hx", lineNumber : 191, className : "little.parser.Parser", methodName : "mergePropertyOperations", customParams : [pre.length,pre]});
+				haxe_Log.trace(i,{ fileName : "little/parser/Parser.hx", lineNumber : 192, className : "little.parser.Parser", methodName : "mergePropertyOperations", customParams : [pre.length,pre]});
 				if(i + 1 >= pre.length) {
 					little_interpreter_Runtime.throwError(little_parser_ParserTokens.ErrorMessage("Property access cut off by the end of file, block or expression."),"Parser");
 					return null;
@@ -29773,15 +29766,18 @@ little_tools_PrepareRun.addConditions = function() {
 	little_Little.plugin.registerCondition("while",[little_parser_ParserTokens.Variable(little_parser_ParserTokens.Identifier("rule"),little_parser_ParserTokens.Identifier(little_Keywords.TYPE_BOOLEAN))],function(params,body) {
 		var val = little_parser_ParserTokens.NullValue;
 		var safetyNet = 0;
-		while(little_tools_Conversion.toHaxeValue(little_interpreter_Interpreter.evaluateExpressionParts(params))) {
+		while(little_tools_Conversion.toHaxeValue(little_interpreter_Interpreter.evaluateExpressionParts(params)) && safetyNet < 500000) {
 			val = little_interpreter_Interpreter.interpret(body,little_interpreter_Interpreter.currentConfig);
 			++safetyNet;
+		}
+		if(safetyNet >= 500000) {
+			little_interpreter_Runtime.throwError(little_parser_ParserTokens.ErrorMessage("Too much iteration (is `" + little_tools_PrettyPrinter.stringify(params) + "` forever `" + little_Keywords.TRUE_VALUE + "`?)"),"Interpreter");
 		}
 		return val;
 	});
 	little_Little.plugin.registerCondition("if",[little_parser_ParserTokens.Variable(little_parser_ParserTokens.Identifier("rule"),little_parser_ParserTokens.Identifier(little_Keywords.TYPE_BOOLEAN))],function(params,body) {
 		var val = little_parser_ParserTokens.NullValue;
-		haxe_Log.trace(params,{ fileName : "little/tools/PrepareRun.hx", lineNumber : 108, className : "little.tools.PrepareRun", methodName : "addConditions", customParams : [body]});
+		haxe_Log.trace(params,{ fileName : "little/tools/PrepareRun.hx", lineNumber : 110, className : "little.tools.PrepareRun", methodName : "addConditions", customParams : [body]});
 		if(little_tools_Conversion.toHaxeValue(little_interpreter_Interpreter.evaluateExpressionParts(params))) {
 			val = little_interpreter_Interpreter.interpret(body,little_interpreter_Interpreter.currentConfig);
 		}
@@ -30187,6 +30183,144 @@ little_tools_PrettyPrinter.parseParamsString = function(params,isExpected) {
 		}
 		return str.join(", ");
 	}
+};
+little_tools_PrettyPrinter.stringify = function(code,token) {
+	if(token != null) {
+		code = [token];
+	}
+	var s = "";
+	var _g = 0;
+	while(_g < code.length) {
+		var token = code[_g];
+		++_g;
+		switch(token._hx_index) {
+		case 0:
+			var line = token.line;
+			s += "\n" + little_tools_PrettyPrinter.indent;
+			break;
+		case 1:
+			s += ", ";
+			break;
+		case 2:
+			var name = token.name;
+			var type = token.type;
+			s += "" + little_Keywords.VARIABLE_DECLARATION + " " + Std.string(name) + " " + (type != null ? "" + little_Keywords.TYPE_DECL_OR_CAST + " " + little_tools_PrettyPrinter.stringify(null,type) : "");
+			break;
+		case 3:
+			var name1 = token.name;
+			var params = token.params;
+			var type1 = token.type;
+			s += "" + little_Keywords.FUNCTION_DECLARATION + " " + little_tools_PrettyPrinter.stringify(null,name1) + "(" + little_tools_PrettyPrinter.stringify(null,params) + ") " + (type1 != null ? "" + little_Keywords.TYPE_DECL_OR_CAST + " " + little_tools_PrettyPrinter.stringify(null,type1) : "");
+			break;
+		case 4:
+			var name2 = token.name;
+			var exp = token.exp;
+			var body = token.body;
+			var type2 = token.type;
+			little_tools_PrettyPrinter.indent += "\t";
+			s += "" + little_tools_PrettyPrinter.stringify(null,name2) + " (" + little_tools_PrettyPrinter.stringify(null,exp) + ") \n" + little_tools_PrettyPrinter.stringify(null,body) + " " + (type2 != null ? "" + little_Keywords.TYPE_DECL_OR_CAST + " " + little_tools_PrettyPrinter.stringify(null,type2) : "");
+			little_tools_PrettyPrinter.indent = little_tools_TextTools.replaceLast(little_tools_PrettyPrinter.indent,"\t","");
+			break;
+		case 5:
+			var name3 = token.name;
+			s += little_tools_PrettyPrinter.stringify(null,name3);
+			break;
+		case 6:
+			var assignees = token.assignees;
+			var value = token.value;
+			var type3 = token.type;
+			var _this = assignees.concat([value]);
+			var result = new Array(_this.length);
+			var _g1 = 0;
+			var _g2 = _this.length;
+			while(_g1 < _g2) {
+				var i = _g1++;
+				result[i] = little_tools_PrettyPrinter.stringify(null,_this[i]);
+			}
+			s += Std.string([result.join(" = ")]);
+			break;
+		case 7:
+			var word = token.word;
+			s += word;
+			break;
+		case 8:
+			var value1 = token.value;
+			var type4 = token.type;
+			s += "" + little_Keywords.TYPE_DECL_OR_CAST + " " + little_tools_PrettyPrinter.stringify(null,type4);
+			break;
+		case 9:
+			var name4 = token.name;
+			var params1 = token.params;
+			s += "" + little_tools_PrettyPrinter.stringify(null,name4) + "(" + little_tools_PrettyPrinter.stringify(null,params1) + ")";
+			break;
+		case 10:
+			var value2 = token.value;
+			var type5 = token.type;
+			s += "" + little_Keywords.FUNCTION_RETURN + " " + little_tools_PrettyPrinter.stringify(null,value2);
+			break;
+		case 11:
+			var parts = token.parts;
+			var type6 = token.type;
+			s += little_tools_PrettyPrinter.stringify(parts);
+			break;
+		case 12:
+			var body1 = token.body;
+			var type7 = token.type;
+			little_tools_PrettyPrinter.indent += "\t";
+			s += "{" + little_tools_PrettyPrinter.stringify(body1) + "} " + (type7 != null ? "" + little_Keywords.TYPE_DECL_OR_CAST + " " + little_tools_PrettyPrinter.stringify(null,type7) : "");
+			little_tools_PrettyPrinter.indent = little_tools_TextTools.replaceLast(little_tools_PrettyPrinter.indent,"\t","");
+			break;
+		case 13:
+			var parts1 = token.parts;
+			s += little_tools_PrettyPrinter.stringify(parts1);
+			break;
+		case 14:
+			var name5 = token.name;
+			var property = token.property;
+			s += "" + little_tools_PrettyPrinter.stringify(null,name5) + little_Keywords.PROPERTY_ACCESS_SIGN + little_tools_PrettyPrinter.stringify(null,property);
+			break;
+		case 15:
+			var sign = token.sign;
+			s += " " + sign + " ";
+			break;
+		case 16:
+			var num = token.num;
+			s += num;
+			break;
+		case 17:
+			var num1 = token.num;
+			s += num1;
+			break;
+		case 18:
+			var string = token.string;
+			s += "\"" + string + "\"";
+			break;
+		case 19:
+			var name6 = token.name;
+			break;
+		case 20:
+			var get = token.get;
+			break;
+		case 21:
+			var use = token.use;
+			break;
+		case 22:
+			var msg = token.msg;
+			break;
+		case 23:
+			s += little_Keywords.NULL_VALUE;
+			break;
+		case 24:
+			s += little_Keywords.TRUE_VALUE;
+			break;
+		case 25:
+			s += little_Keywords.FALSE_VALUE;
+			break;
+		case 26:
+			break;
+		}
+	}
+	return s;
 };
 var little_tools_TextDirection = $hxEnums["little.tools.TextDirection"] = { __ename__:"little.tools.TextDirection",__constructs__:null
 	,RTL: {_hx_name:"RTL",_hx_index:0,__enum__:"little.tools.TextDirection",toString:$estr}
@@ -68252,6 +68386,9 @@ openfl_events_UncaughtErrorEvents.prototype = $extend(openfl_events_EventDispatc
 			useCapture = false;
 		}
 		openfl_events_EventDispatcher.prototype.addEventListener.call(this,type,listener,useCapture,priority,useWeakReference);
+		if(Object.prototype.hasOwnProperty.call(this.__eventMap.h,"uncaughtError")) {
+			this.__enabled = true;
+		}
 	}
 	,removeEventListener: function(type,listener,useCapture) {
 		if(useCapture == null) {
@@ -79076,7 +79213,7 @@ while(_g < _g1) {
 }
 lime_system_CFFI.available = false;
 lime_system_CFFI.enabled = false;
-lime_utils_Log.level = 4;
+lime_utils_Log.level = 3;
 if(typeof console == "undefined") {
 	console = {}
 }
@@ -80518,6 +80655,7 @@ little_parser_Parser.linePart = 0;
 little_tools_PrepareRun.prepared = false;
 little_tools_PrettyPrinter.s = "";
 little_tools_PrettyPrinter.l = 0;
+little_tools_PrettyPrinter.indent = "";
 openfl_Lib.__lastTimerID = 0;
 openfl_Lib.__sentWarnings = new haxe_ds_StringMap();
 openfl_Lib.__timers = new haxe_ds_IntMap();
@@ -86205,7 +86343,6 @@ texter_general_markdown_Markdown.markdownRules = [texter_general_markdown_Markdo
 ApplicationMain.main();
 })(typeof exports != "undefined" ? exports : typeof window != "undefined" ? window : typeof self != "undefined" ? self : this, typeof window != "undefined" ? window : typeof global != "undefined" ? global : typeof self != "undefined" ? self : this);
 
-//# sourceMappingURL=LittleDemo.js.map
 });
 $hx_exports.lime = $hx_exports.lime || {};
 $hx_exports.lime.$scripts = $hx_exports.lime.$scripts || {};
