@@ -1,0 +1,38 @@
+#section-3 {
+
+	background: #ffd45d;
+    background: linear-gradient(to bottom, #ffd45d 0%, #ff7045 100%);
+}
+
+#section-3 h1 {
+	font-size: 3.5em;
+}
+
+#section-3 .title {
+	margin-top: 0;
+	padding-left: 100px;
+	padding-top: 100px;
+}
+
+#section-3 .minitab {
+	position: relative;
+	width: 300px;
+	height: 100px;
+	border-radius: 50px;
+}
+
+#section-3 .minitab:hover {
+	left: -100px;
+}
+
+#section-3 .minitabs {
+	position: absolute;
+	top: 220vh;
+	left: calc(100vw - 100px);
+
+	transition: 0.5s;
+
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
