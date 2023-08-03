@@ -5,10 +5,56 @@ body {
     margin: 0;
     box-sizing: border-box;
 
-    font-family: 'Montserrat', Arial, Helvetica, sans-serif
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+
+	overflow-x: hidden;
 }
 
 .section {
     width: 100%;
     height: 100vh;
+}
+
+.links {
+    width: max-content;
+}
+
+.links.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.links a {
+    font-size: 1.2em;
+    display: block;
+    text-align: center;
+    font-weight: 400;
+    margin-block: 40px;
+    border: 4px solid white;
+    border-radius: 20px;
+    padding: 5px;
+    padding-inline: 10px;
+    width: 200px;
+}
+
+.links.row a {
+    margin-block: 0;
+    margin-inline: 40px;
+}
+
+.highlight {
+    font-weight: bolder;
+    font-size: 1.5em;
+    padding-block: 10px;
+}
+
+/*for flashing elements*/
+flash {
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
 }

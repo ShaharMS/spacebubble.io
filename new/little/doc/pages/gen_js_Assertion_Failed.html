@@ -1,0 +1,38 @@
+<h1>"src/generators/genjs.ml": Assertion Failed <small>by Shahar Marcus</small></h1>
+<p>
+    When testing/compiling your project to Javascript, you sometimes get this annoying, seemingly unresolvable and undocumented error:
+</p>
+<pre>
+    File "src/generators/genjs.ml", line 412, characters 13-19: Assertion failed
+</pre>
+<p style="padding-bottom: 20px;">
+    I know this error might be scary, but no worries! let me explain it:
+</p>
+
+<blockquote>
+    <h2>So, What Exactly Is This?</h2>
+</blockquote>
+<p style="padding-bottom: 20px;">
+    This error looks differently because its a compiler error, stemming from OCaml. <br>
+    It is raised whenever you access anything before calling <code>super()</code>, or
+    try to set anything from the superclass (for example, <code>super.x = 40</code> will throw this error)
+
+</p>
+<blockquote>
+    <h2>And How Do We Solve It?</h2>
+</blockquote>
+<p style="padding-bottom: 20px;">
+    This error might be tricky to understand, but the solution is very quick and easy:
+</p>
+<blockquote>
+    <h2>Quick Fixes:</h2>
+</blockquote>
+<p>
+    <ul>
+        <li>always call <code>super()</code> before anything in the <code>new()</code> function</li>
+        <li>instead of accessing properties through the superclass (<code>super.x</code>, <code>super.y</code>), access them through <code>this</code> (<code>this.x</code>, <code>this.y</code>)</li>
+        <li>replace all occurrences of <code><b style="font-weight: 900">super</b>.someProperty = someValue</code> with <code><b style="font-weight: 900">this</b>.someProperty = someValue</code></li>
+        <li>Avoid using the <code>super</code> keyword in "sticky" situations if it can be replaced with <code>this</code> (recommended when using reflection)</li>
+        <li>defining <code>js-es=6</code></li>
+    </ul>
+</p>

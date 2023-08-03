@@ -1,0 +1,174 @@
+<h1>OpenFL - With Multiple Windows <small>by Shahar Marcus</small></h1>
+
+<p style="padding-bottom: 30px;">
+    A while ago, I started investigating multi-window support in Haxe -
+    I just wanted my applications's settings tab to be a separate window. Sounds simple enough, right? <br>
+    Well, yeah, But - I got "Unlucky" - For that app's development I used the game framework <a
+        href="https://haxeflixel.com">HaxeFlixel</a>,
+    and that framework isn't really designed With multiple windows in mind
+    (well, you can't blame it - its a game framework after all).<br><br>
+
+    But that didn't make me give up - I started looking for other windowing solutions, and it took a while, because,
+    for some reason, I never considered just not using HaxeFlixel for that -
+    But don't judge me, I never did anything without HaxeFlixel At that point...<br><br>
+
+    only a week or so later, after I gave up on the multi-window stuff, it dawned on me i can just use lime and openfl
+    for that, <br>
+    <b>And thats exactly what this tutorial is all about:</b>
+</p>
+<blockquote>
+    <h2>Setting Up The Window</h2>
+</blockquote>
+<p>
+    <i>before I continue, make sure you have the haxelibs <b>Lime</b> and <b>OpenFL</b> installed</i>
+</p>
+<p>
+    Lets first create the window, and assign it to a variable.<br>
+    That variable can be local, class level, static, whatever you want
+    (in this example, I'll use local variables):<br><br>
+</p>
+<pre class="grid language-haxe" style="align-content: space-between; justify-content:space-between; flex-flow:row wrap;">
+<code>// At the top of the file
+import openfl.Lib;
+import lime.ui.WindowAttributes;
+//later
+final window = Lib.application.createWindow({
+	width: 400,
+	height: 400,
+	x: 0,
+	y: 0,
+	title: "Hey There!",
+	resizable: true
+});</code>
+    <a href="./images/Multi-Window-1.webp"><img src="./images/Multi-Window-1.webp" alt="new 400 by 400 window titled &quot;Hey There!&quot; at the top left of the screen" style="aspect-ratio: 455/474; width: 20vw; vertical-align: center; min-width: 200px;"/></a>
+</pre>
+<blockquote class="weak">
+    <h3>What does this code do?</h3>
+    <p style="font-size: 0.9em;">
+        This code assigns a window to the variable named <code>window</code>.<br>
+        As for the curly brackets, those represent the <code>WindowAttributes</code> parameter. Basically,
+        Were creating a 400x400 window, at the top-left of the screen, titled "Hey There!", and the window is resizable.
+    </p>
+</blockquote>
+<p>
+    Now, we have the created window stored inside the variable <code>window</code>.<br>
+    If you use intellisense in your editor, you might have noticed the <code>stage</code> field under the
+    <code>window</code> variable.<br>
+    From now on, we're going to work with the stage.
+</p>
+<b>
+    If you are a HaxeFlixel user, you need to get out of your comfort zone for a bit, because were starting with OpenFL!
+</b>
+<blockquote>
+    <h2>Sprites and Bitmaps</h2>
+</blockquote>
+<p>
+    The first thing I'll show you how to do is add a sprite to that window. for our image, were going to use this masterpiece:
+    <a href="./images/spogAsset.webp"><img src="./images/spogAsset.webp" alt="Spongebob crying meme" style="width: 34px; height: 34px; padding: 0px;"></a>
+</p>
+<blockquote class="weak">
+    <h3>Haxeflixel users - Notice:</h3>
+    <p style="font-size: 0.9em;">
+        OpenFL and HaxeFlixel are actually very similar. for this tutorial, i suggest memorizing the similarities
+        between the two:
+    <table>
+        <tr>
+            <td>
+                <b>HaxeFlixel</b>
+            </td>
+            <td>
+                <b>OpenFL</b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>new FlxSprite()</code>
+            </td>
+            <td>
+                <code>new Bitmap()</code>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>new FlxSpriteGroup()</code>
+            </td>
+            <td>
+                <code>new Sprite()</code>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>.loadGraphic("path/to/image.png")</code>
+            </td>
+            <td>
+                <code>BitmapData.fromFile("path/to/image.png")</code>
+            </td>
+        </tr>
+        <td>
+            <code>add(sprite);</code>
+        </td>
+        <td>
+            <code>addChild(sprite);</code>
+        </td>
+        </tr>
+    </table>
+    </p>
+</blockquote>
+
+<pre class="programming">
+<code>// At the top of the file
+import openfl.Lib;
+//later
+final window = Lib.application.createWindow({
+    width: 400,
+    height: 400,
+    x: 0,
+    y: 0,
+    title: "Hey There!",
+    resizable: true
+});
+// Access the stage of the window - its where we add the graphics
+// here we add our sprite
+var sprite = new MySprite();
+window.stage.addChild(sprite);
+</code></pre>
+<p><i>In another file:</i></p>
+<pre class="grid language-haxe" style="align-content: space-between; justify-content:space-between; flex-flow:row wrap;">
+<code>package;
+    
+import openfl.display.Sprite;
+import openfl.display.Bitmap;
+import openfl.display.BitmapData;
+/**
+ * a sprite that displays an image :D
+ */
+class MySprite extends Sprite {
+    public function new() {
+        super();
+        var bitmap = new Bitmap(BitmapData.fromFile("assets/image.png"));
+        addChild(bitmap);
+    }
+}
+    </code>
+    <a href="./images/Multi-Window-2.webp"><img src="./images/Multi-Window-2.webp" alt="new 400 by 400 window titled &quot;Hey There!&quot; at the top left of the screen" style="aspect-ratio: 500/474; width: 15%; vertical-align: center; min-width: 200px;"/></a>
+</pre>
+<blockquote class="weak">
+    <h3>What does this code do?</h3>
+    <p style="font-size: 0.9em;">
+        After we create the window, we access the stage, and add our sprite to it.
+        <br>
+        That sprite is an instance of the <code>MySprite</code> class, which we created later.
+        that class simply displays an image, here it displays the one stored at <code>assets/image.png</code>.
+        after initializing the sprite, we add it to the stage.
+    </p>
+</blockquote>
+<p>
+    Here, We made a new class that extends the <code>Sprite</code> class - we want to add it to the stage.
+    That sprite simply displays an image.
+
+    After running that code, you can see we have a sprite on the extra window's screen:<br><br>
+    
+    And thats pretty much it for the Basics! <br><br>
+
+    If you're looking for implementing input in your windows, I suggest moving on to <a href="./?name=Multiple-Windows-Input">This Guide</a>
+</p>

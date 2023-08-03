@@ -1,7 +1,8 @@
 #section-3 {
 
 	background: #ffd45d;
-    background: linear-gradient(to bottom, #ffd45d 0%, #ff7045 100%);
+
+	border-bottom: #000 solid 16px;
 }
 
 #section-3 h1 {

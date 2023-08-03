@@ -1,0 +1,41 @@
+p {
+    color: #DDD;
+}
+
+.p .type {
+    color: #00cc69
+}
+
+p .kwd {
+    color: #ff52df
+}
+
+p .kwd1 {
+    color: #4762fc
+}
+
+p .func {
+    color: #eaff00
+}
+
+p .str,
+p .str,
+p .str .kwd,
+p .str .kwd1,
+p .str .type,
+p .str .func {
+    color: #ff5e00
+}
+
+p .cmt,
+p .cmt .kwd,
+p .cmt .kwd1,
+p .cmt .str,
+p .cmt .type,
+p .cmt .func {
+    color: #5e5e5e
+}
+
+p .last-modified {
+    color: #666
+}
