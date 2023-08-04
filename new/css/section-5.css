@@ -1,0 +1,28 @@
+#section-5 {
+	display: flex;
+	flex-direction: column;
+
+	background-color: aquamarine;
+}
+
+#section-5 h1 {
+	font-size: 4em;
+}
+
+#section-5 .title {
+	align-self: center;
+}
+
+#section-5 .pre-title {
+	position: absolute;
+	left: calc(50% - 7.5em);
+	transform: translate(-50%);
+}
+
+#section-5 .data {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	align-self: flex-start;
+	gap: 20px;
+}
