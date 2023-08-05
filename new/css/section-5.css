@@ -3,6 +3,8 @@
 	flex-direction: column;
 
 	background-color: aquamarine;
+	border-bottom: #000000 solid 16px;
+
 }
 
 #section-5 h1 {

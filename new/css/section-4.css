@@ -13,6 +13,7 @@
 
 #section-4 .content {
 	margin-left: 50px;
+    max-width: 50vw;
 }
 
 #section-4 h1 {
@@ -29,6 +30,7 @@
 	top: 15%;
 	right: 5%;
 	height: 70%;
+    max-width: 30vw;
 }
 
 #section-4 .code-io iframe {
