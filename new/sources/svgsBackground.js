@@ -357,7 +357,6 @@ function startAnimation() {
 	tlComet?.play();
 	tlCometTrail?.play();
 	tlConstellation?.play();
-	planet1DrawTl?.play();
 	planet2DrawTl?.play();
 	moonFullDrawTl?.play();
 	moonCrescentDrawTl?.play();
@@ -377,7 +376,6 @@ function stopAnimation() {
 	tlComet?.pause();
 	tlCometTrail?.pause();
 	tlConstellation?.pause();
-	planet1DrawTl?.pause();
 	planet2DrawTl?.pause();
 	moonFullDrawTl?.pause();
 	moonCrescentDrawTl?.pause();
@@ -386,22 +384,6 @@ function stopAnimation() {
 	cometDrawTl?.pause();
 }
 
-const planet1Draw = document.querySelectorAll("#planet-1 .drawPath");
-const planet1DrawTl = new TimelineMax({
-	repeat: -1,
-	yoyo: true,
-	paused: false
-});
-planet1Draw.forEach((path, i) => {
-	const tl = new TimelineMax({
-		repeatDelay: 40,
-		delay: 10
-	});
-	tl.to(path, 3, {
-		drawSVG: "0%"
-	});
-	planet1DrawTl.add(tl, i);
-});
 const planet2Draw = document.querySelectorAll("#planet-2 .drawPath");
 const planet2DrawTl = new TimelineMax({
 	repeat: -1,

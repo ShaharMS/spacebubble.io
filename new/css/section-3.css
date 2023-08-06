@@ -14,26 +14,3 @@
 	padding-left: 100px;
 	padding-top: 100px;
 }
-
-#section-3 .minitab {
-	position: relative;
-	width: 300px;
-	height: 100px;
-	border-radius: 50px;
-}
-
-#section-3 .minitab:hover {
-	left: -100px;
-}
-
-#section-3 .minitabs {
-	position: absolute;
-	top: 220vh;
-	left: calc(100vw - 100px);
-
-	transition: 0.5s;
-
-	display: flex;
-	flex-direction: column;
-	gap: 20px;
-}

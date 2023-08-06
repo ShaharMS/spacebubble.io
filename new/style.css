@@ -13,6 +13,8 @@ body {
 .section {
     width: 100%;
     height: 100vh;
+
+    border-bottom: 16px solid black;
 }
 
 .links {
