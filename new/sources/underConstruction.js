@@ -11,7 +11,7 @@ function markSections() {
         t.style.top = b.y + "px";
         t.style.left = b.x + "px";
         t.style.width = b.width + "px";
-        t.style.height = b.height * 3 / 4 - 16  + "px";
+        t.style.height = b.height * 3 / 4 - 16 + "px";
 
         t.style.marginTop = "0px";
         t.style.paddingTop = b.height / 4 + "px";
@@ -34,10 +34,28 @@ function markSections() {
         t2.style.textAlign = "center";
 
         document.body.appendChild(t2);
+
+        window.addEventListener("resize", () => {
+
+            let b = getBounds(e);
+
+            t.style.top = b.y + "px";
+            t.style.left = b.x + "px";
+            t.style.width = b.width + "px";
+            t.style.height = b.height * 3 / 4 - 16 + "px";
+
+            t.style.marginTop = "0px";
+            t.style.paddingTop = b.height / 4 + "px";
+
+
+            t2.style.top = "calc(" + b.y + "px + 3em + " + b.height / 2 + "px)";
+            t2.style.left = b.x + "px";
+            t2.style.width = b.width + "px";
+        });
     }
 }
 
-markSections();
+if (location.href.includes("spacebubble")) markSections(); // only display in production
 
 function getBounds(el) {
     const rect = el.getBoundingClientRect();

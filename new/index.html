@@ -382,7 +382,7 @@
             
         </div>
         <div class="code-io">
-            <iframe title="code-io" src="./little/littleDemo/Export/html5/bin/index.html" frameborder="0"></iframe>
+            <iframe id="little_code-io" title="code-io" src="./little/littleDemo/Export/html5/bin/index.html" frameborder="0"></iframe>
         </div>
 	</section>
 
@@ -409,6 +409,13 @@
 
 	<script src="./sources/typewriter.js"></script>
 	<script src="./sources/underConstruction.js"></script>
+
+	<script>
+		let littleIO = document.getElementById("little_code-io");
+		// document.createElement("iframe").w
+		littleIO.width = "100%";
+		littleIO.height = "100%";
+	</script>
 </body>
 
 </html>
