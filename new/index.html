@@ -27,7 +27,9 @@
 	</section>
 
 	<section class="section" id="section-2">
-		<svg class="hide" id="main">
+		<div id="main-wrapper"></div>
+		<input type="checkbox" id="toggle" />
+		<svg id="main">
 
 			<defs>
 				<filter id="paddingFilter" x="-100%" y="-100%" width="300%" height="300%">
@@ -65,11 +67,10 @@
 					<path class="drawPath"
 						d="M47.583,39c-1.104,0-2,0.896-2,2v23c0,1.104,0.896,2,2,2c1.105,0,2-0.896,2-2V41C49.583,39.896,48.688,39,47.583,39z"
 						fill="transparent" stroke="#000" stroke-width="2" />
-					<path class="drawPath" 
-						d="M55.036,31.968c0,0.553,0.459,1.208,1.023,1.208c0.566,0,1.023-0.655,1.023-1.208c0-12.228-9.549-22.385-21.285-22.385
+					<path class="drawPath" d="M55.036,31.968c0,0.553,0.459,1.208,1.023,1.208c0.566,0,1.023-0.655,1.023-1.208c0-12.228-9.549-22.385-21.285-22.385
 						H34.91c-11.831,0-21.826,10.285-21.826,22.274c0,0.553,0.458,1.156,1.023,1.156c0.565,0,1.023-0.552,1.023-1.104
-						c0-10.905,9.058-20.326,19.78-20.326h0.889C46.405,11.583,55.036,20.842,55.036,31.968z" 
-						fill="#000" stroke="transparent" />
+						c0-10.905,9.058-20.326,19.78-20.326h0.889C46.405,11.583,55.036,20.842,55.036,31.968z" fill="#000"
+						stroke="transparent" />
 					<path class="drawPath"
 						d="M62.583,42.718v-9.891c0-16.435-10.893-29.244-26.097-29.244h-1.122c-15.832,0-29.781,13.618-29.781,29.244V44
 						c0,0.137,0.093,0.271,0.118,0.399c-1.673,2.312-2.646,5.109-2.646,8.06c0,7.436,6.359,13.958,13.795,13.958
@@ -78,14 +79,13 @@
 						c-1.105,0-2.209,0.896-2.209,2v23.917c0,1.104,1.182,2,2.287,2c7.436,0,13.918-6.522,13.918-13.958
 						C66.788,48.753,65.583,45.275,62.583,42.718z M10.583,44.743v15.431
 						c-2-1.794-3.958-4.525-3.958-7.715C6.625,49.269,8.583,46.537,10.583,44.743z M58.583,60.173v-15.43c2,1.794,3.959,4.526,3.959,7.716S60.583,58.38,58.583,60.173z"
-						fill="transparent" stroke="#000" stroke-width="2"/>
+						fill="transparent" stroke="#000" stroke-width="2" />
 				</g>
 			</symbol>
 
-			<symbol id="frying-pan" viewBox="0 10 40 44" y="4" x = -2>
+			<symbol id="frying-pan" viewBox="0 10 40 44" y="4" x=-2>
 				<g>
-					<path class="drawPath" 
-					d="M15.984375 7.984375C15.433594 7.996094 14.992188 8.449219 15 9
+					<path class="drawPath" d="M15.984375 7.984375C15.433594 7.996094 14.992188 8.449219 15 9
 						C15 13.777344 12.957031 15.464844 10.859375 17.339844
 						C8.96875 19.027344 7 20.945313 7 25
 						C6.996094 25.363281 7.183594 25.699219 7.496094 25.878906
@@ -151,8 +151,7 @@
 						C27.566406 37.796875 25.992188 39 24.183594 39
 						L9.472656 39
 						C7.664063 39 6.089844 37.796875 5.613281 36.050781
-						Z" 
-						stroke="transparent" fill="#000" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+						Z" stroke="transparent" fill="#000" stroke-linecap="round" stroke-linejoin="round" opacity="1" />
 				</g>
 			</symbol>
 
@@ -160,7 +159,7 @@
 				<g>
 					<path class="drawPath"
 						d="M 279 129 H 279.11 v -22.88 c 0 -2.665 -2.21 -4.875 -4.875 -4.875 H 246.74 V 77.74 c 0 -2.665 -2.21 -4.875 -4.875 -4.875 h -32.37 c -2.665 0 -4.875 2.21 -4.875 4.875 v 50.7 H 95.485 v -50.7 c 0 -2.665 -2.21 -4.875 -4.875 -4.875 H 58.24 c -2.665 0 -4.875 2.21 -4.875 4.875 v 22.88 H 25.87 c -2.665 0 -4.875 2.21 -4.875 4.875 v 22.88 H 21 l 0 6.625 v 33.75 H 21 v 26.25 c 0 2.665 2.21 4.875 4.875 4.875 H 53.43 v 22.88 c 0 2.665 2.21 4.875 4.875 4.875 h 32.37 c 2.665 0 4.875 -2.21 4.875 -4.875 V 171.73 h 109.135 v 51.545 c 0 2.665 2.21 4.875 4.875 4.875 h 32.37 c 2.665 0 4.875 -2.21 4.875 -4.875 v -22.88 H 274.3 c 2.665 0 4.875 -2.21 4.875 -4.875 v -23.725 h -0.175 v -4.875 v -33.92 V 129 z M 53.43 190.71 H 30.81 v -80.275 h 22.62 V 190.71 z M 85.735 218.465 h -22.62 V 82.615 h 22.62 V 218.465 z M 204.62 162.11 H 95.485 v -0.065 V 138.19 H 204.62 V 162.11 z M 236.99 218.465 h -22.62 V 82.615 h 22.62 V 218.465 z M 269.36 190.71 h -22.62 v -80.275 h 22.62 V 190.71 z"
-						stroke="transparent" fill="#000" stroke-width="3"/>
+						stroke="transparent" fill="#000" stroke-width="3" />
 				</g>
 			</symbol>
 			<symbol id="planet-2" viewBox="0 0 180 115">
@@ -312,79 +311,115 @@
 
 		</svg>
 
-
-		<div class="stars-wrapper">
-			<div id='stars'></div>
-			<div id='stars2'></div>
-			<div id='stars3'></div>
-		</div>
-		<div id="main-wrapper"></div>
-		<div id="toggle-wrapper">
-			<div>
-				<p>animations</p>
-				<div class="toggle-container">
-					<input type="checkbox" id="toggle" />
-					<label for="toggle" class="toggle">
-						<div class="toggle-handler">
-							<svg viewBox="0 0 103 105" class="moon-toggle">
-								<g>
-									<circle cx="51" cy="51" r="50" fill="none" stroke-miterlimit="10"
-										stroke-width="2" />
-									<circle cx="22.5" cy="43.5" r="6.4" fill="none" stroke="#000" stroke-miterlimit="10"
-										stroke-width="2" />
-									<circle cx="78.3" cy="42.4" r="12.1" fill="none" stroke="#000"
-										stroke-miterlimit="10" stroke-width="2" />
-									<circle cx="53.2" cy="74.3" r="7.3" fill="none" stroke="#000" stroke-miterlimit="10"
-										stroke-width="2" />
-								</g>
-							</svg>
-						</div>
-					</label>
-				</div>
-			</div>
-		</div>
 		<h1 style="z-index: 0;">I'm Shahar :)</h1>
 	</section>
 
 	<section class="section" id="section-3" under-construction>
-		<div class="cloud-container" z-index="1"></div>
-		<h1 class="title" z-index="0">Some Text,Some <br> More text</h1>
+		<div class="cloud-container"></div>
+		<svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 43.4 43.4"
+			enable-background="new 0 0 43.4 43.4" xml:space="preserve">
+			<circle class="circle" fill="none" stroke="#252223" stroke-width="2" stroke-miterlimit="10" cx="21.7"
+				cy="21.5" r="12.6" />
+			<line class="ray" fill="none" stroke="#252223" stroke-width="2" stroke-miterlimit="10" x1="21.7" y1="6.3"
+				x2="21.7" y2="0" />
+			<line class="ray" fill="none" stroke="#252223" stroke-width="2" stroke-miterlimit="10" x1="21.7" y1="43.4"
+				x2="21.7" y2="37" />
+			<line class="ray" fill="none" stroke="#252223" stroke-width="2" stroke-miterlimit="10" x1="6.3" y1="21.7"
+				x2="0" y2="21.7" />
+			<line class="ray" fill="none" stroke="#252223" stroke-width="2" stroke-miterlimit="10" x1="43.4" y1="21.7"
+				x2="37" y2="21.7" />
+			<line class="ray" fill="none" stroke="#252223" stroke-width="2" stroke-miterlimit="10" x1="10.8" y1="10.8"
+				x2="6.4" y2="6.4" />
+			<line class="ray" fill="none" stroke="#252223" stroke-width="2" stroke-miterlimit="10" x1="37" y1="37"
+				x2="32.5" y2="32.5" />
+			<line class="ray" fill="none" stroke="#252223" stroke-width="2" stroke-miterlimit="10" x1="10.8" y1="32.5"
+				x2="6.4" y2="37" />
+			<line class="ray" fill="none" stroke="#252223" stroke-width="2" stroke-miterlimit="10" x1="37" y1="6.4"
+				x2="32.5" y2="10.8" />
+			<line class="ray" fill="none" stroke="#252223" stroke-width="2" stroke-miterlimit="10" x1="15.6" y1="7.6"
+				x2="13.2" y2="1.8" />
+			<line class="ray" fill="none" stroke="#252223" stroke-width="2" stroke-miterlimit="10" x1="30.2" y1="41.6"
+				x2="27.7" y2="35.8" />
+			<line class="ray" fill="none" stroke="#252223" stroke-width="2" stroke-miterlimit="10" x1="7.6" y1="27.7"
+				x2="1.8" y2="30.2" />
+			<line class="ray" fill="none" stroke="#252223" stroke-width="2" stroke-miterlimit="10" x1="41.6" y1="13.2"
+				x2="35.8" y2="15.6" />
+			<line class="ray" fill="none" stroke="#252223" stroke-width="2" stroke-miterlimit="10" x1="7.4" y1="16"
+				x2="1.6" y2="13.6" />
+			<line class="ray" fill="none" stroke="#252223" stroke-width="2" stroke-miterlimit="10" x1="41.8" y1="29.7"
+				x2="35.9" y2="27.4" />
+			<line class="ray" fill="none" stroke="#252223" stroke-width="2" stroke-miterlimit="10" x1="16" y1="35.9"
+				x2="13.6" y2="41.8" />
+			<line class="ray" fill="none" stroke="#252223" stroke-width="2" stroke-miterlimit="10" x1="29.7" y1="1.6"
+				x2="27.4" y2="7.4" />
+		</svg>
+		<div class="grass-hill"></div>
+		<div class="grass-bottom"></div>
+		<div class="tree tree1">
+			<div class="trunk">
+				<div class="leftbranch"></div>
+				<div class="rightbranch"></div>
+			</div>
+		</div>
+		<div class="tree tree2">
+			<div class="trunk">
+				<div class="leftbranch"></div>
+				<div class="rightbranch"></div>
+			</div>
+		</div>
+		<div class="tree tree3">
+			<div class="trunk">
+				<div class="leftbranch"></div>
+				<div class="rightbranch"></div>
+			</div>
+		</div>
+		<div class="tree tree4">
+			<div class="trunk">
+				<div class="leftbranch"></div>
+				<div class="rightbranch"></div>
+			</div>
+		</div>
+		<h1 class="title">Some Text, Some <br> More text</h1>
 	</section>
 
 	<section class="section" id="section-4">
 		<div class="content">
-            <h1 class="title">Little</h1>
-            <p>
-                <p class="highlight">
-                    Little is a programming language I made,
-                	and it's goal is to teach children how to program,
-                	in an easy and accessible way.
-                </p>
-                You can write it's source code in whatever language you'd like to write
-                in - english, spanish, hebrew or arabic - and you'd still be able to run it :)
-                <br>
-                <br>
-                as of today (<code>25th April, 2023</code>), The language's development has finished, and it supports pretty much everything any programming language support, with some extra features on top :)
-                <br>
-                Check out the cool stuff below &darr;, and try out the language with the i/o on the side &rarr;
-            </p>
-            <div class="data">
-                <div class="links row">
-                    <a href="./little/doc"> Documentation &UpperRightArrow;</a>
-                    <a href="./little/demo"> Try Online &UpperRightArrow;</a>
-                    <a href="./little/guides"> Guides &UpperRightArrow;</a>
-                </div>
-            </div>
-            
-        </div>
-        <div class="code-io">
-            <iframe id="little_code-io" title="code-io" src="./little/littleDemo/Export/html5/bin/index.html" frameborder="0"></iframe>
-        </div>
+			<h1 class="title">Little</h1>
+			<p>
+			<p class="highlight">
+				Little is a programming language I made,
+				and it's goal is to teach children how to program,
+				in an easy and accessible way.
+			</p>
+			You can write it's source code in whatever language you'd like to write
+			in - english, spanish, hebrew or arabic - and you'd still be able to run it :)
+			<br>
+			<br>
+			as of today (<code>25th April, 2023</code>), The language's development has finished, and it supports pretty
+			much everything any programming language support, with some extra features on top :)
+			<br>
+			Check out the cool stuff below &darr;, and try out the language with the i/o on the side &rarr;
+			</p>
+			<div class="data">
+				<div class="links row">
+					<a href="./little/doc"> Documentation &UpperRightArrow;</a>
+					<a href="./little/demo"> Try Online &UpperRightArrow;</a>
+					<a href="./little/guides"> Guides &UpperRightArrow;</a>
+				</div>
+			</div>
+
+		</div>
+		<div class="code-io">
+			<iframe id="little_code-io" title="code-io" src="./little/littleDemo/Export/html5/bin/index.html"
+				frameborder="0"></iframe>
+		</div>
 	</section>
 
 	<section class="section" id="section-5" under-construction>
 		<h1 class="title">Dynamically</h1>
-		<h1 class="pre-title"><span style="text-decoration: line-through; font-weight: 400; font-size: 0.9em; opacity: 0.8;">EZWorksheet</span> &RightArrow;</h1>
+		<h1 class="pre-title"><span
+				style="text-decoration: line-through; font-weight: 400; font-size: 0.9em; opacity: 0.8;">EZWorksheet</span>
+			&RightArrow;</h1>
 
 		<div class="data">
 			<div class="links column">
@@ -403,6 +438,7 @@
 	<script src="./sources/starsBackground.js"></script>
 	<script src="./sources/svgsBackground.js"></script>
 	<script src="./sources/clouds.js"></script>
+	<script src="./sources/sun.js"></script>
 
 	<script src="./sources/typewriter.js"></script>
 	<script src="./sources/underConstruction.js"></script>

@@ -9,6 +9,11 @@
 	color: white;
 
 	border-bottom: #000 solid 16px;
+	border-top: #000 solid 16px;
+	
+	position: relative;
+	top: -16px;
+	z-index: 10000;
 }
 
 #section-4 .content {

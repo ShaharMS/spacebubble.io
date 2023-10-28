@@ -1,5 +1,5 @@
 #section-3 {
-
+	z-index: -1;
 	background: #87CEEB;
 
 	border-bottom: #000 solid 16px;
@@ -10,40 +10,217 @@
 }
 
 #section-3 .title {
+	position: relative;
 	margin-top: 0;
 	padding-left: 7vw;
 	padding-top: 7vh;
+	z-index: 9999;
+
 }
+
+/*
+----------------------------------------------
+Clouds
+----------------------------------------------
+*/
 
 .cloud-container {
 	width: 100%;
 	height: 30%;
 	position: absolute;
+	z-index: 9998;
 	top: calc(200vh + 32px);
 }
 
 .cloud {
-	width: 200px; height: 60px;
-	background: #fff;
-	
+	width: 200px;
+	height: 60px;
+	background: #ffffff;
+
 	border-radius: 200px;
-	
-	position: absolute; 
+
+	position: absolute;
+	opacity: 0.5;
 }
 
-.cloud:before, .cloud:after {
+.cloud:before,
+.cloud:after {
 	content: '';
-	position: absolute; 
-	background: #fff;
-	width: 100px; height: 80px;
-	position: absolute; top: -15px; left: 10px;
-	
+	position: absolute;
+	background: #ffffff;
+	width: 100px;
+	height: 80px;
+	position: absolute;
+	top: -15px;
+	left: 10px;
+
 	border-radius: 100px;
-	
+
 	transform: rotate(30deg);
 }
 
 .cloud:after {
-	width: 120px; height: 120px;
-	top: -55px; left: auto; right: 15px;
+	width: 120px;
+	height: 120px;
+	top: -55px;
+	left: auto;
+	right: 15px;
+}
+
+/*
+----------------------------------------------
+Sun
+----------------------------------------------
+*/
+
+.sun-icon {
+	position: absolute;
+	top: calc(200vh + 32px - 250px);
+	right: -250px;
+	transform: translate(-50%, -50%);
+	width: 500px;
+	margin: 0 auto;
+	display: block;
+	animation: rotate 60s 0s linear infinite;
+	fill: #ffee00;
+	transition: all 0.4s;
+}
+
+.sun-icon .ray,
+.sun-icon .circle {
+	stroke: #ffee00;
+	fill: #ffee00;
+	transition: all 0.4s;
+}
+
+.hover {
+	width: 550px;
+	fill: orange;
+	transition: all 0.4s;
+}
+
+.hover .ray,
+.hover .circle {
+	width: 550px;
+	stroke: orange;
+	fill: orange;
+	transition: all 0.4s;
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	50% {
+		transform: rotate(180deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+/*
+----------------------------------------------
+landscape
+----------------------------------------------
+*/
+
+.grass-bottom {
+	/*draw window-wide ellipse, 100px tall ellipse*/
+	height: 200px;
+	rotate: 1deg;
+	width: 150vw;
+	transform: translate(-20%);
+	border: 16px solid green;
+	background-color: green;
+	position: absolute;
+	top: calc(300vh + 32px - 50px);
+	border-radius: 50%;
+}
+
+.grass-hill {
+	height: 40vh;
+	width: 800px;
+	rotate: -10deg;
+	background-color: darkgreen;
+	position: absolute;
+	top: calc(280vh + 32px - 50px);
+	left: 60%;
+	border-radius: 50%;
+
+}
+
+
+.tree {
+	height: 150px;
+	width: 150px;
+	background-color: #6a976c;
+	border-radius: 100%;
+
+	position: absolute;
+}
+
+.tree1 {
+	top: calc(300vh + 32px - 50px - 150px - 100px);
+	left: 24px;
+	transform-origin: 50% 180%;
+	scale: 0.7;
+	background-color: #638864;
+}
+
+.tree2 {
+	top: calc(300vh + 32px - 50px - 150px - 95px);
+	left: 96px;
+}
+
+.tree3 {
+	top: calc(300vh + 32px - 50px - 150px - 220px);
+	right: -10px;
+	transform-origin: 50% 150%;
+	scale: 0.4;
+	background-color: #638864;
+}
+
+.tree4 {
+	top: calc(300vh + 32px - 50px - 150px - 190px);
+	right: 140px;
+	transform-origin: 50% 150%;
+	scale: 0.45;
+	background-color: #638864;
+}
+
+.trunk {
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: 0 10px 212px 10px;
+	border-color: transparent transparent #374544 transparent;
+	margin-top: 54px;
+	margin-left: 65px;
+}
+
+.leftbranch {
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: 0 3px 60px 3px;
+	border-color: transparent transparent #374544 transparent;
+	transform: rotate(-50deg);
+	position: absolute;
+	margin-top: 12.5px;
+	margin-left: -25px;
+}
+
+.rightbranch {
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: 0 2px 35px 2px;
+	border-color: transparent transparent #374544 transparent;
+	transform: rotate(36deg);
+	position: absolute;
+	margin-top: 4px;
+	margin-left: 9px;
 }

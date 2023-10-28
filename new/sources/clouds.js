@@ -1,13 +1,13 @@
-const randomVelocity = () => Math.random();
+const randomVelocity = () => Math.max(0.2, Math.random()) / 4;
 const randomHeight = (height) => Math.random() * height;
 const randomStartPosition = (width) => Math.random() * width;
 
 let timerDone = false;
-setTimeout(() => timerDone = true, 10000);
+setTimeout(() => timerDone = true, 60000);
 const shouldCreateCloud = () =>{
     if (Math.random() > 0.9 && timerDone) {
         timerDone = false;
-        setTimeout(() => timerDone = true, 10000);
+        setTimeout(() => timerDone = true, 60000);
 
         return true;
     }
@@ -16,10 +16,10 @@ const shouldCreateCloud = () =>{
 
 let containers = document.getElementsByClassName("cloud-container");
 for (const container of containers) {
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 3; i++) {
         let cloud = document.createElement("div");
         cloud.classList.add("cloud");
-        cloud.style.top = randomHeight(container.getBoundingClientRect().height) + "px";
+        cloud.style.top = randomHeight(container.getBoundingClientRect().height - 20) + 20 + "px";
         cloud.style.left = randomStartPosition(container.getBoundingClientRect().width) + "px";
         cloud.setAttribute("velocity", randomVelocity());
         container.appendChild(cloud);
@@ -32,7 +32,6 @@ function run() {
             if (cloud.getBoundingClientRect().x > container.getBoundingClientRect().x + container.getBoundingClientRect().width) {
                 container.removeChild(cloud);
             } else {
-                console.log(+parseFloat(cloud.style.left), +cloud.getAttribute("velocity"))
                 cloud.style.left = +parseFloat(cloud.style.left) + +cloud.getAttribute("velocity") + "px";
             }
         }
