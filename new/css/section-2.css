@@ -18,6 +18,7 @@
 
 #section-2 h1 {
     font-size: 8em;
+    text-align: center;
 }
 
 #section-2 svg {
@@ -59,6 +60,8 @@
     height: 100%;
 
     overflow: hidden;
+    display: none;
+
 }
 
 #section-2 #main-wrapper {
