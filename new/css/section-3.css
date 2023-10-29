@@ -18,6 +18,12 @@
 
 }
 
+#section-3 .title > small {
+	font-size: 0.4em;
+	display: block;
+	padding-left: 10px;
+}
+
 /*
 ----------------------------------------------
 Clouds
@@ -141,13 +147,13 @@ landscape
 }
 
 .grass-hill {
-	height: 40vh;
-	width: 800px;
+	height: 60vh;
+	width: 2000px;
 	rotate: -10deg;
 	background-color: darkgreen;
 	position: absolute;
 	top: calc(280vh + 32px - 50px);
-	left: 60%;
+	right: -800px;
 	border-radius: 50%;
 
 }
@@ -163,9 +169,8 @@ landscape
 }
 
 .tree1 {
-	top: calc(300vh + 32px - 50px - 150px - 100px);
+	top: calc(300vh + 32px - 50px - 150px - 47px);
 	left: 24px;
-	transform-origin: 50% 180%;
 	scale: 0.7;
 	background-color: #638864;
 }
@@ -176,17 +181,15 @@ landscape
 }
 
 .tree3 {
-	top: calc(300vh + 32px - 50px - 150px - 220px);
+	top: calc(300vh + 32px - 50px - 150px - 20vh);
 	right: -10px;
-	transform-origin: 50% 150%;
 	scale: 0.4;
 	background-color: #638864;
 }
 
 .tree4 {
-	top: calc(300vh + 32px - 50px - 150px - 190px);
+	top: calc(300vh + 32px - 50px - 150px - 19vh);
 	right: 140px;
-	transform-origin: 50% 150%;
 	scale: 0.45;
 	background-color: #638864;
 }
@@ -223,4 +226,14 @@ landscape
 	position: absolute;
 	margin-top: 4px;
 	margin-left: 9px;
+}
+
+.example-container {
+	width: 10px;
+	height: 10px;
+	/*position absolute with poositioning in the middle of the srcreen*/
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }

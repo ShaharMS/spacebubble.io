@@ -21,3 +21,4 @@ sun.addEventListener("mouseover", () => {
 sun.addEventListener("mouseout", () => {
 	sun.classList.remove("hover");
 })
+
