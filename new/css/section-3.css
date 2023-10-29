@@ -9,6 +9,32 @@
 	font-size: 3.5em;
 }
 
+#section-3 .airplane{
+	scale: 0.3;
+	position: absolute;
+	top: 232vh;
+}
+
+#section-3 .title {
+	white-space: nowrap;
+}
+
+#section-3 .title .part1 {
+	position: relative;
+	font-size: calc(2em);
+	top: -20px;	
+}
+
+#section-3 .title .part2 {
+	position: relative;
+	font-size: calc(1.4em);
+}
+#section-3 .title .part3 {
+	position: relative;
+	font-size: calc(2em);
+	top: 20px;
+}
+
 #section-3 .title {
 	position: relative;
 	margin-top: 0;

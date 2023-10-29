@@ -1,16 +1,18 @@
-<?xml version="1.0"?>
-<svg width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
- <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->
- <g class="layer">
-  <title>Layer 1</title>
-  <path d="m157,261l211,1l116,-61l0,-31l-327,0" fill="#8c8c8c" id="svg_1" stroke="#000000" stroke-width="4"/>
-  <rect fill="#333333" height="67" id="svg_2" stroke="#000000" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="4" width="33" x="125" y="180"/>
-  <line fill="none" id="svg_5" stroke="#141414" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="8" transform="matrix(1, 0, 0, 1, 0, 0)" x1="196" x2="196" y1="129" y2="245"/>
-  <line fill="none" id="svg_6" stroke="#141414" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="9" x1="295.5" x2="295.5" y1="130" y2="243"/>
-  <rect fill="#a12a12" height="18" id="svg_7" stroke="#000000" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="4" width="157" x="168.5" y="235.5"/>
-  <rect fill="#a12a12" height="18" id="svg_4" stroke="#000000" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="4" width="156" x="168.5" y="111.5"/>
-  <rect fill="#007fff" height="25" id="svg_12" stroke="#141414" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="4" width="48" x="213.98" y="144.43"/>
-  <path d="m484.35,184.38l-0.35,-64.38l-18,0l-46,44l0,6l9,0l0,15l55.35,-0.62z" fill="#a12a12" fill-opacity="null" id="svg_18" stroke="#141414" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" stroke-width="4"/>
-  <path d="m159.35,170.25l-0.35,89.75l0.35,-89.75z" fill="#8c8c8c" fill-opacity="null" id="svg_19" stroke="#000000" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" stroke-width="4"/>
- </g>
-</svg>
+<svg width="424" height="156" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+	<!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->
+   
+	<g class="layer">
+	 <title>Layer 1</title>
+	 <path d="m35,153l211,1l116,-61l0,-31l-327,0" fill="#8c8c8c" id="svg_1" stroke="#000000" stroke-width="4"/>
+	 <rect fill="#333333" height="67" id="svg_2" stroke="#000000" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="4" width="33" x="3" y="72"/>
+	 <line fill="none" id="svg_5" stroke="#141414" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="8" x1="74" x2="74" y1="21" y2="137"/>
+	 <line fill="none" id="svg_6" stroke="#141414" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="9" x1="173.5" x2="173.5" y1="22" y2="135"/>
+	 <rect fill="#a12a12" height="18" id="svg_7" stroke="#000000" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="4" width="157" x="46.5" y="127.5"/>
+	 <rect fill="#a12a12" height="18" id="svg_4" stroke="#000000" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="4" width="156" x="46.5" y="3.5"/>
+	 <rect fill="#007fff" height="25" id="svg_12" stroke="#141414" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="4" width="48" x="91.98" y="36.43"/>
+	 <path d="m362.35,76.38l-0.35,-64.38l-18,0l-46,44l0,6l9,0l0,15l55.35,-0.62z" fill="#a12a12" fill-opacity="null" id="svg_18" stroke="#141414" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" stroke-width="4"/>
+	 <path d="m37.35,62.25l-0.35,89.75l0.35,-89.75z" fill="#8c8c8c" fill-opacity="null" id="svg_19" stroke="#000000" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" stroke-width="4"/>
+	 <line fill="none" id="svg_3" stroke="#000000" stroke-width="5" x1="424" x2="351" y1="2" y2="84"/>
+	 <line fill="none" id="svg_8" stroke="#000000" stroke-width="5" x1="423" x2="352" y1="155" y2="82"/>
+	</g>
+   </svg>
