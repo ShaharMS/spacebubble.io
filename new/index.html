@@ -18,6 +18,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
 		integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
 		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.18.0/matter.min.js"></script>
 </head>
 
 <body>
@@ -352,7 +353,49 @@
 			<line class="ray" fill="none" stroke="#252223" stroke-width="2" stroke-miterlimit="10" x1="29.7" y1="1.6"
 				x2="27.4" y2="7.4" />
 		</svg>
-		<div class="airplane">
+		<div class="airplane" id="plane">
+			<script>
+				let plane = document.getElementById('plane');
+				plane.style.scale = window.innerHeight / 2000;
+				let planeExitComplete = false;
+				let originalY = -1;
+
+				const startShaking = (container) => {
+					if (planeExitComplete) {
+						container.style.top = originalY + "px";
+						return;
+					}
+					container.style.top = originalY + "px"; 
+					container.style.left = Math.random() * 4 + "px";
+					requestAnimationFrame(startShaking.bind(null, container));
+				}
+
+				plane.onscreenexit = () => console.log('exit');
+				plane.onmessagestartexit = () => {
+					console.log('start');
+					let bounds = plane.getBoundingClientRect();
+					console.log(bounds);
+					let container = document.createElement("div");
+					container.innerHTML = plane.children[1].innerHTML;
+					document.getElementById('section-3').appendChild(container);
+
+					container.style.position = "absolute";
+					container.style.transformOrigin = "left";
+					container.style.scale = plane.style.scale;
+					container.style.padding = plane.children[1].style.padding;
+					originalY = bounds.y - bounds.height + container.getBoundingClientRect().height / 4 + window.scrollY;
+					container.style.left = 0;
+					container.classList.add(plane.children[1].classList[0])
+					for (const child of plane.children[1].children) {
+						child.style.opacity = "0.01";
+					}
+					startShaking(container);
+				}
+				plane.onmessageexit = () => {
+					console.log('end');
+					planeExitComplete = true;
+				}
+			</script>
 			<h1 class="title">
 				<span class="part1">Creativity</span> <span class="part2">meets</span> <span class="part3">Excellence</span>
 			</h1>

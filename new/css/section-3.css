@@ -9,10 +9,10 @@
 	font-size: 3.5em;
 }
 
-#section-3 .airplane{
+#section-3 .airplane {
 	scale: 0.3;
 	position: absolute;
-	top: 232vh;
+	top: 226vh;
 }
 
 #section-3 .title {
@@ -104,13 +104,15 @@ Clouds
 Sun
 ----------------------------------------------
 */
-
+:root {
+	--sun-radius: 180px;
+}
 .sun-icon {
 	position: absolute;
-	top: calc(200vh + 32px - 250px);
-	right: -250px;
+	top: calc(200vh + 32px - var(--sun-radius));
+	right: calc(0px - var(--sun-radius));
 	transform: translate(-50%, -50%);
-	width: 500px;
+	width: calc(var(--sun-radius) * 2);
 	margin: 0 auto;
 	display: block;
 	animation: rotate 60s 0s linear infinite;
@@ -126,14 +128,17 @@ Sun
 }
 
 .hover {
-	width: 550px;
+	width: calc(var(--sun-radius) * 2.5);
 	fill: orange;
 	transition: all 0.4s;
+
+	top: calc(200vh + 32px - var(--sun-radius) * 1.25);
+	right: calc(0px - var(--sun-radius) * 1.25);
 }
 
 .hover .ray,
 .hover .circle {
-	width: 550px;
+	width: calc(var(--sun-radius) * 2.5);
 	stroke: orange;
 	fill: orange;
 	transition: all 0.4s;
