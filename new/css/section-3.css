@@ -262,7 +262,7 @@ landscape
 .example-container {
 	width: 10px;
 	height: 10px;
-	/*position absolute with poositioning in the middle of the srcreen*/
+	/*position absolute with positioning in the middle of the screen*/
 	position: absolute;
 	top: 50%;
 	left: 50%;
