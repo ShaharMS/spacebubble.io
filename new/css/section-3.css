@@ -38,7 +38,6 @@
 #section-3 .title {
 	position: relative;
 	margin-top: 0;
-	padding-left: 7vw;
 	padding-top: 7vh;
 	z-index: 9999;
 
@@ -105,7 +104,7 @@ Sun
 ----------------------------------------------
 */
 :root {
-	--sun-radius: 180px;
+	--sun-radius: calc(25vh);
 }
 .sun-icon {
 	position: absolute;
