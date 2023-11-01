@@ -48,7 +48,6 @@ const images = [
 		name: "galaxy"
 	}
 ];
-const svgs_stars = ["#star-1", "#star-2", "#star-3"];
 checkBox.addEventListener("change", checkStatus);
 window.addEventListener("resize", function () {
 	w = window.innerWidth;
@@ -83,26 +82,6 @@ El.prototype.attach = function () {
 		"s;"
 	);
 };
-function Star(image, x, y) {
-	this.image = image;
-	this.x = x;
-	this.y = y;
-}
-Star.prototype.attach = function () {
-	this.svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-	this.use = document.createElementNS("http://www.w3.org/2000/svg", "use");
-	this.use.setAttributeNS(
-		"http://www.w3.org/1999/xlink",
-		"xlink:href",
-		this.image
-	);
-	this.svg.setAttribute("xmlns:xlink", "http://www.w3.org/1999/xlink");
-	this.svg.setAttribute(
-		"style",
-		"top: " + this.y + "px; left: " + this.x + "px;"
-	);
-	this.svg.setAttribute("class", "star");
-};
 const spacing = 170;
 const yOffset = 15;
 let i, s;
@@ -131,16 +110,6 @@ function init() {
 			}
 		}
 	}
-	const newSpacing = spacing - 40;
-	for (let y = newSpacing; y <= h; y += spacing) {
-		for (let x = -(spacing / 2); x <= w; x += spacing) {
-			if ((x + spacing / 2) % (2 * spacing) === 0) {
-				drawStar(x, y + 10);
-			} else {
-				drawStar(x, y - 10);
-			}
-		}
-	}
 }
 function draw(x, y) {
 	const image = images[i];
@@ -155,18 +124,7 @@ function draw(x, y) {
 	el.svg.appendChild(el.use);
 	wrapper.appendChild(el.svg);
 }
-function drawStar(x, y) {
-	const image = stars[s];
-	const star = new Star(image, x, y);
-	if (s === stars.length - 1) {
-		s = 0;
-	} else {
-		s++;
-	}
-	star.attach();
-	star.svg.appendChild(star.use);
-	wrapper.appendChild(star.svg);
-}
+
 init();
 
 // Animation functions
