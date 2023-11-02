@@ -8,13 +8,6 @@
 #section-3 h1 {
 	font-size: 3.5em;
 }
-
-#section-3 .airplane {
-	scale: 0.3;
-	position: absolute;
-	top: 226vh;
-}
-
 #section-3 .title {
 	white-space: nowrap;
 }
@@ -47,6 +40,35 @@
 	font-size: 0.4em;
 	display: block;
 	padding-left: 10px;
+}
+
+/*
+----------------------------------------------
+Airplane
+----------------------------------------------
+*/
+
+#section-3 .airplane-aftermath,
+#section-3 .airplane {
+	scale: 0.3;
+	position: absolute;
+	top: 226vh;
+}
+
+/*
+----------------------------------------------
+Ropes
+----------------------------------------------
+*/
+
+#section-3 .rope {
+	position: absolute;
+	width: 5px;
+	height: 80vh;
+	background-color: #000;
+}
+
+#section-3 .rope::after {
 }
 
 /*

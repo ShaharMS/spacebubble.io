@@ -32,7 +32,7 @@ const id = () => p_i++;
 
 for (const plane of planes) {
 	const text = plane.innerHTML;
-	const velocity = parseFloat(plane.getAttribute("velocity") ?? window.innerWidth / 200);
+	const velocity = parseFloat(plane.getAttribute("velocity") ?? window.innerWidth / 100);
 	const stop = parseFloat(plane.getAttribute("distance") ?? -1);
 
 	let graphic = document.createElement("img");
@@ -69,7 +69,6 @@ for (const plane of planes) {
 		container.style.display = "flex";
 		let css = `
 		.${customClass} * {
-			padding-left: 5px !important;
 		}`;
 		let cssStyle = document.createElement("style");
 		cssStyle.innerHTML = css;
