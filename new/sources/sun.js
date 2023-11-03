@@ -1,6 +1,44 @@
 let sun = document.getElementsByClassName("sun-icon")[0];
 let section3 = document.getElementById("section-3");
 
+async function startHoverEffect() {
+	if (!sun.classList.contains("hover")) return;
+
+	const remove = () => {
+		if (!sun.classList.contains("hover")) {
+			
+		}
+	}
+
+	sun.addEventListener("DOMSubtreeModified", );
+
+	let container = document.createElement("div");
+	container.innerHTML =
+		`<div class="secret" style="font-size: 2em; display: flex; justify-content: center;">
+		<h4>Secret In...<h4>
+		<br>
+		<h4 class="secret-counter"></h4>
+	</div>`;
+
+	container.style.position = "absolute";
+	container.style.top = "200vh";
+	container.style.right = "0";
+	container.style.opacity = "0.2";
+	sun.insertAdjacentElement("afterend", container);
+
+	let counter = container.getElementsByClassName("secret-counter")[0];
+	
+	setTimeout(() => {
+		counter.innerHTML = "3";
+		setTimeout(() => {
+			counter.innerHTML = "2";
+			setTimeout(() => {
+				counter.innerHTML = "1";
+			}, 1000);
+		}, 1000);
+	}, 1000);
+}
+
 section3.addEventListener("mousemove", (e) => {
 	// if the mousepoint overlaps the sun, dispatch its hovering css & js events
 	let mx = e.clientX;
@@ -20,5 +58,12 @@ sun.addEventListener("mouseover", () => {
 });
 sun.addEventListener("mouseout", () => {
 	sun.classList.remove("hover");
-})
+});
+
+// add event listener to when hover class is added
+sun.addEventListener("DOMSubtreeModified", () => {
+	if (sun.classList.contains("hover")) {
+		setTimeout(() => startHoverEffect(), 1000);
+	}
+});
 

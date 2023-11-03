@@ -68,9 +68,6 @@ Ropes
 	background-color: #000;
 }
 
-#section-3 .rope::after {
-}
-
 /*
 ----------------------------------------------
 Clouds
@@ -94,6 +91,28 @@ Clouds
 
 	position: absolute;
 	opacity: 0.5;
+	z-index: 0;
+
+	text-align: center;
+	font-size: 90%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	transition: opacity 0.5s ease;
+}
+
+.cloud > * {
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}
+
+.cloud:hover > * {
+	opacity: 1;
+}
+.cloud:hover {
+	z-index: 1;
+	opacity: 1;
 }
 
 .cloud:before,
@@ -108,6 +127,7 @@ Clouds
 	left: 10px;
 
 	border-radius: 100px;
+	z-index: -1;
 
 	transform: rotate(30deg);
 }
