@@ -11,7 +11,7 @@ plane.onmessagestartexit = () => {
 	console.log(container.getBoundingClientRect());
 
 	container.style.position = "absolute";
-	container.style.right = `calc(${plane.style.right} + ${plane.children[0].getBoundingClientRect().width}px + 20px)`;
+	container.style.right = `calc(${plane.style.right} + ${plane.children[0].getBoundingClientRect().width}px + 10px)`;
 	container.style.top = plane.getBoundingClientRect().y + window.scrollY - plane.getBoundingClientRect().height + "px";
 	container.style.scale = 0.3;
 

@@ -28,7 +28,7 @@ class Main extends Sprite
 		input.background = true;
 		input.backgroundColor = 0x101010;
 		input.height = 320;
-		input.width = 608;
+		input.width = Lib.application.window.width - 40;
 		input.type = INPUT;
 		input.multiline = true;
 		input.wordWrap = false;
@@ -87,7 +87,7 @@ class Main extends Sprite
 		output.background = true;
 		output.backgroundColor = 0x101010;
 		output.height = 340;
-		output.width = 646;
+		output.width = Lib.application.window.width;
 		output.multiline = true;
 		output.wordWrap = true;
 		output.x = 0;
@@ -106,7 +106,7 @@ class Main extends Sprite
 		text.backgroundColor = 0x101010;
 		text.textColor = 0xFFFFFF;
 		text.height = 365;
-		text.width = 608;
+		text.width = Lib.application.window.width;
 		return text;
 	}
 

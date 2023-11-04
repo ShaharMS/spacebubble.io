@@ -13,6 +13,7 @@
 	<haxelib name="little"/>
 	<haxelib name="texter"/>
 	<haxelib name="formula"/>
+	<haxelib name="vision" />
 	
 	<assets path="Assets" rename="assets" />
 	

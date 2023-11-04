@@ -1,43 +1,28 @@
 let sun = document.getElementsByClassName("sun-icon")[0];
 let section3 = document.getElementById("section-3");
 
-async function startHoverEffect() {
-	if (!sun.classList.contains("hover")) return;
-
-	const remove = () => {
-		if (!sun.classList.contains("hover")) {
-			
-		}
-	}
-
-	sun.addEventListener("DOMSubtreeModified", );
-
-	let container = document.createElement("div");
-	container.innerHTML =
-		`<div class="secret" style="font-size: 2em; display: flex; justify-content: center;">
-		<h4>Secret In...<h4>
-		<br>
+let secretContainer = document.createElement("div");
+secretContainer.innerHTML =
+	`<div class="secret">
+		<h4>Secret In&hellip;&nbsp; <h4>
 		<h4 class="secret-counter"></h4>
 	</div>`;
 
-	container.style.position = "absolute";
-	container.style.top = "200vh";
-	container.style.right = "0";
-	container.style.opacity = "0.2";
-	sun.insertAdjacentElement("afterend", container);
+secretContainer.setCss({
+	position: "absolute",
+	top: "200vh",
+	right: "0",
+	opacity: "0.5",
+	display: "none",
+	width: "calc(var(--sun-radius) / 3 * 2)",
+	textAlign: "center",
+	flexDirection: "column",
+	alignItems: "center",
+	justifyContent: "center",
+	fontSize: "2em",
+});
 
-	let counter = container.getElementsByClassName("secret-counter")[0];
-	
-	setTimeout(() => {
-		counter.innerHTML = "3";
-		setTimeout(() => {
-			counter.innerHTML = "2";
-			setTimeout(() => {
-				counter.innerHTML = "1";
-			}, 1000);
-		}, 1000);
-	}, 1000);
-}
+sun.insertAdjacentElement("afterend", secretContainer);
 
 section3.addEventListener("mousemove", (e) => {
 	// if the mousepoint overlaps the sun, dispatch its hovering css & js events
@@ -48,22 +33,17 @@ section3.addEventListener("mousemove", (e) => {
 	if (Math.sqrt((mx - sx) * (mx - sx) + (my - sy) * (my - sy)) < 160) {
 		sun.dispatchEvent(new Event("mouseover"));
 		sun.classList.add("hover");
+		secretContainer.style.display = "flex";
 	} else {
 		sun.classList.remove("hover");
+		secretContainer.style.display = "none";
 	}
 });
 
-sun.addEventListener("mouseover", () => {
+sun.addEventListener("mouseenter", (e) => {
 	sun.classList.add("hover");
 });
 sun.addEventListener("mouseout", () => {
 	sun.classList.remove("hover");
-});
-
-// add event listener to when hover class is added
-sun.addEventListener("DOMSubtreeModified", () => {
-	if (sun.classList.contains("hover")) {
-		setTimeout(() => startHoverEffect(), 1000);
-	}
 });
 
