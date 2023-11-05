@@ -44,6 +44,12 @@ import sys.FileSystem;
 
 			rootPath = Reflect.field (config, "rootPath");
 
+			if(!StringTools.endsWith (rootPath, "/")) {
+
+				rootPath += "/";
+
+			}
+
 		}
 
 		if (rootPath == null) {
@@ -119,7 +125,7 @@ null
 
 #elseif (desktop || cpp)
 
-@:keep @:image("C:/Users/shaha/Desktop/Github/texter/assets/DynamicTextField/RotationJoint.png") @:noCompletion #if display private #end class __ASSET__assets_texter_dynamictextfield_rotationjoint_png extends lime.graphics.Image {}
+@:keep @:image("C:/Users/shahar/Documents/GitHub/texter/assets/DynamicTextField/RotationJoint.png") @:noCompletion #if display private #end class __ASSET__assets_texter_dynamictextfield_rotationjoint_png extends lime.graphics.Image {}
 @:keep @:font("Export/html5/obj/webfont/math-bold.ttf") @:noCompletion #if display private #end class __ASSET__assets_texter_mathtextfield_math_bold_ttf extends lime.text.Font {}
 @:keep @:font("Export/html5/obj/webfont/math-regular.ttf") @:noCompletion #if display private #end class __ASSET__assets_texter_mathtextfield_math_regular_ttf extends lime.text.Font {}
 @:keep @:font("Export/html5/obj/webfont/sans.ttf") @:noCompletion #if display private #end class __ASSET__assets_texter_texttools_sans_ttf extends lime.text.Font {}
