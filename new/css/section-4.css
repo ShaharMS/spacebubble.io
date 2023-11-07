@@ -56,3 +56,13 @@
     font-size: 3em;
 }
 
+#section-4 .typewriter a {
+
+	border: 2px solid white;
+	font-family: 'Courier New', Courier, monospace;
+	font-weight: 600;
+	font-size: 1.2em;
+	text-decoration: none;
+
+	text-align: center;
+}

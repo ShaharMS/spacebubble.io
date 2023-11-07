@@ -115,7 +115,7 @@ class Main extends Sprite
 		var interp:Array<{color:Int, start:Int, end:Int}> = [];
 		
 		var indexOfIdent = text.indexesFromEReg(~/\w+/),
-			indexOfBlue = text.indexesFromEReg(new EReg('\\b(${Keywords.VARIABLE_DECLARATION}|${Keywords.FUNCTION_DECLARATION}|${Keywords.TRUE_VALUE}|${Keywords.FALSE_VALUE}|${Keywords.NULL_VALUE}|${Keywords.FOR_LOOP_IDENTIFIERS.FROM}|${Keywords.FOR_LOOP_IDENTIFIERS.TO}|${Keywords.FOR_LOOP_IDENTIFIERS.JUMP})\\b', "m")),
+			indexOfBlue = text.indexesFromEReg(new EReg('\\b(${Keywords.VARIABLE_DECLARATION}|${Keywords.FUNCTION_DECLARATION}|${Keywords.TRUE_VALUE}|${Keywords.FALSE_VALUE}|${Keywords.NULL_VALUE}|${Keywords.FOR_LOOP_FROM}|${Keywords.FOR_LOOP_TO}|${Keywords.FOR_LOOP_JUMP})\\b', "m")),
 			indexOfPurple = text.indexesOfSubs(Keywords.CONDITION_TYPES.concat([Keywords.ELSE])),
 			indexOfFunctionName = text.indexesFromEReg(~/([a-zA-Z0-9_]+)\(/m),
 			indexOfClassName = text.indexesFromEReg(~/(?::|\(| |\n|^)[A-Z][a-zA-Z]+/m),
