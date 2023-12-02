@@ -44,6 +44,13 @@
     height: 650px;
 }
 
+#section-4 .code-io div {
+	padding: 0;
+	margin: 0;
+	overflow-x: clip;
+	overflow-clip-margin: padding-box;
+}
+
 #section-4 .data {
     position: relative;
     top: calc(1080px * 1/5);

@@ -11,11 +11,18 @@ body {
 	overflow-x: hidden;
 }
 
+html {
+	scroll-snap-type: y mandatory;
+	scroll-behavior: smooth;
+}
+
 .section {
     width: 100%;
     height: 100vh;
 
     border-bottom: 16px solid black;
+
+	scroll-snap-align: start;
 }
 
 .links {
