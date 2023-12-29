@@ -1,9 +1,11 @@
 #section-5 {
 	display: flex;
 	flex-direction: column;
-
-	background-color: aquamarine;
+	height: 100vh;
+	width: 100vw;
+	
 	border-bottom: #000000 solid 16px;
+	z-index: -2;
 
 }
 

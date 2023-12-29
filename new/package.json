@@ -1,5 +1,9 @@
 {
   "devDependencies": {
     "@types/matter-js": "^0.19.2"
+  },
+  "dependencies": {
+    "glfx": "^0.0.4",
+    "three": "^0.160.0"
   }
 }
