@@ -6,20 +6,6 @@
 const runPlane = (plane, velocity) => {
 	if (!plane.getAttribute("ran")) plane.setAttribute("ran", "true");
 	plane.style.right = `calc(${plane.style.right} + ${velocity}px)`;
-	if (!plane.getAttribute("exited") && plane.getBoundingClientRect().x < 0 && plane.onscreenexit != null) {
-		plane.setAttribute("exited", "true");
-		plane.onscreenexit();
-	}
-	if (!plane.getAttribute("messageStartExit") && (plane.getBoundingClientRect().x + plane.children[0].getBoundingClientRect().width) < 0 && plane.onmessagestartexit != null) {
-		plane.setAttribute("messageStartExit", "true");
-		plane.onmessagestartexit();
-	}
-	if (!plane.getAttribute("messageExited") && (plane.getBoundingClientRect().x + plane.getBoundingClientRect().width) < 0 && plane.onmessageexit != null) {
-		plane.setAttribute("messageExited", "true");
-		plane.onmessageexit();
-		plane.parentElement.removeChild(plane);
-		return;
-	}
 
 	requestAnimationFrame(() => runPlane(plane, velocity));
 }
@@ -32,7 +18,7 @@ const id = () => p_i++;
 
 for (const plane of planes) {
 	const text = plane.innerHTML;
-	const velocity = parseFloat(plane.getAttribute("velocity") ?? window.innerWidth / 100);
+	const velocity = parseFloat(plane.getAttribute("velocity") ?? window.innerWidth / 1000);
 	const stop = parseFloat(plane.getAttribute("distance") ?? -1);
 
 	let graphic = document.createElement("img");
@@ -48,6 +34,7 @@ for (const plane of planes) {
 
 	plane.appendChild(graphic);
 
+	
 
 	graphic.onload = () => {
 
@@ -83,4 +70,3 @@ for (const plane of planes) {
 	}
 }
 
-console.log(planes);
