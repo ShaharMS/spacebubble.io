@@ -2,9 +2,9 @@
 	background-color: #33239e;
 	background: linear-gradient(to bottom right, #33239e, #8b006d);
 	display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    gap: 10vw;
+	align-items: center;
 
 	color: white;
 
@@ -16,51 +16,47 @@
 	z-index: 10000;
 }
 
+#section-4 .container {
+	display: flex;
+    flex-direction: row;
+    justify-content: center;
+	align-items: center;
+}
+
 #section-4 .content {
-	margin-left: 50px;
     max-width: 50vw;
 }
 
 #section-4 h1 {
     font-size: 6.3em;
-    margin-block: 20px;
+    margin-block: 0 20px;
 }
 
 #section-4 .code-io {
-    position: relative;
+	margin-left: 10vw;
     display: flex;
     flex-direction: column;
     background-color: rgb(30, 30, 30);
     border-radius: 20px;
     padding: 20px;
-	top: 15%;
-	right: 5%;
 	height: 70%;
     max-width: 30vw;
 }
 
 #section-4 .code-io iframe {
     width: 500px;
-    height: 650px;
+    height: min(80vh, 500px);
 }
 
 #section-4 .code-io div {
 	padding: 0;
 	margin: 0;
-	overflow-x: clip;
+	overflow: hidden;
 	overflow-clip-margin: padding-box;
 }
 
-#section-4 .data {
-    position: relative;
-    top: calc(1080px * 1/5);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-#section-4 .data h1 {
-    font-size: 3em;
+#section-4 .links.row {
+	margin-bottom: 5vh;
 }
 
 #section-4 .typewriter a {
