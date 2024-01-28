@@ -42,6 +42,28 @@
 	padding-left: 10px;
 }
 
+#section-3 .content {
+	width: min(600px, 50vw);
+	height: min(400px, 50vh);
+	background-color: green;
+	border: saddlebrown 10px solid;
+	border-radius: 20px;
+	
+	position: relative;
+	left: 50vw;
+	top: 50vh;
+	transform: translate(-50%, -50%);
+}
+
+#section-3 .content:hover {
+	z-index: 10002;
+	scale: 1.02;
+	
+	left: 50vw;
+	top: 50vh;
+	transform: translate(-49%, -49%);
+}
+
 /*
 ----------------------------------------------
 Airplane
@@ -53,19 +75,6 @@ Airplane
 	scale: 0.3;
 	position: absolute;
 	top: 226vh;
-}
-
-/*
-----------------------------------------------
-Ropes
-----------------------------------------------
-*/
-
-#section-3 .rope {
-	position: absolute;
-	width: 5px;
-	height: 80vh;
-	background-color: #000;
 }
 
 /*
