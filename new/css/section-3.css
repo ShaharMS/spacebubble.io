@@ -44,15 +44,39 @@
 
 #section-3 .content {
 	width: min(600px, 50vw);
-	height: min(400px, 50vh);
+	height: min(400px, 30vh);
 	background-color: green;
 	border: saddlebrown 10px solid;
 	border-radius: 20px;
-	
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
 	position: relative;
 	left: 50vw;
-	top: 50vh;
+	top: 60vh;
 	transform: translate(-50%, -50%);
+}
+
+#section-3 .content-stick1 {
+	content: "";
+	position: absolute;
+	display: inline-block;
+	width: 10px;
+	height: 19vh;
+	top: 280vh;
+	left: 33vw;
+	background: black;
+}
+
+#section-3 .content-stick2 {
+	content: "";
+	position: absolute;
+	display: inline-block;
+	width: 10px;
+	height: 19vh;
+	top: 280vh;
+	left: 66vw;
+	background: black;
 }
 
 #section-3 .content:hover {
@@ -60,8 +84,13 @@
 	scale: 1.02;
 	
 	left: 50vw;
-	top: 50vh;
+	top: 60vh;
 	transform: translate(-49%, -49%);
+}
+
+#section-3 .content #scrolling {
+	color: black;
+	font-weight: bold;
 }
 
 /*
@@ -72,9 +101,9 @@ Airplane
 
 #section-3 .airplane-aftermath,
 #section-3 .airplane {
-	scale: 0.3;
+	scale: 0.2;
 	position: absolute;
-	top: 226vh;
+	top: 216vh;
 }
 
 /*

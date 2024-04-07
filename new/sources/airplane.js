@@ -6,7 +6,8 @@
 const runPlane = (plane, velocity) => {
 	if (!plane.getAttribute("ran")) plane.setAttribute("ran", "true");
 	plane.style.right = `calc(${plane.style.right} + ${velocity}px)`;
-
+	if (plane.getBoundingClientRect().right < 0 - window.innerWidth * 0.3) 
+		plane.style.right = `calc(-100% - ${plane.getBoundingClientRect().width * 1.5}px)`
 	requestAnimationFrame(() => runPlane(plane, velocity));
 }
 

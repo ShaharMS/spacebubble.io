@@ -4,8 +4,7 @@ let section3 = document.getElementById("section-3");
 let secretContainer = document.createElement("div");
 secretContainer.innerHTML =
 	`<div class="secret">
-		<h4>Secret In&hellip;&nbsp; <h4>
-		<h4 class="secret-counter"></h4>
+		<h4 id="secret-counter">Secret In&hellip;&nbsp; </h4>
 	</div>`;
 
 secretContainer.setCss({
@@ -31,19 +30,46 @@ section3.addEventListener("mousemove", (e) => {
 	let sx = sun.getBoundingClientRect().x + sun.getBoundingClientRect().width / 2;
 	let sy = sun.getBoundingClientRect().y + sun.getBoundingClientRect().height / 2;
 	if (Math.sqrt((mx - sx) * (mx - sx) + (my - sy) * (my - sy)) < 160) {
+		if (!sun.classList.contains("hover"))
+			sun.dispatchEvent(new Event("mouseenter"));
 		sun.dispatchEvent(new Event("mouseover"));
 		sun.classList.add("hover");
 		secretContainer.style.display = "flex";
 	} else {
+		if (sun.classList.contains("hover"))
+			sun.dispatchEvent(new Event("mouseout"));
 		sun.classList.remove("hover");
 		secretContainer.style.display = "none";
 	}
 });
 
+let secretCounter = document.getElementById("secret-counter");
+let t1, t2, t3, t4;
 sun.addEventListener("mouseenter", (e) => {
 	sun.classList.add("hover");
+	console.log("mouseenter");
+
+	t1 = setTimeout(() => {
+		console.log("timeout 1");
+		secretCounter.innerHTML = "Secret In&hellip;&nbsp; 3";
+	}, 1000)
+	t2 = setTimeout(() => {
+		console.log("timeout 2");
+		secretCounter.innerHTML = "Secret In&hellip;&nbsp; 2";
+	}, 2000)
+	t3 = setTimeout(() => {
+		console.log("timeout 3");
+		secretCounter.innerHTML = "Secret In&hellip;&nbsp; 1";
+	}, 3000)
+	t4 = setTimeout(() => {
+		console.log("timeout 4");
+		secretCounter.innerHTML = "Nice!";
+		//Animation
+	}, 4000)
 });
 sun.addEventListener("mouseout", () => {
 	sun.classList.remove("hover");
+	console.log("mouseout");
+	clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); clearTimeout(t4); 
+	secretCounter.innerHTML = "Secret In&hellip;&nbsp; ";
 });
-
