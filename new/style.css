@@ -11,10 +11,10 @@ body {
 	overflow-x: hidden;
 }
 
-html {
+/* html {
 	scroll-snap-type: y mandatory;
 	scroll-behavior: smooth;
-}
+} */
 
 .section {
     width: 100%;
@@ -39,7 +39,6 @@ html {
     display: block;
     text-align: center;
     font-weight: 400;
-    margin-block: 40px;
     border: 4px solid white;
     border-radius: 20px;
     padding: 5px;

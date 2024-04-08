@@ -87,6 +87,7 @@ const video = document.createElement('video');
 video.src = '../assets/EZWorksheet.mov';
 video.loop = true; // Loop the video
 video.autoplay = true;
+video.playsInline = true;
 video.addEventListener('canplay', function() {
   const texture = new THREE.VideoTexture(video);
    texture.minFilter = THREE.LinearFilter;

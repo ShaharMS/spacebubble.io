@@ -47,29 +47,23 @@ let secretCounter = document.getElementById("secret-counter");
 let t1, t2, t3, t4;
 sun.addEventListener("mouseenter", (e) => {
 	sun.classList.add("hover");
-	console.log("mouseenter");
 
 	t1 = setTimeout(() => {
-		console.log("timeout 1");
 		secretCounter.innerHTML = "Secret In&hellip;&nbsp; 3";
 	}, 1000)
 	t2 = setTimeout(() => {
-		console.log("timeout 2");
 		secretCounter.innerHTML = "Secret In&hellip;&nbsp; 2";
 	}, 2000)
 	t3 = setTimeout(() => {
-		console.log("timeout 3");
 		secretCounter.innerHTML = "Secret In&hellip;&nbsp; 1";
 	}, 3000)
 	t4 = setTimeout(() => {
-		console.log("timeout 4");
 		secretCounter.innerHTML = "Nice!";
 		//Animation
 	}, 4000)
 });
 sun.addEventListener("mouseout", () => {
 	sun.classList.remove("hover");
-	console.log("mouseout");
 	clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); clearTimeout(t4); 
 	secretCounter.innerHTML = "Secret In&hellip;&nbsp; ";
 });

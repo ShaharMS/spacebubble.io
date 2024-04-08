@@ -69,3 +69,30 @@
 
 	text-align: center;
 }
+
+@media screen and (max-width: 700px) {
+	#section-4 .code-io {
+		display: none;
+	}
+
+	#section-4 .content {
+		max-width: 90vw;
+	}
+
+	#section-4 .links.row {
+		display: flex;
+		flex-wrap: wrap;
+		height: 100%;
+		max-width: 90vw;
+		align-items: center;
+	}
+
+	#section-4 .links.row a {
+		margin-block: 10px;
+		margin-inline: 10px;
+	}
+
+	#section-4 {
+		justify-content: flex-start;
+	}
+}
