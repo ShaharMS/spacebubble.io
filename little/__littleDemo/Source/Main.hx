@@ -1,6 +1,6 @@
 package;
 
-import little.Keywords;
+import little.Little.keywords;
 import openfl.Lib;
 import openfl.events.KeyboardEvent;
 import texter.general.markdown.Markdown;
@@ -55,7 +55,7 @@ class Main extends Sprite
 		input.addEventListener(Event.CHANGE, e -> {
 			try {
 				Little.run(input.text);
-				output.text = Little.runtime.stdout.replaceFirst("\n", "");
+				output.text = Little.runtime.stdout.output.replaceFirst("\n", "");
 				input.setTextFormat(Markdown.visualizer.markdownTextFormat, 0, input.text.length);
 				var coloring:Array<{color:Int, start:Int, end:Int}> = parseLittle(input.text);
 				for (i in coloring)
@@ -115,8 +115,8 @@ class Main extends Sprite
 		var interp:Array<{color:Int, start:Int, end:Int}> = [];
 		
 		var indexOfIdent = text.indexesFromEReg(~/\w+/),
-			indexOfBlue = text.indexesFromEReg(new EReg('\\b(${Keywords.VARIABLE_DECLARATION}|${Keywords.FUNCTION_DECLARATION}|${Keywords.TRUE_VALUE}|${Keywords.FALSE_VALUE}|${Keywords.NULL_VALUE}|${Keywords.FOR_LOOP_IDENTIFIERS.FROM}|${Keywords.FOR_LOOP_IDENTIFIERS.TO}|${Keywords.FOR_LOOP_IDENTIFIERS.JUMP})\\b', "m")),
-			indexOfPurple = text.indexesOfSubs(Keywords.CONDITION_TYPES.concat([Keywords.ELSE])),
+			indexOfBlue = text.indexesFromEReg(new EReg('\\b(${Little.keywords.VARIABLE_DECLARATION}|${Little.keywords.FUNCTION_DECLARATION}|${Little.keywords.TRUE_VALUE}|${Little.keywords.FALSE_VALUE}|${Little.keywords.NULL_VALUE}|${Little.keywords.FOR_LOOP_FROM}|${Little.keywords.FOR_LOOP_TO}|${Little.keywords.FOR_LOOP_JUMP})\\b', "m")),
+			indexOfPurple = text.indexesOfSubs(Little.keywords.CONDITION_TYPES.concat([Little.keywords.ELSE])),
 			indexOfFunctionName = text.indexesFromEReg(~/([a-zA-Z0-9_]+)\(/m),
 			indexOfClassName = text.indexesFromEReg(~/(?::|\(| |\n|^)[A-Z][a-zA-Z]+/m),
 			indexOfString = text.indexesFromEReg(~/"[^"]*"|'[^']*'/),

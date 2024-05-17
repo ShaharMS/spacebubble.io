@@ -9,6 +9,10 @@
 	
 	<source path="Source" />
 	
+	<haxelib name="vision" />
+	<haxelib name="hash" />
+	<haxelib name="hxOrderedMap"/>
+	<haxelib name="no-warnings" />
 	<haxelib name="openfl" />
 	<haxelib name="little"/>
 	<haxelib name="texter"/>
