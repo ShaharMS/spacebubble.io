@@ -35,7 +35,7 @@ class ApplicationMain
 		ManifestResources.init(config);
 		#end
 
-		app.meta["build"] = "320";
+		app.meta["build"] = "361";
 		app.meta["company"] = "Company Name";
 		app.meta["file"] = "LittleDemo";
 		app.meta["name"] = "LittleDemo";
@@ -101,7 +101,9 @@ class ApplicationMain
 
 		app.createWindow(attributes);
 		
-		#elseif !air
+		#elseif air
+		app.window.title = "LittleDemo";
+		#else
 		app.window.context.attributes.background = null;
 		app.window.frameRate = 60;
 		#end

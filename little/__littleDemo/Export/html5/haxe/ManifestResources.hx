@@ -1,6 +1,7 @@
 package;
 
 import haxe.io.Bytes;
+import haxe.io.Path;
 import lime.utils.AssetBundle;
 import lime.utils.AssetLibrary;
 import lime.utils.AssetManifest;
@@ -44,15 +45,21 @@ import sys.FileSystem;
 
 			rootPath = Reflect.field (config, "rootPath");
 
+			if(!StringTools.endsWith (rootPath, "/")) {
+
+				rootPath += "/";
+
+			}
+
 		}
 
 		if (rootPath == null) {
 
-			#if (ios || tvos || emscripten)
+			#if (ios || tvos || webassembly)
 			rootPath = "assets/";
 			#elseif android
 			rootPath = "";
-			#elseif console
+			#elseif (console || sys)
 			rootPath = lime.system.System.applicationDirectory;
 			#else
 			rootPath = "./";
@@ -70,17 +77,6 @@ import sys.FileSystem;
 
 		var data, manifest, library, bundle;
 
-		#if kha
-
-		null
-		library = AssetLibrary.fromManifest (manifest);
-		Assets.registerLibrary ("null", library);
-
-		if (library != null) preloadLibraries.push (library);
-		else preloadLibraryNames.push ("null");
-
-		#else
-
 		data = '{"name":null,"assets":"aoy4:pathy54:assets%2Ftexter%2FDynamicTextField%2FRotationJoint.pngy4:sizei498y4:typey5:IMAGEy2:idR1y7:preloadtgoR2i285096R3y4:FONTy9:classNamey50:__ASSET__assets_texter_mathtextfield_math_bold_ttfR5y47:assets%2Ftexter%2FMathTextField%2Fmath-bold.ttfR6tgoR2i291936R3R7R8y53:__ASSET__assets_texter_mathtextfield_math_regular_ttfR5y50:assets%2Ftexter%2FMathTextField%2Fmath-regular.ttfR6tgoR2i129796R3R7R8y41:__ASSET__assets_texter_texttools_sans_ttfR5y38:assets%2Ftexter%2FTextTools%2Fsans.ttfR6tgoR2i454852R3R7R8y42:__ASSET__assets_texter_texttools_serif_ttfR5y39:assets%2Ftexter%2FTextTools%2Fserif.ttfR6tgh","rootPath":null,"version":2,"libraryArgs":[],"libraryType":null}';
 		manifest = AssetManifest.parse (data, rootPath);
 		library = AssetLibrary.fromManifest (manifest);
@@ -92,19 +88,10 @@ import sys.FileSystem;
 		else preloadLibraryNames.push ("default");
 		
 
-		#end
-
 	}
 
 
 }
-
-
-#if kha
-
-null
-
-#else
 
 #if !display
 #if flash
@@ -119,7 +106,7 @@ null
 
 #elseif (desktop || cpp)
 
-@:keep @:image("C:/Users/shaha/Desktop/Github/texter/assets/DynamicTextField/RotationJoint.png") @:noCompletion #if display private #end class __ASSET__assets_texter_dynamictextfield_rotationjoint_png extends lime.graphics.Image {}
+@:keep @:image("C:/Users/shahar/Documents/GitHub/texter/assets/DynamicTextField/RotationJoint.png") @:noCompletion #if display private #end class __ASSET__assets_texter_dynamictextfield_rotationjoint_png extends lime.graphics.Image {}
 @:keep @:font("Export/html5/obj/webfont/math-bold.ttf") @:noCompletion #if display private #end class __ASSET__assets_texter_mathtextfield_math_bold_ttf extends lime.text.Font {}
 @:keep @:font("Export/html5/obj/webfont/math-regular.ttf") @:noCompletion #if display private #end class __ASSET__assets_texter_mathtextfield_math_regular_ttf extends lime.text.Font {}
 @:keep @:font("Export/html5/obj/webfont/sans.ttf") @:noCompletion #if display private #end class __ASSET__assets_texter_texttools_sans_ttf extends lime.text.Font {}
@@ -155,8 +142,6 @@ null
 #end
 
 #end
-#end
-
 #end
 
 #end
