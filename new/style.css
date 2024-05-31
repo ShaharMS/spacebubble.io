@@ -14,7 +14,7 @@ body {
 /* html {
 	scroll-snap-type: y mandatory;
 	scroll-behavior: smooth;
-} */
+}  */
 
 .section {
     width: 100%;
@@ -52,6 +52,11 @@ body {
 .links.row a {
     margin-block: 0;
     margin-inline: 40px;
+}
+
+.links.column a {
+	margin-block: 30px;
+	margin-inline: 0;
 }
 
 .highlight {

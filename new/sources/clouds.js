@@ -19,9 +19,10 @@ const shouldCreateCloud = (width) => {
 const cloudContent = () => {
 	let array = [
 		"This website had about 5 redesigns in total since its creation 😅",
-		"Making pretty much everything since like 3 years ago",
+		`Making pretty much everything since like ${new Date(new Date() - new Date(2021, 2 /* started 6 months later, this way it would count in half year increments*/, 15)).getFullYear() - 1970} years ago`,
 		"Major thanks to Ohad for helping me design this <sophisticated>masterpiece</sophisticated>",
-		"I̸͈̗͑̔̍̒̃ ̷̨͔͐̈̃̅͠l̷͈̬̒͑į̷̦̜͖̙̈́͊k̵̬̗͚̳̔͒́̂ͅe̶̳͂͝ ̸̩̪̦̪̙̍h̵̳̺͆̅a̷̱͌͛m̴̰͕̹͌̆b̵̠̉͐̓̐ų̷̑̃͂ŕ̶̞͚̒̋g̶̡͉̝̙̍̎͛e̶͍͎̾r̴̨̝̘̝͈̈́̀̉ŝ̵͍͈",
+		"i like hamburgers :D",
+		"Ỉ̵̛̛̺̺̩̣̳̹͔̒̄̏͗̊̾͆͗̄͋̇̿ ̸̢̦̘͚͍͍͓̋̀͗A̸̢͈̮̩̘̘͉̖̗͓̠̦̣̫͎̰̬͐̀̽͆̉̀̓̌̈́̀̓́̐̊̾̿͗M̸̧̗͍̫̹̻͆̑̒̏̓̒̆͛͝͠ͅ ̶̨̘̩̻͍͎̜̘̩̂̂̀̿̔̄̎̉̉͜ͅI̵̻̺͉̝̰̟̞̤̚͜͜N̷̘̭̭̠̪̤͈̤͕̝̯͈̻̟̂̌̓̈́͊͂͛͆͂̂̒̈́̕͜ͅ ̴̟̏͑͐Y̶͖̯̗̯͗͌̀͗́́̚̚Ó̸͖̤͈̜͗͒̂͝U̷͍̥̝͇̎̎́̒R̸̤͖̠͙̤̤̰͎̳̾̔̃̎̆͐ ̴̧̡̨̢̣̹͖̘̝̜͛̽̅͑̏͋͜͝W̸̨͔̻̮̖̝̟̱͔̰̗̺̰̯̱̩̑̍̈́́Ḁ̷̭̩̦͇̑̎̓L̴̮̫͈̼͓̘̂̒̋̒͘̚͠͠L̸̦̖̺͖͐̑̌̽̐́̎͘̕͠S̴̡̛̛͕̙̏̈̀̎̈̂͂͝͝͝͠͝",
 		"Made with Love ❤️",
 		"Have you listened to Kendrick Lamar's <italic>'To Pimp A Butterfly'</italic>?",
 		"Follow me on <a href='https://twitter.com/MarcusShahar'>Twitter</a> For <italic>absolutely nothing</italic>!",
