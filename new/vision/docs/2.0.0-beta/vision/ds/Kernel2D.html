@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en"><!-- use theme color or fallback -->
+<!--use textcolor from settings, otherwise create a contrasting color to theme color-->
+<head><meta charset="utf-8"/><link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-select.min.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,600italic,400" rel="stylesheet" type="text/css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet" type="text/css"/><script src="../../jquery-3.6.0.min.js"></script><script src="../../bootstrap/js/bootstrap.min.js"></script><script src="../../bootstrap/js/bootstrap-select.min.js"></script><link href="../../styles.css" rel="stylesheet"/><link href="../../extra-styles.css" rel="stylesheet"/><link href="../../haxe-nav.css" rel="stylesheet"/><link href="../../dark-mode.css" rel="stylesheet"/><script>var dox = {rootPath: "../../",platforms: ["js"]};</script><script src="../../nav.js"></script><script src="../../index.js"></script><link rel="icon" href="../../favicon.ico" type="image/x-icon"/><title>vision.ds.Kernel2D</title></head><body><script>/* Here to prevent flash of unstyled content */let systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;if ((!localStorage.theme && systemDarkMode) || localStorage.theme == "dark") {document.body.style.backgroundColor = "#111";document.body.style.opacity = "0";document.addEventListener("DOMContentLoaded", function(event) {toggleTheme();document.body.style.backgroundColor = "";document.body.style.opacity = "";});}</script><style>
+.navbar .brand {
+	display: inline-block;
+	float: none;
+	text-shadow: 0 0 0 transparent;
+}
+</style><nav class="nav"><div class="navbar"><div class="navbar-inner" style="background:#FAFAFA; border-bottom:1px solid rgba(0,0,0,.09)"><div class="container"><a class="brand" style="color:#000000" href="../../">Vision API</a><a href="#" id="theme-toggle" class="brand" style="color:#000000" onclick="toggleTheme()" title="Toggle Dark Mode"><i class="fa fa-moon-o"></i></a></div></div></div></nav><div class="container main-content"><div class="row-fluid"><div class="span3"><div class="well sidebar-nav"><form class="form-search" id="searchForm"><div class="input-prepend input-block-level"><span class="add-on"><i class="fa fa-search"></i></span><input id="search" type="text" placeholder="Filter (Ctrl+P)" autocomplete="off"/></div></form></div><div class="well sidebar-nav" id="explorer"><div id="nav"></div></div></div><div class="span9"><div class="page-header"><h1><small>enum</small> Kernel2D</h1><h4><small>package <a href="../../vision/ds/index.html">vision.ds</a></small></h4><span class="label label-meta label-meta-directlyUsed" title="Marks types that are directly referenced by non-extern code.">@:directlyUsed</span></div><div class="body"><div class="doc doc-main"><p></p></div><h3 class="section">Values</h3><div class="fields"><div class="field"><h3><code><a name="Identity" href="#Identity"><span class="identifier">Identity</span></a></code></h3><div class="doc"><p>This kernel preserves the image's pixel data.</p>
+<pre><code>0  0  0
+0  1  0
+0  0  0</code></pre>
+<p>Original:</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Vd-Orig.png" alt="Pre-processed" /></p>
+<p>Convolved:</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Vd-Orig.png" alt="Post-processed" /></p></div></div><div class="field"><h3><code><a name="BoxBlur" href="#BoxBlur"><span class="identifier">BoxBlur</span></a></code></h3><div class="doc"><p>This kernel applies a nearest-neighbor style blurring to the image.</p>
+<pre><code>1  1  1
+1  1  1
+1  1  1</code></pre>
+<p>Original:</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Vd-Orig.png" alt="Pre-processed" /></p>
+<p>Convolved:</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Vd-Blur2.png" alt="Post-processed" /></p></div></div><div class="field"><h3><code><a name="LaplacianPositive" href="#LaplacianPositive"><span class="identifier">LaplacianPositive</span></a></code></h3><div class="doc"><p>This kernel applies a Positive Laplacian Operator:</p>
+<pre><code>0  1  0
+1  -4 1
+0  1  0</code></pre>
+<p>Original:</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Vd-Orig.png" alt="Pre-processed" /></p>
+<p>Convolved:</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Vd-Orig.png" alt="Post-processed" /></p></div></div><div class="field"><h3><code><a name="LaplacianNegative" href="#LaplacianNegative"><span class="identifier">LaplacianNegative</span></a></code></h3><div class="doc"><p>This kernel applies a Negative Laplacian Operator:</p>
+<pre><code>0  -1  0
+-1  4 -1
+0  -1  0</code></pre>
+<p>Original:</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Vd-Orig.png" alt="Pre-processed" /></p>
+<p>Convolved:</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Vd-Orig.png" alt="Post-processed" /></p></div></div><div class="field"><h3><code><a name="RidgeDetection" href="#RidgeDetection"><span class="identifier">RidgeDetection</span></a></code></h3><div class="doc"><p>This kernel is often used to detect changes of surface level in an image.</p>
+<p>For a more aggressive kernel, see <code>RidgeDetectionAggressive</code></p>
+<pre><code>-1  -1  -1
+-1  +4  -1
+-1  -1  -1</code></pre>
+<p>Original:</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Vd-Orig.png" alt="Pre-processed" /></p>
+<p>Convolved (Normalized &amp; Range Limited):</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Vd-Rige1.png" alt="Post-processed" /></p></div></div><div class="field"><h3><code><a name="RidgeDetectionAggressive" href="#RidgeDetectionAggressive"><span class="identifier">RidgeDetectionAggressive</span></a></code></h3><div class="doc"><p>This kernel is often used to detect changes of surface level in an image.</p>
+<p>This kernel is more sensitive to surface changes than its softer counterpart.</p>
+<pre><code>-1  -1  -1
+-1  +7  -1
+-1  -1  -1</code></pre>
+<p>Original:</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Vd-Orig.png" alt="Pre-processed" /></p>
+<p>Convolved (Normalized &amp; Range Limited):</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Vd-Rige2.png" alt="Post-processed" /></p></div></div><div class="field"><h3><code><a name="Sharpen" href="#Sharpen"><span class="identifier">Sharpen</span></a></code></h3><div class="doc"><p>This kernel is often used to sharpen, or "deepfry" an image. It highlights
+the change in pixel values where colors in the image change dramatically
+from one pixel to the other.</p>
+<pre><code>+0  -1  +0
+-1  +5  -1
++0  -1  +0</code></pre>
+<p>Original:</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Vd-Orig.png" alt="Pre-processed" /></p>
+<p>Convolved:</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Vd-Sharp.png" alt="Post-processed" /></p></div></div><div class="field"><h3><code><a name="UnsharpMasking" href="#UnsharpMasking"><span class="identifier">UnsharpMasking</span></a></code></h3><div class="doc"><p>Based on the <code>Gaussian Blur</code>, this kernel doesn't actually blur the image, but
+uses a similar filter to slightly sharpen the image, while retaining the image's
+quality. Can be used to slightly increase the quality of a blurry image.</p>
+<pre><code>1  4  6   4  1
+4 16  24  16 4
+6 24 -476 24 6
+4 16  24  16 4
+1  4  6   4  1</code></pre>
+<p>Original:</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Vd-Orig.png" alt="Pre-processed" /></p>
+<p>Convolved:</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Vd-Unsharp_5x5.png" alt="Post-processed" /></p></div></div><div class="field"><h3><code><a name="Assemble3x3" href="#Assemble3x3"><span class="identifier">Assemble3x3</span></a>(corner:<a class="type" title="Float - The standard Float type, this is a double-precision IEEE 64bit float." href="../../Float.html">Float</a>, edge:<a class="type" title="Float - The standard Float type, this is a double-precision IEEE 64bit float." href="../../Float.html">Float</a>, center:<a class="type" title="Float - The standard Float type, this is a double-precision IEEE 64bit float." href="../../Float.html">Float</a>)</code></h3><div class="doc"><p>Makes a 3x3 kernel, following this structure:</p><table><thead><th align="center"></th><th>1</th><th>2</th><th>3</th></thead><tbody><tr><td align="center">1</td><td><code>corner</code></td><td><code> edge </code></td><td><code>corner</code></td></tr><tr><td align="center">2</td><td><code> edge</code></td><td><code>center</code></td><td><code> edge </code></td></tr><tr><td align="center">3</td><td><code>corner</code></td><td><code> edge </code></td><td><code>corner</code></td></tr></tbody></table></div></div><div class="field"><h3><code><a name="Assemble5x5" href="#Assemble5x5"><span class="identifier">Assemble5x5</span></a>(farCorner:<a class="type" title="Float - The standard Float type, this is a double-precision IEEE 64bit float." href="../../Float.html">Float</a>, farEdge:<a class="type" title="Float - The standard Float type, this is a double-precision IEEE 64bit float." href="../../Float.html">Float</a>, edge:<a class="type" title="Float - The standard Float type, this is a double-precision IEEE 64bit float." href="../../Float.html">Float</a>, midCorner:<a class="type" title="Float - The standard Float type, this is a double-precision IEEE 64bit float." href="../../Float.html">Float</a>, midEdge:<a class="type" title="Float - The standard Float type, this is a double-precision IEEE 64bit float." href="../../Float.html">Float</a>, center:<a class="type" title="Float - The standard Float type, this is a double-precision IEEE 64bit float." href="../../Float.html">Float</a>)</code></h3><div class="doc"><p>Makes a 5x5 kernel, following this structure:</p><table><thead><th align="center"></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></thead><tbody><tr><td align="center">1</td><td><code>farCorner</code></td><td><code>farEdge</code></td><td><code>edge</code></td><td><code>farEdge</code></td><td><code>farCorner</code></td></tr><tr><td align="center">&nbsp;</td></tr><tr><td align="center">2</td><td><code>farEdge</code></td><td><code>midCorner</code></td><td><code>midEdge</code></td><td><code>midCorner</code></td><td><code>farEdge</code></td></tr><tr><td align="center">&nbsp;</td></tr><tr><td align="center">3</td><td><code>edge</code></td><td><code>midEdge</code></td><td><code>center</code></td><td><code>midEdge</code></td><td><code>edge</code></td></tr><tr><td align="center">&nbsp;</td></tr><tr><td align="center">4</td><td><code>farEdge</code></td><td><code>midCorner</code></td><td><code>midEdge</code></td><td><code>midCorner</code></td><td><code>farEdge</code></td></tr><tr><td align="center">&nbsp;</td></tr><tr><td align="center">5</td><td><code>farCorner</code></td><td><code>farEdge</code></td><td><code>edge</code></td><td><code>farEdge</code></td><td><code>farCorner</code></td></tr></tbody></table></div></div><div class="field"><h3><code><a name="Custom" href="#Custom"><span class="identifier">Custom</span></a>(kernel:<a class="type" title="Array - An Array is a storage for values." href="../../Array.html">Array</a>&lt;<a class="type" title="Array - An Array is a storage for values." href="../../Array.html">Array</a>&lt;<a class="type" title="Float - The standard Float type, this is a double-precision IEEE 64bit float." href="../../Float.html">Float</a>&gt;&gt;)</code></h3><div class="doc"><p>make a kernel without any special tools.</p>
+<p>Usage:</p>
+<pre><code> Custom([
+     [0, 1, 0],
+     [0, 1, 0],
+     [0, 1, 0],
+ ])
+</code></pre></div></div><div class="field"><h3><code><a name="GaussianBlur" href="#GaussianBlur"><span class="identifier">GaussianBlur</span></a>(size:<a class="type" title="vision.ds.gaussian.GaussianKernelSize" href="../../vision/ds/gaussian/GaussianKernelSize.html">GaussianKernelSize</a>, sigma:<a class="type" title="Float - The standard Float type, this is a double-precision IEEE 64bit float." href="../../Float.html">Float</a>)</code></h3><div class="doc"><p>Generates a gaussian kernel of size <code>size</code>x<code>size</code>, and uses <code>sigma</code> for the distribution factor.</p>
+<p>Example of an (approximated) 5x5 gaussian kernel:</p>
+<pre><code>1  4  6  4  1
+4 16  24 16 4
+6 24  36 24 6
+4 16  24 16 4
+1  4  6  4  1</code></pre>
+<p>Original:</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Vd-Orig.png" alt="Pre-Processed" /></p>
+<p><code>GaussianBlur(X3, 1)</code>, <code>GaussianBlur(X5, 1)</code>:</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Vd-Blur1.png" alt="Post-Processed" />&nbsp;,&nbsp;<img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Vd-Blur_Gaussian_5x5.png" alt="Post-Processed" /></p></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#000000">&copy; 2024 &nbsp;</p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>

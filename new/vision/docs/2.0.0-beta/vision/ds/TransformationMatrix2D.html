@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en"><!-- use theme color or fallback -->
+<!--use textcolor from settings, otherwise create a contrasting color to theme color-->
+<head><meta charset="utf-8"/><link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-select.min.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,600italic,400" rel="stylesheet" type="text/css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet" type="text/css"/><script src="../../jquery-3.6.0.min.js"></script><script src="../../bootstrap/js/bootstrap.min.js"></script><script src="../../bootstrap/js/bootstrap-select.min.js"></script><link href="../../styles.css" rel="stylesheet"/><link href="../../extra-styles.css" rel="stylesheet"/><link href="../../haxe-nav.css" rel="stylesheet"/><link href="../../dark-mode.css" rel="stylesheet"/><script>var dox = {rootPath: "../../",platforms: ["js"]};</script><script src="../../nav.js"></script><script src="../../index.js"></script><link rel="icon" href="../../favicon.ico" type="image/x-icon"/><title>vision.ds.TransformationMatrix2D</title></head><body><script>/* Here to prevent flash of unstyled content */let systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;if ((!localStorage.theme && systemDarkMode) || localStorage.theme == "dark") {document.body.style.backgroundColor = "#111";document.body.style.opacity = "0";document.addEventListener("DOMContentLoaded", function(event) {toggleTheme();document.body.style.backgroundColor = "";document.body.style.opacity = "";});}</script><style>
+.navbar .brand {
+	display: inline-block;
+	float: none;
+	text-shadow: 0 0 0 transparent;
+}
+</style><nav class="nav"><div class="navbar"><div class="navbar-inner" style="background:#FAFAFA; border-bottom:1px solid rgba(0,0,0,.09)"><div class="container"><a class="brand" style="color:#000000" href="../../">Vision API</a><a href="#" id="theme-toggle" class="brand" style="color:#000000" onclick="toggleTheme()" title="Toggle Dark Mode"><i class="fa fa-moon-o"></i></a></div></div></div></nav><div class="container main-content"><div class="row-fluid"><div class="span3"><div class="well sidebar-nav"><form class="form-search" id="searchForm"><div class="input-prepend input-block-level"><span class="add-on"><i class="fa fa-search"></i></span><input id="search" type="text" placeholder="Filter (Ctrl+P)" autocomplete="off"/></div></form></div><div class="well sidebar-nav" id="explorer"><div id="nav"></div></div></div><div class="span9"><div class="page-header"><h1><small>abstract</small> TransformationMatrix2D(<a class="type" title="vision.ds.Matrix2D - Represents a transformation matrix, used for warping images in one way or another." href="../../vision/ds/Matrix2D.html">Matrix2D</a>)</h1><h4><small>package <a href="../../vision/ds/index.html">vision.ds</a></small></h4><h4><small> to <a class="type" title="vision.ds.Matrix2D - Represents a transformation matrix, used for warping images in one way or another." href="../../vision/ds/Matrix2D.html">Matrix2D</a></small></h4><span class="label label-meta label-meta-forward.variance" title="">@:forward.variance</span><span class="label label-meta label-meta-forward" title="Forwards field access to underlying type.">@:forward(getRow,getColumn,setRow,setColumn,map,clone,fill,toString)</span></div><div class="body"><div class="doc doc-main"><p></p></div><h3 class="section">Static variables</h3><div class="fields"><div class="field "><a name="a"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#a"><span class="identifier">a</span></a>:<a class="type" title="Float - The standard Float type, this is a double-precision IEEE 64bit float." href="../../Float.html">Float</a></code></h3><div class="doc"><p>The top-left element in this matrix, at position <code>(0, 0)</code>:</p>
+<pre><code class="prettyprint haxe">┌          ┐
+│ a  ᵇ  ᵗˣ │
+│ ᶜ  ᵈ  ᵗʸ │
+│ ᵉ  ᶠ  1  │
+└          ┘</code></pre>
+<p>Used for manipulation on the X axis, using a given point's X value.</p></div></div><div class="field "><a name="b"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#b"><span class="identifier">b</span></a>:<a class="type" title="Float - The standard Float type, this is a double-precision IEEE 64bit float." href="../../Float.html">Float</a></code></h3><div class="doc"><p>The top-middle element in this matrix, at position <code>(0, 1)</code>:</p>
+<pre><code class="prettyprint haxe">┌          ┐
+│ ᵃ  b  ᵗˣ │
+│ ᶜ  ᵈ  ᵗʸ │
+│ ᵉ  ᶠ  1  │
+└          ┘</code></pre>
+<p>Used for manipulation on the X axis, using a given point's Y value.</p></div></div><div class="field "><a name="c"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#c"><span class="identifier">c</span></a>:<a class="type" title="Float - The standard Float type, this is a double-precision IEEE 64bit float." href="../../Float.html">Float</a></code></h3><div class="doc"><p>The middle-left element in this matrix, at position <code>(1, 0)</code>:</p>
+<pre><code class="prettyprint haxe">┌          ┐
+│ ᵃ  ᵇ  ᵗˣ │
+│ c  ᵈ  ᵗʸ │
+│ ᵉ  ᶠ  1  │
+└          ┘</code></pre>
+<p>Used for manipulation on the Y axis, using a given point's X value.</p></div></div><div class="field "><a name="d"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#d"><span class="identifier">d</span></a>:<a class="type" title="Float - The standard Float type, this is a double-precision IEEE 64bit float." href="../../Float.html">Float</a></code></h3><div class="doc"><p>The center element in this matrix, at position <code>(1, 1)</code>:</p>
+<pre><code class="prettyprint haxe">┌          ┐
+│ ᵃ  ᵇ  ᵗˣ │
+│ ᶜ  d  ᵗʸ │
+│ ᵉ  ᶠ  1  │
+└          ┘</code></pre>
+<p>Used for manipulation on the Y axis, using a given point's Y value.</p></div></div><div class="field "><a name="e"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#e"><span class="identifier">e</span></a>:<a class="type" title="Float - The standard Float type, this is a double-precision IEEE 64bit float." href="../../Float.html">Float</a></code></h3><div class="doc"><p>The bottom-left element in this matrix, at position <code>(0, 2)</code>:</p>
+<pre><code class="prettyprint haxe">┌          ┐
+│ ᵃ  ᵇ  ᵗˣ │
+│ ᶜ  ᵈ  ᵗʸ │
+│ e  ᶠ  1  │
+└          ┘</code></pre>
+<p>Used for manipulation on the Z axis, using a given point's X value.
+The higher a pixel's value on the Z axis, the "deeper" it is in the image, 
+or in other terms, the closer it is to the vanishing point.</p>
+<p>The vanishing point is decided when we apply the matrix to each pixel - it is the X
+and Y offsets we add to each point before the main calculation. It also plays a 
+role in rotations and reflections, by acting like the rotation/reflection center.</p></div></div><div class="field "><a name="f"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#f"><span class="identifier">f</span></a>:<a class="type" title="Float - The standard Float type, this is a double-precision IEEE 64bit float." href="../../Float.html">Float</a></code></h3><div class="doc"><p>The bottom-middle element in this matrix, at position <code>(1, 2)</code>:</p>
+<pre><code class="prettyprint haxe">┌          ┐
+│ ᵃ  ᵇ  ᵗˣ │
+│ ᶜ  ᵈ  ᵗʸ │
+│ ᵉ  f  1  │
+└          ┘</code></pre>
+<p>Used for manipulation on the Z axis, using a given point's Y value.
+The higher a pixel's value on the Z axis, the "deeper" it is in the image, 
+or in other terms, the closer it is to the vanishing point.</p>
+<p>The vanishing point is decided when we apply the matrix to each pixel - it is the X
+and Y offsets we add to each point before the main calculation. It also plays a 
+role in rotations and reflections, by acting like the rotation/reflection center.</p></div></div><div class="field "><a name="tx"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#tx"><span class="identifier">tx</span></a>:<a class="type" title="Float - The standard Float type, this is a double-precision IEEE 64bit float." href="../../Float.html">Float</a></code></h3><div class="doc"><p>The top-left element in this matrix, at position <code>(2, 0)</code>:</p>
+<pre><code class="prettyprint haxe">┌          ┐
+│ ᵃ  ᵇ  tx │
+│ ᶜ  ᵈ  ᵗʸ │
+│ ᵉ  ᶠ  1  │
+└          ┘</code></pre>
+<p>Used for translation on the X axis, or in other words, moving pixels horizontally.</p></div></div><div class="field "><a name="ty"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#ty"><span class="identifier">ty</span></a>:<a class="type" title="Float - The standard Float type, this is a double-precision IEEE 64bit float." href="../../Float.html">Float</a></code></h3><div class="doc"><p>The middle-left element in this matrix, at position <code>(2, 0)</code>:</p>
+<pre><code class="prettyprint haxe">┌          ┐
+│ ᵃ  ᵇ  ᵗˣ │
+│ ᶜ  ᵈ  ty │
+│ ᵉ  ᶠ  1  │
+└          ┘</code></pre>
+<p>Used for translation on the Y axis, or in other words, moving pixels vertically.</p></div></div><div class="field "><a name="underlying"></a><h3 class="anchor"><code><span class="label label-static">static</span><span class="label">read only</span><a href="#underlying"><span class="identifier">underlying</span></a>:<a class="type" title="vision.ds.Matrix2D - Represents a transformation matrix, used for warping images in one way or another." href="../../vision/ds/Matrix2D.html">Matrix2D</a></code></h3><div class="doc"><p>The underlying <code><a href="../../vision/ds/Matrix2D.html#Matrix2D">Matrix2D</a></code> instance.
+you can safely use this for mathematical operations.</p></div></div></div><h3 class="section">Static methods</h3><div class="fields"><div class="field "><a name="transformPoint"></a><h3 class="anchor"><code><span class="label label-static">static</span><span class="label label-inline">inline</span><a href="#transformPoint"><span class="identifier">transformPoint</span></a>(<span style="white-space:nowrap">this:<a class="type" title="vision.ds.Matrix2D - Represents a transformation matrix, used for warping images in one way or another." href="../../vision/ds/Matrix2D.html">Matrix2D</a>,</span> <span style="white-space:nowrap">point:<a class="type" title="vision.ds.Point3D" href="../../vision/ds/Point3D.html">Point3D</a></span>):<a class="type" title="vision.ds.Point3D" href="../../vision/ds/Point3D.html">Point3D</a></code></h3><h3 class="anchor"><code><span class="label label-static">static</span><span class="label label-inline">inline</span><a href="#transformPoint"><span class="identifier">transformPoint</span></a>(<span style="white-space:nowrap">this:<a class="type" title="vision.ds.Matrix2D - Represents a transformation matrix, used for warping images in one way or another." href="../../vision/ds/Matrix2D.html">Matrix2D</a>,</span> <span style="white-space:nowrap">point:<a class="type" title="vision.ds.Point2D" href="../../vision/ds/Point2D.html">Point2D</a></span>):<a class="type" title="vision.ds.Point2D" href="../../vision/ds/Point2D.html">Point2D</a></code></h3><div class="doc"><p>Multiplies the given point by this <code><a href="../../vision/ds/Matrix2D.html#Matrix2D">Matrix2D</a></code>:<br />
+The <code>x</code> coordinate is multiplied by the first row, 
+the <code>y</code> coordinate is multiplied by the second row,
+and the <code>z</code> coordinate is multiplied by the last row,</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>point</code></th><td><p>any 3D point</p></td></tr></table><p class="javadoc">Returns:</p><div class="indent inline-content"><p>a new, transformed <code><a href="../../vision/ds/Point3D.html#Point3D">Point3D</a></code> instance</p></div></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#000000">&copy; 2024 &nbsp;</p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>
