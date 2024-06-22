@@ -29,25 +29,25 @@
 
 #section-6 h1 {
     font-size: 6.3em;
-    margin-block: 40px 20px;
+    margin-block: 30px 10px;
 }
 
 #section-6 .highlight {
 	width: min(80%, 700px);
 }
 
-/* Spotlight Effect*/
 /* Flashlight Overlay */
 :root {
 	--cursorX: 50vw;
 	--cursorY: 50vh;
 }
-#section-6.spotlight::after {
-	content: '';
-	display: block;
+#section-6.spotlight .overlay {
 	width: 100%;
-	height: 100%;
-	position: fixed;
+	height: 100vh;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 20000;
 	pointer-events: none;
 	background: radial-gradient(
 	  circle 20vmax at var(--cursorX) var(--cursorY),
@@ -55,4 +55,40 @@
 	  rgba(0,0,0,0) 60%,
 	  rgba(0, 0, 0, 0.8) 61%
 	) !important;
-  }
+}
+
+/* Searchlight objects*/
+
+#section-6 .searchlight {
+	position: absolute;
+	top: 10px;
+	left: 5px;
+	width: 60px;
+	height: 40px;
+	background: linear-gradient(to right, gray, darkgray);
+	border: #000 solid 6px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px; 
+	rotate: -45deg;
+}
+
+#section-6 .searchlight::before {
+	content: "";
+	position: absolute;
+	top: -20px;
+	left: 35px;
+	width: 10px;
+	height: 40px;
+	background: #000;
+	border: #000 solid 2px;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	rotate: 45deg;
+}
+
+#section-6 .searchlight.mirror {
+	left: unset;
+	right: 5px;
+	transform: scale(-1, 1);
+	rotate: 45deg;
+}

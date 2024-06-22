@@ -11,10 +11,10 @@ body {
 	overflow-x: hidden;
 }
 
-/* html {
+html {
 	scroll-snap-type: y mandatory;
 	scroll-behavior: smooth;
-}  */
+}
 
 .section {
     width: 100%;
