@@ -1,5 +1,13 @@
+const SEARCHLIGHT_WIDTH = 60;
+const SEARCHLIGHT_HEIGHT = 40;
+
+const SEARCHLIGHT_Y = 16;
+const SEARCHLIGHT_X = (mirror) => {
+    return mirror ? 11.5 : document.body.clientWidth - 11.5 - SEARCHLIGHT_WIDTH;
+};
+
 let lastMouseX = 0; let lastMouseY = 0;
-let RADIUS = 150;
+
 let section6 = document.getElementById("section-6");
 /**
  * @type {HTMLCanvasElement}
@@ -54,13 +62,18 @@ function update(e) {
 
     //change angle of searchlights
     if (section6.classList.contains("spotlight")) {
-        let spotlight1Pos = document.getElementById("se1").getBoundingClientRect();
-        let spotlight2Pos = document.getElementById("se2").getBoundingClientRect();
+        let dist1 = Math.sqrt(Math.pow(x - SEARCHLIGHT_X(false), 2) + Math.pow(y - SEARCHLIGHT_Y, 2))
+        let dist2 = Math.sqrt(Math.pow(x - SEARCHLIGHT_X(true), 2) + Math.pow(y - SEARCHLIGHT_Y, 2))
+        let RADIUS1 = SEARCHLIGHT_WIDTH * dist1 / (document.body.clientWidth / 3);
+        let RADIUS2 = SEARCHLIGHT_WIDTH * dist2 / (document.body.clientWidth / 3);
 
-        let deg1 = Math.atan2(y - spotlight1Pos.y, x - spotlight1Pos.x) * 180 / Math.PI
-        let deg2 = Math.atan2(y - spotlight2Pos.y, x - spotlight2Pos.x) * 180 / Math.PI
+        let deg1 = Math.atan2(y - (SEARCHLIGHT_Y), x - (SEARCHLIGHT_X(true))) * 180 / Math.PI
+        let deg2 = Math.atan2(y - (SEARCHLIGHT_Y), x - (SEARCHLIGHT_X(false))) * 180 / Math.PI
         document.getElementById("se1").style.setProperty('--deg', -deg1 + 90 + "deg")
         document.getElementById("se2").style.setProperty('--deg', deg2 - 90 + "deg")
+
+        deg1 = Math.atan2(y - SEARCHLIGHT_Y, x - SEARCHLIGHT_X(false)) * 180 / Math.PI
+        deg2 = Math.atan2(y - SEARCHLIGHT_Y, x - SEARCHLIGHT_X(true)) * 180 / Math.PI
 
         // Draw on canvas
         context.globalCompositeOperation = 'source-over';
@@ -73,20 +86,20 @@ function update(e) {
         // Draw the circle - now, everything drawn will be transparent
         context.beginPath();
         // And draw the trapezoid beams, from each corner of the searchlight to the circle:
-        let centerSe1 = [spotlight1Pos.x + spotlight1Pos.width / 2, spotlight1Pos.y + spotlight1Pos.height / 2]
-        let centerSe2 = [spotlight2Pos.x + spotlight2Pos.width / 2, spotlight2Pos.y + spotlight2Pos.height / 2]
+        let centerSe1 = [SEARCHLIGHT_X(false) + SEARCHLIGHT_WIDTH / 2, SEARCHLIGHT_Y + SEARCHLIGHT_HEIGHT / 2]
+        let centerSe2 = [SEARCHLIGHT_X(true) + SEARCHLIGHT_WIDTH / 2, SEARCHLIGHT_Y + SEARCHLIGHT_HEIGHT / 2]
         
-        let startSe1 = rotatePoint(centerSe1, [spotlight1Pos.x, spotlight1Pos.y + spotlight1Pos.height], (-deg1 + 90) * Math.PI / 180)
-        let startSe2 = rotatePoint(centerSe2, [spotlight2Pos.x, spotlight2Pos.y + spotlight2Pos.height], (-deg2 + 90) * Math.PI / 180)
+        let startSe1 = rotatePoint(centerSe1, [SEARCHLIGHT_X(false), SEARCHLIGHT_Y + SEARCHLIGHT_HEIGHT], (-deg1 + 90) * Math.PI / 180)
+        let startSe2 = rotatePoint(centerSe2, [SEARCHLIGHT_X(true), SEARCHLIGHT_Y + SEARCHLIGHT_HEIGHT], (-deg2 + 90) * Math.PI / 180)
 
-        let endSe1 = rotatePoint(centerSe1, [spotlight1Pos.x + spotlight1Pos.width, spotlight1Pos.y + spotlight1Pos.height], (-deg1 + 90) * Math.PI / 180)
-        let endSe2 = rotatePoint(centerSe2, [spotlight2Pos.x + spotlight2Pos.width, spotlight2Pos.y + spotlight2Pos.height], (-deg2 + 90) * Math.PI / 180)
+        let endSe1 = rotatePoint(centerSe1, [SEARCHLIGHT_X(false) + SEARCHLIGHT_WIDTH, SEARCHLIGHT_Y + SEARCHLIGHT_HEIGHT], (-deg1 + 90) * Math.PI / 180)
+        let endSe2 = rotatePoint(centerSe2, [SEARCHLIGHT_X(true) + SEARCHLIGHT_WIDTH, SEARCHLIGHT_Y + SEARCHLIGHT_HEIGHT], (-deg2 + 90) * Math.PI / 180)
 
-        let mid1Se1 = [x + Math.cos((deg1 + 90) * Math.PI / 180) * RADIUS, y + Math.sin((deg1 + 90) * Math.PI / 180) * RADIUS];
-        let mid2Se1 = [x - Math.cos((deg1 + 90) * Math.PI / 180) * RADIUS, y - Math.sin((deg1 + 90) * Math.PI / 180) * RADIUS];
+        let mid1Se1 = [x + Math.cos((deg1 + 90) * Math.PI / 180) * RADIUS1, y + Math.sin((deg1 + 90) * Math.PI / 180) * RADIUS1];
+        let mid2Se1 = [x - Math.cos((deg1 + 90) * Math.PI / 180) * RADIUS1, y - Math.sin((deg1 + 90) * Math.PI / 180) * RADIUS1];
 
-        let mid1Se2 = [x + Math.cos((deg2 + 90) * Math.PI / 180) * RADIUS, y + Math.sin((deg2 + 90) * Math.PI / 180) * RADIUS];
-        let mid2Se2 = [x - Math.cos((deg2 + 90) * Math.PI / 180) * RADIUS, y - Math.sin((deg2 + 90) * Math.PI / 180) * RADIUS];
+        let mid1Se2 = [x + Math.cos((deg2 + 90) * Math.PI / 180) * RADIUS2, y + Math.sin((deg2 + 90) * Math.PI / 180) * RADIUS2];
+        let mid2Se2 = [x - Math.cos((deg2 + 90) * Math.PI / 180) * RADIUS2, y - Math.sin((deg2 + 90) * Math.PI / 180) * RADIUS2];
 
         context.moveTo(startSe1[0], startSe1[1]);
         context.lineTo(mid1Se1[0], mid1Se1[1]);
@@ -94,17 +107,26 @@ function update(e) {
         context.lineTo(endSe1[0], endSe1[1]);
         context.lineTo(startSe1[0], startSe1[1]);
         context.fill();
+        context.closePath();
 
+
+        context.beginPath();
+        context.arc((mid1Se1[0] + mid2Se1[0]) / 2, (mid1Se1[1] + mid2Se1[1]) / 2, RADIUS1, (deg1 + 90) * Math.PI / 180, (deg1 - 90 - 180) * Math.PI / 180, false);
+        context.fill();
+        context.closePath();
+
+        context.beginPath();
         context.moveTo(startSe2[0], startSe2[1]);
         context.lineTo(mid1Se2[0], mid1Se2[1]);
         context.lineTo(mid2Se2[0], mid2Se2[1]);
         context.lineTo(endSe2[0], endSe2[1]);
         context.lineTo(startSe2[0], startSe2[1]);
         context.fill();
+        context.closePath();
 
-        context.arc(x, y, RADIUS, 0, 2 * Math.PI, false);
+        context.beginPath();
+        context.arc((mid1Se2[0] + mid2Se2[0]) / 2, (mid1Se2[1] + mid2Se2[1]) / 2, RADIUS2, (deg2 - 90) * Math.PI / 180, (deg2 + 90 + 180) * Math.PI / 180, true);
         context.fill();
-
         context.closePath();
     }
 }
