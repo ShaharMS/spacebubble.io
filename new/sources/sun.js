@@ -18,8 +18,10 @@ secretContainer.setCss({
 	flexDirection: "column",
 	alignItems: "center",
 	justifyContent: "center",
-	fontSize: "2em",
+	fontSize: window.innerWidth < 1000 ? "1em" : "2em",
+	paddingTop: window.innerWidth < 1000 ? "1em" : "0em",
 });
+console.log(window.innerWidth);
 
 sun.insertAdjacentElement("afterend", secretContainer);
 

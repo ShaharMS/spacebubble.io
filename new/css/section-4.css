@@ -45,7 +45,7 @@
 
 #section-4 .code-io iframe {
     width: 500px;
-    height: min(80vh, 500px);
+    height: 80vh;
 }
 
 #section-4 .code-io div {
@@ -70,7 +70,7 @@
 	text-align: center;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 900px) {
 	#section-4 .code-io {
 		display: none;
 	}
@@ -93,6 +93,6 @@
 	}
 
 	#section-4 {
-		justify-content: flex-start;
+		/* justify-content: flex-start; */
 	}
 }

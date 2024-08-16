@@ -4,7 +4,8 @@
 	overflow: hidden;
 	background: #87CEEB;
 
-	border-bottom: #000 solid 16px;
+	/*border-bottom: #000 solid 16px;*/
+	/*Border isnt visible because of landscape, it is done manually*/
 }
 
 #section-3 h1 {
@@ -59,14 +60,29 @@
 	transform: translate(-50%, -50%);
 }
 
+@media screen and (max-height: 700px) {
+	#section-3 .content {
+		display: flex;
+		flex-direction: row;
+		padding-left: 20px;
+		justify-content: space-between;
+		align-items: center;
+		overflow: hidden;
+	}
+
+	#section-3 .content:nth-child(1) {
+		margin-inline-end: -30px;
+	}
+}
+
 #section-3 .content-stick1 {
 	content: "";
 	position: absolute;
 	display: inline-block;
 	width: 10px;
-	height: 19vh;
-	top: 280vh;
-	left: 33vw;
+	height: 25vh;
+	top: calc(260vh + min(400px, 30vh) / 2);
+	left: calc(50vw - min(600px, 50vw) / 3);
 	background: black;
 }
 
@@ -75,9 +91,9 @@
 	position: absolute;
 	display: inline-block;
 	width: 10px;
-	height: 19vh;
-	top: 280vh;
-	left: 66vw;
+	height: 25vh;
+	top: calc(260vh + min(400px, 30vh) / 2);
+	left: calc(50vw + min(600px, 50vw) / 3);
 	background: black;
 }
 
@@ -237,6 +253,13 @@ Sun
 	100% {
 		transform: rotate(360deg);
 	}
+}
+
+@media screen and (max-width: 767px) {
+	.secret {
+		font-size: 1em;
+	}
+	
 }
 
 /*

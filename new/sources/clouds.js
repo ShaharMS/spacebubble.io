@@ -27,7 +27,7 @@ const cloudContent = () => {
 		"Have you listened to Kendrick Lamar's <italic>'To Pimp A Butterfly'</italic>?",
 		"Follow me on <a href='https://twitter.com/MarcusShahar'>Twitter</a> For <italic>absolutely nothing</italic>!",
 		"<div style=\"padding-left: 20px\">This is slightly misaligned.<br> Cry about it 😊.</div>",
-		`"<img style="position: relative; top: 12px; width: 32px; height: 20px" class="emojidex-emoji" src="https://cdn.emojidex.com/emoji/seal/TrollFace.png" emoji-code="TrollFace" alt="TrollFace"/>"<br><br>God, Genesis 11.7`
+		`"<img style="position: relative; top: 12px; width: 25px; height: 20px" src="https://upload.wikimedia.org/wikipedia/en/9/9a/Trollface_non-free.png" alt="TrollFace"/>"<br><br>God, Genesis 11.7`
 	];
 	return '<div style="position: relative; top: -10px; width: 80%";>' + array[counter++ % array.length] + '</div>';
 }

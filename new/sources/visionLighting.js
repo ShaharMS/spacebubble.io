@@ -16,6 +16,11 @@ let overlay = section6.querySelector("canvas.overlay");
 
 overlay.width = section6.clientWidth;
 overlay.height = section6.clientHeight;
+
+window.onresize = () => {
+    overlay.width = section6.clientWidth;
+    overlay.height = section6.clientHeight;
+}
 /**
  * @type {CanvasRenderingContext2D}
  */
@@ -62,10 +67,8 @@ function update(e) {
 
     //change angle of searchlights
     if (section6.classList.contains("spotlight")) {
-        let dist1 = Math.sqrt(Math.pow(x - SEARCHLIGHT_X(false), 2) + Math.pow(y - SEARCHLIGHT_Y, 2))
-        let dist2 = Math.sqrt(Math.pow(x - SEARCHLIGHT_X(true), 2) + Math.pow(y - SEARCHLIGHT_Y, 2))
-        let RADIUS1 = SEARCHLIGHT_WIDTH * dist1 / (document.body.clientWidth / 3);
-        let RADIUS2 = SEARCHLIGHT_WIDTH * dist2 / (document.body.clientWidth / 3);
+        let RADIUS1 = ((document.body.clientWidth / 8) + (document.body.clientHeight / 8)) / 4;
+        let RADIUS2 = ((document.body.clientWidth / 8) + (document.body.clientHeight / 8)) / 4;
 
         let deg1 = Math.atan2(y - (SEARCHLIGHT_Y), x - (SEARCHLIGHT_X(true))) * 180 / Math.PI
         let deg2 = Math.atan2(y - (SEARCHLIGHT_Y), x - (SEARCHLIGHT_X(false))) * 180 / Math.PI
